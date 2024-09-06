@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="최규빈">
-<meta name="dcterms.date" content="2023-03-14">
+<meta name="dcterms.date" content="2024-09-06">
 
-<title>SS2024 - 02wk: 측도론 intro (2)</title>
+<title>SS2024 - 02wk: 귀류법과 일반화, 전사/단사/전단사, Cardinality</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -149,10 +149,10 @@ window.Quarto = {
   <li><a href="#예비개념1-귀류법" id="toc-예비개념1-귀류법" class="nav-link" data-scroll-target="#예비개념1-귀류법">2. 예비개념1: 귀류법</a></li>
   <li><a href="#예비개념2-일반화" id="toc-예비개념2-일반화" class="nav-link" data-scroll-target="#예비개념2-일반화">2. 예비개념2: 일반화</a></li>
   <li><a href="#cardinality" id="toc-cardinality" class="nav-link" data-scroll-target="#cardinality">3. Cardinality</a></li>
-  <li><a href="#유리수집합의-카디널리티" id="toc-유리수집합의-카디널리티" class="nav-link" data-scroll-target="#유리수집합의-카디널리티">4. 유리수집합의 카디널리티</a></li>
-  <li><a href="#실수집합의-카디널리티" id="toc-실수집합의-카디널리티" class="nav-link" data-scroll-target="#실수집합의-카디널리티">5. 실수집합의 카디널리티</a></li>
-  <li><a href="#무리수집합의-카디널리티" id="toc-무리수집합의-카디널리티" class="nav-link" data-scroll-target="#무리수집합의-카디널리티">6. 무리수집합의 카디널리티</a></li>
-  <li><a href="#a1.-전사-단사-전단사" id="toc-a1.-전사-단사-전단사" class="nav-link" data-scroll-target="#a1.-전사-단사-전단사">A1. 전사, 단사, 전단사</a></li>
+  <li><a href="#유리수집합의-cardinality" id="toc-유리수집합의-cardinality" class="nav-link" data-scroll-target="#유리수집합의-cardinality">4. 유리수집합의 Cardinality</a></li>
+  <li><a href="#실수집합의-cardinality" id="toc-실수집합의-cardinality" class="nav-link" data-scroll-target="#실수집합의-cardinality">5. 실수집합의 Cardinality</a></li>
+  <li><a href="#무리수집합의-cardinality" id="toc-무리수집합의-cardinality" class="nav-link" data-scroll-target="#무리수집합의-cardinality">6. 무리수집합의 Cardinality</a></li>
+  <li><a href="#a1.-전사-단사" id="toc-a1.-전사-단사" class="nav-link" data-scroll-target="#a1.-전사-단사">A1. 전사, 단사</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="02wk.out.ipynb" download="02wk.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
@@ -161,7 +161,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">02wk: 측도론 intro (2)</h1>
+<h1 class="title">02wk: 귀류법과 일반화, 전사/단사/전단사, Cardinality</h1>
 </div>
 
 
@@ -178,7 +178,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 14, 2023</p>
+      <p class="date">September 6, 2024</p>
     </div>
   </div>
   
@@ -258,8 +258,8 @@ window.Quarto = {
 <li>유리수집합과 무리수집합사이의 전단사함수는 존재할 수 없다.</li>
 </ul>
 </section>
-<section id="유리수집합의-카디널리티" class="level1 page-columns page-full">
-<h1>4. 유리수집합의 카디널리티</h1>
+<section id="유리수집합의-cardinality" class="level1 page-columns page-full">
+<h1>4. 유리수집합의 Cardinality</h1>
 <p><code>-</code> 우리가 궁극적으로 궁금한 것</p>
 <ul>
 <li>유리수집합과 무리수집합의 카디널리티는 다를까?</li>
@@ -338,8 +338,8 @@ window.Quarto = {
 <li><span class="math inline">\(\aleph_0 \times \aleph_0 = \aleph_0^2 =  \aleph_0\)</span></li>
 </ul>
 </section>
-<section id="실수집합의-카디널리티" class="level1 page-columns page-full">
-<h1>5. 실수집합의 카디널리티</h1>
+<section id="실수집합의-cardinality" class="level1 page-columns page-full">
+<h1>5. 실수집합의 Cardinality</h1>
 <p><code>-</code> 아래의 관계가 성립했다.</p>
 <ul>
 <li><span class="math inline">\(|\mathbb{N}| = \aleph_0\)</span></li>
@@ -386,8 +386,8 @@ window.Quarto = {
 </ul>
 <p>이러한 <span class="math inline">\(y\)</span>는 분명히 실수이지만 <span class="math inline">\(y \notin \{f(1),f(2),f(3),\dots,\}\)</span> 이다.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
 <div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;모순이네?</p></li></div></section>
-<section id="무리수집합의-카디널리티" class="level1">
-<h1>6. 무리수집합의 카디널리티</h1>
+<section id="무리수집합의-cardinality" class="level1">
+<h1>6. 무리수집합의 Cardinality</h1>
 <p><strong>(주장)</strong> 무리수집합의 카디널리티는 <span class="math inline">\(\aleph_0\)</span>가 아니다.</p>
 <p><strong>(쉐도복싱)</strong> 무리수집합의 카디널리티가 <span class="math inline">\(\aleph_0\)</span> 이라고 하자.</p>
 <ul>
@@ -397,31 +397,34 @@ window.Quarto = {
 <li>따라서 <span class="math inline">\(\mathbb{Q} \cup \mathbb{Q}^c\)</span> 와 <span class="math inline">\(\mathbb{N} \cup \mathbb{N}^-\)</span> 사이에는 전단사함수가 존재함. (모순)</li>
 </ul>
 </section>
-<section id="a1.-전사-단사-전단사" class="level1">
-<h1>A1. 전사, 단사, 전단사</h1>
+<section id="a1.-전사-단사" class="level1">
+<h1>A1. 전사, 단사</h1>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-1. 단사 (Injective): <strong>“단” 하나씩 매칭</strong>
+유치한 말장난
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<ol type="1">
+<li>단사 (Injective): <strong>“단” 하나씩 매칭</strong></li>
+</ol>
 <ul>
 <li><strong>단사</strong>는 “하나씩만 대응”이라는 의미로 기억</li>
 <li>외우기: <strong>“하나씩 대응하니 겹치면 안 돼”</strong></li>
 <li>즉, 다른 입력 <span class="math inline">\(x_1 \neq x_2\)</span> 이면 출력도 달라야 해(=겹치면안됨) <span class="math inline">\(f(x_1) \neq f(x_2)\)</span>.</li>
 </ul>
-<section id="전사-surjective-전부-커버" class="level3">
-<h3 class="anchored" data-anchor-id="전사-surjective-전부-커버">2. 전사 (Surjective): <strong>“전”부 커버</strong></h3>
+<ol start="2" type="1">
+<li>전사 (Surjective): <strong>“전”부 커버</strong></li>
+</ol>
 <ul>
 <li><strong>전사</strong>는 공역의 모든 원소가 함수의 출력에 포함된다는 의미입니다.</li>
 <li>외우기: <strong>“출력이 빠지지 않고 전부 다 커버돼야 해”</strong></li>
 <li>즉, 공역의 모든 값 <span class="math inline">\(y\)</span>에 대해 대응하는 입력 <span class="math inline">\(x\)</span>가 있어야 합니다.</li>
 </ul>
-</section>
 </div>
 </div>
 
