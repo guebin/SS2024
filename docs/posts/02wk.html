@@ -22,40 +22,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -179,14 +145,14 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#강의영상" id="toc-강의영상" class="nav-link active" data-scroll-target="#강의영상">강의영상</a></li>
-  <li><a href="#강의노트-다운로드" id="toc-강의노트-다운로드" class="nav-link" data-scroll-target="#강의노트-다운로드">강의노트 다운로드</a></li>
-  <li><a href="#예비개념1-귀류법" id="toc-예비개념1-귀류법" class="nav-link" data-scroll-target="#예비개념1-귀류법">예비개념1: 귀류법</a></li>
-  <li><a href="#예비개념2-일반화" id="toc-예비개념2-일반화" class="nav-link" data-scroll-target="#예비개념2-일반화">예비개념2: 일반화</a></li>
-  <li><a href="#cardinality" id="toc-cardinality" class="nav-link" data-scroll-target="#cardinality">cardinality</a></li>
-  <li><a href="#유리수집합의-카디널리티" id="toc-유리수집합의-카디널리티" class="nav-link" data-scroll-target="#유리수집합의-카디널리티">유리수집합의 카디널리티</a></li>
-  <li><a href="#실수집합의-카디널리티" id="toc-실수집합의-카디널리티" class="nav-link" data-scroll-target="#실수집합의-카디널리티">실수집합의 카디널리티</a></li>
-  <li><a href="#무리수집합의-카디널리티" id="toc-무리수집합의-카디널리티" class="nav-link" data-scroll-target="#무리수집합의-카디널리티">무리수집합의 카디널리티</a></li>
+  <li><a href="#강의영상" id="toc-강의영상" class="nav-link active" data-scroll-target="#강의영상">1. 강의영상</a></li>
+  <li><a href="#예비개념1-귀류법" id="toc-예비개념1-귀류법" class="nav-link" data-scroll-target="#예비개념1-귀류법">2. 예비개념1: 귀류법</a></li>
+  <li><a href="#예비개념2-일반화" id="toc-예비개념2-일반화" class="nav-link" data-scroll-target="#예비개념2-일반화">2. 예비개념2: 일반화</a></li>
+  <li><a href="#cardinality" id="toc-cardinality" class="nav-link" data-scroll-target="#cardinality">3. Cardinality</a></li>
+  <li><a href="#유리수집합의-카디널리티" id="toc-유리수집합의-카디널리티" class="nav-link" data-scroll-target="#유리수집합의-카디널리티">4. 유리수집합의 카디널리티</a></li>
+  <li><a href="#실수집합의-카디널리티" id="toc-실수집합의-카디널리티" class="nav-link" data-scroll-target="#실수집합의-카디널리티">5. 실수집합의 카디널리티</a></li>
+  <li><a href="#무리수집합의-카디널리티" id="toc-무리수집합의-카디널리티" class="nav-link" data-scroll-target="#무리수집합의-카디널리티">6. 무리수집합의 카디널리티</a></li>
+  <li><a href="#a1.-전사-단사-전단사" id="toc-a1.-전사-단사-전단사" class="nav-link" data-scroll-target="#a1.-전사-단사-전단사">A1. 전사, 단사, 전단사</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="02wk.out.ipynb" download="02wk.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
@@ -225,38 +191,10 @@ window.Quarto = {
 
 
 <section id="강의영상" class="level1">
-<h1>강의영상</h1>
-<blockquote class="blockquote">
-<p><a href="https://youtube.com/playlist?list=PLQqh36zP38-zlQzcT1FJ8lBWRGkqBIsEu" class="uri">https://youtube.com/playlist?list=PLQqh36zP38-zlQzcT1FJ8lBWRGkqBIsEu</a></p>
-</blockquote>
-</section>
-<section id="강의노트-다운로드" class="level1">
-<h1>강의노트 다운로드</h1>
-<div id="593896e3-66ee-4b2e-9ab3-40848b56a095" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>wget https:<span class="op">//</span>raw.githubusercontent.com<span class="op">/</span>guebin<span class="op">/</span>AP2023<span class="op">/</span>main<span class="op">/</span>posts<span class="op">/</span>I.<span class="op">%</span><span class="dv">20</span><span class="er">Measure</span><span class="op">%</span><span class="dv">20</span><span class="er">Theory</span><span class="op">/</span><span class="dv">2023</span><span class="op">-</span><span class="dv">0</span><span class="er">3</span><span class="op">-</span><span class="dv">14</span><span class="op">-</span><span class="dv">2</span><span class="er">wk</span>.ipynb</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>--2023-03-14 18:55:02--  https://raw.githubusercontent.com/guebin/AP2023/main/posts/I.%20Measure%20Theory/2023-03-14-2wk.ipynb
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.110.133, 185.199.109.133, 185.199.111.133, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.110.133|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 144568 (141K) [text/plain]
-Saving to: ‘2023-03-14-2wk.ipynb.1’
-
-2023-03-14-2wk.ipyn 100%[===================&gt;] 141.18K  --.-KB/s    in 0.01s   
-
-2023-03-14 18:55:02 (12.4 MB/s) - ‘2023-03-14-2wk.ipynb.1’ saved [144568/144568]
-
---2023-03-14 18:55:02--  http://2wk.ipynb/
-Resolving 2wk.ipynb (2wk.ipynb)... failed: Name or service not known.
-wget: unable to resolve host address ‘2wk.ipynb’
-FINISHED --2023-03-14 18:55:02--
-Total wall clock time: 0.05s
-Downloaded: 1 files, 141K in 0.01s (12.4 MB/s)</code></pre>
-</div>
-</div>
+<h1>1. 강의영상</h1>
 </section>
 <section id="예비개념1-귀류법" class="level1">
-<h1>예비개념1: 귀류법</h1>
+<h1>2. 예비개념1: 귀류법</h1>
 <p><code>-</code> 귀류법: <strong>니 논리 대로면…</strong> &lt;- 인터넷 댓글에 많음..</p>
 <pre><code>님 논리대로면..
 - XXX가 문제 없으면 서울 전체가 문제가 없고 (애초에 서울은 문제도 아니라는데 왜 이소리는 하고 계신지 모르겠지만)
@@ -265,15 +203,16 @@ Downloaded: 1 files, 141K in 0.01s (12.4 MB/s)</code></pre>
 와우! 모든 문제가 해결되었습니다! 출산율 감소로 인한 한국대학의 위기가 해결되었.. 아니 애초에 위기가 없었군요!.
 어휴.. ㅠㅠ</code></pre>
 <p>ref: <a href="https://m.hibrain.net/braincafe/cafes/38/posts/205/articles/466461?pagekey=466461&amp;listType=TOTAL&amp;pagesize=5&amp;sortType=RDT&amp;limit=30&amp;displayType=TIT&amp;siteid=1&amp;page=1">하이브레인넷</a></p>
+<p><code>-</code> (지난시간에서) 한점의 확률이 0이어야 하는 이유?</p>
 </section>
 <section id="예비개념2-일반화" class="level1">
-<h1>예비개념2: 일반화</h1>
+<h1>2. 예비개념2: 일반화</h1>
 <p><code>-</code> 연필의 정의: 필기도구의 하나. 흑연과 점토의 혼합물을 구워 만든 가느다란 심을 속에 넣고, 겉은 나무로 둘러싸서 만든다. 1565년에 영국에서 처음으로 만들었다.</p>
 <p><code>-</code> 질문: 아래는 연필인가?</p>
 <p><img src="02wk_files/figure-html/d7414026-ec8e-43a1-9f41-99c38a219b50-1-bc4ce260-8b68-4d31-8d65-674a0cf58a33.png" class="img-fluid"></p>
 </section>
 <section id="cardinality" class="level1">
-<h1>cardinality</h1>
+<h1>3. Cardinality</h1>
 <ul>
 <li>ref: <a href="https://en.wikipedia.org/wiki/Cardinality" class="uri">https://en.wikipedia.org/wiki/Cardinality</a></li>
 </ul>
@@ -307,6 +246,7 @@ Downloaded: 1 files, 141K in 0.01s (12.4 MB/s)</code></pre>
 <li>집합 <span class="math inline">\(X\)</span>에서 집합 <span class="math inline">\(Y\)</span>로 가는 단사함수 <span class="math inline">\(f\)</span>가 존재한다. <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(|X| \leq |Y|\)</span></li>
 <li>집합 <span class="math inline">\(X\)</span>에서 집합 <span class="math inline">\(Y\)</span>로 가는 전사함수 <span class="math inline">\(f\)</span>가 존재한다. <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(|X| \geq |Y|\)</span></li>
 </ul>
+<p><code>-</code> 강의노트에 쓰기 좀 애매한 내용을 부록에 담았습니다… 읽어보시고 느낌을 잘 잡으세요!!</p>
 <p>(예비학습 끝)</p>
 <p><code>-</code> 성질1~2로 유추하면 아래와 같은 사실을 주장 할 수 있지 않을까?</p>
 <ul>
@@ -319,7 +259,7 @@ Downloaded: 1 files, 141K in 0.01s (12.4 MB/s)</code></pre>
 </ul>
 </section>
 <section id="유리수집합의-카디널리티" class="level1 page-columns page-full">
-<h1>유리수집합의 카디널리티</h1>
+<h1>4. 유리수집합의 카디널리티</h1>
 <p><code>-</code> 우리가 궁극적으로 궁금한 것</p>
 <ul>
 <li>유리수집합과 무리수집합의 카디널리티는 다를까?</li>
@@ -399,7 +339,7 @@ Downloaded: 1 files, 141K in 0.01s (12.4 MB/s)</code></pre>
 </ul>
 </section>
 <section id="실수집합의-카디널리티" class="level1 page-columns page-full">
-<h1>실수집합의 카디널리티</h1>
+<h1>5. 실수집합의 카디널리티</h1>
 <p><code>-</code> 아래의 관계가 성립했다.</p>
 <ul>
 <li><span class="math inline">\(|\mathbb{N}| = \aleph_0\)</span></li>
@@ -447,7 +387,7 @@ Downloaded: 1 files, 141K in 0.01s (12.4 MB/s)</code></pre>
 <p>이러한 <span class="math inline">\(y\)</span>는 분명히 실수이지만 <span class="math inline">\(y \notin \{f(1),f(2),f(3),\dots,\}\)</span> 이다.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
 <div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;모순이네?</p></li></div></section>
 <section id="무리수집합의-카디널리티" class="level1">
-<h1>무리수집합의 카디널리티</h1>
+<h1>6. 무리수집합의 카디널리티</h1>
 <p><strong>(주장)</strong> 무리수집합의 카디널리티는 <span class="math inline">\(\aleph_0\)</span>가 아니다.</p>
 <p><strong>(쉐도복싱)</strong> 무리수집합의 카디널리티가 <span class="math inline">\(\aleph_0\)</span> 이라고 하자.</p>
 <ul>
@@ -456,6 +396,34 @@ Downloaded: 1 files, 141K in 0.01s (12.4 MB/s)</code></pre>
 <li><span class="math inline">\(|\mathbb{Q}^c|=\aleph_0\)</span> 이므로 <span class="math inline">\(\mathbb{Q}^c\)</span>와 <span class="math inline">\(\mathbb{N}^{-}=\{-1,-2,\dots\}\)</span>사이에는 전단사함수가 존재함.</li>
 <li>따라서 <span class="math inline">\(\mathbb{Q} \cup \mathbb{Q}^c\)</span> 와 <span class="math inline">\(\mathbb{N} \cup \mathbb{N}^-\)</span> 사이에는 전단사함수가 존재함. (모순)</li>
 </ul>
+</section>
+<section id="a1.-전사-단사-전단사" class="level1">
+<h1>A1. 전사, 단사, 전단사</h1>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+1. 단사 (Injective): <strong>“단” 하나씩 매칭</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>단사</strong>는 “하나씩만 대응”이라는 의미로 기억</li>
+<li>외우기: <strong>“하나씩 대응하니 겹치면 안 돼”</strong></li>
+<li>즉, 다른 입력 <span class="math inline">\(x_1 \neq x_2\)</span> 이면 출력도 달라야 해(=겹치면안됨) <span class="math inline">\(f(x_1) \neq f(x_2)\)</span>.</li>
+</ul>
+<section id="전사-surjective-전부-커버" class="level3">
+<h3 class="anchored" data-anchor-id="전사-surjective-전부-커버">2. 전사 (Surjective): <strong>“전”부 커버</strong></h3>
+<ul>
+<li><strong>전사</strong>는 공역의 모든 원소가 함수의 출력에 포함된다는 의미입니다.</li>
+<li>외우기: <strong>“출력이 빠지지 않고 전부 다 커버돼야 해”</strong></li>
+<li>즉, 공역의 모든 값 <span class="math inline">\(y\)</span>에 대해 대응하는 입력 <span class="math inline">\(x\)</span>가 있어야 합니다.</li>
+</ul>
+</section>
+</div>
+</div>
 
 
 </section>
