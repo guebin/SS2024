@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.533">
+<meta name="generator" content="quarto-1.4.520">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -71,33 +71,6 @@ ul.task-list li input[type="checkbox"] {
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -496,7 +469,7 @@ window.Quarto = {
 <p><strong>(결론)</strong> 그럼 유리수의 카디널넘버는 <span class="math inline">\(\aleph_0\)</span>이다.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> 좀 더 자극적으로 말하면 “자연수의 갯수와 유리수의 갯수는 같다” 라고 말할 수 있다.</p>
 <div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;<span class="math inline">\(\mathbb{Q} = \mathbb{Q}^+ \cup \{0\} \cup \mathbb{Q}^-\)</span></p></li></div><p><code>-</code> 조금 무식하게 쓰면 아래와 같이 쓸 수 있다.</p>
 <ul>
-<li><span class="math inline">\(\aleph_0 \times \aleph_0 = \aleph_0^2 =  \aleph_0\)</span></li>
+<li><span class="math inline">\(\aleph_0 \times \aleph_0 = \aleph_0^2 = \aleph_0\)</span></li>
 </ul>
 <p><code>#</code></p>
 </section>
@@ -556,7 +529,7 @@ window.Quarto = {
 <li><span class="math inline">\(\mathbb{R} = \mathbb{Q} \cup \mathbb{Q}^c\)</span></li>
 <li><span class="math inline">\(|\mathbb{Q}|=\aleph_0\)</span> 이므로 <span class="math inline">\(\mathbb{Q}\)</span>와 <span class="math inline">\(\mathbb{Z}^+=\mathbb{N}\)</span>사이에는 전단사함수가 존재함.</li>
 <li><span class="math inline">\(|\mathbb{Q}^c|=\aleph_0\)</span> 이므로 <span class="math inline">\(\mathbb{Q}^c\)</span>와 <span class="math inline">\(\mathbb{Z}^{-}=\{-1,-2,\dots\}\)</span>사이에는 전단사함수가 존재함.</li>
-<li>따라서 <span class="math inline">\(\mathbb{Q} \cup \mathbb{Q}^c\)</span> 와 <span class="math inline">\(\mathbb{N} \cup \mathbb{N}^-\)</span> 사이에는 전단사함수가 존재함. (모순)</li>
+<li>따라서 <span class="math inline">\(\mathbb{Q} \cup \mathbb{Q}^c\)</span> 와 <span class="math inline">\(\mathbb{Z}^+ \cup \mathbb{Z}^-\)</span> 사이에는 전단사함수가 존재함. (모순)</li>
 </ul>
 </section>
 </section>
@@ -858,6 +831,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
     if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
@@ -872,14 +866,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             break;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
+        typesetMath(container);
         return container.innerHTML
       } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
+        typesetMath(note);
         return note.innerHTML;
       }
     } else {
@@ -888,9 +878,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
+      typesetMath(note);
       return note.innerHTML;
     }
   }
