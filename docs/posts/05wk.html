@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.533">
+<meta name="generator" content="quarto-1.4.520">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -71,33 +71,6 @@ ul.task-list li input[type="checkbox"] {
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -323,7 +296,7 @@ window.Quarto = {
 <ul>
 <li><span class="math inline">\(\cap\)</span>-closed (closed under intersection) or a <strong><span class="math inline">\(\pi\)</span>-system</strong>: <span class="math inline">\(\forall A,B \in {\cal A}:~ A \cap B \in {\cal A}\)</span></li>
 <li><span class="math inline">\(\sigma\)</span>-<span class="math inline">\(\cap\)</span>-closed (closed under countable interserction): <span class="math inline">\(\forall \{A_i\}_{i=1}^{\infty} \subset {\cal A}:~ \cap_{i=1}^{\infty} A_i \in {\cal A}\)</span></li>
-<li><span class="math inline">\(\cup\)</span>-closed (closed under unions): <span class="math inline">\(\forall A,B \in {\cal A}:~  A\cup B \in {\cal A}\)</span></li>
+<li><span class="math inline">\(\cup\)</span>-closed (closed under unions): <span class="math inline">\(\forall A,B \in {\cal A}:~ A\cup B \in {\cal A}\)</span></li>
 <li><span class="math inline">\(\sigma\)</span>-<span class="math inline">\(\cup\)</span>-closed (closed under countable unois): <span class="math inline">\(\forall \{A_i\}_{i=1}^{\infty} \subset {\cal A}:~ \cup_{i=1}^{\infty}A_i \in {\cal A}\)</span></li>
 <li>＼-closed (closed under differences): <span class="math inline">\(\forall A,B \in {\cal A}:~ A-B \in {\cal A}\)</span></li>
 <li><span class="math inline">\(^c\)</span>-closed (closed under complements): <span class="math inline">\(\forall A \in {\cal A}:~ A^c \in {\cal A}\)</span></li>
@@ -499,10 +472,10 @@ window.Quarto = {
 <li>예시2: <span class="math inline">\({\cal A} = \{[a,b]: -\infty \leq a &lt; b \leq \infty \}\cup \{\emptyset\}\)</span></li>
 </ul>
 <p><code>-</code> 교재의 언급 (p3)</p>
-<div class="img-fluid quarto-figure quarto-figure-center">
-<figure class="figure">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
 <p><img src="05wk_files/figure-html/0b8c7ded-3d4a-40d0-9583-b2ce545c3393-1-003fb509-9d2e-4940-ae04-b94564848690.png" class="img-fluid figure-img"></p>
-<figcaption>그림1: 교재에서의 세미알지브라 설명</figcaption>
+<figcaption class="margin-caption">그림1: 교재에서의 세미알지브라 설명</figcaption>
 </figure>
 </div>
 </section>
@@ -552,7 +525,7 @@ window.Quarto = {
 <li>예시4: <span class="math inline">\({\cal A} = \{[a,b]: -\infty &lt; a &lt; b &lt; \infty \}\)</span></li>
 </ul>
 </section>
-<section id="람다시스템-starstar" class="level2">
+<section id="람다시스템-starstar" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="람다시스템-starstar">람다시스템 (<span class="math inline">\(\star\star\)</span>)</h2>
 <p><code>-</code> <strong><u>정의1</u>:</strong> <span class="math inline">\(\lambda\)</span>-system</p>
 <p>집합 <span class="math inline">\({\cal A}\subset 2^{\Omega}\)</span>가 아래의 조건을 만족하면 <span class="math inline">\({\cal A}\)</span>를 <span class="math inline">\(\Omega\)</span>에 대한 람다시스템 이라고 부른다.</p>
@@ -590,10 +563,10 @@ window.Quarto = {
 </ol>
 <p><code>-</code> Note: 정의1의 3번조건과 정의2의 3번조건은 서로 동치관계이다.</p>
 <p><code>-</code> 교재에서의 파이시스템, 람다시스템 설명</p>
-<div class="img-fluid quarto-figure quarto-figure-center">
-<figure class="figure">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
 <p><img src="05wk_files/figure-html/e9c00cca-b7a6-4d6b-924d-389ad0758be6-1-5135f65d-640a-4f6e-9775-58145ad1c8f3.png" class="img-fluid figure-img"></p>
-<figcaption>그림2: 교재에서의 파이시스템과 람다시스템</figcaption>
+<figcaption class="margin-caption">그림2: 교재에서의 파이시스템과 람다시스템</figcaption>
 </figure>
 </div>
 <blockquote class="blockquote">
@@ -740,10 +713,9 @@ window.Quarto = {
 </tbody>
 </table>
 <p><code>-</code> 다이어그램 (포함관계)</p>
-<div class="cell" data-layout-align="default">
+<div class="cell">
 <div class="cell-output-display">
 <div>
-<p></p><figure class="figure"><p></p>
 <div>
 <svg width="672" height="480" viewbox="0.00 0.00 394.00 377.60" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 373.6)">
@@ -869,15 +841,13 @@ window.Quarto = {
 </g>
 </svg>
 </div>
-<p></p></figure><p></p>
 </div>
 </div>
 </div>
 <p><code>-</code> 다이어그램 (이해용) – 그림은 더럽지만..</p>
-<div class="cell" data-layout-align="default">
+<div class="cell">
 <div class="cell-output-display">
 <div>
-<p></p><figure class="figure"><p></p>
 <div>
 <svg width="672" height="480" viewbox="0.00 0.00 444.10 483.60" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 479.6)">
@@ -1012,7 +982,6 @@ window.Quarto = {
 </g>
 </svg>
 </div>
-<p></p></figure><p></p>
 </div>
 </div>
 </div>
@@ -1151,6 +1120,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
     if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
@@ -1165,14 +1155,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             break;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
+        typesetMath(container);
         return container.innerHTML
       } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
+        typesetMath(note);
         return note.innerHTML;
       }
     } else {
@@ -1181,9 +1167,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
+      typesetMath(note);
       return note.innerHTML;
     }
   }
