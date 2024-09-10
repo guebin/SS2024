@@ -209,6 +209,10 @@ P(\Omega^*) = \frac{\pi}{2\pi} = \frac{1}{2}
 <li>약속4: 구간 <span class="math inline">\((a,b)\)</span>사이의 모든 유리수의 길이는 <span class="math inline">\(b-a\)</span> 이다.</li>
 </ul>
 <p>이와 같은 방식으로 길이를 잰다면 확률을 정의함에 있어서 모순이 일어나지 않는가? 모순이 일어나지 않으면 모순이 없다고 답을 쓰고 모순이 일어난다면 모순이 일어나는 이유를 설명하라.</p>
+<p><code>(풀이)</code></p>
+<p>구간 <span class="math inline">\((a,b)\)</span> 사이의 모든 유리수의 집합은 <span class="math inline">\(\mathbb{Q}\)</span>, 모든 무리수의 집합은 <span class="math inline">\(\mathbb{Q}^c\)</span> 라고 하자. 그렇다면 아래의 식이 성립한다.</p>
+<p><span class="math display">\[\mathbb{P}\big((a,b)\big)=\mathbb{P}\big(\mathbb{Q} \cup \mathbb{Q}^c \big)=\mathbb{P}(\mathbb{Q}) +\mathbb{P}(\mathbb{Q}^c)= \frac{m(\mathbb{Q})}{2\pi}+\frac{m(\mathbb{Q}^c)}{2\pi}=\frac{b-a}{2\pi}\]</span></p>
+<p>여기에서 첫번쨰 등호가 성립하는 이유는 <span class="math inline">\(\mathbb{Q}\)</span>의 정의, 그리고 두번째 등호가 성리하는 이유는 서로소인 집합에 대한 확률의 공리, 세번째 등호가 성립하는 이유는 문제에서 주어진 식 <span class="math inline">\(\mathbb{P}(\Omega^*)=\frac{m(\Omega^*)}{m(\Omega)}\)</span> 때문이며, 네번쪠 등호가 성립하는 이유는 약속1에 의하여 <span class="math inline">\(P((a,b))=\frac{m((a,b))}{2\pi}=\frac{b-a}{2\pi}\)</span> 이 성립하기 때문이다. 그런데 약속4에 의하여 <span class="math inline">\(m(\mathbb{Q})=b-a\)</span>를 대입하면 <span class="math inline">\(m(\mathbb{Q}^c)=0\)</span> 이 되어야하는데 이는 약속3에 모순이 된다.</p>
 <p><code>(2)</code> 길이를 재는 함수 <span class="math inline">\(m\)</span>에 대하여 아래와 같은 약속을 하자.</p>
 <ul>
 <li>약속1: 구간 <span class="math inline">\((a,b)\)</span>의 길이는 <span class="math inline">\(b-a\)</span>이다. 즉 <span class="math inline">\(m((a,b))=b-a\)</span> 이다.</li>
@@ -217,6 +221,12 @@ P(\Omega^*) = \frac{\pi}{2\pi} = \frac{1}{2}
 <li>약속4: 구간 <span class="math inline">\((a,b)\)</span>사이의 모든 유리수의 길이는 <span class="math inline">\(\frac{b-a}{2}\)</span> 이다.</li>
 </ul>
 <p>이와 같은 방식으로 길이를 잰다면 확률을 정의함에 있어서 모순이 일어나지 않는가? 모순이 일어나지 않으면 모순이 없다고 답을 쓰고 모순이 일어난다면 모순이 일어나는 이유를 설명하라.</p>
+<p><code>(풀이)</code></p>
+<p>구간 <span class="math inline">\((0,2\pi)\)</span> 사이의 모든 유리수의 집합은 <span class="math inline">\(\mathbb{Q}\)</span>라고 하자. <span class="math inline">\(2\pi\)</span>에서 <span class="math inline">\(q\)</span>의 모든 원소를 뺀 집합을 <span class="math inline">\(\mathbb{Q}^\star\)</span> 라고 하자. 즉</p>
+<p><span class="math display">\[\mathbb{Q}^\star = \{2\pi-q : q \in \mathbb{Q} \}\]</span></p>
+<p>이다. 그런데 <span class="math inline">\(\mathbb{Q}^\star\)</span>의 모든 원소는 무리수이므로 <span class="math inline">\(\mathbb{Q}^\star \subset \mathbb{Q}^c\)</span> 가 성립한다. 따라서 <span class="math inline">\(\mathbb{Q}^\star\)</span> 와 <span class="math inline">\(\mathbb{Q}^c - \mathbb{Q}^\star\)</span>는 서로소이다. 이제 아래의 식을 관찰하자.</p>
+<p><span class="math display">\[\mathbb{P}(\mathbb{Q}^c)=\mathbb{P}\big(\mathbb{Q}^\star \cup (\mathbb{Q}^c-\mathbb{Q}^\star)\big)= \mathbb{P}(\mathbb{Q}^\star) +\mathbb{P}(\mathbb{Q}^c-\mathbb{Q}^\star) = \frac{m(\mathbb{Q}^\star)}{2\pi} +\frac{m(\mathbb{Q}^c-\mathbb{Q}^\star)}{2\pi}  = \frac{b-a}{4\pi}\]</span></p>
+<p>여기에서 첫번째 등호는 집합의 성질에 의하여, 두번째 등호는 서로소인 사건에 대한 확률의 공리에 의하여, 세번째등호는 식 <span class="math inline">\(\mathbb{P}(\Omega^*)=\frac{m(\Omega^*)}{m(\Omega)}\)</span>에 의하여, 네번째 등호는 약속4에 의하여 성립한다. 그런데 <span class="math inline">\(m(\mathbb{Q}^\star)\)</span>는 <span class="math inline">\(m(\mathbb{Q})\)</span>를 <span class="math inline">\(\pi\)</span>를 기준으로 플립(대칭이동)한 것이므로 <span class="math inline">\(m(\mathbb{Q}^\star)=\frac{b-a}{2}\)</span> 가 성립하고 이에 따라 <span class="math inline">\(m(\mathbb{Q}^c-\mathbb{Q}^\star)=0\)</span> 이어야 한다. 그런데 집합 <span class="math inline">\(\mathbb{Q}^c-\mathbb{Q}^\star\)</span>는 무한집합이므로 약속3에 따라서 0이 아닌 길이가 있어야 하는데 이는 모순이다.</p>
 
 
 
