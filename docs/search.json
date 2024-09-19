@@ -25,7 +25,7 @@
     "href": "posts/03wk.html#a.-예비학습",
     "title": "03wk: 유리수, 무리수, 실수의 Cardinality",
     "section": "A. 예비학습",
-    "text": "A. 예비학습\n# 개념1 – 어떠한 집합 \\(A\\)의 cardinality가 \\(\\aleph_0\\) 이라면, 집합 \\(A\\)를 아래와 같이 쓸 수 있다.\n\\[ A = \\{a_1,a_2,a_3,\\dots \\} =\\bigcup_{n \\in \\mathbb{N}} \\{a_n\\}\\]\n#\n# 개념2 – 어떠한 집합 \\(A\\)의 cardinality가 \\(\\aleph_0\\) 이라고 하자. 그리고 또 다른 집합 \\(B\\)의 cardinality는 \\(N\\) 이라고 하자. 그러면 \\(A\\cup B\\) 의 cardinality는 \\(\\aleph_0\\) 이다.\n# 개념3 – 어떠한 집합 \\(A\\)의 cardinality가 \\(\\aleph_0\\) 이라고 하자. 그리고 또 다른 집합 \\(B\\)의 cardinality는 \\(N\\) 이라고 하자. 그러면 \\(A\\cup B\\) 의 cardinality는 \\(\\aleph_0\\) 이다.\n# 개념4 – \\(A \\subset B\\) 라면, 항상 \\(A\\)에서 \\(B\\)로 가는 단사함수가 존재한다. 즉 \\(|A| \\leq |B|\\) 가 성립한다."
+    "text": "A. 예비학습\n# 정의 – 집합 \\(A\\) 의 cardinality 를 엄밀하게 정의하는건 어렵다. 그래서 이 수업은 아래와 같이 알고 있어도 무방하다.\n\n집합 \\(A\\)가 유한집합일 경우: \\(|A|\\)는 집합의 \\(A\\)의 원소수와 같다.\n집합 \\(A\\)가 무한집합일 경우: \\(|A|\\)를 직접적으로 정의할수 없다. 단지 또 다른 집합 \\(B\\)와의 크기 비교는 가능하다.\n\n#\n# 개념1 – 어떠한 집합 \\(A\\)의 cardinality가 \\(\\aleph_0\\) 이라면, 집합 \\(A\\)를 아래와 같이 쓸 수 있다.\n\\[ A = \\{a_1,a_2,a_3,\\dots \\} =\\bigcup_{n \\in \\mathbb{N}} \\{a_n\\}\\]\n#\n# 개념2 – 어떠한 집합 \\(A\\)의 cardinality가 \\(\\aleph_0\\) 이라고 하자. 그리고 또 다른 집합 \\(B\\)의 cardinality는 \\(N\\) 이라고 하자. 그러면 \\(A\\cup B\\) 의 cardinality는 \\(\\aleph_0\\) 이다.\n# 개념3 – 어떠한 집합 \\(A\\)의 cardinality가 \\(\\aleph_0\\) 이라고 하자. 그리고 또 다른 집합 \\(B\\)의 cardinality는 \\(N\\) 이라고 하자. 그러면 \\(A\\cup B\\) 의 cardinality는 \\(\\aleph_0\\) 이다.\n# 개념4 – \\(A \\subset B\\) 라면, 항상 \\(A\\)에서 \\(B\\)로 가는 단사함수가 존재한다. 즉 \\(|A| \\leq |B|\\) 가 성립한다."
   },
   {
     "objectID": "posts/03wk.html#b.-유리수",
