@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "통계세미나 (2024)",
     "section": "",
-    "text": "질문하는 방법\n\n카카오톡: 질문하러 가기\n이메일: guebin@jbnu.ac.kr\n직접방문: 자연과학대학 본관 205호\nZoom: 카카오톡이나 이메일로 미리 시간을 정할 것\nLMS쪽지: https://ieilms.jbnu.ac.kr/\n\n강의노트\n\n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nSep 10, 2024\n\n\n02wk: 귀류법과 일반화, 수학과의 표현, Cardinality의 개념\n\n\n최규빈 \n\n\n\n\nSep 4, 2024\n\n\n01wk: Quiz (09/10)\n\n\n최규빈 \n\n\n\n\nSep 3, 2024\n\n\n01wk: 확률을 정의하는건 쉬운 일인가?, 르벡메져\n\n\n최규빈 \n\n\n\n\n\nNo matching items"
+    "text": "질문하는 방법\n\n카카오톡: 질문하러 가기\n이메일: guebin@jbnu.ac.kr\n직접방문: 자연과학대학 본관 205호\nZoom: 카카오톡이나 이메일로 미리 시간을 정할 것\nLMS쪽지: https://ieilms.jbnu.ac.kr/\n\n강의노트\n\n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nSep 19, 2024\n\n\n03wk: 유리수, 무리수, 실수의 Cardinality\n\n\n최규빈 \n\n\n\n\nSep 10, 2024\n\n\n02wk: 귀류법과 일반화, 수학과의 표현, Cardinality의 개념\n\n\n최규빈 \n\n\n\n\nSep 4, 2024\n\n\n01wk: Quiz (09/10)\n\n\n최규빈 \n\n\n\n\nSep 3, 2024\n\n\n01wk: 확률을 정의하는건 쉬운 일인가?, 르벡메져\n\n\n최규빈 \n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/01wk-Q.html",
@@ -12,6 +12,41 @@
     "title": "01wk: Quiz (09/10)",
     "section": "",
     "text": "우리는 단순한 시계 하나를 생각해볼 수 있다. 이 시계에는 바늘이 하나 있고, 이 바늘을 무작위로 돌렸을 때, 바늘이 시계에서 어떤 위치에 멈추게 될 확률을 계산하는 상황을 상상해보자.\n여기서 시계의 위치를 각도로 나타낸다. 시계의 각도는 \\(0\\)에서 \\(2\\pi\\) 사이로 표현된다. 즉, 시계바늘이 12시를 가리킬 때는 각도가 \\(0\\)이고, 시계바늘이 시계 방향으로 6시를 가리킬 때는 각도가 \\(\\pi\\)이다. 이 문제에서 전체 각도 공간을 sample space \\(\\Omega\\)로 정의한다. \\(\\Omega = [0, 2\\pi)\\)는 시계의 모든 각도를 나타내는 구간이다.\n시계바늘이 \\(0\\)부터 \\(2\\pi\\) 사이의 각도를 랜덤하게 가리킨다고 가정할 때, 우리는 특정 각도 범위에 바늘이 있을 확률을 계산할 수 있다. 예를들어 바늘이 12시부터 6시까지, 즉 각도 범위로 보면 \\([0, \\pi)\\) 사이에 바늘이 위치할 확률을 구하는 과정을 살펴보자.\n\n전체 각도 범위는 \\(0\\)에서 \\(2\\pi\\)까지이므로, 전체 가능성의 범위 \\(\\Omega\\)의 길이(측도)는 \\(m(\\Omega) = 2\\pi\\)이다.\n바늘이 12시부터 6시 사이에 있을 각도 구간을 \\(\\Omega^*\\)로 정의할 수 있다. \\(\\Omega^* = [0, \\pi)\\)이며, 이 구간의 길이(측도)는 \\(m(\\Omega^*) = \\pi\\)이다.\n\n확률을 구하는 방법은, 우리가 원하는 범위 \\(\\Omega^*\\)의 길이를 전체 표본 공간 \\(\\Omega\\)의 길이로 나누는 것이다. 즉, 확률 \\(P(\\Omega^*)\\)는 다음과 같이 정의된다:\n\\[\nP(\\Omega^*) = \\frac{m(\\Omega^*)}{m(\\Omega)}\n\\]\n따라서, 바늘이 12시에서 6시 사이에 있을 확률은 다음과 같다:\n\\[\nP(\\Omega^*) = \\frac{\\pi}{2\\pi} = \\frac{1}{2}\n\\]\n즉, 시계바늘을 무작위로 돌렸을 때 바늘이 12시에서 6시 사이에 있을 확률은 1/2이다.\n기호 설명:\n\n\\(\\Omega\\): 전체 표본 공간으로, 시계바늘이 가리킬 수 있는 모든 각도 범위 \\([0, 2\\pi)\\)를 나타낸다.\n\\(\\Omega^*\\): 바늘이 12시에서 6시까지 있을 각도 범위로, \\([0, \\pi)\\) 구간을 나타낸다.\n\\(m(\\Omega)\\): 표본 공간 \\(\\Omega\\)의 측도로, 전체 각도 구간의 길이를 의미한다. 여기서는 \\(m(\\Omega) = 2\\pi\\)이다.\n\\(m(\\Omega^*)\\): 구간 \\(\\Omega^*\\)의 측도로, 바늘이 12시부터 6시까지 있을 각도 구간의 길이를 의미한다. 여기서는 \\(m(\\Omega^*) = \\pi\\)이다.\n\\(P(\\Omega^*)\\): 확률로, 바늘이 12시부터 6시까지 있을 확률을 나타낸다. 이는 \\(P(\\Omega^*) = \\frac{m(\\Omega^*)}{m(\\Omega)}\\)로 계산된다.\n\n(1) 길이를 재는 함수 \\(m\\)에 대하여 아래와 같은 약속을 하자.\n\n약속1: 구간 \\((a,b)\\)의 길이는 \\(b-a\\)이다. 즉 \\(m((a,b))=b-a\\) 이다.\n약속2: 한 점의 길이는 0이다.\n약속3: 점을 무한히 합치면 선이 되는것 처럼, 점의 길이를 무한히 합치면 0이 아니라 0보다 큰 어떠한 수가 된다.\n약속4: 구간 \\((a,b)\\)사이의 모든 유리수의 길이는 \\(b-a\\) 이다.\n\n이와 같은 방식으로 길이를 잰다면 확률을 정의함에 있어서 모순이 일어나지 않는가? 모순이 일어나지 않으면 모순이 없다고 답을 쓰고 모순이 일어난다면 모순이 일어나는 이유를 설명하라.\n(풀이)\n구간 \\((a,b)\\) 사이의 모든 유리수의 집합은 \\(\\mathbb{Q}\\), 모든 무리수의 집합은 \\(\\mathbb{Q}^c\\) 라고 하자. 그렇다면 아래의 식이 성립한다.\n\\[\\mathbb{P}\\big((a,b)\\big)=\\mathbb{P}\\big(\\mathbb{Q} \\cup \\mathbb{Q}^c \\big)=\\mathbb{P}(\\mathbb{Q}) +\\mathbb{P}(\\mathbb{Q}^c)= \\frac{m(\\mathbb{Q})}{2\\pi}+\\frac{m(\\mathbb{Q}^c)}{2\\pi}=\\frac{b-a}{2\\pi}\\]\n여기에서 첫번쨰 등호가 성립하는 이유는 \\(\\mathbb{Q}\\)의 정의, 그리고 두번째 등호가 성리하는 이유는 서로소인 집합에 대한 확률의 공리, 세번째 등호가 성립하는 이유는 문제에서 주어진 식 \\(\\mathbb{P}(\\Omega^*)=\\frac{m(\\Omega^*)}{m(\\Omega)}\\) 때문이며, 네번쪠 등호가 성립하는 이유는 약속1에 의하여 \\(P((a,b))=\\frac{m((a,b))}{2\\pi}=\\frac{b-a}{2\\pi}\\) 이 성립하기 때문이다. 그런데 약속4에 의하여 \\(m(\\mathbb{Q})=b-a\\)를 대입하면 \\(m(\\mathbb{Q}^c)=0\\) 이 되어야하는데 이는 약속3에 모순이 된다.\n(2) 길이를 재는 함수 \\(m\\)에 대하여 아래와 같은 약속을 하자.\n\n약속1: 구간 \\((a,b)\\)의 길이는 \\(b-a\\)이다. 즉 \\(m((a,b))=b-a\\) 이다.\n약속2: 한 점의 길이는 0이다.\n약속3: 점을 무한히 합치면 선이 되는것 처럼, 점의 길이를 무한히 합치면 0이 아니라 0보다 큰 어떠한 수가 된다.\n약속4: 구간 \\((a,b)\\)사이의 모든 유리수의 길이는 \\(\\frac{b-a}{2}\\) 이다.\n\n이와 같은 방식으로 길이를 잰다면 확률을 정의함에 있어서 모순이 일어나지 않는가? 모순이 일어나지 않으면 모순이 없다고 답을 쓰고 모순이 일어난다면 모순이 일어나는 이유를 설명하라.\n(풀이)\n구간 \\((0,2\\pi)\\) 사이의 모든 유리수의 집합은 \\(\\mathbb{Q}\\), 모든 무리수의 집합을 \\(\\mathbb{Q}^c\\) 라고 하자. \\(2\\pi\\)에서 \\(q\\)의 모든 원소를 뺀 집합을 \\(\\mathbb{Q}^\\star\\) 라고 하자. 즉\n\\[\\mathbb{Q}^\\star = \\{2\\pi-q : q \\in \\mathbb{Q} \\}\\]\n이다. 이제 아래의 식을 관찰하자.\n\\[\\mathbb{P}(\\mathbb{Q}^c)=\\mathbb{P}\\big(\\mathbb{Q}^\\star \\cup (\\mathbb{Q}^c-\\mathbb{Q}^\\star)\\big)= \\mathbb{P}(\\mathbb{Q}^\\star) +\\mathbb{P}(\\mathbb{Q}^c-\\mathbb{Q}^\\star) = \\frac{m(\\mathbb{Q}^\\star)}{2\\pi} +\\frac{m(\\mathbb{Q}^c-\\mathbb{Q}^\\star)}{2\\pi}  = \\frac{b-a}{4\\pi}\\]\n여기에서 첫번째 등호는 집합의 성질에 의하여, 두번째 등호는 서로소인 사건에 대한 확률의 공리에 의하여, 세번째등호는 식 \\(\\mathbb{P}(\\Omega^*)=\\frac{m(\\Omega^*)}{m(\\Omega)}\\)에 의하여, 네번째 등호는 약속4에 의하여 성립한다. 그런데 \\(\\mathbb{Q}^\\star\\)는 \\(\\mathbb{Q}\\)를 \\(\\pi\\)를 기준으로 플립(대칭이동)한 것이므로 \\(m(\\mathbb{Q})=m(\\mathbb{Q}^\\star)=\\frac{b-a}{2}\\) 가 성립하고 이에 따라 \\(m(\\mathbb{Q}^c-\\mathbb{Q}^\\star)=0\\) 이어야 한다. 그런데 집합 \\(\\mathbb{Q}^c-\\mathbb{Q}^\\star\\)는 무한집합이므로 약속3에 따라서 0이 아닌 길이가 있어야 하는데 이는 모순이다."
+  },
+  {
+    "objectID": "posts/03wk.html",
+    "href": "posts/03wk.html",
+    "title": "03wk: 유리수, 무리수, 실수의 Cardinality",
+    "section": "",
+    "text": "#{{&lt; video https://youtu.be/playlist?list=PLQqh36zP38-zzxPOmD99-PgC29bJVzM11&si=bp4UCPBUspjZNISj &gt;}}"
+  },
+  {
+    "objectID": "posts/03wk.html#a.-예비학습",
+    "href": "posts/03wk.html#a.-예비학습",
+    "title": "03wk: 유리수, 무리수, 실수의 Cardinality",
+    "section": "A. 예비학습",
+    "text": "A. 예비학습\n# 개념1 – 어떠한 집합 \\(A\\)의 cardinality가 \\(\\aleph_0\\) 이라면, 집합 \\(A\\)를 아래와 같이 쓸 수 있다.\n\\[ A = \\{a_1,a_2,a_3,\\dots \\} =\\bigcup_{n \\in \\mathbb{N}} \\{a_n\\}\\]\n#\n# 개념2 – 어떠한 집합 \\(A\\)의 cardinality가 \\(\\aleph_0\\) 이라고 하자. 그리고 또 다른 집합 \\(B\\)의 cardinality는 \\(N\\) 이라고 하자. 그러면 \\(A\\cup B\\) 의 cardinality는 \\(\\aleph_0\\) 이다.\n# 개념3 – 어떠한 집합 \\(A\\)의 cardinality가 \\(\\aleph_0\\) 이라고 하자. 그리고 또 다른 집합 \\(B\\)의 cardinality는 \\(N\\) 이라고 하자. 그러면 \\(A\\cup B\\) 의 cardinality는 \\(\\aleph_0\\) 이다.\n# 개념4 – \\(A \\subset B\\) 라면, 항상 \\(A\\)에서 \\(B\\)로 가는 단사함수가 존재한다. 즉 \\(|A| \\leq |B|\\) 가 성립한다."
+  },
+  {
+    "objectID": "posts/03wk.html#b.-유리수",
+    "href": "posts/03wk.html#b.-유리수",
+    "title": "03wk: 유리수, 무리수, 실수의 Cardinality",
+    "section": "B. 유리수",
+    "text": "B. 유리수\n# 예제1 – \\(|\\mathbb{N}| = |\\mathbb{Q}|\\) 임을 보여라. (https://en.wikipedia.org/wiki/Rational_number)\n- 전략: 자연수집합 \\(\\mathbb{N}\\)에서 양의유리수 \\(\\mathbb{Q}^+\\)로 가는 전단사함수가 존재함을 보이자. (그러면 아래의 2-4가 자동으로 보여진다.)\n\n\\(|\\mathbb{N}| = |\\mathbb{Q}^+|\\)\n\\(|\\mathbb{Q}^+| = |\\mathbb{Q}^-| \\Rightarrow |\\mathbb{N}| = |\\mathbb{Q}^-|\\)\n\\(|\\mathbb{N}| = |\\mathbb{Q}^+ \\cup \\mathbb{Q}^-|\\)\n\\(|\\mathbb{N}| = |\\mathbb{Q}|\\)\n\n- 단사: \\(\\mathbb{N} \\subset \\mathbb{Q}^+\\) 이므로, \\(\\mathbb{N} \\to \\mathbb{Q}^+\\) 인 단사함수가 존재한다. 즉 \\(|\\mathbb{N}| \\leq |\\mathbb{Q}^+|\\) 이다.\n- 전사: 이제 \\(\\mathbb{N} \\to \\mathbb{Q}^+\\)인 전사함수가 존재함을 보이면 된다. 아래의 그림을 보면 직관적으로 \\(\\mathbb{N} \\to \\mathbb{Q}^+\\)인 전사함수가 존재함을 알 수 있음. (모든 양의유리수 \\(q \\in \\mathbb{Q}^+\\)에 대하여 대응하는 \\(n \\in \\mathbb{N}\\)이 적어도 하나는 존재함)\n\n\n좀 더 엄밀한 증명을 원한다면?\n\n- 결론: 유리수집합 \\(\\mathbb{Q}\\)의 카디널넘버는 \\(\\aleph_0\\)이다. 좀 더 자극적으로 말하면 “자연수의 갯수와 유리수의 갯수는 같다” 라고 말할 수 있다.\n- 조금 무식하게 쓰면 아래와 같이 쓸 수 있다.\n\n\\(\\aleph_0 \\times \\aleph_0 = \\aleph_0^2 = \\aleph_0\\)\n\n#"
+  },
+  {
+    "objectID": "posts/03wk.html#c.-실수",
+    "href": "posts/03wk.html#c.-실수",
+    "title": "03wk: 유리수, 무리수, 실수의 Cardinality",
+    "section": "C. 실수",
+    "text": "C. 실수\n# 예제2 – \\(|\\mathbb{R}| &gt; |\\mathbb{Q}|\\) 임을 보여라.\n- 그런데 \\(|\\mathbb{Q}|=|\\mathbb{N}|\\) 이므로, \\(|\\mathbb{R}| &gt; |\\mathbb{N}|\\) 임을 보여도 충분하다.\n\n\\(\\mathbb{N} \\to \\mathbb{R}\\) 인 단사함수는 존재하지만, 전사함수는 존재할 수 없음을 보이자.\n\n- \\(\\mathbb{N} \\to \\mathbb{R}\\) 인 단사함수의 존재성은 쉽게 논의할 수 있다. (자연수는 실수의 부분집합이니까)\n- \\(\\mathbb{N} \\to \\mathbb{R}\\) 인 전사함수는 존재할 수 없음을 보이고 싶다. 그런데 이는 \\(\\mathbb{N} \\to [0,1]\\)로 향하는 전사가 존재할 수 없음을 보여도 충분하다.1\n1 \\(\\mathbb{R}\\)은 커녕 \\([0,1]\\)도 꽉 채우지 못한다는 의미니까..- 전략: \\(\\mathbb{N} \\to [0,1]\\) 인 전사함수가 존재한다고 가정하고 모순을 이끌어 내자.\n1. 아래와 같은 주장을 하는 가상의 인물을 세움:\n\n\\(\\mathbb{N} \\to [0,1]\\)로 향하는 전사함수 \\(a(n)\\) 이 존재한다.\n\n2. 그 가상의 인물이 하는 주장을 잘 생각해보면 아래와 같음\n\\(a\\)는 정의역이 자연수이고 공역이 실수인 함수이므로 아래와 같은 형태일 것임.\n\n\\(a(1)=a_1= 0.1\\)2\n\\(a(2)=a_2= 0.3141592\\cdots\\)3\n\\(a(3)=a_3=0.14142135\\cdots\\)4\n\\(\\dots\\)\n\n2 유리수3 무리수, \\(\\frac{\\pi}{10}\\)4 무리수, \\(\\frac{\\sqrt{2}}{10}\\)그 가상의 인물의 주장대로라면\n\\[[0,1]=\\{a_1,a_2,a_3,\\dots\\}\\]\n이라는 의미임.5\n5 다시 말하면 \\([0,1]\\) 사이의 모든 실수는 “셀수있다”라는 의미임3. 전사함수의 정의에 의하여 아래가 성립해야 함\n\n\\(\\forall y\\in [0,1] ~\\exists x \\in \\mathbb{N}\\) such that \\(a(x)=y\\)\n\n아래의 원리에 따라서 \\(y=0.x_1x_2x_3\\cdots\\)를 뽑는다면?\n\n\\(y\\)의 첫번째 소수점의 값 \\(x_1\\)은 \\(a(1)=a_1\\)의 첫번째 소수점과 다르게 한다. \\(\\Rightarrow\\) \\(y\\neq a(1)\\) \\(\\Rightarrow\\) \\(y \\notin \\{a_1\\}\\)\n\\(y\\)의 두번째 소수점의 값 \\(x_2\\)은 \\(a(2)=a_2\\)의 두번째 소수점과 다르게 한다. \\(\\Rightarrow\\) \\(y\\neq a(1)\\) and \\(y\\neq a(2)\\) \\(\\Rightarrow\\) \\(y \\notin \\{a_1, a_2\\}\\)\n\\(\\dots\\)\n\n이러한 \\(y\\)는 분명히 실수이지만 \\(y \\notin \\{a_1,a_2,a_3,\\dots,\\}\\) 이다.6\n6 모순이네?#"
+  },
+  {
+    "objectID": "posts/03wk.html#d.-무리수",
+    "href": "posts/03wk.html#d.-무리수",
+    "title": "03wk: 유리수, 무리수, 실수의 Cardinality",
+    "section": "D. 무리수",
+    "text": "D. 무리수\n# 예제3 – \\(|\\mathbb{R}-\\mathbb{Q}| &gt; |\\mathbb{Q}|\\) 임을 보여라.\n#"
   },
   {
     "objectID": "posts/01wk.html",
