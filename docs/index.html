@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.520">
+<meta name="generator" content="quarto-1.4.533">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -101,6 +101,33 @@ ul.task-list li input[type="checkbox"] {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -144,7 +171,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(5)</span></div></div></div>
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content">
 
@@ -196,7 +223,18 @@ Author
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-date-sort="1726671600000" data-listing-file-modified-sort="1726756286114" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="730" data-listing-title-sort="03wk: 유리수, 무리수, 실수의 Cardinality" data-listing-filename-sort="03wk.ipynb">
+<tr data-index="0" data-listing-date-sort="1727103600000" data-listing-file-modified-sort="1727151488349" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="363" data-listing-title-sort="04wk: Quiz (09/24)" data-listing-filename-sort="04wk-Q.ipynb">
+<td>
+<span class="listing-date">Sep 24, 2024</span>
+</td>
+<td>
+<a href="./posts/04wk-Q.html" class="title listing-title">04wk: Quiz (09/24)</a>
+</td>
+<td>
+<span class="listing-author">최규빈 </span>
+</td>
+</tr>
+<tr data-index="1" data-listing-date-sort="1726671600000" data-listing-file-modified-sort="1726756272000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="730" data-listing-title-sort="03wk: 유리수, 무리수, 실수의 Cardinality" data-listing-filename-sort="03wk.ipynb">
 <td>
 <span class="listing-date">Sep 19, 2024</span>
 </td>
@@ -207,7 +245,7 @@ Author
 <span class="listing-author">최규빈 </span>
 </td>
 </tr>
-<tr data-index="1" data-listing-date-sort="1725894000000" data-listing-file-modified-sort="1726756288914" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1705" data-listing-title-sort="02wk: 귀류법과 일반화, 수학과의 표현, Cardinality의 개념" data-listing-filename-sort="02wk.ipynb">
+<tr data-index="2" data-listing-date-sort="1725894000000" data-listing-file-modified-sort="1726623186000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1705" data-listing-title-sort="02wk: 귀류법과 일반화, 수학과의 표현, Cardinality의 개념" data-listing-filename-sort="02wk.ipynb">
 <td>
 <span class="listing-date">Sep 10, 2024</span>
 </td>
@@ -218,7 +256,7 @@ Author
 <span class="listing-author">최규빈 </span>
 </td>
 </tr>
-<tr data-index="2" data-listing-date-sort="1725375600000" data-listing-file-modified-sort="1726017473000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="583" data-listing-title-sort="01wk: Quiz (09/10)" data-listing-filename-sort="01wk-Q.ipynb">
+<tr data-index="3" data-listing-date-sort="1725375600000" data-listing-file-modified-sort="1727077006696" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="583" data-listing-title-sort="01wk: Quiz (09/10)" data-listing-filename-sort="01wk-Q.ipynb">
 <td>
 <span class="listing-date">Sep 4, 2024</span>
 </td>
@@ -229,7 +267,7 @@ Author
 <span class="listing-author">최규빈 </span>
 </td>
 </tr>
-<tr data-index="3" data-listing-date-sort="1725289200000" data-listing-file-modified-sort="1726142075720" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1008" data-listing-title-sort="01wk: 확률을 정의하는건 쉬운 일인가?, 르벡메져" data-listing-filename-sort="01wk.ipynb">
+<tr data-index="4" data-listing-date-sort="1725289200000" data-listing-file-modified-sort="1726142075000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1008" data-listing-title-sort="01wk: 확률을 정의하는건 쉬운 일인가?, 르벡메져" data-listing-filename-sort="01wk.ipynb">
 <td>
 <span class="listing-date">Sep 3, 2024</span>
 </td>
@@ -374,27 +412,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    const typesetMath = (el) => {
-      if (window.MathJax) {
-        // MathJax Typeset
-        window.MathJax.typeset([el]);
-      } else if (window.katex) {
-        // KaTeX Render
-        var mathElements = el.getElementsByClassName("math");
-        var macros = [];
-        for (var i = 0; i < mathElements.length; i++) {
-          var texText = mathElements[i].firstChild;
-          if (mathElements[i].tagName == "SPAN") {
-            window.katex.render(texText.data, mathElements[i], {
-              displayMode: mathElements[i].classList.contains('display'),
-              throwOnError: false,
-              macros: macros,
-              fleqn: false
-            });
-          }
-        }
-      }
-    }
     if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
@@ -409,10 +426,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             break;
           }
         }
-        typesetMath(container);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
         return container.innerHTML
       } else {
-        typesetMath(note);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
         return note.innerHTML;
       }
     } else {
@@ -421,7 +442,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      typesetMath(note);
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
       return note.innerHTML;
     }
   }
