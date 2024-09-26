@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.520">
+<meta name="generator" content="quarto-1.4.533">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -105,6 +105,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -329,15 +356,15 @@ Note
 <ul>
 <li><span class="math inline">\(\mathbb{P}(\emptyset) = \lambda(\emptyset) = 0\)</span></li>
 <li><span class="math inline">\(\mathbb{P}(\Omega) = \lambda(\Omega) = 1\)</span></li>
-<li><span class="math inline">\(\mathbb{P}([0,0.3)) = \lambda([0,0.3]) = 0.3\)</span></li>
-<li><span class="math inline">\(\mathbb{P}([0.3,1)) = \lambda([0.3,1]) = 0.7\)</span></li>
+<li><span class="math inline">\(\mathbb{P}([0,0.5)) = \lambda([0,0.5]) = 0.5\)</span></li>
+<li><span class="math inline">\(\mathbb{P}([0.5,1)) = \lambda([0.5,1]) = 0.5\)</span></li>
 </ul>
 <p>사실 아래와 같이 정의해도 딱히 모순이 되진 않음. (단지 이 경우는 우리가 잰 것이 “길이”라고 주장할 수는 없겠지, 그래서 쓸모가 없겠지)</p>
 <ul>
 <li><span class="math inline">\(\mathbb{P}(\emptyset) = 0\)</span></li>
 <li><span class="math inline">\(\mathbb{P}(\Omega) = 1\)</span></li>
-<li><span class="math inline">\(\mathbb{P}([0,0.3)) = 0\)</span></li>
-<li><span class="math inline">\(\mathbb{P}([0.3,1)) = 1\)</span></li>
+<li><span class="math inline">\(\mathbb{P}([0,0.5)) = 0\)</span></li>
+<li><span class="math inline">\(\mathbb{P}([0.5,1)) = 1\)</span></li>
 </ul>
 <p>(추가해설)</p>
 <p>만약 “<span class="math inline">\([0,1]\)</span> 사이의 모든 유리수의 집합에 대한 확률은 얼마인가?” 라고 묻는다면? 어떻게 대답해야하나?</p>
@@ -375,7 +402,7 @@ Note
 <p>그런데 여기에서 <span class="math inline">\(\mathbb{P}(\{2\})\)</span>와 <span class="math inline">\(\mathbb{P}(\{2,3,4\})\)</span>는 정의가능한데, <span class="math inline">\(\mathbb{P}(\{3,4\})\)</span>는 정의할 수 없다는 사실이 말이 안된다. 따라서 <span class="math inline">\({\cal F}\)</span>를 아래와 같이 수정해야 한다.</p>
 <p><span class="math display">\[{\cal F}=\{\emptyset, \{1\}, \{2\}, \{2,3,4\}, \{1,3,4\}, \Omega, \{3,4\}, \{1,2\} \}\]</span></p>
 <blockquote class="blockquote">
-<p>해설2에 대한 논의를 일반화 하면 <span class="math inline">\(A\subset B \Rightarrow B = A \uplus (B-A) \Rightarrow \mathbb{P}(B) = \mathbb{P}(A) +\mathbb{P}(B-A)\)</span> 이므로, <span class="math inline">\(A,B\)</span> 가 확률값을 잴 수 있는 집합이라면 <span class="math inline">\(B-A\)</span> 역시 확률값을 잴 수 있는 집합이어야 한다고 결론지을 수 있다.</p>
+<p>해설2에 대한 논의를 일반화 하면 <span class="math inline">\(A\subset B  \Rightarrow B = A \uplus (B-A)  \Rightarrow \mathbb{P}(B) = \mathbb{P}(A) +\mathbb{P}(B-A)\)</span> 이므로, <span class="math inline">\(A,B\)</span> 가 확률값을 잴 수 있는 집합이라면 <span class="math inline">\(B-A\)</span> 역시 확률값을 잴 수 있는 집합이어야 한다고 결론지을 수 있다.</p>
 </blockquote>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -469,24 +496,24 @@ Note
 <p><code>조건1</code>. <span class="math inline">\({\cal F}\neq \emptyset\)</span></p>
 <p><code>조건2</code>. <span class="math inline">\(A \in {\cal F} \Rightarrow A^c \in {\cal F}\)</span></p>
 <p><code>조건3</code>. <span class="math inline">\(A \in {\cal F}, B \in {\cal F} \text{ and } A\cap B = \emptyset \quad \Longrightarrow \quad A \uplus B~ \in~ {\cal F}\)</span></p>
-<p><code>조건4</code>. <span class="math inline">\(A \in {\cal F}, B \in {\cal F} \text{ and } A \subset B \quad \Longrightarrow \quad B-A ~ \in~ {\cal F}\)</span></p>
-<p><code>조건5</code>. <span class="math inline">\(\big(A_1 \in {\cal F}, A_2 \in {\cal F} ,\dots\big) \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~ A_m \cap A_k = \emptyset \big) \quad \Longrightarrow \quad \uplus_{n=1}^{\infty} A_n \in~ {\cal F}\)</span></p>
+<p><code>조건4</code>. <span class="math inline">\(A \in {\cal F}, B \in {\cal F} \text{ and } A \subset B  \quad \Longrightarrow \quad B-A ~ \in~ {\cal F}\)</span></p>
+<p><code>조건5</code>. <span class="math inline">\(\big(A_1 \in {\cal F}, A_2 \in {\cal F} ,\dots\big)  \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~  A_m \cap A_k = \emptyset \big) \quad \Longrightarrow \quad \uplus_{n=1}^{\infty} A_n \in~ {\cal F}\)</span></p>
 <p><code>#</code></p>
 <p><strong><code># 조건의 정리</code></strong></p>
 <p>위의 5개의 조건은 아래의 3가지 조건으로 정리가능하다.</p>
 <p><code>조건1</code>. <span class="math inline">\({\cal F}\neq \emptyset\)</span></p>
 <p><code>조건2</code>. <span class="math inline">\(A \in {\cal F} \Rightarrow A^c \in {\cal F}\)</span></p>
-<p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: A_n \in {\cal F} \big) \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~ A_m \cap A_k = \emptyset \big) \quad \Longrightarrow \quad \uplus_{n=1}^{\infty} A_n \in~ {\cal F}\)</span></p>
+<p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: A_n \in {\cal F} \big)  \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~  A_m \cap A_k = \emptyset \big) \quad \Longrightarrow \quad \uplus_{n=1}^{\infty} A_n \in~ {\cal F}\)</span></p>
 <p>또는 아래의 3가지 조건으로 정리가능하다.</p>
 <p><code>조건1</code>. <span class="math inline">\(\Omega \in {\cal F}\)</span></p>
 <p><code>조건2</code>. <span class="math inline">\(A \in {\cal F} \Rightarrow A^c \in {\cal F}\)</span></p>
-<p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: A_n \in {\cal F} \big) \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~ A_m \cap A_k = \emptyset \big) \quad \Longrightarrow \quad \uplus_{n=1}^{\infty} A_n \in~ {\cal F}\)</span></p>
+<p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: A_n \in {\cal F} \big)  \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~  A_m \cap A_k = \emptyset \big) \quad \Longrightarrow \quad \uplus_{n=1}^{\infty} A_n \in~ {\cal F}\)</span></p>
 <p><code>#</code></p>
 <p><strong><code># 람다시스템</code></strong></p>
 <p><span class="math inline">\(\Omega\)</span>의 부분집합중 잴 수 있는 집합의 모임 <span class="math inline">\({\cal F}\)</span> 는 아래의 <code>조건1</code>~ <code>조건3</code>을 만족하는 집합의 집합 (collection) 이라고 정의하면 어떨까??</p>
 <p><code>조건1</code>. <span class="math inline">\(\Omega \in {\cal F}\)</span></p>
 <p><code>조건2</code>. <span class="math inline">\(A \in {\cal F} \Rightarrow A^c \in {\cal F}\)</span></p>
-<p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: A_n \in {\cal F} \big) \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~ A_m \cap A_k = \emptyset \big) \quad \Longrightarrow \quad \uplus_{n=1}^{\infty} A_n \in~ {\cal F}\)</span></p>
+<p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: A_n \in {\cal F} \big)  \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~  A_m \cap A_k = \emptyset \big) \quad \Longrightarrow \quad \uplus_{n=1}^{\infty} A_n \in~ {\cal F}\)</span></p>
 <p>그럴싸하지만, 하나의 조건이 더 필요하다.</p>
 <p><code>#</code></p>
 </section>
@@ -505,7 +532,7 @@ Note
 <p>집합 <span class="math inline">\(A\)</span>와 <span class="math inline">\(B\)</span>에 대한 확률값을 매길 수 있다면 <span class="math inline">\(\mathbb{P}(A \cap B)\)</span>를 정의할 수 있어야 할까? 이 문항은 이 질문에 대한 답을 준다. 주어진 <span class="math inline">\({\cal F}\)</span>는 아래의 조건을 만족한다.</p>
 <p><code>조건1</code>. <span class="math inline">\(\Omega \in {\cal F}\)</span></p>
 <p><code>조건2</code>. <span class="math inline">\(A \in {\cal F} \Rightarrow A^c \in {\cal F}\)</span></p>
-<p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: A_n \in {\cal F} \big) \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~ A_m \cap A_k = \emptyset \big) \quad \Longrightarrow \quad \uplus_{n=1}^{\infty} A_n \in~ {\cal F}\)</span></p>
+<p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: A_n \in {\cal F} \big)  \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~  A_m \cap A_k = \emptyset \big) \quad \Longrightarrow \quad \uplus_{n=1}^{\infty} A_n \in~ {\cal F}\)</span></p>
 <p>그렇지만 <span class="math inline">\({\cal F}\)</span>는</p>
 <p><span class="math display">\[\{1,2\} \cap \{1,3\} = \{1\}\]</span></p>
 <p>와 같은 집합이라든가,</p>
@@ -519,7 +546,7 @@ Note
 <p>집합 <span class="math inline">\(A\)</span>와 <span class="math inline">\(B\)</span>에 대한 확률값을 매길 수 있다면 <span class="math inline">\(\mathbb{P}(A \cap B)\)</span>를 정의할 수 있어야 할까? 이 문항은 이 질문에 대한 답을 준다. 주어진 <span class="math inline">\({\cal F}\)</span>는 아래의 조건을 만족한다.</p>
 <p><code>조건1</code>. <span class="math inline">\(\Omega \in {\cal F}\)</span></p>
 <p><code>조건2</code>. <span class="math inline">\(A \in {\cal F} \Rightarrow A^c \in {\cal F}\)</span></p>
-<p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: A_n \in {\cal F} \big) \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~ A_m \cap A_k = \emptyset \big) \quad \Longrightarrow \quad \uplus_{n=1}^{\infty} A_n \in~ {\cal F}\)</span></p>
+<p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: A_n \in {\cal F} \big)  \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~  A_m \cap A_k = \emptyset \big) \quad \Longrightarrow \quad \uplus_{n=1}^{\infty} A_n \in~ {\cal F}\)</span></p>
 <p>그렇지만 <span class="math inline">\({\cal F}\)</span>는</p>
 <p><span class="math display">\[\{1,2\} \cap \{1,3\} = \{1\}\]</span></p>
 <p>와 같은 집합이라든가,</p>
@@ -530,12 +557,12 @@ Note
 <p>확률을 좀 더 쓸모있게 만들기 위해 두 집합 <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>에 대한 확률을 무모순으로 정의가능하다면 그것의 교집합인 <span class="math inline">\(A\cap B\)</span>에 대하여서도 확률값을 무모순으로 정의가능하다고 가정하자. 즉 <span class="math inline">\(\Omega\)</span>의 부분집합중 잴 수 있는 집합의 모임 <span class="math inline">\({\cal F}\)</span> 는 아래의 <code>조건1</code>~ <code>조건4</code>을 만족하는 집합의 집합 (collection) 이라고 정의하자.</p>
 <p><code>조건1</code>. <span class="math inline">\(\Omega \in {\cal F}\)</span></p>
 <p><code>조건2</code>. <span class="math inline">\(A \in {\cal F} \Rightarrow A^c \in {\cal F}\)</span></p>
-<p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: A_n \in {\cal F} \big) \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~ A_m \cap A_k = \emptyset \big) \quad \Longrightarrow \quad \uplus_{n=1}^{\infty} A_n \in~ {\cal F}\)</span></p>
+<p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: A_n \in {\cal F} \big)  \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~  A_m \cap A_k = \emptyset \big) \quad \Longrightarrow \quad \uplus_{n=1}^{\infty} A_n \in~ {\cal F}\)</span></p>
 <p><code>조건4</code>. <span class="math inline">\(A \in {\cal F}, B \in {\cal F} \Rightarrow A \cap B \in {\cal F}\)</span></p>
 <p>그런데 <code>조건3</code>과 <code>조건4</code>를 이용하면 아래와 같은 <code>조건5</code>를 유추할 수 있다.</p>
 <p><code>조건1</code>. <span class="math inline">\(\Omega \in {\cal F}\)</span></p>
 <p><code>조건2</code>. <span class="math inline">\(A \in {\cal F} \Rightarrow A^c \in {\cal F}\)</span></p>
-<p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: A_n \in {\cal F} \big) \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~ A_m \cap A_k = \emptyset \big) \quad \Longrightarrow \quad \uplus_{n=1}^{\infty} A_n \in~ {\cal F}\)</span></p>
+<p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: A_n \in {\cal F} \big)  \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~  A_m \cap A_k = \emptyset \big) \quad \Longrightarrow \quad \uplus_{n=1}^{\infty} A_n \in~ {\cal F}\)</span></p>
 <p><code>조건4</code>. <span class="math inline">\(A \in {\cal F}, B \in {\cal F} \Rightarrow A \cap B \in {\cal F}\)</span></p>
 <p><code>조건5</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: A_n \in {\cal F} \big) \quad \Longrightarrow \quad \cup_{n=1}^{\infty} A_n \in~ {\cal F}\)</span></p>
 <p>그런데 <code>조건5</code>는 <code>조건3</code>을 imply 하므로 <code>조건3</code>을 삭제할 수 있다.</p>
@@ -706,27 +733,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    const typesetMath = (el) => {
-      if (window.MathJax) {
-        // MathJax Typeset
-        window.MathJax.typeset([el]);
-      } else if (window.katex) {
-        // KaTeX Render
-        var mathElements = el.getElementsByClassName("math");
-        var macros = [];
-        for (var i = 0; i < mathElements.length; i++) {
-          var texText = mathElements[i].firstChild;
-          if (mathElements[i].tagName == "SPAN") {
-            window.katex.render(texText.data, mathElements[i], {
-              displayMode: mathElements[i].classList.contains('display'),
-              throwOnError: false,
-              macros: macros,
-              fleqn: false
-            });
-          }
-        }
-      }
-    }
     if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
@@ -741,10 +747,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             break;
           }
         }
-        typesetMath(container);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
         return container.innerHTML
       } else {
-        typesetMath(note);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
         return note.innerHTML;
       }
     } else {
@@ -753,7 +763,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      typesetMath(note);
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
       return note.innerHTML;
     }
   }
