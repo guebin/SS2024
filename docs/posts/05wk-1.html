@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.533">
+<meta name="generator" content="quarto-1.4.520">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="최규빈">
-<meta name="dcterms.date" content="2024-09-26">
+<meta name="dcterms.date" content="2024-10-03">
 
-<title>SS2024 - 04wk: 시그마필드, 측도</title>
+<title>SS2024 - 05wk: 시그마필드 – Motivation2, 측도와 확률측도</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -72,33 +106,6 @@ ul.task-list li input[type="checkbox"] {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
 <link rel="stylesheet" href="../styles.css">
 </head>
 
@@ -145,15 +152,24 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#b.-motivation-2" id="toc-b.-motivation-2" class="nav-link active" data-scroll-target="#b.-motivation-2">B. Motivation 2</a></li>
-  <li><a href="#c.-정의" id="toc-c.-정의" class="nav-link" data-scroll-target="#c.-정의">C. 정의</a></li>
-  <li><a href="#지금까지의-스토리" id="toc-지금까지의-스토리" class="nav-link" data-scroll-target="#지금까지의-스토리">지금까지의 스토리</a></li>
-  <li><a href="#확률측도-motivation" id="toc-확률측도-motivation" class="nav-link" data-scroll-target="#확률측도-motivation">확률측도 motivation</a></li>
-  <li><a href="#확률측도의-정의" id="toc-확률측도의-정의" class="nav-link" data-scroll-target="#확률측도의-정의">확률측도의 정의</a></li>
-  <li><a href="#귀찮아서-만든-이론들-star" id="toc-귀찮아서-만든-이론들-star" class="nav-link" data-scroll-target="#귀찮아서-만든-이론들-star">귀찮아서 만든 이론들 (<span class="math inline">\(\star\)</span>)</a>
+  <li><a href="#강의영상" id="toc-강의영상" class="nav-link active" data-scroll-target="#강의영상">1. 강의영상</a></li>
+  <li><a href="#지금까지의-스토리" id="toc-지금까지의-스토리" class="nav-link" data-scroll-target="#지금까지의-스토리">2. 지금까지의 스토리</a></li>
+  <li><a href="#sigma-field---motivation2" id="toc-sigma-field---motivation2" class="nav-link" data-scroll-target="#sigma-field---motivation2">3. <span class="math inline">\(\sigma\)</span>-field - Motivation2</a>
   <ul class="collapse">
-  <li><a href="#상황1-시그마필드-구하기-귀찮아" id="toc-상황1-시그마필드-구하기-귀찮아" class="nav-link" data-scroll-target="#상황1-시그마필드-구하기-귀찮아">상황1: 시그마필드 구하기 귀찮아</a></li>
-  <li><a href="#상황2-확률-정의하기-귀찮아" id="toc-상황2-확률-정의하기-귀찮아" class="nav-link" data-scroll-target="#상황2-확률-정의하기-귀찮아">상황2: 확률 정의하기 귀찮아</a></li>
+  <li><a href="#a.-시그마필드" id="toc-a.-시그마필드" class="nav-link" data-scroll-target="#a.-시그마필드">A. 시그마필드</a></li>
+  <li><a href="#b.-시그마필드의-성질" id="toc-b.-시그마필드의-성질" class="nav-link" data-scroll-target="#b.-시그마필드의-성질">B. 시그마필드의 성질</a></li>
+  </ul></li>
+  <li><a href="#측도와-확률측도" id="toc-측도와-확률측도" class="nav-link" data-scroll-target="#측도와-확률측도">4. 측도와 확률측도</a>
+  <ul class="collapse">
+  <li><a href="#a.-측도의-정의-확률측도의-정의" id="toc-a.-측도의-정의-확률측도의-정의" class="nav-link" data-scroll-target="#a.-측도의-정의-확률측도의-정의">A. 측도의 정의, 확률측도의 정의</a></li>
+  <li><a href="#b.-확률측도" id="toc-b.-확률측도" class="nav-link" data-scroll-target="#b.-확률측도">B. 확률측도</a></li>
+  <li><a href="#c.-확률측도와-측도의-차이" id="toc-c.-확률측도와-측도의-차이" class="nav-link" data-scroll-target="#c.-확률측도와-측도의-차이">C. 확률측도와 측도의 차이</a></li>
+  <li><a href="#d.-측도공간-확률공간" id="toc-d.-측도공간-확률공간" class="nav-link" data-scroll-target="#d.-측도공간-확률공간">D. 측도공간, 확률공간</a></li>
+  </ul></li>
+  <li><a href="#확률을-어디에서-정의할까" id="toc-확률을-어디에서-정의할까" class="nav-link" data-scroll-target="#확률을-어디에서-정의할까">5. 확률을 어디에서 정의할까?</a>
+  <ul class="collapse">
+  <li><a href="#a.-상황1-시그마필드-구하기-귀찮아" id="toc-a.-상황1-시그마필드-구하기-귀찮아" class="nav-link" data-scroll-target="#a.-상황1-시그마필드-구하기-귀찮아">A. 상황1 – 시그마필드 구하기 귀찮아</a></li>
+  <li><a href="#b.-상황2-확률-정의하기-귀찮아" id="toc-b.-상황2-확률-정의하기-귀찮아" class="nav-link" data-scroll-target="#b.-상황2-확률-정의하기-귀찮아">B. 상황2 – 확률 정의하기 귀찮아</a></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="05wk-1.out.ipynb" download="05wk-1.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
@@ -163,7 +179,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">04wk: 시그마필드, 측도</h1>
+<h1 class="title">05wk: 시그마필드 – Motivation2, 측도와 확률측도</h1>
 </div>
 
 
@@ -180,7 +196,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 26, 2024</p>
+      <p class="date">October 3, 2024</p>
     </div>
   </div>
   
@@ -192,13 +208,33 @@ window.Quarto = {
 </header>
 
 
-<section id="b.-motivation-2" class="level2">
-<h2 class="anchored" data-anchor-id="b.-motivation-2">B. Motivation 2</h2>
+<section id="강의영상" class="level1">
+<h1>1. 강의영상</h1>
+<div id="957f89ff-ca13-4f91-9cd3-fbf9ae6d54f3" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#{{&lt; video https://youtu.be/playlist?list=PLQqh36zP38-zYlrMhll2MUhhr9FyL_YIu&amp;si=Zx-ha5JrW6uLbiid &gt;}}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="지금까지의-스토리" class="level1 page-columns page-full">
+<h1>2. 지금까지의 스토리</h1>
+<p><code>-</code> 지금까지의 이야기. (논의에 사용되는 예제는 <strong>수정된바늘예제</strong>로 한정한다. 즉 <span class="math inline">\(\Omega=[0,1)\)</span>로 한정한다, 따라서 아래중 확률이라는 단어를 길이로 대체헤도 모두 말이된다)</p>
+<ul>
+<li>우리가 원래 원했던 것은 <strong><span class="math inline">\(\Omega=[0,1)\)</span> 의 모든 부분집합에 대해서 확률을 “무모순”으로 정의</strong> 하는 것이었다.</li>
+<li><strong><span class="math inline">\(\Omega=[0,1)\)</span> 의 모든 부분집합에 대해서 확률을 “무모순”으로 정의</strong>하는게 엄청 쉬운일 인줄 알았는데 사실은 그렇지가 않았다. 확률을 정의하는건 매우 까다로운 일이었다.</li>
+<li>이러한 까다로움을 해결하기 위해서 “르벡메져”라는 새로운 도구를 사용했다. 이 도구는 몇 가지 까다로운 집합에 대해서도 확률을 무모순으로 정의할 수 있었다.</li>
+<li>그런데 “르벡메저”를 사용해도 <span class="math inline">\(\Omega=[0,1)\)</span>의 부분집합 중 확률을 잴 수 없는 집합이 존재함을 알았다. (비탈리집합이라나 뭐라나..)</li>
+<li>“르벡메저”를 사용하여 <span class="math inline">\(\Omega=[0,1)\)</span>의 모든 부분집합에 대한 확률을 정의하는 일은 포기하기로 했다. 즉 비탈리집합의 경우 길이를 정의하지 않기로 했다. 그런데 문제는 비탈리집합의 길이만 정의하지 않으면 끝나는것이 아니었다.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
+<li>따라서 <span class="math inline">\(\Omega\)</span>의 부분집합중, <strong>확률을 정의할 수 있는 집합들의 모임</strong>이라는 개념을 논의할 필요성이 생겼고 이러한 집합들의 모임이 가져야 할 성질에 대하여 상상해보는 시간을 가졌었다.</li>
+</ul>
+<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;예를들면 <span class="math inline">\([0,1)\)</span>에서 비탈리집합의 길이를 정의하지 않는다는 말은, <span class="math inline">\([0,1)\)</span>에서 비탈리집합을 뺀 집합의 길이도 정의하지 않는다는 말과 동일해지는 문제가 있음</p></li></div></section>
+<section id="sigma-field---motivation2" class="level1">
+<h1>3. <span class="math inline">\(\sigma\)</span>-field - Motivation2</h1>
+<section id="a.-시그마필드" class="level2">
+<h2 class="anchored" data-anchor-id="a.-시그마필드">A. 시그마필드</h2>
 <p><strong><code># 생각1</code></strong> – trivial <span class="math inline">\(\sigma\)</span>-field</p>
-<p><span class="math inline">\(\Omega=[0,1)\)</span> 이라고 하자. <span class="math inline">\({\cal F}\)</span>을 아래와 같이 정의한다고 하자. 이러한 묶음 <span class="math inline">\({\cal F}\)</span>는 합리적이다.</p>
+<p><span class="math inline">\(\Omega=[0,1)\)</span> 이라고 하자. <span class="math inline">\({\cal F}\)</span>을 아래와 같이 정의한다고 하자. 이러한 묶음 <span class="math inline">\({\cal F}\)</span>는 합리적일까?</p>
 <p><span class="math display">\[{\cal F}=\{\emptyset, \Omega \}\]</span></p>
 <p>(해설)</p>
-<p>이렇게 잡으면 모순이 일어나진 않음. (그렇지만 이러한 <span class="math inline">\({\cal F}\)</span>는 “확률”을 쓸모없는 개념으로 만든다)</p>
+<p>이렇게 잡으면 모순이 일어나진 않음. (그렇지만 쓸모가 없음..)</p>
 <p><code>#</code></p>
 <p><strong><code># 생각2</code></strong> – 교집합..?</p>
 <p><span class="math inline">\(\Omega=\{1,2,3,4\}\)</span>라고 하자. 아래와 같은 <span class="math inline">\({\cal F}\)</span>는 합리적일까?</p>
@@ -207,37 +243,32 @@ window.Quarto = {
 <p>집합 <span class="math inline">\(A\)</span>와 <span class="math inline">\(B\)</span>에 대한 확률값을 매길 수 있다면 <span class="math inline">\(\mathbb{P}(A \cap B)\)</span>를 정의할 수 있어야 할까? 이 문항은 이 질문에 대한 답을 준다. 주어진 <span class="math inline">\({\cal F}\)</span>는 아래의 조건을 만족한다.</p>
 <p><code>조건1</code>. <span class="math inline">\(\Omega \in {\cal F}\)</span></p>
 <p><code>조건2</code>. <span class="math inline">\(A \in {\cal F} \Rightarrow A^c \in {\cal F}\)</span></p>
-<p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: A_n \in {\cal F} \big)  \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~  A_m \cap A_k = \emptyset \big) \quad \Longrightarrow \quad \uplus_{n=1}^{\infty} A_n \in~ {\cal F}\)</span></p>
+<p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: A_n \in {\cal F} \big) \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~ A_m \cap A_k = \emptyset \big) \quad \Longrightarrow \quad \uplus_{n=1}^{\infty} A_n \in~ {\cal F}\)</span></p>
 <p>그렇지만 <span class="math inline">\({\cal F}\)</span>는</p>
 <p><span class="math display">\[\{1,2\} \cap \{1,3\} = \{1\}\]</span></p>
 <p>와 같은 집합이라든가,</p>
 <p><span class="math display">\[\{1,2\} \cup \{1,3\} = \{1,3,4\}\]</span></p>
-<p>와 같은 집합의 확률값을 잴 수 없다고 한다. 즉 <span class="math inline">\(\mathbb{P}(A)\)</span>, <span class="math inline">\(\mathbb{P}(B)\)</span>를 잴 수 있음에도 <span class="math inline">\(\mathbb{P}(A \cap B)\)</span>, <span class="math inline">\(\mathbb{P}(A \cup B)\)</span> 의 확률값은 모두 잴 수 없다고 하는 것이다. 이러한 접근법은 확률의 공리에 모순을 불러일으키는 건 아니지만 “확률”을 쓸모없게 만든다.</p>
-<p><code>#</code></p>
-<p><strong><code># 생각3</code></strong> – 교집합..?</p>
-<p><span class="math inline">\(\Omega=\{1,2,3,4\}\)</span>라고 하자. 아래와 같은 <span class="math inline">\({\cal F}\)</span>는 합리적일까?</p>
-<p><span class="math display">\[{\cal F}= \big\{ \emptyset, \{1,2\}, \{1,3\}, \{1,4\},\{2,3\},\{2,4\},\{3,4\}, \Omega\big\}\]</span></p>
-<p><code>(해설)</code></p>
-<p>집합 <span class="math inline">\(A\)</span>와 <span class="math inline">\(B\)</span>에 대한 확률값을 매길 수 있다면 <span class="math inline">\(\mathbb{P}(A \cap B)\)</span>를 정의할 수 있어야 할까? 이 문항은 이 질문에 대한 답을 준다. 주어진 <span class="math inline">\({\cal F}\)</span>는 아래의 조건을 만족한다.</p>
-<p><code>조건1</code>. <span class="math inline">\(\Omega \in {\cal F}\)</span></p>
-<p><code>조건2</code>. <span class="math inline">\(A \in {\cal F} \Rightarrow A^c \in {\cal F}\)</span></p>
-<p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: A_n \in {\cal F} \big)  \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~  A_m \cap A_k = \emptyset \big) \quad \Longrightarrow \quad \uplus_{n=1}^{\infty} A_n \in~ {\cal F}\)</span></p>
-<p>그렇지만 <span class="math inline">\({\cal F}\)</span>는</p>
-<p><span class="math display">\[\{1,2\} \cap \{1,3\} = \{1\}\]</span></p>
-<p>와 같은 집합이라든가,</p>
-<p><span class="math display">\[\{1,2\} \cup \{1,3\} = \{1,3,4\}\]</span></p>
-<p>와 같은 집합의 확률값을 잴 수 없다고 한다. 즉 <span class="math inline">\(\mathbb{P}(A)\)</span>, <span class="math inline">\(\mathbb{P}(B)\)</span>를 잴 수 있음에도 <span class="math inline">\(\mathbb{P}(A \cap B)\)</span>, <span class="math inline">\(\mathbb{P}(A \cup B)\)</span> 의 확률값은 모두 잴 수 없다고 하는 것이다. 이러한 접근법은 확률의 공리에 모순을 불러일으키는 건 아니지만 “확률”을 쓸모없게 만든다.</p>
+<p>와 같은 집합의 확률값을 잴 수 없다고 한다. 즉 <span class="math inline">\(\mathbb{P}(A)\)</span>, <span class="math inline">\(\mathbb{P}(B)\)</span>를 잴 수 있음에도 <span class="math inline">\(\mathbb{P}(A \cap B)\)</span>, <span class="math inline">\(\mathbb{P}(A \cup B)\)</span> 의 확률값은 모두 잴 수 없다고 하는 것이다. 하지만 이 접근법은 확률의 공리에 모순을 불러일으키는 건 아니다. (그렇지만 “확률”을 쓸모없게 만들지)</p>
+<blockquote class="blockquote">
+<p>통계학과 입장: 확률의 공리상 <span class="math inline">\(A\)</span>와 <span class="math inline">\(B\)</span>에 대한 확률을 모두 정의할 수 있다고 해서 <span class="math inline">\(A\cap B\)</span>를 잴 수 있어야 하는건 아니다.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>수학과의 입장: 그런데, 사실 <span class="math inline">\(\Omega\)</span> 에서의 확률이라는 것은 사실 “길이”의 개념을 일반화 한 것이다. 확률을 무모순으로 정의가능한 집합은 사실 어떠한 집합의 크기,길이,넓이,부피,밀도,규모(scale),범위(extent) 등 “재다”라는 개념을 무모순으로 정의가능한 집합을 잘 정의하면 되는 일이다. 이러한 집합에 한정하여 말한다면 집합 <span class="math inline">\(A\)</span>를 잴 수 있고 집합 <span class="math inline">\(B\)</span>를 잴 수 있는데, 집합 <span class="math inline">\(A \cap B\)</span>는 잴 수 없다는 것이 오히려 이상하다. (오히려 <span class="math inline">\(\Omega\)</span>를 잴 수 있다는게 더 이상한거 아니야?)</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>합의: 그냥 <span class="math inline">\(A \cap B\)</span> 도 잴 수 있다고 하시죠</p>
+</blockquote>
 <p><code>#</code></p>
 <p><strong><code># 조건의정리 (교집합을 추가하면)</code></strong></p>
-<p>확률을 좀 더 쓸모있게 만들기 위해 두 집합 <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>에 대한 확률을 무모순으로 정의가능하다면 그것의 교집합인 <span class="math inline">\(A\cap B\)</span>에 대하여서도 확률값을 무모순으로 정의가능하다고 가정하자. 즉 <span class="math inline">\(\Omega\)</span>의 부분집합중 잴 수 있는 집합의 모임 <span class="math inline">\({\cal F}\)</span> 는 아래의 <code>조건1</code>~ <code>조건4</code>을 만족하는 집합의 집합 (collection) 이라고 정의하자.</p>
+<p>두 집합 <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>에 대한 확률을 무모순으로 정의가능하다면 그것의 교집합인 <span class="math inline">\(A\cap B\)</span>에 대하여서도 확률값을 무모순으로 정의가능하다고 가정하자. 즉 <span class="math inline">\(\Omega\)</span>의 부분집합중 잴 수 있는 집합의 모임 <span class="math inline">\({\cal F}\)</span> 는 아래의 <code>조건1</code>~ <code>조건4</code>을 만족하는 집합의 집합 (collection) 이라고 정의하자.</p>
 <p><code>조건1</code>. <span class="math inline">\(\Omega \in {\cal F}\)</span></p>
 <p><code>조건2</code>. <span class="math inline">\(A \in {\cal F} \Rightarrow A^c \in {\cal F}\)</span></p>
-<p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: A_n \in {\cal F} \big)  \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~  A_m \cap A_k = \emptyset \big) \quad \Longrightarrow \quad \uplus_{n=1}^{\infty} A_n \in~ {\cal F}\)</span></p>
+<p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: A_n \in {\cal F} \big) \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~ A_m \cap A_k = \emptyset \big) \quad \Longrightarrow \quad \uplus_{n=1}^{\infty} A_n \in~ {\cal F}\)</span></p>
 <p><code>조건4</code>. <span class="math inline">\(A \in {\cal F}, B \in {\cal F} \Rightarrow A \cap B \in {\cal F}\)</span></p>
 <p>그런데 <code>조건3</code>과 <code>조건4</code>를 이용하면 아래와 같은 <code>조건5</code>를 유추할 수 있다.</p>
 <p><code>조건1</code>. <span class="math inline">\(\Omega \in {\cal F}\)</span></p>
 <p><code>조건2</code>. <span class="math inline">\(A \in {\cal F} \Rightarrow A^c \in {\cal F}\)</span></p>
-<p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: A_n \in {\cal F} \big)  \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~  A_m \cap A_k = \emptyset \big) \quad \Longrightarrow \quad \uplus_{n=1}^{\infty} A_n \in~ {\cal F}\)</span></p>
+<p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: A_n \in {\cal F} \big) \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~ A_m \cap A_k = \emptyset \big) \quad \Longrightarrow \quad \uplus_{n=1}^{\infty} A_n \in~ {\cal F}\)</span></p>
 <p><code>조건4</code>. <span class="math inline">\(A \in {\cal F}, B \in {\cal F} \Rightarrow A \cap B \in {\cal F}\)</span></p>
 <p><code>조건5</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: A_n \in {\cal F} \big) \quad \Longrightarrow \quad \cup_{n=1}^{\infty} A_n \in~ {\cal F}\)</span></p>
 <p>그런데 <code>조건5</code>는 <code>조건3</code>을 imply 하므로 <code>조건3</code>을 삭제할 수 있다.</p>
@@ -250,9 +281,6 @@ window.Quarto = {
 <p><code>조건2</code>. <span class="math inline">\(A \in {\cal F} \Rightarrow A^c \in {\cal F}\)</span></p>
 <p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: A_n \in {\cal F}\big) \Rightarrow \cup_{n=1}^{\infty} A_n \in~ {\cal F}\)</span></p>
 <p><code>#</code></p>
-</section>
-<section id="c.-정의" class="level2">
-<h2 class="anchored" data-anchor-id="c.-정의">C. 정의</h2>
 <p><strong><code># 정의: 시그마필드</code></strong></p>
 <p><span class="math inline">\(\Omega\)</span>의 부분집합중 아래의 <code>조건1</code>~ <code>조건3</code>을 만족하는 집합의 집합 (collection) <span class="math inline">\({\cal F}\)</span>를 “<span class="math inline">\(\Omega\)</span>에 대한 시그마필드”라고 한다.</p>
 <p><code>조건1</code>. <span class="math inline">\(\Omega \in {\cal F}\)</span></p>
@@ -262,48 +290,191 @@ window.Quarto = {
 <p><code>#</code></p>
 <p><code>-</code> 좀 더 편리하게 아래와 같이 기억하면 좋다.</p>
 <blockquote class="blockquote">
-<p>시그마필드는 잴 수 있는 집합의 모임인데 아래와 같은 규칙을 만족해야 한다. (1) 전체집합을 포함한다. (2) 여집합에 닫혀있다. (3) 가산합집합에 닫혀있다.</p>
+<p>시그마필드는 아래와 같은 규칙을 만족해야 한다. (1) 전체집합을 포함한다. (2) 여집합에 닫혀있다. (3) 가산합집합에 닫혀있다.</p>
 </blockquote>
 <p><code>-</code> 참고1: 시그마필드라는 것은 유일하게 정의되지 않는다. 즉 동일한 <span class="math inline">\(\Omega\)</span>에 대하여 정의할 수 있는 시그마필드 <span class="math inline">\({\cal F}\)</span>는 유일하지 않다.</p>
 <p><code>-</code> 참고2: 시그마필드는 <span class="math inline">\(\Omega\)</span> 없이 단독으로 정의되지 않는다. 즉</p>
 <p><span class="math display">\[{\cal F}=\{\emptyset, \{H\}, \{T\}, \{H,T\}\}\]</span></p>
 <p>는 단지 그냥 시그마필드라고 언급하기 보다 <span class="math inline">\(\Omega=\{H,T\}\)</span>에 대한 시그마필드라고 해야 정확한 표현이다.</p>
 <p><code>-</code> 참고3: 참고2에 따라서 <span class="math inline">\({\cal F}\)</span> 단독으로 표기하는 것 보다 <span class="math inline">\(\Omega\)</span>를 붙여서 <span class="math inline">\((\Omega,{\cal F})\)</span>와 같이 쌍으로 표기하는게 더 합리적이다. 앞으로는 이러한 쌍을 <strong><em>measurable space</em></strong> 라고 부른다.</p>
-<p><code>-</code> 참고4: 시그마필드는 엄밀하게 말하면 “확률값”을 무모순으로 정의가능한 집합들의 모임이 아니다. 정확하게는 “길이 비슷한 무언가”를 무모순으로 정의가능한 집합들의 모임이다. 시그마필드의 정의를 잘 생각해보면, “확률값” 대신에 “길이” 혹은 “길이 비슷한 무언가” 를 대입하여도 말이 성립한다.</p>
-<p><code>-</code> 참고5: “길이 비슷한 무언가” 에는 “길이”도 포함되고 “확률”도 포함된다. 따라서 시그마필드를 올바르게 이해하는 것은 아래의 그림이다.</p>
-<p><img src="attachment:4516256b-441f-4e8a-801b-b2a7fc17871b.png" class="img-fluid"></p>
-<p>즉 시그마필드는 “확률값”을 무모순으로 정의하기 위해 필요한 최소기준들을 만족하는 모임일 뿐이지, 그 조건들을 만족한다고 반드시 “확률값”을 무모순으로 정의할 수 있는건 아니다. (신랑감후보같은 개념)</p>
 </section>
-<section id="지금까지의-스토리" class="level1 page-columns page-full">
-<h1>지금까지의 스토리</h1>
-<p><code>-</code> 지금까지의 이야기.</p>
-<ul>
-<li><strong><span class="math inline">\(\Omega\)</span>의 모든 부분집합에 대해서 확률을 “무모순”으로 정의</strong>하는게 엄청 쉬운일 인줄 알았는데,<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
-<li>사실은 그렇지가 않았다.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> 확률을 정의하는건 매우 까다로운 일이었다.</li>
-<li>이러한 까다로움을 해결하기 위해서 “르벡메져”라는 새로운 도구를 사용했다. 이 도구는 몇 가지 까다로운 집합에 대하여 확률을 무모순으로 정의할 수 있었다.</li>
-<li>르벡메져는 구간 <span class="math inline">\([0,2\pi)\)</span>의 모든 유리수 집합의 길이와 구간 <span class="math inline">\([0,2\pi)\)</span>의 모든 무리수 집합의 길이를 다르게 정의하는 신기한 방식을 사용하는데, 이러한 방식을 납득하기 위한 최소한의 노력으로 “셀 수 있는 무한”과 “셀 수 없는 무한”의 개념을 공부했다.</li>
-<li>하지만 르벡메져를 통해서도 <span class="math inline">\(\Omega\)</span>의 모든 부분집합에 대하여 길이를 잴 수 없는 집합<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>이 존재함이 밝혀졌다.</li>
-<li>따라서 <strong><span class="math inline">\(\Omega\)</span>의 모든 부분집합에 대해서 확률을 “무모순”으로 정의</strong>하는 일은 포기하였다.</li>
-<li>대신에 <strong><span class="math inline">\(\Omega\)</span>의 부분집합 중, 잴 수 있는 집합들에 대해서만 확률을 “무모순”으로 정의</strong>하는 일을 시도했다.</li>
-<li>이 잴 수 있는 집합들의 모임을 시그마필드라 칭하고 기호로는 <span class="math inline">\({\cal F}\)</span>라고 정의하였다.</li>
-</ul>
-<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;동전예제</p></li><li id="fn2"><p><sup>2</sup>&nbsp;바늘이 하나 있는 시계예제</p></li><li id="fn3"><p><sup>3</sup>&nbsp;비탈리집합</p></li></div><p><code>-</code> 이제 하고 싶은 것</p>
-<blockquote class="blockquote">
-<p>시그마필드에서 확률을 정의하자! <span class="math inline">\(\Leftrightarrow\)</span> 시그마필드를 정의역으로 하는 “확률”이라는 이름의 함수를 정의하자.</p>
-</blockquote>
+<section id="b.-시그마필드의-성질" class="level2">
+<h2 class="anchored" data-anchor-id="b.-시그마필드의-성질">B. 시그마필드의 성질</h2>
+<p><code>-</code> 정리표:</p>
+<table class="table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;"><span class="math inline">\(A \cap B\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\emptyset\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(A-B\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\cup_iA_i \to \uplus_i B_i\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\Omega\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(A^c\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(A\cup B\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\cup_{i=1}^{\infty}A_i\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\uplus_{i=1}^{\infty}B_i\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\cap_{i=1}^{\infty}A_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\pi\)</span>-system</td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">semi-ring</td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Delta\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">semi-algebra</td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Delta\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Delta\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">ring</td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">algebra</td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\sigma\)</span>-ring</td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\lambda\)</span>-system</td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Delta\)</span>’</td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(X\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\sigma\)</span>-field</td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O\)</span></td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="확률측도-motivation" class="level1">
-<h1>확률측도 motivation</h1>
-<p><strong>(예제1)</strong> – 시그마필드에서만 확률정의가능</p>
+</section>
+<section id="측도와-확률측도" class="level1 page-columns page-full">
+<h1>4. 측도와 확률측도</h1>
+<p><code>-</code> <code>강의오류 공지</code> – 시그마필드는 사실 “확률값”을 무모순으로 정의가능한 집합들의 모임이 아닙니다. 엄밀하게는 (확률이든 길이든 넓이든 뭐든) “<strong>잰다</strong>”라는 행위를 합리적이게 만드는 집합들의 모임입니다. 따라서 잴 수 있는 공간 <span class="math inline">\((\Omega,{\cal F})\)</span> 에서 <span class="math inline">\({\cal F}\)</span> 는 <span class="math inline">\(\Omega\)</span> 의 부분집합중, (확률이든 길이든 넓이든 뭐든) “<strong>잰다</strong>”라는 행위가 말이되게 만드는 집합들의 모임을 의미한다고 볼 수 있습니다. 혼란을 드려 죄송합니다. (그런데 내년에도 이렇게 설명하지 않을까요?.. ㅎㅎ)</p>
+<p><code>-</code> 여기에서 “<strong>잰다</strong>”라는 행위를 함수로 이해한다면, 그 함수의 정의역이 <span class="math inline">\({\cal F}\)</span> 가 되는 것이다. 참고로 “<strong>잰다</strong>”라는 행위를 수행하는 함수를 <strong><em>measure</em></strong> 혹은 <strong><em>measurable function</em></strong>, <strong><em>measurable mapping</em></strong> 이라고 하며, measure 가 정의되는 정의역 <span class="math inline">\({\cal F}\)</span>이 시그마필드이다.</p>
+<section id="a.-측도의-정의-확률측도의-정의" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="a.-측도의-정의-확률측도의-정의">A. 측도의 정의, 확률측도의 정의</h2>
+<p><code># 메져의 정의</code>: 메져는 잴 수 있는 공간 <span class="math inline">\((\Omega, {\cal F})\)</span>가 전제되었을 경우 정의 할 수 있는 일종의 함수 <span class="math inline">\(m: {\cal F} \to [0,\infty]\)</span> 인데, 아래의 조건을 만족해야 한다.</p>
+<p><code>조건1</code>. <span class="math inline">\(\forall A \in {\cal F}:~ m(A) \geq 0\)</span>.</p>
+<p><code>조건2</code>. <span class="math inline">\(m(\emptyset)=0\)</span>.</p>
+<p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: A_n \in {\cal F} \big) \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~ A_m \cap A_k = \emptyset \big) \quad \Longrightarrow \quad m\left(\uplus_{n=1}^{\infty} A_n\right) = \sum_{n=1}^{\infty}m(A_n)\)</span></p>
+<p>쉽게 말하면 (1) 메저는 항상 양수이어야 하고, (2) 공집합은 항상 측정값이 0이며 (3) <span class="math inline">\(\sigma\)</span>-additivity<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>가 성립해야한다는 의미이다.</p>
+<div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;countable additivity 라고 하기도 함</p></li></div><p><code>#</code></p>
+<p><code># 확률의 정의</code>: 확률은 잴 수 있는 공간 <span class="math inline">\((\Omega, {\cal F})\)</span>가 전제되었을 경우 정의 할 수 있는 일종의 함수 <span class="math inline">\(\mathbb{P}:{\cal F} \to [0,1]\)</span> 인데, 아래의 조건을 만족해야 한다.</p>
+<p><code>조건1</code>. <span class="math inline">\(\forall A \in {\cal F}:~ \mathbb{P}(A) \geq 0\)</span>.</p>
+<p><code>조건2</code>. <span class="math inline">\(\mathbb{P}(\Omega)=1\)</span>.</p>
+<p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: A_n \in {\cal F} \big) \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~ A_m \cap A_k = \emptyset \big) \quad \Longrightarrow \quad \mathbb{P}\left(\uplus_{n=1}^{\infty} A_n\right) = \sum_{n=1}^{\infty}\mathbb{P}(A_n)\)</span></p>
+<p>쉽게 말하면 (1) 확률은 항상 양수이어야 하고, (2) 전체확률은 1이며 (3) <span class="math inline">\(\sigma\)</span>-additivity<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>가 성립해야한다는 의미이다.</p>
+<div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;countable additivity 라고 하기도 함</p></li></div><p><code>#</code></p>
+<p><code># 예제1</code> 확률은 메저의 한 종류임을 보여라. 즉 확률의 공리1-3을 만족하면 메저의 공리1-3을 만족함을 보여라.</p>
+<p><code># 예제2</code> 메저의 정의에서 <code>조건4</code> <span class="math inline">\(m(\Omega)=1\)</span> 임을 추가하면 확률의 공리1-3이 됨을 보여라.</p>
+</section>
+<section id="b.-확률측도" class="level2">
+<h2 class="anchored" data-anchor-id="b.-확률측도">B. 확률측도</h2>
+<p><code># 예제1</code> – 시그마필드에서만 확률정의가능</p>
 <p><span class="math inline">\(\Omega=\{H,T\}\)</span> 라고 하고 <span class="math inline">\({\cal F}=\{\emptyset, \{H\},\Omega\}\)</span> 이라고 하자. 아래와 같은 함수 <span class="math inline">\(P\)</span>를 고려하고 이것을 확률이라고 하자. 이러한 확률은 합리적인가?</p>
 <ul>
 <li><span class="math inline">\(P(\emptyset) = 0\)</span></li>
 <li><span class="math inline">\(P(\{H\}) = \frac{1}{2}\)</span></li>
 <li><span class="math inline">\(P(\Omega) = 1\)</span></li>
 </ul>
-<p>(해설1) <span class="math inline">\({\cal F}\)</span>는 시그마필드가 아니므로 이 위에서는 애초에 확률을 정의할 수 없음.</p>
-<p>(해설2) 확률을 잘 정의하기 위해서는 우선 잘 정의된 “잴 수 있는 공간 <span class="math inline">\((\Omega, {\cal F})\)</span>” 가 필요하다.</p>
-<p><strong>(예제2)</strong> – 잘 정의된 확률</p>
+<p>(해설) <span class="math inline">\({\cal F}\)</span>는 시그마필드가 아니므로 이 위에서는 애초에 확률을 정의할 수 없음.</p>
+<blockquote class="blockquote">
+<p>확률을 잘 정의하기 위해서는 우선 잘 정의된 “잴 수 있는 공간 <span class="math inline">\((\Omega, {\cal F})\)</span>” 가 필요하다.</p>
+</blockquote>
+<p><code>#</code></p>
+<p><code># 예제2</code> – 잘 정의된 확률</p>
 <p><span class="math inline">\(\Omega=\{H,T\}\)</span> 라고 하고 <span class="math inline">\({\cal F}=2^{\Omega}\)</span> 이다. 아래와 같은 함수 <span class="math inline">\(P\)</span>를 고려하고 이를 잴 수 있는 공간 <span class="math inline">\((\Omega,{\cal F})\)</span> 에서의 확률이라고 하자. 이러한 확률은 합리적인가?</p>
 <ul>
 <li><span class="math inline">\(P(\emptyset) = 0\)</span></li>
@@ -312,7 +483,8 @@ window.Quarto = {
 <li><span class="math inline">\(P(\Omega) = 1\)</span></li>
 </ul>
 <p>(해설) 합리적임.</p>
-<p><strong>(예제3)</strong> – 확률은 0보다 커야해.</p>
+<p><code>#</code></p>
+<p><code># 예제3</code> – 확률은 0보다 커야해.</p>
 <p><span class="math inline">\(\Omega=\{H,T\}\)</span> 라고 하고 <span class="math inline">\({\cal F}=2^{\Omega}\)</span> 이다. 아래와 같은 함수 <span class="math inline">\(P\)</span>를 고려하고 이를 잴 수 있는 공간 <span class="math inline">\((\Omega,{\cal F})\)</span> 에서의 확률이라고 하자. 이러한 확률은 합리적인가?</p>
 <ul>
 <li><span class="math inline">\(P(\emptyset) = 0\)</span></li>
@@ -321,21 +493,24 @@ window.Quarto = {
 <li><span class="math inline">\(P(\Omega) = 1\)</span></li>
 </ul>
 <p>(해설) 확률은 음수가 나오면 안되므로 합리적이지 않음.</p>
-<p><strong>(예제4)</strong> – 전체확률은 1이어야 함.</p>
+<p><code>#</code></p>
+<p><code># 예제4</code> – 전체확률은 1이어야 함.</p>
 <p><span class="math inline">\(\Omega=\{H,T\}\)</span> 라고 하고 <span class="math inline">\({\cal F}=\{\emptyset, \Omega\}\)</span> 이다. 아래와 같은 함수 <span class="math inline">\(P:{\cal F} \to [0,1]\)</span>를 고려하고 이를 잴 수 있는 공간 <span class="math inline">\((\Omega,{\cal F})\)</span> 에서의 확률이라고 하자. 이러한 확률은 합리적인가?</p>
 <ul>
 <li><span class="math inline">\(P(\emptyset) = 0\)</span></li>
 <li><span class="math inline">\(P(\Omega) = 0.5\)</span></li>
 </ul>
 <p>(해설) 전체확률은 1이어야 하므로 합리적이지 않음.</p>
-<p><strong>(예제5)</strong> – 공집합의 확률은 0이어야 함.</p>
+<p><code>#</code></p>
+<p><code># 예제5</code> – 공집합의 확률은 0이어야 함.</p>
 <p><span class="math inline">\(\Omega=\{H,T\}\)</span> 라고 하고 <span class="math inline">\({\cal F}=\{\emptyset, \Omega\}\)</span> 이다. 아래와 같은 함수 <span class="math inline">\(P:{\cal F} \to [0,1]\)</span>를 고려하고 이를 잴 수 있는 공간 <span class="math inline">\((\Omega,{\cal F})\)</span> 에서의 확률이라고 하자. 이러한 확률은 합리적인가?</p>
 <ul>
 <li><span class="math inline">\(P(\emptyset) = 0.5\)</span></li>
 <li><span class="math inline">\(P(\Omega) = 1\)</span></li>
 </ul>
 <p>(해설) 공집합의 확률은 0이어야 하므로 합리적이지 않음.</p>
-<p><strong>(예제6)</strong> – 서로소인 집합을 합친 확률, 여집합의 확률</p>
+<p><code>#</code></p>
+<p><code># 예제6</code> – 서로소인 집합을 합친 확률, 여집합의 확률</p>
 <p><span class="math inline">\(\Omega=\{H,T\}\)</span> 라고 하고 <span class="math inline">\({\cal F}=\{\emptyset, \{H\}, \{T\}, \Omega\}\)</span> 이다. 아래와 같은 함수 <span class="math inline">\(P:{\cal F} \to [0,1]\)</span>를 고려하고 이를 잴 수 있는 공간 <span class="math inline">\((\Omega,{\cal F})\)</span> 에서의 확률이라고 하자. 이러한 확률은 합리적인가?</p>
 <ul>
 <li><span class="math inline">\(P(\emptyset) = 0\)</span></li>
@@ -343,19 +518,14 @@ window.Quarto = {
 <li><span class="math inline">\(P(\{T\}) = 1/3\)</span></li>
 <li><span class="math inline">\(P(\Omega) = 1\)</span></li>
 </ul>
-<p>(해설1) 합리적이지 않음. 왜냐하면</p>
+<p>(해설) 합리적이지 않음. 왜냐하면</p>
 <ul>
 <li><span class="math inline">\(P(\{H\}\cup \{T\})=P(\Omega)=1\)</span></li>
 <li><span class="math inline">\(P(\{H\}\cup \{T\})=P(\{H\})+P(\{T\})=2/3\)</span></li>
 </ul>
 <p>이므로 모순임.</p>
-<p>(해설2) 합리적이지 않음. 왜냐하면</p>
-<ul>
-<li><span class="math inline">\(P(\Omega-\{H\})=P(\{T\})=1/3\)</span></li>
-<li><span class="math inline">\(P(\Omega-\{H\})=1-P(\{H\})=2/3\)</span></li>
-</ul>
-<p>이므로 모순임.</p>
-<p><strong>(예제7)</strong> – 포함관계에 있는 집합의 확률</p>
+<p><code>#</code></p>
+<p><code># 예제7</code> – 포함관계에 있는 집합의 확률</p>
 <p><span class="math inline">\(\Omega=\{1,2,3\}\)</span> 라고 하고</p>
 <p><span class="math display">\[{\cal F}=\{\emptyset, \{1\}, \{2\}, \{3\}, \{1,2\}, \{1,3\}, \{2,3\}, \Omega\}\]</span></p>
 <p>라고 하자. 아래와 같은 함수 <span class="math inline">\(P:{\cal F} \to [0,1]\)</span>를 고려하고 이를 잴 수 있는 공간 <span class="math inline">\((\Omega,{\cal F})\)</span> 에서의 확률이라고 하자. 이러한 확률은 합리적인가?</p>
@@ -369,98 +539,105 @@ window.Quarto = {
 <li><span class="math inline">\(P(\{2,3\}) = 1/4\)</span></li>
 <li><span class="math inline">\(P(\Omega) = 1\)</span></li>
 </ul>
-<p>(해설1) 합리적이지 않음. 왜냐하면</p>
+<p>(해설) 합리적이지 않음. 왜냐하면</p>
 <ul>
 <li><span class="math inline">\(P(\{2\}\cup \{3\})=P(\{2,3\})=1/4\)</span></li>
 <li><span class="math inline">\(P(\{2\}\cup \{3\})=P(\{2\})+P(\{3\})=3/4\)</span></li>
 </ul>
 <p>이므로 모순임.</p>
-<p>(해설2) 합리적이지 않음. 왜냐하면</p>
+<p><code>#</code></p>
+<blockquote class="blockquote">
+<p>정의역이 시그마필드이고, 확률의 공리1,2,3을 만족하는 경우만 우리는 “확률”이라 인정하겠다.</p>
+</blockquote>
+<p><code># 예제7</code> – 포함관계에 있는 집합의 확률</p>
+<p><span class="math inline">\(\Omega=\{1,2,3\}\)</span> 라고 하고</p>
+<p><span class="math display">\[{\cal F}=\{\emptyset, \{1\}, \{2\}, \{3\}, \{1,2\}, \{1,3\}, \{2,3\}, \Omega\}\]</span></p>
+<p>라고 하자. 아래와 같은 함수 <span class="math inline">\(P:{\cal F} \to [0,1]\)</span>를 고려하고 이를 잴 수 있는 공간 <span class="math inline">\((\Omega,{\cal F})\)</span> 에서의 확률이라고 하자. 이러한 확률은 합리적인가?</p>
 <ul>
-<li><span class="math inline">\(\{3\} \subset \{2,3\}\)</span></li>
-<li><span class="math inline">\(P(\{3\}) \geq P(\{2,3\})\)</span></li>
+<li><span class="math inline">\(P(\emptyset) = 0\)</span></li>
+<li><span class="math inline">\(P(\{1\}) = 1/4\)</span></li>
+<li><span class="math inline">\(P(\{2\}) = 1/4\)</span></li>
+<li><span class="math inline">\(P(\{3\}) = 2/4\)</span></li>
+<li><span class="math inline">\(P(\{1,2\}) = 2/4\)</span></li>
+<li><span class="math inline">\(P(\{1,3\}) = 3/4\)</span></li>
+<li><span class="math inline">\(P(\{2,3\}) = 1/4\)</span></li>
+<li><span class="math inline">\(P(\Omega) = 1\)</span></li>
 </ul>
-<p>이므로 <span class="math inline">\(A \subset B \Rightarrow P(A) \leq P(B)\)</span> 가 성립하지 않음.</p>
-<p>(기타등등 해설)</p>
-<p><span class="math inline">\(P(\{2,3\}^c)\)</span>, <span class="math inline">\(P(\{1\}\cup \{2,3\})\)</span> 따위를 계산해도 모순임</p>
-<p><strong><em>생각의 시간</em></strong></p>
-<p><code>-</code> 확률이라는 것을 구체적으로 정의하지는 않았지만 적어도 현재까지 파악한 직관에 의하면 아래와 같은 조건을 만족하는 함수라고 “일단은” 생각할 수 있다.</p>
-<ol type="1">
-<li>확률 <span class="math inline">\(P\)</span>는 시그마필드에서 정의되어야 한다. 따라서 확률이라는 말을 하기 전에 우선 “<span class="math inline">\(\Omega\)</span>에 대한 <span class="math inline">\({\cal F}\)</span>”를 정의하거나 “잴 수 있는 공간 <span class="math inline">\((\Omega, {\cal F})\)</span>”을 정의해야 한다.</li>
-<li>확률 <span class="math inline">\(P\)</span>는 0보다 크고 1보다 작아야 한다.</li>
-<li>전체확률은 항상 1이어야 한다. 즉 <span class="math inline">\(P(\Omega)=1\)</span> 이어야 한다. // (이게 5번과 결합하면 공집합일 확률이 0이어야 한다는 것을 암시한다)</li>
-<li>서로소인 두 집합 <span class="math inline">\(A,B\)</span>에 대하여 확률 <span class="math inline">\(P(A\cup B)\)</span>는 <span class="math inline">\(P(A)+P(B)\)</span>와 같이 계산 되어야 한다.</li>
-<li><span class="math inline">\(P(A^c)=1-P(A)\)</span> 가 성립해야 한다.</li>
-<li>포함관계에 있는 두 집합 <span class="math inline">\(A\subset B\)</span>에 대하여 <span class="math inline">\(P(A)\leq P(B)\)</span>가 항상 성립해야 한다.</li>
-</ol>
-<p><code>-</code> 또한 아래와 같은 성질도 있어야 할 것 같다. (혹은 있었으면 좋겠다)</p>
-<ol start="7" type="1">
-<li>서로소인 집합열 <span class="math inline">\(B_1,B_2,\dots\)</span> 에 대하여 <span class="math inline">\(P(\cup_{i=1}^{\infty} B_i) = \sum_{i=1}^{\infty}P(B_i)\)</span> 가 성립하면 좋겠다. (4번의 업그레이드 버전)</li>
-<li><span class="math inline">\(P(A\cup B)= P(A) + P(B) - P(A\cap B)\)</span> 등을 포함한 기타 잡스러운 성질들도 모두 성립하면 좋겠다.</li>
-</ol>
-<p><code>-</code> 이제 우리가 따져봐야 할 것은 (1) 확률을 정의하기 위한 조건으로 1-8이면 충분한지 (혹시 더 많은 조건들이 필요한건 아닌지) (2) 위에서 리스팅한 조건들이 꼭 모두 다 필요한지? (예를 들면 한 두개의 조건이 다른조건을 암시하는건 아닌지) 이다.</p>
-<p><code>-</code> 결론적으로는 말하면 1,2,3,7만 있으면 충분하다.</p>
-<p><code>-</code> 연습1: <span class="math inline">\((3),(4) \Rightarrow (5)\)</span> 임을 보여라.</p>
-<p><code>-</code> 연습2: <span class="math inline">\((2),(4) \Rightarrow (6)\)</span> 임을 보여라.</p>
-</section>
-<section id="확률측도의-정의" class="level1 page-columns page-full">
-<h1>확률측도의 정의</h1>
-<p><code>-</code> 확률의 정의: 메져(measure)는 길이따위를 일반화한 개념이다. 확률은 메져의 특수한 형태이다.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>메져와 확률은 아래와 같이 정의한다.</p>
-<div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;메져의 조건에서 전체집합의 길이가 1이라는 제약만 있음</p></li></div><div class="img-fluid quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="05wk-1_files/figure-html/2e5f9160-be82-4571-b0cb-becac75e71c7-1-2e3b6cdd-8339-4938-9606-9ceb390e6459.png" class="img-fluid figure-img"></p>
-<figcaption>그림1: Durret책에서 정의한 measure와 probability measure의 정의, 드래그한 부분이 정의임.</figcaption>
-</figure>
-</div>
-<p><code>-</code> 교재의 정의 약간 설명</p>
+<p>(해설) 합리적이지 않음. 왜냐하면</p>
 <ul>
-<li>교재에서는 일반적인 측도 <span class="math inline">\(\mu\)</span>를 설명하고 전체집합의 길이가 1인 측도를 확률측도 <span class="math inline">\(P\)</span>라고 한다고 설명하고 있다. 따라서 교재의 <span class="math inline">\(\mu\)</span>는 문맥상 <span class="math inline">\(P\)</span>로 바꾸어 이해해도 무방함.</li>
-<li>교재에서 <span class="math inline">\(\mu\)</span>는 잴 수 있는 공간 <span class="math inline">\((\Omega,{\cal F}\)</span>에서 정의한다고 서술하고 있으며 이는 우리가 이미 살펴본 조건 <code>1</code>과 일치한다.</li>
-<li>교재에서 <span class="math inline">\(\mu:{\cal F} \to \mathbb{R}\)</span>이라고 서술되어 있는데 우리의 경우는 <span class="math inline">\(P:{\cal F} \to [0,1]\)</span>로 바꾸어 이해하면 된다.</li>
+<li><span class="math inline">\(P(\{2\}\cup \{3\})=P(\{2,3\})=1/4\)</span></li>
+<li><span class="math inline">\(P(\{2\}\cup \{3\})=P(\{2\})+P(\{3\})=3/4\)</span></li>
 </ul>
-<p><code>-</code> 사실 잘 따져보면 이것은 우리가 위키에서 찾아본 확률의 공리도 결국 같은 소리를 하고 있다.</p>
-<div class="img-fluid quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="05wk-1_files/figure-html/e9436bf4-e52d-4e6b-82e3-c054f125a24e-1-image.png" class="img-fluid figure-img"></p>
-<figcaption>그림2: 확률의 공리</figcaption>
-</figure>
-</div>
-<p><code>-</code> 확률의 정의: 확률은 잴 수 있는 공간 <span class="math inline">\((\Omega, {\cal F})\)</span>가 전제되었을 경우 정의 할 수 있는 일종의 함수 <span class="math inline">\(P:{\cal F} \to [0,1]\)</span> 인데, 아래의 조건을 만족해야 한다. // 위키버전</p>
-<ol type="1">
-<li>확률은 항상 양수이어야 하며,</li>
-<li>전체 확률은 1이어야 하며, (그리고 이것은 공집합일 확률이 0임을 암시함)</li>
-<li><span class="math inline">\(\sigma\)</span>-additivity가 성립해야 한다.</li>
-</ol>
-<p><code>-</code> 메져의 정의: 메져는 잴 수 있는 공간 <span class="math inline">\((\Omega, {\cal F})\)</span>가 전제되었을 경우 정의 할 수 있는 일종의 함수 <span class="math inline">\(m: {\cal F} \to [0,\infty]\)</span>인데, 아래의 조건을 만족해야 한다.</p>
-<ol type="1">
-<li>메저는 항상 양수이어야 하며,</li>
-<li>공집합은 메져가 0이어야 하며,</li>
-<li><span class="math inline">\(\sigma\)</span>-additivity가 성립해야 한다.</li>
-</ol>
+<p>이므로 모순임.</p>
+<p><code>#</code></p>
 </section>
-<section id="귀찮아서-만든-이론들-star" class="level1 page-columns page-full">
-<h1>귀찮아서 만든 이론들 (<span class="math inline">\(\star\)</span>)</h1>
-<section id="상황1-시그마필드-구하기-귀찮아" class="level2">
-<h2 class="anchored" data-anchor-id="상황1-시그마필드-구하기-귀찮아">상황1: 시그마필드 구하기 귀찮아</h2>
-<p><strong>(예제1)</strong></p>
-<p><code>-</code> <span class="math inline">\(\Omega=\{1,2,3,4\}\)</span>이라고 하자. 내가 관심있는 event의 모음은 아래와 같다.</p>
+<section id="c.-확률측도와-측도의-차이" class="level2">
+<h2 class="anchored" data-anchor-id="c.-확률측도와-측도의-차이">C. 확률측도와 측도의 차이</h2>
+<p><code># 예제1</code> – <span class="math inline">\(|\Omega|&lt;\infty\)</span> 인 경우</p>
+<p><span class="math inline">\(\Omega=\{1,2,3,4,5,6\}\)</span> 라고 하자. 이때 <span class="math inline">\(2^\Omega\)</span>는 <span class="math inline">\(\Omega\)</span>의 모든 부분집합들의 집합이다. 여기에서 <span class="math inline">\(2^\Omega\)</span>는 시그마필드의 정의를 만족하므로 <span class="math inline">\((\Omega, 2^{\Omega})\)</span> 는 잴 수 있는 공간이 된다. 이 공간위에서 함수 <span class="math inline">\(\mathbb{P}: 2^{\Omega} \to [0,1]\)</span> 를 아래와 같의 정의하자.</p>
+<p><span class="math display">\[\mathbb{P}(A)=\frac{|A|}{|\Omega|}.\]</span></p>
+<p>이러한 함수 <span class="math inline">\(\mathbb{P}\)</span> 는 (1) 정의역이 시그마필드이며 (2) 확률의공리1-3을 만족하므로 확률이라 주장할 수 있다.</p>
+<p><code>#</code></p>
+<p><code># 예제2</code> – <span class="math inline">\(|\Omega| = \aleph_1\)</span> 인 경우, 확률정의 불가능</p>
+<p><span class="math inline">\(\Omega=[0,1)\)</span> 라고 하자. 이때 <span class="math inline">\(2^\Omega\)</span>는 <span class="math inline">\(\Omega\)</span>의 모든 부분집합들의 집합이다. 여기에서 <span class="math inline">\(2^\Omega\)</span>는 시그마필드의 정의를 만족하므로 <span class="math inline">\((\Omega, 2^{\Omega})\)</span> 는 잴 수 있는 공간이 된다. 이 공간위에서 함수 <span class="math inline">\(\mathbb{P}: 2^{\Omega} \to [0,1]\)</span> 를 아래와 같이 정의하자.</p>
+<p><span class="math display">\[\mathbb{P}(A)=\lambda(A), \quad \text{$\lambda$ is lebesgue measure}.\]</span></p>
+<p>이러한 함수 <span class="math inline">\(\mathbb{P}\)</span> 는 (1) 정의역이 시그마필드이지만 (2) 확률의공리1-3을 만족하지 않는다. (왜? 비탈리집합!) 따라서 함수 <span class="math inline">\(\mathbb{P}\)</span> 를 확률이라고 주장할 수 없다. 또한 <span class="math inline">\(\mathbb{P}(A)=\lambda(A)\)</span>가 아닌 그 어떠한 방식으로 정의해도 잴 수 있는 공간 <span class="math inline">\((\Omega, 2^{\Omega})\)</span> 위에서 확률을 무모순으로 정의하는게 불가능함이 밝혀져 있다.</p>
+<p><code>#</code></p>
+<blockquote class="blockquote">
+<p>의문: 그러면 이름이 이상한것 아니야? 즉, <span class="math inline">\(\Omega=[0,1)\)</span> 일경우 <span class="math inline">\((\Omega, 2^{\Omega})\)</span>를 잴 수 있는 공간이라고 말하는 것 자체가 잘못된것 아니야??</p>
+</blockquote>
+<p><code># 예제3</code> – <span class="math inline">\(|\Omega| = \aleph_1\)</span> 인 경우, 측도정의가능</p>
+<p><span class="math inline">\(\Omega=[0,1)\)</span> 라고 하자. 이때 <span class="math inline">\(2^\Omega\)</span>는 <span class="math inline">\(\Omega\)</span>의 모든 부분집합들의 집합이다. 여기에서 <span class="math inline">\(2^\Omega\)</span>는 시그마필드의 정의를 만족하므로 <span class="math inline">\((\Omega, 2^{\Omega})\)</span> 는 잴 수 있는 공간이 된다. 이 공간위에서 함수 <span class="math inline">\(m: 2^{\Omega} \to [0,\infty]\)</span> 를 아래와 같이 정의하자.</p>
+<p><span class="math display">\[m(A)=0, \quad \forall A \in 2^{\Omega}\]</span></p>
+<p>이러한 함수 <span class="math inline">\(m\)</span> 은 (1) 정의역이 시그마필드이고 (2) 측도의공리1-3을 만족한다. 따라서 함수 <span class="math inline">\(m\)</span> 를 측도라고 주장할 수 있다. (그런데 이따위 측도를 어디에 쓰지?)</p>
+<p><code>#</code></p>
+</section>
+<section id="d.-측도공간-확률공간" class="level2">
+<h2 class="anchored" data-anchor-id="d.-측도공간-확률공간">D. 측도공간, 확률공간</h2>
+<p><code># 정의</code> – 잴 수 있는 공간 <span class="math inline">\((\Omega,{\cal F})\)</span> 와 그 공간에서의 측도 <span class="math inline">\(m:{\cal F} \to [0,\infty]\)</span> 을 묶은 <span class="math inline">\((\Omega, {\cal F},m)\)</span> 을 measure space 라고 한다. 만약에 측도 <span class="math inline">\(m\)</span>이 확률측도의 정의를 만족한다면 공간 <span class="math inline">\((\Omega, {\cal F},m)\)</span> 혹은 <span class="math inline">\((\Omega, {\cal F},\mathbb{P})\)</span> 는 확률공간 (probability space) 라고 한다.</p>
+</section>
+</section>
+<section id="확률을-어디에서-정의할까" class="level1 page-columns page-full">
+<h1>5. 확률을 어디에서 정의할까?</h1>
+<p><code># 확장이론</code> <span class="math inline">\(\Omega=[0,1)\)</span> 일 경우 확률(=길이)을 정의하는 방법:</p>
+<ul>
+<li>사전인지사항1: <span class="math inline">\((\Omega, 2^{\Omega})\)</span> 에서 확률(=길이)를 정의하는 것은 불가능함</li>
+<li>사전인지사항2: <span class="math inline">\((\Omega, \{\emptyset, \Omega\})\)</span> 에서 <span class="math inline">\(\mathbb{P}=\lambda\)</span>를 정의하는 것은 의미가 없음.</li>
+<li>문제를 해결하는 자세: <span class="math inline">\(\{\emptyset, \Omega\}\)</span> 보다는 크고, <span class="math inline">\(2^{\Omega}\)</span> 보다는 작은 어떠한 <span class="math inline">\({\cal F}\)</span>에 대하여 확률(=길이)를 정의해야 하지 않나?</li>
+<li>즉 <span class="math inline">\((\Omega, ???, \lambda)\)</span> 를 measure space 로 만드는 적당한 시그마필드 <span class="math inline">\(???\)</span> 를 찾으면 되는것 아닌가? 그리고 그 <span class="math inline">\(???\)</span> 에서 확률을 정의하면 되지 않나?</li>
+</ul>
+<p>우리는</p>
+<ol type="1">
+<li><span class="math inline">\((\Omega, ???, \lambda)\)</span> 를 measure space 로 만드는 시그마필드는 찾는 방법??</li>
+<li><span class="math inline">\(???\)</span> 에서 확률을 정의하는 방법??</li>
+</ol>
+<p>을 논의하면 된다.</p>
+<p><code>#</code></p>
+<section id="a.-상황1-시그마필드-구하기-귀찮아" class="level2">
+<h2 class="anchored" data-anchor-id="a.-상황1-시그마필드-구하기-귀찮아">A. 상황1 – 시그마필드 구하기 귀찮아</h2>
+<p><span class="math inline">\((\Omega, ???, \lambda)\)</span> 를 measure space 로 만드는 시그마필드는 찾는 방법?? 을 생각하자. 가능한 방식은 아래의 2가지가 있는데</p>
+<p><code>방법1</code>: <span class="math inline">\(2^\Omega\)</span> 에서 확률(=길이)을 잴 수 없는 집합들을 제외한다.</p>
+<p><code>방법2</code>: 확률(=길이)를 정의할 수 있는 집합들 <span class="math inline">\({\cal A}\)</span>를 정의하고 이를 확장시킨다.</p>
+<p>이중에서 방법2를 채택한다.</p>
+<p><code># 예제1</code></p>
+<p><span class="math inline">\(\Omega=\{1,2,3,4\}\)</span>이라고 하자. 내가 관심있는 event의 모음은 아래와 같다.</p>
 <p><span class="math display">\[{\cal A} = \{\{1\},\{2\}\}\]</span></p>
-<p><code>-</code> 당연히 이러한 이벤트에 대해서만 적절한 확률을 정의하면 좋겠는데, 이는 불가능 하다. 왜냐하면 <span class="math inline">\({\cal A}\)</span>는 시그마필드가 아니기 때문이다.</p>
-<p><code>-</code> 따라서 할 수 없이 아래와 같은 방식으로 시그마필드를 구해야 했다.</p>
+<p>당연히 이러한 이벤트에 대해서만 적절한 확률을 정의하면 좋겠는데, 이는 불가능 하다. 왜냐하면 <span class="math inline">\({\cal A}\)</span>는 시그마필드가 아니기 때문이다. 따라서 할 수 없이 아래와 같은 방식으로 시그마필드를 구해야 했다.</p>
 <p><span class="math display">\[{\cal F} = \big\{\emptyset, \{1\}, \{2\}, \{1,2\}, \{3,4\}, \{1,3,4\}, \{2,3,4\}, \Omega \big\}\]</span></p>
-<p><code>-</code> 이러한 <span class="math inline">\({\cal F}\)</span>를 구하기는 것은 귀찮은 일인데, 이를 편리하게 해결하기 위해서 <span class="math inline">\(\sigma({\cal A})\)</span>라는 기호를 도입하고 이를 “<span class="math inline">\(\{1\}\)</span>, <span class="math inline">\(\{2\}\)</span>를 원소로 가지는 최소한의 <span class="math inline">\({\cal F}\)</span>” 라고 생각 하기로 하였다. 즉 앞으로는</p>
+<p>이러한 <span class="math inline">\({\cal F}\)</span>를 구하기는 것은 귀찮은 일인데, 이를 편리하게 해결하기 위해서 <span class="math inline">\(\sigma({\cal A})\)</span>라는 기호를 도입하고 이를 “<span class="math inline">\(\{1\}\)</span>, <span class="math inline">\(\{2\}\)</span>를 원소로 가지는 최소한의 <span class="math inline">\({\cal F}\)</span>” 라고 생각 하기로 하였다. 즉 앞으로는</p>
 <p><span class="math display">\[\sigma({\cal A})\]</span></p>
 <p>라고만 써도 위에서 명시한 <span class="math inline">\({\cal F}\)</span>를 의미한다고 알아서 생각하면 된다는 것이다.</p>
 <p><code>걱정</code>: 문제는 이러한 논리전개가 항상 가능하냐는 것이다.</p>
 <blockquote class="blockquote">
 <p>귀찮아서 만든 이론1: 걱정할 필요 없다. 언제나 <span class="math inline">\(\sigma({\cal A})\)</span>라는 표현은 가능하다. 즉 <span class="math inline">\(\Omega\)</span>의 임의의 부분집합에 대하여 우리가 관심있는 집합만 모은 것을 <span class="math inline">\({\cal A}\)</span>라고 할때, <span class="math inline">\({\cal A}\)</span>의 모든 원소를 포함하고 시그마필드의 정의를 만족하는 최소한의 시그마필드 <span class="math inline">\(\sigma({\cal A})\)</span>는 항상 존재한다.</p>
 </blockquote>
-<p><strong>(예제2)</strong></p>
-<p><span class="math inline">\(\Omega = \mathbb{R}\)</span> 이라고 하자. 이중에서 우리가 관심있는 집합들은 르벡메져로 길이를 명확하게 잴 수 있는 아래와 같은 형태이다.</p>
+<p><code>#</code></p>
+<p><code># 예제2</code></p>
+<p><span class="math inline">\(\Omega = [0,1)\)</span> 이라고 하자. 이중에서 우리가 관심있는 집합들은 르벡메져로 길이를 명확하게 잴 수 있는 아래와 같은 형태이다.</p>
 <p><span class="math display">\[[a,b]\]</span></p>
-<p>여기에서 <span class="math inline">\(a,b \in \mathbb{R}\)</span>, <span class="math inline">\(a&lt;b\)</span> 이라고 하자. 따라서 이 경우 <span class="math inline">\({\cal A}\)</span>를 아래와 같이 설정할 수 있다.</p>
-<p><span class="math display">\[{\cal A} = \big\{[a,b]: a,b \in \mathbb{R}, a&lt;b \big\}\]</span></p>
-<p>이제 <span class="math inline">\(\sigma({\cal A})\)</span>를 상상하자. 이는 <span class="math inline">\(\Omega=\mathbb{R}\)</span>에서 잴 수 있는 집합들의 모임이다. 편의상 <span class="math inline">\(\sigma({\cal A}):={\cal R}\)</span>로 정의하자. 여기에서 <span class="math inline">\({\cal R}\)</span> 상당히 많은 케이스를 포함하는 집합이다. 예를들면 아래와 같은 집합들은 모두 <span class="math inline">\({\cal R}\)</span>의 원소이다. (즉 아래의 집합은 <span class="math inline">\([a,b]\)</span>를 잴 수 있다고 할때, 당연히 잴 수 있다고 여겨지는 집합들이다.)</p>
+<p>여기에서 <span class="math inline">\(a,b \in \mathbb{R}\)</span>, <span class="math inline">\(0\leq a&lt;b\leq 1\)</span> 이라고 하자. 따라서 이 경우 <span class="math inline">\({\cal A}\)</span>를 아래와 같이 설정할 수 있다.</p>
+<p><span class="math display">\[{\cal A} = \big\{[a,b]: a,b \in \mathbb{R}, 0\leq a&lt;b\leq 1 \big\}\]</span></p>
+<p>이제 <span class="math inline">\(\sigma({\cal A}):={\cal R}\)</span> 를 상상하자. (귀찮아서 만든 이론1에 의하면 이러한 <span class="math inline">\({\cal R}\)</span> 는 항상 존재함) 언뜻 생각하면 <span class="math inline">\({\cal R}\)</span>의 원소는 <span class="math inline">\([a,b]\)</span> 의 형태만 가능하여, 확률 혹은 길이를 정의함에 너무 제한적인 정의역일것 같은데 그렇지 않다. <span class="math inline">\({\cal R}\)</span> 은 상당히 많은 케이스를 포함하는 집합이다. 예를들면 아래와 같은 집합들은 모두 <span class="math inline">\({\cal R}\)</span> 의 원소이다.</p>
 <ul>
 <li><span class="math inline">\([0,2)\)</span></li>
 <li><span class="math inline">\(\{2\}\)</span></li>
@@ -472,18 +649,16 @@ window.Quarto = {
 <li><span class="math inline">\(\mathbb{N}\)</span>, <span class="math inline">\(\mathbb{Z}\)</span>, <span class="math inline">\(\mathbb{Q}\)</span></li>
 <li><span class="math inline">\([0,2] \cap \mathbb{Q}\)</span></li>
 </ul>
-<blockquote class="blockquote">
-<p>사실상 <span class="math inline">\({\cal R}=\sigma({\cal A})\)</span>와 같은 기호가 없다면 <span class="math inline">\(\mathbb{R}\)</span>에서 잴 수 있는 집합들의 모임은 명시적으로 쓰는 것 자체가 불가능함.</p>
-</blockquote>
+<p><code>#</code></p>
 </section>
-<section id="상황2-확률-정의하기-귀찮아" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="상황2-확률-정의하기-귀찮아">상황2: 확률 정의하기 귀찮아</h2>
-<p><strong>(예제1)</strong> – motivating EX</p>
-<p><code>-</code> <span class="math inline">\(\Omega=\{1,2,3,4\}\)</span>이라고 하자. 내가 관심있는 집합의 모음은 아래와 같다.</p>
+<section id="b.-상황2-확률-정의하기-귀찮아" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="b.-상황2-확률-정의하기-귀찮아">B. 상황2 – 확률 정의하기 귀찮아</h2>
+<p><code># 예제1</code> – motivating EX</p>
+<p><span class="math inline">\(\Omega=\{1,2,3,4\}\)</span>이라고 하자. 내가 관심있는 집합의 모음은 아래와 같다.</p>
 <p><span class="math display">\[{\cal A} = \{\emptyset, \{1\},\{2\},\{3,4\},\Omega\}\]</span></p>
-<p><code>-</code> 여기에서 <span class="math inline">\({\cal A}\)</span>는 시그마필드가 아니다. 따라서 <span class="math inline">\({\cal A}\)</span>에서는 확률을 정의할 수 없다. 확률을 정의하려면 <span class="math inline">\(\sigma({\cal A})\)</span>에서 정의해야 한다.</p>
-<p><code>-</code> 소망: 그래도 그냥 <span class="math inline">\({\cal A}\)</span>에서만 확률 비슷한걸<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> 잘 정의하면 안될까?</p>
-<div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;정의역이 시그마필드가 아니므로 확률이라고 말할 수 없다</p></li></div><p><code>-</code> 희망: 이게 될 것 같다. 예를들면 함수 <span class="math inline">\(\tilde{P}:{\cal A} \to [0,1]\)</span>를 아래와 같이 정의하자.</p>
+<p>여기에서 <span class="math inline">\({\cal A}\)</span>는 시그마필드가 아니다. 따라서 <span class="math inline">\({\cal A}\)</span>에서는 확률을 정의할 수 없다. 확률을 정의하려면 <span class="math inline">\(\sigma({\cal A})\)</span>에서 정의해야 한다.</p>
+<p><code>-</code> 소망: 그래도 그냥 <span class="math inline">\({\cal A}\)</span>에서만 확률 비슷한걸<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> 잘 정의하면 안될까?</p>
+<div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;정의역이 시그마필드가 아니므로 확률이라고 말할 수 없다</p></li></div><p><code>-</code> 희망: 이게 될 것 같다. 예를들면 함수 <span class="math inline">\(\tilde{P}:{\cal A} \to [0,1]\)</span>를 아래와 같이 정의하자.</p>
 <ul>
 <li><span class="math inline">\(\tilde{P}(\emptyset) = 0\)</span></li>
 <li><span class="math inline">\(\tilde{P}(\{1\}) = 1/4\)</span></li>
@@ -491,14 +666,14 @@ window.Quarto = {
 <li><span class="math inline">\(\tilde{P}(\{3,4\}) = 1/4\)</span></li>
 <li><span class="math inline">\(\tilde{P}(\Omega) = 1\)</span></li>
 </ul>
-<p>이 정도만 정의해보자. <span class="math inline">\(\tilde{P}\)</span>는 정의역이 시그마필드가 아니라는 점만 제외하면 확률의 공리 1,2,3을 따른다. 이렇게 함수 <span class="math inline">\(\tilde{P}\)</span>를 정의하게 되면</p>
+<p>이 정도만 정의해보자. <span class="math inline">\(\tilde{P}\)</span>는 정의역이 시그마필드가 아니라는 점만 제외하면 set function <span class="math inline">\(\tilde{P}\)</span> 는 확률의 공리 1,2,3을 따른다. 이렇게 함수 <span class="math inline">\(\tilde{P}\)</span>를 정의하게 되면</p>
 <p><span class="math display">\[\sigma({\cal A}) = \big\{\emptyset, \{1\}, \{2\}, \{1,2\}, \{3,4\}, \{1,3,4\}, \{2,3,4\}, \Omega \big\}\]</span></p>
-<p>에서의 확률 <span class="math inline">\(P:\sigma({\cal A}) \to [0,1]\)</span>는 확률 비슷한 함수 <span class="math inline">\(\tilde{P}\)</span>를 “알아서, 잘, 센스있게” 확장하여 정의할 수 있다. 구체적으로는 아래와 같이 된다.</p>
+<p>에서의 확률 <span class="math inline">\(\mathbb{P}:\sigma({\cal A}) \to [0,1]\)</span>는 확률 비슷한 함수 <span class="math inline">\(\tilde{P}\)</span>를 “알아서, 잘, 센스있게” 확장하여 정의할 수 있다. 구체적으로는 아래와 같이 된다.</p>
 <table class="table">
 <thead>
 <tr class="header">
 <th style="text-align: center;"></th>
-<th style="text-align: center;"><span class="math inline">\(P\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\mathbb{P}\)</span></th>
 <th style="text-align: center;"><span class="math inline">\(\tilde{P}\)</span></th>
 </tr>
 </thead>
@@ -550,15 +725,16 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<p><strong>(예제2)</strong> – motivating EX (2)</p>
-<p><code>-</code> <span class="math inline">\(\Omega=\{1,2,3,4\}\)</span>이라고 하고 <span class="math inline">\({\cal A} = \{\emptyset, \{1\},\{2\}, \{3,4\}, \Omega\}\)</span> 라고 하자. 그리고 아래와 같은 <span class="math inline">\(\sigma({\cal A})\)</span>를 다시 상상하자.</p>
+<p><code>#</code></p>
+<p><code># 예제2</code> – motivating EX (2)</p>
+<p><span class="math inline">\(\Omega=\{1,2,3,4\}\)</span>이라고 하고 <span class="math inline">\({\cal A} = \{\emptyset, \{1\},\{2\}, \{3,4\}, \Omega\}\)</span> 라고 하자. 그리고 아래와 같은 <span class="math inline">\(\sigma({\cal A})\)</span>를 다시 상상하자.</p>
 <p><span class="math display">\[\sigma({\cal A}) = \big\{\emptyset, \{1\}, \{2\}, \{1,2\}, \{3,4\}, \{1,3,4\}, \{2,3,4\}, \Omega \big\}\]</span></p>
-<p><code>-</code> 위의 시그마필드에서 확률을 예제1과 다른 방식으로 정의할 수 도 있다. 예를들면 아래와 같은 방식으로 정의가능하다.</p>
+<p>위의 시그마필드에서 확률을 예제1과 다른 방식으로 정의할 수 도 있다. 예를들면 아래와 같은 방식으로 정의가능하다.</p>
 <table class="table">
 <thead>
 <tr class="header">
 <th style="text-align: center;"></th>
-<th style="text-align: center;"><span class="math inline">\(P_1\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\mathbb{P}_1\)</span></th>
 <th style="text-align: center;"><span class="math inline">\(\tilde{P}_1\)</span></th>
 </tr>
 </thead>
@@ -615,7 +791,7 @@ window.Quarto = {
 <thead>
 <tr class="header">
 <th style="text-align: center;"></th>
-<th style="text-align: center;"><span class="math inline">\(P_2\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\mathbb{P}_2\)</span></th>
 <th style="text-align: center;"><span class="math inline">\(\tilde{P}_2\)</span></th>
 </tr>
 </thead>
@@ -667,38 +843,39 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<p><code>-</code> 어떠한 방식으로 정의하든 <span class="math inline">\({\cal A}\)</span>에서 확률 비슷한 것 <span class="math inline">\(\tilde{P}_1,\tilde{P}_2\)</span>를 잘 정의하기만 <span class="math inline">\(\sigma({\cal A})\)</span>에서의 확률 <span class="math inline">\(P\)</span>로 적절하게 확장할 수 있다. 심지어 이런 확장은 유일한 듯 하다.</p>
+<p>어떠한 방식으로 정의하든 <span class="math inline">\({\cal A}\)</span>에서 확률 비슷한 것 <span class="math inline">\(\tilde{P}_1,\tilde{P}_2\)</span>를 잘 정의하기만 <span class="math inline">\(\sigma({\cal A})\)</span>에서의 확률로 적절하게 확장할 수 있다. 심지어 이런 확장은 유일한 듯 하다.</p>
 <blockquote class="blockquote">
-<p>귀찮아서 만든 이론2: 운이 좋다면, <span class="math inline">\({\cal A}\)</span> 에서 확률의 공리를 만족하는 적당한 함수 <span class="math inline">\(\tilde{P}:{\cal A} \to [0,1]\)</span>를 <span class="math inline">\((\Omega, \sigma({\cal A}))\)</span> 에서의 확률측도 <span class="math inline">\(P\)</span>로 업그레이드 할 수 있으며 업그레이드 결과는 유일하다.</p>
+<p>귀찮아서 만든 이론2: 운이 좋다면, <span class="math inline">\({\cal A}\)</span> 에서 확률의 공리를 만족하는 적당한 함수 <span class="math inline">\(\tilde{P}:{\cal A} \to [0,1]\)</span>를 <span class="math inline">\((\Omega, \sigma({\cal A}))\)</span> 에서의 확률측도 <span class="math inline">\(\mathbb{P}\)</span>로 업그레이드 할 수 있으며 업그레이드 결과는 유일하다.</p>
 </blockquote>
-<p><strong>(예제3)</strong> – 운이 안 좋은 경우</p>
-<p><code>-</code> <span class="math inline">\(\Omega=\{1,2,3\}\)</span> 이라고 하고 <span class="math inline">\({\cal A} = \{\emptyset, \{1,2\},\{2,3\}, \Omega\}\)</span> 라고 하자.</p>
-<p><code>-</code> 아래와 같은 확률 비슷한 함수 <span class="math inline">\(\tilde{P}:{\cal A} \to [0,1]\)</span>를 정의하자.</p>
+<p><code>#</code></p>
+<p><code># 예제3</code> – 운이 안 좋은 경우 1</p>
+<p><span class="math inline">\(\Omega=\{1,2,3\}\)</span> 이라고 하고 <span class="math inline">\({\cal A} = \{\emptyset, \{1,2\},\{2,3\}, \Omega\}\)</span> 라고 하자.</p>
+<p>아래와 같은 확률 비슷한 함수 <span class="math inline">\(\tilde{P}:{\cal A} \to [0,1]\)</span>를 정의하자.</p>
 <ul>
 <li><span class="math inline">\(\tilde{P}(\emptyset) = 0\)</span></li>
 <li><span class="math inline">\(\tilde{P}(\{1,2\}) = 0\)</span></li>
 <li><span class="math inline">\(\tilde{P}(\{2,3\}) = 0\)</span></li>
 <li><span class="math inline">\(\tilde{P}(\Omega) = 1\)</span></li>
 </ul>
-<p><code>-</code> <span class="math inline">\(\tilde{P}\)</span>는 분명히 <span class="math inline">\({\cal A}\)</span>에서 확률의 공리1-3을 만족한다.</p>
-<p><code>-</code> 하지만 <span class="math inline">\(\sigma({\cal A})\)</span>로의 확장은 불가능하다.</p>
-<p><strong>(예제4)</strong> – 운이 안 좋은 경우</p>
-<p><code>-</code> <span class="math inline">\(\Omega=\{1,2,3,4\}\)</span> 이라고 하고 <span class="math inline">\({\cal A} = \{\emptyset, \{1,2\},\{2,3\}, \Omega\}\)</span> 라고 하자.</p>
-<p><code>-</code> 아래와 같은 확률 비슷한 함수 <span class="math inline">\(\tilde{P}:{\cal A} \to [0,1]\)</span>를 정의하자.</p>
+<p><span class="math inline">\(\tilde{P}\)</span>는 분명히 <span class="math inline">\({\cal A}\)</span>에서 확률의 공리1-3을 만족한다. 하지만 <span class="math inline">\(\sigma({\cal A})\)</span>로의 확장은 불가능하다.</p>
+<p><code>#</code></p>
+<p><code># 예제4</code> – 운이 안 좋은 경우 2</p>
+<p><span class="math inline">\(\Omega=\{1,2,3,4\}\)</span> 이라고 하고 <span class="math inline">\({\cal A} = \{\emptyset, \{1,2\},\{2,3\}, \Omega\}\)</span> 라고 하자.</p>
+<p>아래와 같은 확률 비슷한 함수 <span class="math inline">\(\tilde{P}:{\cal A} \to [0,1]\)</span>를 정의하자.</p>
 <ul>
 <li><span class="math inline">\(\tilde{P}(\emptyset) = 0\)</span></li>
 <li><span class="math inline">\(\tilde{P}(\{1,2\}) = 1/2\)</span></li>
 <li><span class="math inline">\(\tilde{P}(\{2,3\}) = 1/2\)</span></li>
 <li><span class="math inline">\(\tilde{P}(\Omega) = 1\)</span></li>
 </ul>
-<p><code>-</code> <span class="math inline">\(\tilde{P}\)</span>는 분명히 <span class="math inline">\({\cal A}\)</span>에서 확률의 공리1-3을 만족한다.</p>
-<p><code>-</code> <span class="math inline">\(\sigma({\cal A})\)</span>로의 확장도 가능하다. 하지만 유일한 확장을 보장하지 않는다.</p>
+<p><span class="math inline">\(\tilde{P}\)</span>는 분명히 <span class="math inline">\({\cal A}\)</span>에서 확률의 공리1-3을 만족한다.</p>
+<p><span class="math inline">\(\sigma({\cal A})\)</span>로의 확장도 가능하다. 하지만 유일한 확장을 보장하지 않는다.</p>
 <table class="table">
 <thead>
 <tr class="header">
 <th style="text-align: center;"></th>
-<th style="text-align: center;"><span class="math inline">\(P_1\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(P_2\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\mathbb{P}_1\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\mathbb{P}_2\)</span></th>
 <th style="text-align: center;"><span class="math inline">\(\tilde{P}\)</span></th>
 </tr>
 </thead>
@@ -807,9 +984,11 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<p><strong>(예제5)</strong> – 혹시…</p>
-<p><code>-</code> <span class="math inline">\(\Omega=\mathbb{R}\)</span>, <span class="math inline">\({\cal A}=\big\{[a,b]: a,b \in \mathbb{R}, a&lt;b \big\}\)</span> 라고 하자.</p>
-<p><code>-</code> <span class="math inline">\({\cal A}\)</span>에서만 측도비슷한 함수 <span class="math inline">\(\tilde{m}([a,b])=b-a\)</span>를 잘 정의한다면 그것이 <span class="math inline">\(\sigma({\cal A})\)</span>에서의 측도 <span class="math inline">\(m\)</span>으로 업그레이드 가능하며, 그 업그레이드 결과는 유일할까?</p>
+<p><code>#</code></p>
+<p><code># 예제5</code> – 혹시…</p>
+<p><span class="math inline">\(\Omega=\mathbb{R}\)</span>, <span class="math inline">\({\cal A}=\big\{[a,b]: a,b \in \mathbb{R}, a&lt;b \big\}\)</span> 라고 하자.</p>
+<p><span class="math inline">\({\cal A}\)</span>에서만 측도비슷한 함수 <span class="math inline">\(\tilde{\lambda}([a,b])=b-a\)</span>를 잘 정의한다면 그것이 <span class="math inline">\(\sigma({\cal A})\)</span>에서의 측도 <span class="math inline">\(\lambda\)</span>으로 업그레이드 가능하며, 그 업그레이드 결과는 유일할까?</p>
+<p><code>#</code></p>
 
 
 </section>
@@ -945,6 +1124,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
     if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
@@ -959,14 +1159,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             break;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
+        typesetMath(container);
         return container.innerHTML
       } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
+        typesetMath(note);
         return note.innerHTML;
       }
     } else {
@@ -975,9 +1171,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
+      typesetMath(note);
       return note.innerHTML;
     }
   }

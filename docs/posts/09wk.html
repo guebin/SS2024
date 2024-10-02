@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.533">
+<meta name="generator" content="quarto-1.4.520">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -71,33 +71,6 @@ ul.task-list li input[type="checkbox"] {
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -206,7 +179,7 @@ window.Quarto = {
 </section>
 <section id="확률변수-오개념-정리" class="level1 page-columns page-full">
 <h1>확률변수 오개념 정리</h1>
-<section id="확률공간과-용어들" class="level2">
+<section id="확률공간과-용어들" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="확률공간과-용어들">확률공간과 용어들</h2>
 <p><code>-</code> 동전예제에서의 확률공간 <span class="math inline">\((\Omega,{\cal F},P)\)</span>를 가정하고 용어를 정리해보자.</p>
 <ul>
@@ -216,10 +189,10 @@ window.Quarto = {
 <li>set of “events”: <span class="math inline">\({\cal F}\)</span></li>
 <li>probabilites: <span class="math inline">\(P:{\cal F} \to [0,1]\)</span></li>
 </ul>
-<div class="img-fluid quarto-figure quarto-figure-center">
-<figure class="figure">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
 <p><img src="09wk_files/figure-html/2c6bc936-3c67-4e00-a2ec-c0598d4e42f9-1-c8a4b443-0b7b-401a-87d9-a17a1c13f6d0.png" class="img-fluid figure-img"></p>
-<figcaption>그림1: 확률을 위한 기본용어</figcaption>
+<figcaption class="margin-caption">그림1: 확률을 위한 기본용어</figcaption>
 </figure>
 </div>
 </section>
@@ -373,13 +346,13 @@ window.Quarto = {
 <p><span class="math display">\[\forall B \in {\cal R}: X^{-1}(B) = \{\omega:X(\omega)\in B \} \in {\cal F}\]</span></p>
 <p><code>-</code> 결국확률변수를 정의하기 위해서 2개의 가측공간 <span class="math inline">\((\Omega, {\cal F})\)</span>, <span class="math inline">\((\mathbb{R}, {\cal R})\)</span>이 필요함.</p>
 </section>
-<section id="잴-수-있는-함수" class="level2">
+<section id="잴-수-있는-함수" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="잴-수-있는-함수">잴 수 있는 함수</h2>
 <p><code>-</code> 교재의 정의1</p>
-<div class="img-fluid quarto-figure quarto-figure-center">
-<figure class="figure">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
 <p><img src="09wk_files/figure-html/cc6ad753-ddaf-4c85-a8d7-f8180dc732a5-1-72ca667e-06cc-4236-98d9-6fdd8cf5e190.png" class="img-fluid figure-img"></p>
-<figcaption>그림2: Durret에서 긁어온 확률변수의 정의</figcaption>
+<figcaption class="margin-caption">그림2: Durret에서 긁어온 확률변수의 정의</figcaption>
 </figure>
 </div>
 <ul>
@@ -388,10 +361,10 @@ window.Quarto = {
 <li>두개의 가측공간에 대한 언급은 매우 모호하게 되어있음.</li>
 </ul>
 <p><code>-</code> 교재의 정의2</p>
-<div class="img-fluid quarto-figure quarto-figure-center">
-<figure class="figure">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
 <p><img src="09wk_files/figure-html/b30dbdf1-b0e2-40f7-aad6-94048a98c299-1-12848e5a-dc22-4b3c-8694-ffafcde27d2b.png" class="img-fluid figure-img"></p>
-<figcaption>그림3: Durret에서 긁어온 확률변수의 정의2</figcaption>
+<figcaption class="margin-caption">그림3: Durret에서 긁어온 확률변수의 정의2</figcaption>
 </figure>
 </div>
 <ul>
@@ -428,10 +401,10 @@ window.Quarto = {
 <p><strong><span class="math inline">\(Y\)</span>는 확률변수임</strong></p>
 <p><span class="math inline">\(\forall B \in {\cal R}\)</span>에 대하여 <span class="math inline">\(Y^{-1}(B)\in {\cal F}\)</span>가 성립함.</p>
 <ul>
-<li><span class="math inline">\(\{\omega: Y(\omega) \in \emptyset\}  = \emptyset \in \sigma({\cal A})\)</span></li>
-<li><span class="math inline">\(\{\omega: Y(\omega) \in \{1\}\}  = \{a\} \in \sigma({\cal A})\)</span></li>
-<li><span class="math inline">\(\{\omega: Y(\omega) \in \{2\}\}  = \{b,c,d\} \in \sigma({\cal A})\)</span></li>
-<li><span class="math inline">\(\{\omega: Y(\omega) \in \{1,2\}\}  = \{a,b,c,d\} \in \sigma({\cal A})\)</span></li>
+<li><span class="math inline">\(\{\omega: Y(\omega) \in \emptyset\} = \emptyset \in \sigma({\cal A})\)</span></li>
+<li><span class="math inline">\(\{\omega: Y(\omega) \in \{1\}\} = \{a\} \in \sigma({\cal A})\)</span></li>
+<li><span class="math inline">\(\{\omega: Y(\omega) \in \{2\}\} = \{b,c,d\} \in \sigma({\cal A})\)</span></li>
+<li><span class="math inline">\(\{\omega: Y(\omega) \in \{1,2\}\} = \{a,b,c,d\} \in \sigma({\cal A})\)</span></li>
 <li>위에서 언급되지 않은 <span class="math inline">\(B \in {\cal R}\)</span>에 대해서는 모두 <span class="math inline">\(Y^{-1}(B)=\emptyset \in \sigma({\cal A})\)</span>가 성립함.</li>
 </ul>
 <p><code>(2)</code> 두개의 잴 수 있는 공간 <span class="math inline">\((\Omega, {\cal F})\)</span>와 <span class="math inline">\((S,{\cal S})\)</span>를 고려하자. 단,</p>
@@ -448,7 +421,7 @@ window.Quarto = {
 \end{cases}\]</span></p>
 <p><span class="math inline">\(X\)</span>는 <span class="math inline">\((\Omega,{\cal F})\to(S,{\cal S})\)</span>인 가측함수인가?</p>
 <p><code>(풀이)</code> 잴 수 있는 함수임.</p>
-<p>Note: <span class="math inline">\(\sigma({\cal A})=\{\emptyset, \mathbb{Q}, \mathbb{Q}^c, \mathbb{R} \}, 2^S  = \{\emptyset, \{0\}, \{1\}, \{0,1\}\}\)</span></p>
+<p>Note: <span class="math inline">\(\sigma({\cal A})=\{\emptyset, \mathbb{Q}, \mathbb{Q}^c, \mathbb{R} \}, 2^S = \{\emptyset, \{0\}, \{1\}, \{0,1\}\}\)</span></p>
 <p>잴 수 있는 함수임을 체크하기 위해서는 <span class="math inline">\(2^S\)</span>의 모든 원소 <span class="math inline">\(B\)</span>에 대하여 <span class="math inline">\(X^{-1}(B):= \{\omega : X(\omega) \in B\} \in {\cal F}\)</span> 임을 확인하면 된다.</p>
 <ul>
 <li><span class="math inline">\(B=\emptyset\)</span> 일 경우: <span class="math inline">\(\{\omega: X(\omega) \in \emptyset\}=\emptyset \in \sigma({\cal A})\)</span></li>
@@ -611,6 +584,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
     if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
@@ -625,14 +619,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             break;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
+        typesetMath(container);
         return container.innerHTML
       } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
+        typesetMath(note);
         return note.innerHTML;
       }
     } else {
@@ -641,9 +631,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
+      typesetMath(note);
       return note.innerHTML;
     }
   }
