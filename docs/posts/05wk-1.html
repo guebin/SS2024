@@ -437,11 +437,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
+<p><code>-</code> 아래를 체크해보자.</p>
+<ul>
+<li><span class="math inline">\(A, B \in {\cal F} \Rightarrow A \cap B \in {\cal F}\)</span></li>
+<li><span class="math inline">\(\emptyset \in {\cal F}\)</span></li>
+<li><span class="math inline">\(A, B \in {\cal F} \Rightarrow A-B \in {\cal F}\)</span></li>
+<li><span class="math inline">\(\big(\forall n \in \mathbb{N}: A_n \in {\cal F} \big) \Rightarrow \cap_{n=1}^{\infty} A_n \in~ {\cal F}\)</span></li>
+</ul>
 </section>
 </section>
 <section id="측도와-확률측도" class="level1 page-columns page-full">
 <h1>4. 측도와 확률측도</h1>
 <p><code>-</code> <code>강의오류 공지</code> – 시그마필드는 사실 “확률값”을 무모순으로 정의가능한 집합들의 모임이 아닙니다. 엄밀하게는 (확률이든 길이든 넓이든 뭐든) “<strong>잰다</strong>”라는 행위를 합리적이게 만드는 집합들의 모임입니다. 따라서 잴 수 있는 공간 <span class="math inline">\((\Omega,{\cal F})\)</span> 에서 <span class="math inline">\({\cal F}\)</span> 는 <span class="math inline">\(\Omega\)</span> 의 부분집합중, (확률이든 길이든 넓이든 뭐든) “<strong>잰다</strong>”라는 행위가 말이되게 만드는 집합들의 모임을 의미한다고 볼 수 있습니다. 혼란을 드려 죄송합니다. (그런데 내년에도 이렇게 설명하지 않을까요?.. ㅎㅎ)</p>
+<blockquote class="blockquote">
+<p>강의오류에도 불구하고 시그마필드는 의미가 있다. 시그마필드를 만들었다고 거기에서 항상 확률을 항상 정의가능한 것은 아니지만, 확률은 항상 시그마필드에서 정의해야 하기 때문. 즉 “시그마필드 <span class="math inline">\(\Leftrightarrow\)</span> <span class="math inline">\(\Omega=[0,1)\)</span>의 부분집합중 확률을 잴 수 있는 집합의 모임” 은 아니지만 “시그마필드 <span class="math inline">\(\Leftarrow\)</span> <span class="math inline">\(\Omega=[0,1)\)</span>의 부분집합중 확률을 잴 수 있는 집합의 모임” 은 성립</p>
+</blockquote>
 <p><code>-</code> 여기에서 “<strong>잰다</strong>”라는 행위를 함수로 이해한다면, 그 함수의 정의역이 <span class="math inline">\({\cal F}\)</span> 가 되는 것이다. 참고로 “<strong>잰다</strong>”라는 행위를 수행하는 함수를 <strong><em>measure</em></strong> 혹은 <strong><em>measurable function</em></strong>, <strong><em>measurable mapping</em></strong> 이라고 한다.</p>
 <section id="a.-측도의-정의-확률측도의-정의" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="a.-측도의-정의-확률측도의-정의">A. 측도의 정의, 확률측도의 정의</h2>
@@ -463,11 +473,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="b.-확률측도" class="level2">
 <h2 class="anchored" data-anchor-id="b.-확률측도">B. 확률측도</h2>
 <p><code># 예제1</code> – 시그마필드에서만 확률정의가능</p>
-<p><span class="math inline">\(\Omega=\{H,T\}\)</span> 라고 하고 <span class="math inline">\({\cal F}=\{\emptyset, \{H\},\Omega\}\)</span> 이라고 하자. 아래와 같은 함수 <span class="math inline">\(P\)</span>를 고려하고 이것을 확률이라고 하자. 이러한 확률은 합리적인가?</p>
+<p><span class="math inline">\(\Omega=\{H,T\}\)</span> 라고 하고 <span class="math inline">\({\cal F}=\{\emptyset, \{H\},\Omega\}\)</span> 이라고 하자. 아래와 같은 함수 <span class="math inline">\(\mathbb{P}\)</span> 를 고려하고 이것을 확률이라고 하자. 이러한 확률은 합리적인가?</p>
 <ul>
-<li><span class="math inline">\(P(\emptyset) = 0\)</span></li>
-<li><span class="math inline">\(P(\{H\}) = \frac{1}{2}\)</span></li>
-<li><span class="math inline">\(P(\Omega) = 1\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\emptyset) = 0\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\{H\}) = \frac{1}{2}\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\Omega) = 1\)</span></li>
 </ul>
 <p>(해설) <span class="math inline">\({\cal F}\)</span>는 시그마필드가 아니므로 이 위에서는 애초에 확률을 정의할 수 없음.</p>
 <blockquote class="blockquote">
@@ -475,48 +485,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </blockquote>
 <p><code>#</code></p>
 <p><code># 예제2</code> – 잘 정의된 확률</p>
-<p><span class="math inline">\(\Omega=\{H,T\}\)</span> 라고 하고 <span class="math inline">\({\cal F}=2^{\Omega}\)</span> 이다. 아래와 같은 함수 <span class="math inline">\(P\)</span>를 고려하고 이를 잴 수 있는 공간 <span class="math inline">\((\Omega,{\cal F})\)</span> 에서의 확률이라고 하자. 이러한 확률은 합리적인가?</p>
+<p><span class="math inline">\(\Omega=\{H,T\}\)</span> 라고 하고 <span class="math inline">\({\cal F}=2^{\Omega}\)</span> 이다. 아래와 같은 함수 <span class="math inline">\(\mathbb{P}\)</span> 를 고려하고 이를 잴 수 있는 공간 <span class="math inline">\((\Omega,{\cal F})\)</span> 에서의 확률이라고 하자. 이러한 확률은 합리적인가?</p>
 <ul>
-<li><span class="math inline">\(P(\emptyset) = 0\)</span></li>
-<li><span class="math inline">\(P(\{H\}) = \frac{1}{100}\)</span></li>
-<li><span class="math inline">\(P(\{T\}) = \frac{99}{100}\)</span></li>
-<li><span class="math inline">\(P(\Omega) = 1\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\emptyset) = 0\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\{H\}) = \frac{1}{100}\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\{T\}) = \frac{99}{100}\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\Omega) = 1\)</span></li>
 </ul>
 <p>(해설) 합리적임.</p>
 <p><code>#</code></p>
 <p><code># 예제3</code> – 확률은 0보다 커야해.</p>
-<p><span class="math inline">\(\Omega=\{H,T\}\)</span> 라고 하고 <span class="math inline">\({\cal F}=2^{\Omega}\)</span> 이다. 아래와 같은 함수 <span class="math inline">\(P\)</span>를 고려하고 이를 잴 수 있는 공간 <span class="math inline">\((\Omega,{\cal F})\)</span> 에서의 확률이라고 하자. 이러한 확률은 합리적인가?</p>
+<p><span class="math inline">\(\Omega=\{H,T\}\)</span> 라고 하고 <span class="math inline">\({\cal F}=2^{\Omega}\)</span> 이다. 아래와 같은 함수 <span class="math inline">\(\mathbb{P}\)</span> 를 고려하고 이를 잴 수 있는 공간 <span class="math inline">\((\Omega,{\cal F})\)</span> 에서의 확률이라고 하자. 이러한 확률은 합리적인가?</p>
 <ul>
-<li><span class="math inline">\(P(\emptyset) = 0\)</span></li>
-<li><span class="math inline">\(P(\{H\}) = -\frac{1}{2}\)</span></li>
-<li><span class="math inline">\(P(\{T\}) = \frac{1}{2}\)</span></li>
-<li><span class="math inline">\(P(\Omega) = 1\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\emptyset) = 0\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\{H\}) = -\frac{1}{2}\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\{T\}) = \frac{1}{2}\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\Omega) = 1\)</span></li>
 </ul>
 <p>(해설) 확률은 음수가 나오면 안되므로 합리적이지 않음.</p>
 <p><code>#</code></p>
 <p><code># 예제4</code> – 전체확률은 1이어야 함.</p>
-<p><span class="math inline">\(\Omega=\{H,T\}\)</span> 라고 하고 <span class="math inline">\({\cal F}=\{\emptyset, \Omega\}\)</span> 이다. 아래와 같은 함수 <span class="math inline">\(P:{\cal F} \to [0,1]\)</span>를 고려하고 이를 잴 수 있는 공간 <span class="math inline">\((\Omega,{\cal F})\)</span> 에서의 확률이라고 하자. 이러한 확률은 합리적인가?</p>
+<p><span class="math inline">\(\Omega=\{H,T\}\)</span> 라고 하고 <span class="math inline">\({\cal F}=\{\emptyset, \Omega\}\)</span> 이다. 아래와 같은 함수 <span class="math inline">\(\mathbb{P}:{\cal F} \to [0,1]\)</span>를 고려하고 이를 잴 수 있는 공간 <span class="math inline">\((\Omega,{\cal F})\)</span> 에서의 확률이라고 하자. 이러한 확률은 합리적인가?</p>
 <ul>
-<li><span class="math inline">\(P(\emptyset) = 0\)</span></li>
-<li><span class="math inline">\(P(\Omega) = 0.5\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\emptyset) = 0\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\Omega) = 0.5\)</span></li>
 </ul>
 <p>(해설) 전체확률은 1이어야 하므로 합리적이지 않음.</p>
 <p><code>#</code></p>
 <p><code># 예제5</code> – 공집합의 확률은 0이어야 함.</p>
-<p><span class="math inline">\(\Omega=\{H,T\}\)</span> 라고 하고 <span class="math inline">\({\cal F}=\{\emptyset, \Omega\}\)</span> 이다. 아래와 같은 함수 <span class="math inline">\(P:{\cal F} \to [0,1]\)</span>를 고려하고 이를 잴 수 있는 공간 <span class="math inline">\((\Omega,{\cal F})\)</span> 에서의 확률이라고 하자. 이러한 확률은 합리적인가?</p>
+<p><span class="math inline">\(\Omega=\{H,T\}\)</span> 라고 하고 <span class="math inline">\({\cal F}=\{\emptyset, \Omega\}\)</span> 이다. 아래와 같은 함수 <span class="math inline">\(\mathbb{P}:{\cal F} \to [0,1]\)</span>를 고려하고 이를 잴 수 있는 공간 <span class="math inline">\((\Omega,{\cal F})\)</span> 에서의 확률이라고 하자. 이러한 확률은 합리적인가?</p>
 <ul>
-<li><span class="math inline">\(P(\emptyset) = 0.5\)</span></li>
-<li><span class="math inline">\(P(\Omega) = 1\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\emptyset) = 0.5\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\Omega) = 1\)</span></li>
 </ul>
 <p>(해설) 공집합의 확률은 0이어야 하므로 합리적이지 않음.</p>
 <p><code>#</code></p>
 <p><code># 예제6</code> – 서로소인 집합을 합친 확률, 여집합의 확률</p>
-<p><span class="math inline">\(\Omega=\{H,T\}\)</span> 라고 하고 <span class="math inline">\({\cal F}=\{\emptyset, \{H\}, \{T\}, \Omega\}\)</span> 이다. 아래와 같은 함수 <span class="math inline">\(P:{\cal F} \to [0,1]\)</span>를 고려하고 이를 잴 수 있는 공간 <span class="math inline">\((\Omega,{\cal F})\)</span> 에서의 확률이라고 하자. 이러한 확률은 합리적인가?</p>
+<p><span class="math inline">\(\Omega=\{H,T\}\)</span> 라고 하고 <span class="math inline">\({\cal F}=\{\emptyset, \{H\}, \{T\}, \Omega\}\)</span> 이다. 아래와 같은 함수 <span class="math inline">\(\mathbb{P}:{\cal F} \to [0,1]\)</span>를 고려하고 이를 잴 수 있는 공간 <span class="math inline">\((\Omega,{\cal F})\)</span> 에서의 확률이라고 하자. 이러한 확률은 합리적인가?</p>
 <ul>
-<li><span class="math inline">\(P(\emptyset) = 0\)</span></li>
-<li><span class="math inline">\(P(\{H\}) = 1/3\)</span></li>
-<li><span class="math inline">\(P(\{T\}) = 1/3\)</span></li>
-<li><span class="math inline">\(P(\Omega) = 1\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\emptyset) = 0\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\{H\}) = 1/3\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\{T\}) = 1/3\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\Omega) = 1\)</span></li>
 </ul>
 <p>(해설) 합리적이지 않음. 왜냐하면</p>
 <ul>
@@ -528,21 +538,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code># 예제7</code> – 포함관계에 있는 집합의 확률</p>
 <p><span class="math inline">\(\Omega=\{1,2,3\}\)</span> 라고 하고</p>
 <p><span class="math display">\[{\cal F}=\{\emptyset, \{1\}, \{2\}, \{3\}, \{1,2\}, \{1,3\}, \{2,3\}, \Omega\}\]</span></p>
-<p>라고 하자. 아래와 같은 함수 <span class="math inline">\(P:{\cal F} \to [0,1]\)</span>를 고려하고 이를 잴 수 있는 공간 <span class="math inline">\((\Omega,{\cal F})\)</span> 에서의 확률이라고 하자. 이러한 확률은 합리적인가?</p>
+<p>라고 하자. 아래와 같은 함수 <span class="math inline">\(\mathbb{P}:{\cal F} \to [0,1]\)</span>를 고려하고 이를 잴 수 있는 공간 <span class="math inline">\((\Omega,{\cal F})\)</span> 에서의 확률이라고 하자. 이러한 확률은 합리적인가?</p>
 <ul>
-<li><span class="math inline">\(P(\emptyset) = 0\)</span></li>
-<li><span class="math inline">\(P(\{1\}) = 1/4\)</span></li>
-<li><span class="math inline">\(P(\{2\}) = 1/4\)</span></li>
-<li><span class="math inline">\(P(\{3\}) = 2/4\)</span></li>
-<li><span class="math inline">\(P(\{1,2\}) = 2/4\)</span></li>
-<li><span class="math inline">\(P(\{1,3\}) = 3/4\)</span></li>
-<li><span class="math inline">\(P(\{2,3\}) = 1/4\)</span></li>
-<li><span class="math inline">\(P(\Omega) = 1\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\emptyset) = 0\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\{1\}) = 1/4\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\{2\}) = 1/4\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\{3\}) = 2/4\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\{1,2\}) = 2/4\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\{1,3\}) = 3/4\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\{2,3\}) = 1/4\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\Omega) = 1\)</span></li>
 </ul>
 <p>(해설) 합리적이지 않음. 왜냐하면</p>
 <ul>
-<li><span class="math inline">\(P(\{2\}\cup \{3\})=P(\{2,3\})=1/4\)</span></li>
-<li><span class="math inline">\(P(\{2\}\cup \{3\})=P(\{2\})+P(\{3\})=3/4\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\{2\}\cup \{3\})=\mathbb{P}(\{2,3\})=1/4\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\{2\}\cup \{3\})=\mathbb{P}(\{2\})+\mathbb{P}(\{3\})=3/4\)</span></li>
 </ul>
 <p>이므로 모순임.</p>
 <p><code>#</code></p>
@@ -552,21 +562,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code># 예제7</code> – 포함관계에 있는 집합의 확률</p>
 <p><span class="math inline">\(\Omega=\{1,2,3\}\)</span> 라고 하고</p>
 <p><span class="math display">\[{\cal F}=\{\emptyset, \{1\}, \{2\}, \{3\}, \{1,2\}, \{1,3\}, \{2,3\}, \Omega\}\]</span></p>
-<p>라고 하자. 아래와 같은 함수 <span class="math inline">\(P:{\cal F} \to [0,1]\)</span>를 고려하고 이를 잴 수 있는 공간 <span class="math inline">\((\Omega,{\cal F})\)</span> 에서의 확률이라고 하자. 이러한 확률은 합리적인가?</p>
+<p>라고 하자. 아래와 같은 함수 <span class="math inline">\(\mathbb{P}:{\cal F} \to [0,1]\)</span>를 고려하고 이를 잴 수 있는 공간 <span class="math inline">\((\Omega,{\cal F})\)</span> 에서의 확률이라고 하자. 이러한 확률은 합리적인가?</p>
 <ul>
-<li><span class="math inline">\(P(\emptyset) = 0\)</span></li>
-<li><span class="math inline">\(P(\{1\}) = 1/4\)</span></li>
-<li><span class="math inline">\(P(\{2\}) = 1/4\)</span></li>
-<li><span class="math inline">\(P(\{3\}) = 2/4\)</span></li>
-<li><span class="math inline">\(P(\{1,2\}) = 2/4\)</span></li>
-<li><span class="math inline">\(P(\{1,3\}) = 3/4\)</span></li>
-<li><span class="math inline">\(P(\{2,3\}) = 1/4\)</span></li>
-<li><span class="math inline">\(P(\Omega) = 1\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\emptyset) = 0\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\{1\}) = 1/4\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\{2\}) = 1/4\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\{3\}) = 2/4\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\{1,2\}) = 2/4\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\{1,3\}) = 3/4\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\{2,3\}) = 1/4\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\Omega) = 1\)</span></li>
 </ul>
 <p>(해설) 합리적이지 않음. 왜냐하면</p>
 <ul>
-<li><span class="math inline">\(P(\{2\}\cup \{3\})=P(\{2,3\})=1/4\)</span></li>
-<li><span class="math inline">\(P(\{2\}\cup \{3\})=P(\{2\})+P(\{3\})=3/4\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\{2\}\cup \{3\})=\mathbb{P}(\{2,3\})=1/4\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\{2\}\cup \{3\})=\mathbb{P}(\{2\})+\mathbb{P}(\{3\})=3/4\)</span></li>
 </ul>
 <p>이므로 모순임.</p>
 <p><code>#</code></p>
@@ -633,10 +643,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </blockquote>
 <p><code>#</code></p>
 <p><code># 예제2</code></p>
-<p><span class="math inline">\(\Omega = [0,1)\)</span> 이라고 하자. 이중에서 우리가 관심있는 집합들은 르벡메져로 길이를 명확하게 잴 수 있는 아래와 같은 형태이다.</p>
+<p><span class="math inline">\(\Omega = \mathbb{R}\)</span> 이라고 하자. 이중에서 우리가 관심있는 집합들은 르벡메져로 길이를 명확하게 잴 수 있는 아래와 같은 형태이다.</p>
 <p><span class="math display">\[[a,b]\]</span></p>
-<p>여기에서 <span class="math inline">\(a,b \in \mathbb{R}\)</span>, <span class="math inline">\(0\leq a&lt;b\leq 1\)</span> 이라고 하자. 따라서 이 경우 <span class="math inline">\({\cal A}\)</span>를 아래와 같이 설정할 수 있다.</p>
-<p><span class="math display">\[{\cal A} = \big\{[a,b]: a,b \in \mathbb{R}, 0\leq a&lt;b\leq 1 \big\}\]</span></p>
+<p>여기에서 <span class="math inline">\(a,b \in \mathbb{R}\)</span>, <span class="math inline">\(a&lt;b\)</span> 이라고 하자. 따라서 이 경우 <span class="math inline">\({\cal A}\)</span>를 아래와 같이 설정할 수 있다.</p>
+<p><span class="math display">\[{\cal A} = \big\{[a,b]: a,b \in \mathbb{R}, a&lt;b\big\}\]</span></p>
 <p>이제 <span class="math inline">\(\sigma({\cal A}):={\cal R}\)</span> 를 상상하자. (귀찮아서 만든 이론1에 의하면 이러한 <span class="math inline">\({\cal R}\)</span> 는 항상 존재함) 언뜻 생각하면 <span class="math inline">\({\cal R}\)</span>의 원소는 <span class="math inline">\([a,b]\)</span> 의 형태만 가능하여, 확률 혹은 길이를 정의함에 너무 제한적인 정의역일것 같은데 그렇지 않다. <span class="math inline">\({\cal R}\)</span> 은 상당히 많은 케이스를 포함하는 집합이다. 예를들면 아래와 같은 집합들은 모두 <span class="math inline">\({\cal R}\)</span> 의 원소이다.</p>
 <ul>
 <li><span class="math inline">\([0,2)\)</span></li>
@@ -987,7 +997,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code>#</code></p>
 <p><code># 예제5</code> – 혹시…</p>
 <p><span class="math inline">\(\Omega=\mathbb{R}\)</span>, <span class="math inline">\({\cal A}=\big\{[a,b]: a,b \in \mathbb{R}, a&lt;b \big\}\)</span> 라고 하자.</p>
-<p><span class="math inline">\({\cal A}\)</span>에서만 측도비슷한 함수 <span class="math inline">\(\tilde{\lambda}([a,b])=b-a\)</span>를 잘 정의한다면 그것이 <span class="math inline">\(\sigma({\cal A})\)</span>에서의 측도 <span class="math inline">\(\lambda\)</span>으로 업그레이드 가능하며, 그 업그레이드 결과는 유일할까?</p>
+<p><span class="math inline">\({\cal A}\)</span>에서만 측도비슷한 함수 <span class="math inline">\(\tilde{\lambda}([a,b])=b-a\)</span>를 잘 정의한다면 그것이 <span class="math inline">\(\sigma({\cal A})\)</span>에서의 측도 <span class="math inline">\(\lambda\)</span>으로 업그레이드 가능하며, 그 업그레이드 결과는 유일할까? 그래서 아래의 집합들에 대한 확률을 무모순으로 정의가능할까?</p>
+<ul>
+<li><span class="math inline">\([0,2)\)</span></li>
+<li><span class="math inline">\(\{2\}\)</span></li>
+<li><span class="math inline">\((0,2)\)</span></li>
+<li><span class="math inline">\([0,\infty)\)</span>, <span class="math inline">\((0,\infty)\)</span></li>
+<li><span class="math inline">\((-\infty,0)\)</span>, <span class="math inline">\((-\infty,0]\)</span></li>
+<li><span class="math inline">\([1,2] \cup [3,4]\)</span></li>
+<li><span class="math inline">\((1,2] \cup [3,4)\)</span></li>
+<li><span class="math inline">\(\mathbb{N}\)</span>, <span class="math inline">\(\mathbb{Z}\)</span>, <span class="math inline">\(\mathbb{Q}\)</span></li>
+<li><span class="math inline">\([0,2] \cap \mathbb{Q}\)</span></li>
+</ul>
+<blockquote class="blockquote">
+<p>이게 가능하다면 대박인데, 결론적으로 말하면 이게 가능하다. 이게 가능한 이유는 카라테오도리의 정리 때문</p>
+</blockquote>
 <p><code>#</code></p>
 
 
