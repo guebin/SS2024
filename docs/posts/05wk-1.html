@@ -171,6 +171,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#a.-상황1-시그마필드-구하기-귀찮아" id="toc-a.-상황1-시그마필드-구하기-귀찮아" class="nav-link" data-scroll-target="#a.-상황1-시그마필드-구하기-귀찮아">A. 상황1 – 시그마필드 구하기 귀찮아</a></li>
   <li><a href="#b.-상황2-확률-정의하기-귀찮아" id="toc-b.-상황2-확률-정의하기-귀찮아" class="nav-link" data-scroll-target="#b.-상황2-확률-정의하기-귀찮아">B. 상황2 – 확률 정의하기 귀찮아</a></li>
   </ul></li>
+  <li><a href="#측도론의-유산" id="toc-측도론의-유산" class="nav-link" data-scroll-target="#측도론의-유산">6. 측도론의 유산</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="05wk-1.out.ipynb" download="05wk-1.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
@@ -1010,12 +1011,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><span class="math inline">\([0,2] \cap \mathbb{Q}\)</span></li>
 </ul>
 <blockquote class="blockquote">
-<p>이게 가능하다면 대박인데, 결론적으로 말하면 이게 가능하다. 이게 가능한 이유는 카라테오도리의 정리 때문</p>
+<p>이게 가능하다면 대박인데, 결론적으로 말하면 이게 가능하다. 이게 가능한 이유는 카라테오도리의 확장정리 때문</p>
 </blockquote>
 <p><code>#</code></p>
-
-
 </section>
+</section>
+<section id="측도론의-유산" class="level1 page-columns page-full">
+<h1>6. 측도론의 유산</h1>
+<blockquote class="blockquote">
+<p>이걸 제가 좀 자세히 할지 못할지 모르겠네요..</p>
+</blockquote>
+<p><code># 이론</code> – 아래와 같은 집합을 고려하자.</p>
+<ul>
+<li><span class="math inline">\({\cal A}_1:= \{A\subset \mathbb{R}: A \text{ is open}\}\)</span><a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></li>
+<li><span class="math inline">\({\cal A}_2:= \{(a,b): a,b \in \mathbb{R}, a&lt;b\}\)</span></li>
+<li><span class="math inline">\({\cal A}_3:= \{[a,b): a,b \in \mathbb{R}, a&lt;b\}\)</span></li>
+<li><span class="math inline">\({\cal A}_4:= \{(a,b]: a,b \in \mathbb{R}, a&lt;b\}\)</span></li>
+<li><span class="math inline">\({\cal A}_5:= \{[a,b]: a,b \in \mathbb{R}, a&lt;b\}\)</span></li>
+<li><span class="math inline">\({\cal A}_6:= \{(-\infty,b): a,b \in \mathbb{R}, a&lt;b\}\)</span></li>
+<li><span class="math inline">\({\cal A}_7:= \{(-\infty,b]: a,b \in \mathbb{R}, a&lt;b\}\)</span></li>
+<li><span class="math inline">\({\cal A}_8:= \{(a,\infty): a,b \in \mathbb{R}, a&lt;b\}\)</span></li>
+<li><span class="math inline">\({\cal A}_9:= \{[a,\infty): a,b \in \mathbb{R}, a&lt;b\}\)</span></li>
+</ul>
+<div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;여기에서 open은 엄밀하게 말하면 usual topological spcace <span class="math inline">\((\mathbb{R},{\cal U})\)</span> 에서의 <span class="math inline">\({\cal U}\)</span>-open set을 의미한다. 즉 보통위상공간에서 정의가능한 openset을 의미한다.</p></li></div><p>아래가 성립한다.</p>
+<p><span class="math display">\[{\cal R}:={\cal B}(\mathbb{R}) = \sigma({\cal A}_1)=\sigma({\cal A}_2)=\dots=\sigma({\cal A}_9)\]</span></p>
+<p><code>#</code></p>
+<p><code># 정의</code> – 위의 이론에서 논의된 <span class="math inline">\({\cal R}\)</span>을 보렐시그마필드라고 한다.</p>
+<blockquote class="blockquote">
+<p>참고로 “시그마필드” <span class="math inline">\(\Leftarrow\)</span> “길이를 잴 수 있는 집합들의 모임” 이지만, “보렐시그마필드” <span class="math inline">\(\Leftrightarrow\)</span> “길이를 잴 수 있는 집합들의 모임” 이다. 그리고 보렐시그마필드야 말로 <span class="math inline">\((\mathbb{R},???,\lambda)\)</span> 를 measure space로 만드는 가장 합리적인 집합(collection)이다.</p>
+</blockquote>
+<p><code>#</code></p>
+<p><code># 이론</code> – <span class="math inline">\(\Omega=\mathbb{R}\)</span> 에 대하여 아래와 같은 collection <span class="math inline">\({\cal A}\)</span>를 고려하자.</p>
+<p><span class="math display">\[{\cal A}=\{(a,b]: a,b\in \mathbb{R}, a&lt;b\}\]</span></p>
+<p>그리고 아래와 같은 함수 <span class="math inline">\(\tilde{m}:{\cal A} \to [0,\infty]\)</span>을 고려하자.</p>
+<p><span class="math display">\[\tilde{m}((a,b]) = b-a\]</span></p>
+<p>이러한 함수 <span class="math inline">\(\tilde{m}\)</span>은 <span class="math inline">\((\mathbb{R},{\cal R})\)</span>에서의 메져 <span class="math inline">\(m:{\cal R} \to [0,\infty]\)</span>로 쉽게 업그레이드 가능하며 이 업그레이드 결과는 유일하다.</p>
+<p><code>#</code></p>
+<p><code># 정의</code> 위의 이론에 의하여 업그레이드 된 메져 <span class="math inline">\(m\)</span>을 르벡메져라고 한다.</p>
+
+
 </section>
 
 
