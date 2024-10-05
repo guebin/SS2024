@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="최규빈">
-<meta name="dcterms.date" content="2024-09-04">
+<meta name="dcterms.date" content="2024-09-24">
 
-<title>SS2024 - 01wk: Quiz (09/10)</title>
+<title>SS2024 - Quiz-2 (2024.09.24) // 범위: 02wk 까지</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -102,7 +102,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -118,6 +118,12 @@ window.Quarto = {
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../quiz.html"> 
+<span class="menu-text"><strong>Quiz</strong></span></a>
+  </li>  
+</ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/guebin/SS2024"> <i class="bi bi-github" role="img">
@@ -140,15 +146,13 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="01wk-Q.out.ipynb" download="01wk-Q.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">01wk: Quiz (09/10)</h1>
+<h1 class="title"><strong>Quiz-2 (2024.09.24)</strong> // 범위: 02wk 까지</h1>
 </div>
 
 
@@ -165,7 +169,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 4, 2024</p>
+      <p class="date">September 24, 2024</p>
     </div>
   </div>
   
@@ -177,58 +181,60 @@ window.Quarto = {
 </header>
 
 
-<p>우리는 단순한 시계 하나를 생각해볼 수 있다. 이 시계에는 바늘이 하나 있고, 이 바늘을 무작위로 돌렸을 때, 바늘이 시계에서 어떤 위치에 멈추게 될 확률을 계산하는 상황을 상상해보자.</p>
-<p>여기서 시계의 위치를 <strong>각도</strong>로 나타낸다. 시계의 각도는 <span class="math inline">\(0\)</span>에서 <span class="math inline">\(2\pi\)</span> 사이로 표현된다. 즉, 시계바늘이 12시를 가리킬 때는 각도가 <span class="math inline">\(0\)</span>이고, 시계바늘이 시계 방향으로 6시를 가리킬 때는 각도가 <span class="math inline">\(\pi\)</span>이다. 이 문제에서 전체 각도 공간을 <strong>sample space</strong> <span class="math inline">\(\Omega\)</span>로 정의한다. <span class="math inline">\(\Omega = [0, 2\pi)\)</span>는 시계의 모든 각도를 나타내는 구간이다.</p>
-<p>시계바늘이 <span class="math inline">\(0\)</span>부터 <span class="math inline">\(2\pi\)</span> 사이의 각도를 랜덤하게 가리킨다고 가정할 때, 우리는 특정 각도 범위에 바늘이 있을 확률을 계산할 수 있다. 예를들어 바늘이 <strong>12시부터 6시까지</strong>, 즉 각도 범위로 보면 <span class="math inline">\([0, \pi)\)</span> 사이에 바늘이 위치할 확률을 구하는 과정을 살펴보자.</p>
+<section id="수학과의-표현-20점" class="level1">
+<h1><code>1</code>. 수학과의 표현 – 20점</h1>
+<p>아래의 명제를 읽고 참 거짓을 판단하라.</p>
+<blockquote class="blockquote">
+<p>단, 이 문제에서 <span class="math inline">\(\mathbb{N}\)</span>는 자연수의 집합 <span class="math inline">\(\mathbb{N}_{even}\)</span>은 짝수의 집합을 의미한다.</p>
+</blockquote>
+<p><code>(1)</code> <span class="math inline">\(a+b \in \mathbb{N}, \forall a,b \in \mathbb{N}\)</span></p>
+<p>(풀이) <span class="math inline">\(a+b\)</span>는 자연수이다, 단 여기에서 <span class="math inline">\(a,b\)</span> 는 임의의 자연수. (임의의 자연수를 더하면 자연수라는 의미) <span class="math inline">\(\to\)</span> 참</p>
+<p><code>(2)</code> <span class="math inline">\(a-b \in \mathbb{N}, \forall a,b \in \mathbb{N}\)</span></p>
+<p>(풀이) <span class="math inline">\(a-b\)</span>는 자연수이다, 단 여기에서 <span class="math inline">\(a,b\)</span> 는 임의의 자연수. (임의의 자연수를 뺴면 자연수라는 의미) <span class="math inline">\(\to\)</span> 거짓</p>
+<p><code>(3)</code> <span class="math inline">\(k \in \mathbb{N} \Rightarrow 2k \in \mathbb{N}_{even}\)</span></p>
+<p>(풀이) <span class="math inline">\(k\)</span>가 자연수라면, <span class="math inline">\(2k\)</span>는 짝수이다. (자연수를 2배하면 항상 짝수가 된다는 의미) <span class="math inline">\(\to\)</span> 참</p>
+<p><code>(4)</code> <span class="math inline">\(\forall m \in \mathbb{N}_{even}~ \exists k \in \mathbb{N}\)</span> such that <span class="math inline">\(2k=m\)</span>.</p>
+<p>(풀이) 임의의 짝수 <span class="math inline">\(m\)</span>에 대하여, 항상 <span class="math inline">\(2k=m\)</span> 를 만족하는 적당한 <span class="math inline">\(k\)</span>가 존재한다. (임의의 짝수는 항상 자연수와 2의 곱으로 표현할 수 있다는 의미) <span class="math inline">\(\to\)</span> 참</p>
+</section>
+<section id="수학과의-표현-20점-1" class="level1">
+<h1>2. 수학과의 표현 – 20점</h1>
+<p>아래가 의미하는 바를 한국어로 자연스럽게 작성하라.</p>
+<blockquote class="blockquote">
+<p>단, 이 문제에서 <span class="math inline">\(\mathbb{N}\)</span>은 자연수의 집합, <span class="math inline">\(\mathbb{N}_{even}\)</span>은 짝수의 집합, <span class="math inline">\(\mathbb{N}_{odd}\)</span>는 홀수의 집합, 그리고 <span class="math inline">\(\mathbb{Q}^+\)</span>는 양의 유리수 집합을 의미한다.</p>
+</blockquote>
+<p><code>(1)</code> <span class="math inline">\(a \in \mathbb{N}_{even}, b \in \mathbb{N}_{odd} \Rightarrow a \times b \in \mathbb{N}_{even}\)</span></p>
+<p>(풀이) <span class="math inline">\(a\)</span>가 짝수이고, <span class="math inline">\(b\)</span>가 홀수라면 <span class="math inline">\(a\times b\)</span>는 짝수이다. (짝수와 홀수를 곱하면 짝수라는 의미)</p>
+<p><code>(2)</code> <span class="math inline">\(\forall q \in \mathbb{Q}^+~ \exists m, n \in \mathbb{N}\)</span> such that <span class="math inline">\(q = \frac{n}{m}\)</span>.</p>
+<p>(풀이) 임의의 양의 유리수 <span class="math inline">\(q\)</span>에 대하여, 항상 <span class="math inline">\(q=\frac{n}{m}\)</span> 을 만족하는 두 자연수 <span class="math inline">\(m,n\)</span> 이 존재한다. (임의의 양의 유리수는 항상 두 자연수의 비로 나타낼수 있다는 의미)</p>
+</section>
+<section id="전단사함수-40점" class="level1">
+<h1><code>3</code>. 전단사함수 – 40점</h1>
+<p><code>(1)</code> 함수 <span class="math inline">\(f\)</span>는 <span class="math inline">\(X = \{1,2,3,4\}\)</span> 에서 <span class="math inline">\(Y = \{1,2,3,4\}\)</span> 로 매핑되며, 매핑은 다음과 같다:</p>
 <ul>
-<li>전체 각도 범위는 <span class="math inline">\(0\)</span>에서 <span class="math inline">\(2\pi\)</span>까지이므로, 전체 가능성의 범위 <span class="math inline">\(\Omega\)</span>의 길이(측도)는 <span class="math inline">\(m(\Omega) = 2\pi\)</span>이다.</li>
-<li>바늘이 12시부터 6시 사이에 있을 각도 구간을 <span class="math inline">\(\Omega^*\)</span>로 정의할 수 있다. <span class="math inline">\(\Omega^* = [0, \pi)\)</span>이며, 이 구간의 길이(측도)는 <span class="math inline">\(m(\Omega^*) = \pi\)</span>이다.</li>
+<li><span class="math inline">\(f(1) = 1\)</span></li>
+<li><span class="math inline">\(f(2) = 1\)</span></li>
+<li><span class="math inline">\(f(3) = 2\)</span></li>
+<li><span class="math inline">\(f(4) = 2\)</span></li>
 </ul>
-<p>확률을 구하는 방법은, 우리가 원하는 범위 <span class="math inline">\(\Omega^*\)</span>의 길이를 전체 표본 공간 <span class="math inline">\(\Omega\)</span>의 길이로 나누는 것이다. 즉, 확률 <span class="math inline">\(P(\Omega^*)\)</span>는 다음과 같이 정의된다:</p>
-<p><span class="math display">\[
-P(\Omega^*) = \frac{m(\Omega^*)}{m(\Omega)}
-\]</span></p>
-<p>따라서, 바늘이 12시에서 6시 사이에 있을 확률은 다음과 같다:</p>
-<p><span class="math display">\[
-P(\Omega^*) = \frac{\pi}{2\pi} = \frac{1}{2}
-\]</span></p>
-<p>즉, 시계바늘을 무작위로 돌렸을 때 바늘이 12시에서 6시 사이에 있을 확률은 <strong>1/2</strong>이다.</p>
-<p><strong>기호 설명:</strong></p>
+<p>이 함수가 전사인지 아닌지, 단사인지 아닌지 판단하고 판단의 근거를 설명하라.</p>
+<p>(풀이) <span class="math inline">\(1 \neq 2\)</span> 이지만 <span class="math inline">\(f(1)=f(2)\)</span> 이므로 단사가 아니고, <span class="math inline">\(f(x)=3\)</span>을 만족하는 <span class="math inline">\(x\)</span>값이 없으므로 전사가 아니다.</p>
+<p><code>(2)</code> 함수 <span class="math inline">\(f\)</span>는 <span class="math inline">\(X = \{1,2,3,4\}\)</span> 에서 <span class="math inline">\(Y = \{1,2\}\)</span> 로 매핑되며, 매핑은 다음과 같다:</p>
 <ul>
-<li><span class="math inline">\(\Omega\)</span>: 전체 표본 공간으로, 시계바늘이 가리킬 수 있는 모든 각도 범위 <span class="math inline">\([0, 2\pi)\)</span>를 나타낸다.</li>
-<li><span class="math inline">\(\Omega^*\)</span>: 바늘이 12시에서 6시까지 있을 각도 범위로, <span class="math inline">\([0, \pi)\)</span> 구간을 나타낸다.</li>
-<li><span class="math inline">\(m(\Omega)\)</span>: 표본 공간 <span class="math inline">\(\Omega\)</span>의 측도로, 전체 각도 구간의 길이를 의미한다. 여기서는 <span class="math inline">\(m(\Omega) = 2\pi\)</span>이다.</li>
-<li><span class="math inline">\(m(\Omega^*)\)</span>: 구간 <span class="math inline">\(\Omega^*\)</span>의 측도로, 바늘이 12시부터 6시까지 있을 각도 구간의 길이를 의미한다. 여기서는 <span class="math inline">\(m(\Omega^*) = \pi\)</span>이다.</li>
-<li><span class="math inline">\(P(\Omega^*)\)</span>: 확률로, 바늘이 12시부터 6시까지 있을 확률을 나타낸다. 이는 <span class="math inline">\(P(\Omega^*) = \frac{m(\Omega^*)}{m(\Omega)}\)</span>로 계산된다.</li>
+<li><span class="math inline">\(f(1) = 1\)</span></li>
+<li><span class="math inline">\(f(2) = 1\)</span></li>
+<li><span class="math inline">\(f(3) = 2\)</span></li>
+<li><span class="math inline">\(f(4) = 2\)</span></li>
 </ul>
-<p><code>(1)</code> 길이를 재는 함수 <span class="math inline">\(m\)</span>에 대하여 아래와 같은 약속을 하자.</p>
-<ul>
-<li>약속1: 구간 <span class="math inline">\((a,b)\)</span>의 길이는 <span class="math inline">\(b-a\)</span>이다. 즉 <span class="math inline">\(m((a,b))=b-a\)</span> 이다.</li>
-<li>약속2: 한 점의 길이는 0이다.</li>
-<li>약속3: 점을 무한히 합치면 선이 되는것 처럼, 점의 길이를 무한히 합치면 0이 아니라 0보다 큰 어떠한 수가 된다.</li>
-<li>약속4: 구간 <span class="math inline">\((a,b)\)</span>사이의 모든 유리수의 길이는 <span class="math inline">\(b-a\)</span> 이다.</li>
-</ul>
-<p>이와 같은 방식으로 길이를 잰다면 확률을 정의함에 있어서 모순이 일어나지 않는가? 모순이 일어나지 않으면 모순이 없다고 답을 쓰고 모순이 일어난다면 모순이 일어나는 이유를 설명하라.</p>
-<p><code>(풀이)</code></p>
-<p>구간 <span class="math inline">\((a,b)\)</span> 사이의 모든 유리수의 집합은 <span class="math inline">\(\mathbb{Q}\)</span>, 모든 무리수의 집합은 <span class="math inline">\(\mathbb{Q}^c\)</span> 라고 하자. 그렇다면 아래의 식이 성립한다.</p>
-<p><span class="math display">\[\mathbb{P}\big((a,b)\big)=\mathbb{P}\big(\mathbb{Q} \cup \mathbb{Q}^c \big)=\mathbb{P}(\mathbb{Q}) +\mathbb{P}(\mathbb{Q}^c)= \frac{m(\mathbb{Q})}{2\pi}+\frac{m(\mathbb{Q}^c)}{2\pi}=\frac{b-a}{2\pi}\]</span></p>
-<p>여기에서 첫번쨰 등호가 성립하는 이유는 <span class="math inline">\(\mathbb{Q}\)</span>의 정의, 그리고 두번째 등호가 성리하는 이유는 서로소인 집합에 대한 확률의 공리, 세번째 등호가 성립하는 이유는 문제에서 주어진 식 <span class="math inline">\(\mathbb{P}(\Omega^*)=\frac{m(\Omega^*)}{m(\Omega)}\)</span> 때문이며, 네번쪠 등호가 성립하는 이유는 약속1에 의하여 <span class="math inline">\(P((a,b))=\frac{m((a,b))}{2\pi}=\frac{b-a}{2\pi}\)</span> 이 성립하기 때문이다. 그런데 약속4에 의하여 <span class="math inline">\(m(\mathbb{Q})=b-a\)</span>를 대입하면 <span class="math inline">\(m(\mathbb{Q}^c)=0\)</span> 이 되어야하는데 이는 약속3에 모순이 된다.</p>
-<p><code>(2)</code> 길이를 재는 함수 <span class="math inline">\(m\)</span>에 대하여 아래와 같은 약속을 하자.</p>
-<ul>
-<li>약속1: 구간 <span class="math inline">\((a,b)\)</span>의 길이는 <span class="math inline">\(b-a\)</span>이다. 즉 <span class="math inline">\(m((a,b))=b-a\)</span> 이다.</li>
-<li>약속2: 한 점의 길이는 0이다.</li>
-<li>약속3: 점을 무한히 합치면 선이 되는것 처럼, 점의 길이를 무한히 합치면 0이 아니라 0보다 큰 어떠한 수가 된다.</li>
-<li>약속4: 구간 <span class="math inline">\((a,b)\)</span>사이의 모든 유리수의 길이는 <span class="math inline">\(\frac{b-a}{2}\)</span> 이다.</li>
-</ul>
-<p>이와 같은 방식으로 길이를 잰다면 확률을 정의함에 있어서 모순이 일어나지 않는가? 모순이 일어나지 않으면 모순이 없다고 답을 쓰고 모순이 일어난다면 모순이 일어나는 이유를 설명하라.</p>
-<p><code>(풀이)</code></p>
-<p>구간 <span class="math inline">\((0,2\pi)\)</span> 사이의 모든 유리수의 집합은 <span class="math inline">\(\mathbb{Q}\)</span>, 모든 무리수의 집합을 <span class="math inline">\(\mathbb{Q}^c\)</span> 라고 하자. <span class="math inline">\(2\pi\)</span>에서 <span class="math inline">\(q\)</span>의 모든 원소를 뺀 집합을 <span class="math inline">\(\mathbb{Q}^\star\)</span> 라고 하자. 즉</p>
-<p><span class="math display">\[\mathbb{Q}^\star = \{2\pi-q : q \in \mathbb{Q} \}\]</span></p>
-<p>이다. 이제 아래의 식을 관찰하자.</p>
-<p><span class="math display">\[\mathbb{P}(\mathbb{Q}^c)=\mathbb{P}\big(\mathbb{Q}^\star \cup (\mathbb{Q}^c-\mathbb{Q}^\star)\big)= \mathbb{P}(\mathbb{Q}^\star) +\mathbb{P}(\mathbb{Q}^c-\mathbb{Q}^\star) = \frac{m(\mathbb{Q}^\star)}{2\pi} +\frac{m(\mathbb{Q}^c-\mathbb{Q}^\star)}{2\pi}  = \frac{b-a}{4\pi}\]</span></p>
-<p>여기에서 첫번째 등호는 집합의 성질에 의하여, 두번째 등호는 서로소인 사건에 대한 확률의 공리에 의하여, 세번째등호는 식 <span class="math inline">\(\mathbb{P}(\Omega^*)=\frac{m(\Omega^*)}{m(\Omega)}\)</span>에 의하여, 네번째 등호는 약속4에 의하여 성립한다. 그런데 <span class="math inline">\(\mathbb{Q}^\star\)</span>는 <span class="math inline">\(\mathbb{Q}\)</span>를 <span class="math inline">\(\pi\)</span>를 기준으로 플립(대칭이동)한 것이므로 <span class="math inline">\(m(\mathbb{Q})=m(\mathbb{Q}^\star)=\frac{b-a}{2}\)</span> 가 성립하고 이에 따라 <span class="math inline">\(m(\mathbb{Q}^c-\mathbb{Q}^\star)=0\)</span> 이어야 한다. 그런데 집합 <span class="math inline">\(\mathbb{Q}^c-\mathbb{Q}^\star\)</span>는 무한집합이므로 약속3에 따라서 0이 아닌 길이가 있어야 하는데 이는 모순이다.</p>
+<p>이 함수가 전사인지 아닌지, 단사인지 아닌지 판단하고 판단의 근거를 설명하라.</p>
+<p>(풀이) <span class="math inline">\(1 \neq 2\)</span> 이지만 <span class="math inline">\(f(1)=f(2)\)</span> 이므로 단사가 아니다. <span class="math inline">\(f(x)=1\)</span> 을 만족하는 <span class="math inline">\(x\)</span>값은 1,2 그리고 <span class="math inline">\(f(x)=2\)</span> 를 만족하는 <span class="math inline">\(x\)</span>값은 3,4 이므로 모든 <span class="math inline">\(y \in Y\)</span> 에 대해 <span class="math inline">\(f(x)=y\)</span>를 만족하는 <span class="math inline">\(x \in X\)</span> 가 존재한다. 따라서 전사이다.</p>
+</section>
+<section id="카디널리티-20점" class="level1">
+<h1><code>4</code>. 카디널리티 – 20점</h1>
+<p>짝수들의 집합 <span class="math inline">\(\mathbb{N}_{even}\)</span> 와 홀수들의 집합 <span class="math inline">\(\mathbb{N}_{odd}\)</span> 의 카디널리티가 동일함을 보여라.</p>
+<p>(풀이) <span class="math inline">\(f(x)=x-1\)</span> 은 <span class="math inline">\(\mathbb{N}_{even}\)</span> 에서 <span class="math inline">\(\mathbb{N}_{odd}\)</span> 로의 전단사함수이므로 두 집합의 카디널리티는 동일하다.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

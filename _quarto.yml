@@ -5,6 +5,8 @@ project:
 website:
   title: "SS2024"
   navbar:
+    left: 
+      - quiz.qmd    
     right:
       - icon: github    
         href: https://github.com/guebin/SS2024

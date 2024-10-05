@@ -2,13 +2,18 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/05wk-1.html",
+      "/posts/05wk.html",
       "/posts/04wk.html",
-      "/posts/04wk-Q.html",
       "/posts/03wk.html",
       "/posts/02wk.html",
-      "/posts/01wk-Q.html",
       "/posts/01wk.html"
+    ]
+  },
+  {
+    "listing": "/quiz.html",
+    "items": [
+      "/quiz/Quiz-2.html",
+      "/quiz/Quiz-1.html"
     ]
   }
 ]
