@@ -439,7 +439,9 @@ window.Quarto = {
 <section id="b.-smallest-sigma-field-containing-cal-a" class="level2">
 <h2 class="anchored" data-anchor-id="b.-smallest-sigma-field-containing-cal-a">B. smallest <span class="math inline">\(\sigma\)</span>-field containing <span class="math inline">\({\cal A}\)</span></h2>
 <p><strong><code># 이론</code></strong> – <span class="math inline">\({\cal A} \subset 2^\Omega\)</span> 을 포함하는 가장 작은 시그마필드 <span class="math inline">\(\sigma({\cal A})\)</span> 는 항상 (유일하게) 존재한다.</p>
-<p>(증명) 우선 <span class="math inline">\(2^{\Omega}\)</span>가 (1) <span class="math inline">\({\cal A}\)</span> 를 포함하는 집합이고 (2) 시그마필드임을 고려하면 <strong>존재성</strong>은 쉽게 증명할 수 있다. 따라서 “<span class="math inline">\({\cal A}\)</span> 를 포함하는 시그마필드가 적어도 하나는 존재함”은 주장할 수 있다. 이제 <span class="math inline">\({\cal A}\)</span> 를 포함하는 시그마필드를 모두 교집합한 집합 <span class="math inline">\({\cal F}\)</span> 를 상상하자. 시그마필드의 교집합은 시그마필드이므로 <span class="math inline">\({\cal F}\)</span>는 시그마필드이다. 또한 <span class="math inline">\({\cal F}\)</span>는 <span class="math inline">\({\cal A}\)</span> 를 포함하는 시그마필드를 모두 교집합하여 만들었으므로, <span class="math inline">\({\cal A}\)</span> 를 포함하는 시그마필드중 가장 작은 시그마필드이다.</p>
+<p>(증명) 우선 <span class="math inline">\(2^{\Omega}\)</span>가 (1) <span class="math inline">\({\cal A}\)</span> 를 포함하는 집합이고 (2) 시그마필드임을 고려하면 “<span class="math inline">\({\cal A}\)</span> 를 포함하는 시그마필드가 적어도 하나는 존재함”은 주장할 수 있다. 이제 <span class="math inline">\({\cal A}\)</span> 를 포함하는 시그마필드를 모두 교집합한 집합 <span class="math inline">\({\cal F}\)</span> 를 상상하자. 즉</p>
+<p><span class="math display">\[{\cal F} = \bigcap_{X \in {\cal X}} X, \quad \text{ where } {\cal X}=\{X: {\cal A} \subset X \text{ and }  X \text{ is $\sigma$-field}  \}\]</span></p>
+<p>시그마필드의 교집합은 시그마필드이므로 <span class="math inline">\({\cal F}\)</span>는 시그마필드이다. 또한 <span class="math inline">\({\cal F}\)</span>는 <span class="math inline">\({\cal A}\)</span> 를 포함하는 시그마필드를 모두 교집합하여 만들었으므로, <span class="math inline">\({\cal A}\)</span> 를 포함하는 시그마필드중 가장 작은 시그마필드이다.</p>
 <p><code>#</code></p>
 <p><code># 참고예제</code> – <span class="math inline">\({\cal A} \subset 2^\Omega\)</span>를 포함하는 가장 작은 세미링은 존재하지 않는다. 아래를 고려하자.</p>
 <ul>
@@ -498,21 +500,21 @@ window.Quarto = {
 <blockquote class="blockquote">
 <p><strong>(e)</strong> <span class="math inline">\(l({\cal P})\)</span> is <span class="math inline">\(\pi\)</span>-system</p>
 </blockquote>
-<p><span class="math inline">\({\cal D}_E = \{F: E\cap F \in l({\cal P}), ~F \in l({\cal P})\}\)</span> 라고 정의할 때 <span class="math inline">\(\forall E \in l({\cal P}): ~ {\cal D}_E = l({\cal A})\)</span> 를 보이면, <span class="math inline">\(l({\cal P})\)</span> 이 파이시스템을 보이는 것이 된다. 즉 아래를 보이면 된다.</p>
+<p><span class="math inline">\({\cal D}_E = \{F: E\cap F \in l({\cal P}), ~F \in l({\cal P})\}\)</span> 라고 정의할 때 <span class="math inline">\(\forall E \in l({\cal P}): ~ {\cal D}_E = l({\cal P})\)</span> 를 보이면, <span class="math inline">\(l({\cal P})\)</span> 이 파이시스템을 보이는 것이 된다. 즉 아래를 보이면 된다.</p>
 <blockquote class="blockquote">
-<p><strong>(e)</strong> <span class="math inline">\(\forall E \in l({\cal P}): ~ {\cal D}_E = l({\cal A})\)</span>.</p>
+<p><strong>(e)</strong> <span class="math inline">\(\forall E \in l({\cal P}): ~ {\cal D}_E = l({\cal P})\)</span>.</p>
 </blockquote>
 <p>이를 위해서는 다시 아래를 보이면 충분하다.</p>
 <blockquote class="blockquote">
-<p><strong>(f)</strong> <span class="math inline">\(\forall E \in l({\cal P}): ~ {\cal D}_E \subset l({\cal A})\)</span> and <span class="math inline">\(l({\cal A}) \subset {\cal D}_E\)</span></p>
+<p><strong>(f)</strong> <span class="math inline">\(\forall E \in l({\cal P}): ~ {\cal D}_E \subset l({\cal P})\)</span> and <span class="math inline">\(l({\cal P}) \subset {\cal D}_E\)</span></p>
 </blockquote>
-<p>그런데 <span class="math inline">\({\cal D}_E \subset l({\cal A})\)</span> 는 당연하므로 아래를 보여도 충분하다.</p>
+<p>그런데 <span class="math inline">\({\cal D}_E \subset l({\cal P})\)</span> 는 당연하므로 아래를 보여도 충분하다.</p>
 <blockquote class="blockquote">
-<p><strong>(g)</strong> <span class="math inline">\(\forall E \in l({\cal P}): ~ l({\cal A}) \subset {\cal D}_E\)</span></p>
+<p><strong>(g)</strong> <span class="math inline">\(\forall E \in l({\cal P}): ~ l({\cal P}) \subset {\cal D}_E\)</span></p>
 </blockquote>
-<p><span class="math inline">\({\cal D}_E\)</span>가 람다시스템이라면, <span class="math inline">\(\lambda({\cal A})\)</span>의 정의에 의하여 (g)가 성립하므로 람다 <span class="math inline">\({\cal D}_E\)</span>가 람다시스템임을 보이면 충분하다. 따라서 아래를 보이면된다.</p>
+<p>그런데 정의에 의하여 <span class="math inline">\({\cal D}_E\)</span>가 람다시스템이라면, <span class="math inline">\(\lambda({\cal A})\)</span>의 정의에 의하여 (g)가 성립하므로 람다 <span class="math inline">\({\cal D}_E\)</span>가 람다시스템임을 보이면 충분하다. 따라서 아래를 보이면된다.</p>
 <blockquote class="blockquote">
-<p><strong>(h)</strong> <span class="math inline">\(\forall E \in l({\cal P}):\)</span> (1) <span class="math inline">\(\Omega \in {\cal D}_E\)</span> (2) <span class="math inline">\({\cal D}_E\)</span> is <span class="math inline">\(^c\)</span>-closed (3) <span class="math inline">\({\cal D}_E\)</span> is <span class="math inline">\(\uplus\)</span>-closed.</p>
+<p><strong>(h)</strong> <span class="math inline">\(\forall E \in l({\cal P}):\)</span> (1) <span class="math inline">\(\Omega \in {\cal D}_E\)</span> (2) <span class="math inline">\({\cal D}_E\)</span> is <span class="math inline">\(^c\)</span>-closed (3) <span class="math inline">\({\cal D}_E\)</span> is <span class="math inline">\(\uplus\)</span>-closed. <br> <strong>(i)</strong> <span class="math inline">\(\forall E \in l({\cal P}): {\cal P} \subset {\cal D}_E\)</span>.</p>
 </blockquote>
 <p><span class="math inline">\(F \in {\cal D}_E \Leftrightarrow E \cap F \in l({\cal P})\)</span> 임을 이용하여 (h)를 체크해보자.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -612,7 +614,21 @@ window.Quarto = {
 <p><span class="math inline">\((B_1 \cap E), (B_2 \cap E), \dots\)</span> 이 서로소인 집합열이라는 사실과 <span class="math inline">\(l({\cal P})\)</span>이 람다시스템임을 이용하면 <span class="math inline">\((\star)\)</span>는 쉽게 보일 수 있다. 또한 이러한 논리전개가 임의의 <span class="math inline">\(E \in l({\cal P})\)</span> 에 대하여서도 동일하게 성립하므로 (h)-(3)을 체크할 수 있다.</p>
 </div>
 </div>
-<p>따라서 (h)를 보일 수 있고, 증명이 완료되었다.</p>
+<p>따라서 (h)를 보일 수 있다. 이제 (i)를 보이자.</p>
+<blockquote class="blockquote">
+<p><strong>(i)</strong> <span class="math inline">\(\forall E \in l({\cal P}): {\cal P} \subset {\cal D}_E\)</span>.</p>
+</blockquote>
+<p>만약에 <span class="math inline">\(E \in {\cal P}\)</span> 라면 <span class="math inline">\({\cal P} \subset {\cal D}_E\)</span> 이다. 그런데 이것은 아래를 의미한다.</p>
+<ul>
+<li><span class="math inline">\(E \in {\cal P}, F \in l({\cal P}) \Rightarrow E\cap F \in l({\cal P}) \cdots (\star)\)</span></li>
+</ul>
+<p>이때 <span class="math inline">\((\star)\)</span> 의 의미를 곱씹으면, “<span class="math inline">\({\cal P}\)</span> 와 <span class="math inline">\(l({\cal P})\)</span> 에서 각각 원소를 하나씩 뽑으면, 그 두 원소의 교집합은 반드시 <span class="math inline">\(l({\cal P})\)</span> 의 원소가 된다”는 의미이다. 이를 이용하면 아래의 수식을 쓸 수 있다. (혹은 단지 (<span class="math inline">\(\star\)</span>) 에서 <span class="math inline">\(E\)</span>와 <span class="math inline">\(F\)</span>를 교환해도 아래를 쓸 수 있다.)</p>
+<ul>
+<li><span class="math inline">\(E \in l({\cal P}), F \in {\cal P} \Rightarrow E\cap F \in l({\cal P})\)</span></li>
+</ul>
+<p>이것이 의미하는 것은 <span class="math inline">\(E \in l({\cal P})\)</span> 일때 <span class="math inline">\({\cal D}_E = \{F \in l({\cal P}): E \cap F \in l({\cal P})\} = {\cal P} \cup \text{???}\)</span> 라는 의미이다. 따라서 아래를 보일 수 있다.</p>
+<p><span class="math display">\[E \in l({\cal P}) \Rightarrow {\cal D}_E \supset {\cal P}\]</span></p>
+<p>따라서 (i) 역시 증명되었다.</p>
 <p><code>#</code></p>
 <p><code># 예제1</code></p>
 <p><span class="math inline">\(\Omega = \{1,2,3,4\}\)</span> 에 대하여 관심있는 집합을 아래와 같이 설정하자.</p>
