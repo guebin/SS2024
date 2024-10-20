@@ -241,7 +241,7 @@ window.Quarto = {
 <p>집합 <span class="math inline">\(A\)</span>와 <span class="math inline">\(B\)</span>에 대한 확률값을 매길 수 있다면 <span class="math inline">\(\mathbb{P}(A \cap B)\)</span>를 정의할 수 있어야 할까? 이 문항은 이 질문에 대한 답을 준다. 주어진 <span class="math inline">\({\cal F}\)</span>는 아래의 조건을 만족한다.</p>
 <p><code>조건1</code>. <span class="math inline">\(\Omega \in {\cal F}\)</span></p>
 <p><code>조건2</code>. <span class="math inline">\(A \in {\cal F} \Rightarrow A^c \in {\cal F}\)</span></p>
-<p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: A_n \in {\cal F} \big)  \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~  A_m \cap A_k = \emptyset \big) \quad \Longrightarrow \quad \uplus_{n=1}^{\infty} A_n \in~ {\cal F}\)</span></p>
+<p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: B_n \in {\cal F} \big)  \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~  B_m \cap B_k = \emptyset \big) \quad \Longrightarrow \quad \uplus_{n=1}^{\infty} B_n \in~ {\cal F}\)</span></p>
 <p>그렇지만 <span class="math inline">\({\cal F}\)</span>는</p>
 <p><span class="math display">\[\{1,2\} \cap \{1,3\} = \{1\}\]</span></p>
 <p>와 같은 집합이라든가,</p>
@@ -251,7 +251,7 @@ window.Quarto = {
 <p>통계학과 입장: 확률의 공리상 <span class="math inline">\(A\)</span>와 <span class="math inline">\(B\)</span>에 대한 확률을 모두 정의할 수 있다고 해서 <span class="math inline">\(A\cap B\)</span>를 잴 수 있어야 하는건 아니다.</p>
 </blockquote>
 <blockquote class="blockquote">
-<p>수학과의 입장: 그런데, 사실 <span class="math inline">\(\Omega\)</span> 에서의 확률이라는 것은 사실 “길이”의 개념을 일반화 한 것이다. 확률을 무모순으로 정의가능한 집합은 사실 어떠한 집합의 크기,길이,넓이,부피,밀도,규모(scale),범위(extent) 등 “재다”라는 개념을 무모순으로 정의가능한 집합을 잘 정의하면 되는 일이다. 이러한 집합에 한정하여 말한다면 집합 <span class="math inline">\(A\)</span>를 잴 수 있고 집합 <span class="math inline">\(B\)</span>를 잴 수 있는데, 집합 <span class="math inline">\(A \cap B\)</span>는 잴 수 없다는 것이 오히려 이상하다. (오히려 <span class="math inline">\(\Omega\)</span>를 잴 수 있다는게 더 이상한거 아니야?)</p>
+<p>수학과의 입장: 그런데, 사실 <span class="math inline">\(\Omega\)</span> 에서의 확률이라는 것은 사실 “길이”의 개념을 일반화 한 것이다. 확률을 무모순으로 정의가능한 집합은 사실 어떠한 집합의 크기,길이,넓이,부피 등 “재다”라는 개념을 무모순으로 정의가능한 집합을 잘 정의하면 되는 일이다. 이러한 집합에 한정하여 말한다면 집합 <span class="math inline">\(A\)</span>를 잴 수 있고 집합 <span class="math inline">\(B\)</span>를 잴 수 있는데, 집합 <span class="math inline">\(A \cap B\)</span>는 잴 수 없다는 것이 오히려 이상하다. (오히려 <span class="math inline">\(\Omega\)</span>를 잴 수 있다는게 더 이상한거 아니야?)</p>
 </blockquote>
 <blockquote class="blockquote">
 <p>합의: 그냥 <span class="math inline">\(A \cap B\)</span> 도 잴 수 있다고 하시죠</p>
@@ -261,12 +261,12 @@ window.Quarto = {
 <p>두 집합 <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>에 대한 확률을 무모순으로 정의가능하다면 그것의 교집합인 <span class="math inline">\(A\cap B\)</span>에 대하여서도 확률값을 무모순으로 정의가능하다고 가정하자. 즉 <span class="math inline">\(\Omega\)</span>의 부분집합중 잴 수 있는 집합의 모임 <span class="math inline">\({\cal F}\)</span> 는 아래의 <code>조건1</code>~ <code>조건4</code>을 만족하는 집합의 집합 (collection) 이라고 정의하자.</p>
 <p><code>조건1</code>. <span class="math inline">\(\Omega \in {\cal F}\)</span></p>
 <p><code>조건2</code>. <span class="math inline">\(A \in {\cal F} \Rightarrow A^c \in {\cal F}\)</span></p>
-<p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: A_n \in {\cal F} \big)  \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~  A_m \cap A_k = \emptyset \big) \quad \Longrightarrow \quad \uplus_{n=1}^{\infty} A_n \in~ {\cal F}\)</span></p>
+<p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: B_n \in {\cal F} \big)  \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~  B_m \cap B_k = \emptyset \big) \quad \Longrightarrow \quad \uplus_{n=1}^{\infty} B_n \in~ {\cal F}\)</span></p>
 <p><code>조건4</code>. <span class="math inline">\(A \in {\cal F}, B \in {\cal F} \Rightarrow A \cap B \in {\cal F}\)</span></p>
 <p>그런데 <code>조건3</code>과 <code>조건4</code>를 이용하면 아래와 같은 <code>조건5</code>를 유추할 수 있다.</p>
 <p><code>조건1</code>. <span class="math inline">\(\Omega \in {\cal F}\)</span></p>
 <p><code>조건2</code>. <span class="math inline">\(A \in {\cal F} \Rightarrow A^c \in {\cal F}\)</span></p>
-<p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: A_n \in {\cal F} \big)  \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~  A_m \cap A_k = \emptyset \big) \quad \Longrightarrow \quad \uplus_{n=1}^{\infty} A_n \in~ {\cal F}\)</span></p>
+<p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: B_n \in {\cal F} \big)  \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~  B_m \cap B_k = \emptyset \big) \quad \Longrightarrow \quad \uplus_{n=1}^{\infty} B_n \in~ {\cal F}\)</span></p>
 <p><code>조건4</code>. <span class="math inline">\(A \in {\cal F}, B \in {\cal F} \Rightarrow A \cap B \in {\cal F}\)</span></p>
 <p><code>조건5</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: A_n \in {\cal F} \big) \quad \Longrightarrow \quad \cup_{n=1}^{\infty} A_n \in~ {\cal F}\)</span></p>
 <p>그런데 <code>조건5</code>는 <code>조건3</code>을 imply 하므로 <code>조건3</code>을 삭제할 수 있다.</p>
@@ -456,13 +456,13 @@ window.Quarto = {
 <p><code># 메져의 정의</code>: 메져는 잴 수 있는 공간 <span class="math inline">\((\Omega, {\cal F})\)</span>가 전제되었을 경우 정의 할 수 있는 일종의 함수 <span class="math inline">\(m: {\cal F} \to [0,\infty]\)</span> 인데, 아래의 조건을 만족해야 한다.</p>
 <p><code>조건1</code>. <span class="math inline">\(\forall A \in {\cal F}:~ m(A) \geq 0\)</span>.</p>
 <p><code>조건2</code>. <span class="math inline">\(m(\emptyset)=0\)</span>.</p>
-<p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: A_n \in {\cal F} \big)  \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~  A_m \cap A_k = \emptyset \big) \quad \Longrightarrow \quad m\left(\uplus_{n=1}^{\infty} A_n\right) = \sum_{n=1}^{\infty}m(A_n)\)</span></p>
+<p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: B_n \in {\cal F} \big)  \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~  B_m \cap B_k = \emptyset \big) \quad \Longrightarrow \quad m\left(\uplus_{n=1}^{\infty} B_n\right) = \sum_{n=1}^{\infty}m(B_n)\)</span></p>
 <p>쉽게 말하면 (1) 메저는 항상 양수이어야 하고, (2) 공집합은 항상 측정값이 0이며 (3) <span class="math inline">\(\sigma\)</span>-additivity<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>가 성립해야한다는 의미이다.</p>
 <div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;countable additivity 라고 하기도 함</p></li></div><p><code>#</code></p>
 <p><code># 확률의 정의</code>: 확률은 잴 수 있는 공간 <span class="math inline">\((\Omega, {\cal F})\)</span>가 전제되었을 경우 정의 할 수 있는 일종의 함수 <span class="math inline">\(\mathbb{P}:{\cal F} \to [0,1]\)</span> 인데, 아래의 조건을 만족해야 한다.</p>
 <p><code>조건1</code>. <span class="math inline">\(\forall A \in {\cal F}:~ \mathbb{P}(A) \geq 0\)</span>.</p>
 <p><code>조건2</code>. <span class="math inline">\(\mathbb{P}(\Omega)=1\)</span>.</p>
-<p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: A_n \in {\cal F} \big)  \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~  A_m \cap A_k = \emptyset \big) \quad \Longrightarrow \quad \mathbb{P}\left(\uplus_{n=1}^{\infty} A_n\right) = \sum_{n=1}^{\infty}\mathbb{P}(A_n)\)</span></p>
+<p><code>조건3</code>. <span class="math inline">\(\big(\forall n \in \mathbb{N}: B_n \in {\cal F} \big)  \text{ and } \big(\forall {m,k} \in \mathbb{N}, m\neq k:~  B_m \cap B_k = \emptyset \big) \quad \Longrightarrow \quad \mathbb{P}\left(\uplus_{n=1}^{\infty} B_n\right) = \sum_{n=1}^{\infty}\mathbb{P}(B_n)\)</span></p>
 <p>쉽게 말하면 (1) 확률은 항상 양수이어야 하고, (2) 전체확률은 1이며 (3) <span class="math inline">\(\sigma\)</span>-additivity<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>가 성립해야한다는 의미이다.</p>
 <div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;countable additivity 라고 하기도 함</p></li></div><p><code>#</code></p>
 <p><code># 예제1</code> 확률은 메저의 한 종류임을 보여라. 즉 확률의 공리1-3을 만족하면 메저의 공리1-3을 만족함을 보여라.</p>
@@ -1040,11 +1040,11 @@ window.Quarto = {
 <p><code>#</code></p>
 <p><code># 이론</code> – <span class="math inline">\(\Omega=\mathbb{R}\)</span> 에 대하여 아래와 같은 collection <span class="math inline">\({\cal A}\)</span>를 고려하자.</p>
 <p><span class="math display">\[{\cal A}=\{(a,b]: a,b\in \mathbb{R}, a&lt;b\}\]</span></p>
-<p>그리고 아래와 같은 함수 <span class="math inline">\(\tilde{m}:{\cal A} \to [0,\infty]\)</span>을 고려하자.</p>
-<p><span class="math display">\[\tilde{m}((a,b]) = b-a\]</span></p>
-<p>이러한 함수 <span class="math inline">\(\tilde{m}\)</span>은 <span class="math inline">\((\mathbb{R},{\cal R})\)</span>에서의 메져 <span class="math inline">\(m:{\cal R} \to [0,\infty]\)</span>로 쉽게 업그레이드 가능하며 이 업그레이드 결과는 유일하다.</p>
+<p>그리고 아래와 같은 함수 <span class="math inline">\(\tilde{\lambda}:{\cal A} \to [0,\infty]\)</span>을 고려하자.</p>
+<p><span class="math display">\[\tilde{\lambda}((a,b]) = b-a\]</span></p>
+<p>이러한 함수 <span class="math inline">\(\tilde{\lambda}\)</span>은 <span class="math inline">\((\mathbb{R},{\cal R})\)</span>에서의 메져 <span class="math inline">\(\lambda:{\cal R} \to [0,\infty]\)</span>로 쉽게 업그레이드 가능하며 이 업그레이드 결과는 유일하다.</p>
 <p><code>#</code></p>
-<p><code># 정의</code> 위의 이론에 의하여 업그레이드 된 메져 <span class="math inline">\(m\)</span>을 르벡메져라고 한다.</p>
+<p><code># 정의</code> – 위의 이론에 의하여 업그레이드 된 메져 <span class="math inline">\(\lambda\)</span>을 르벡메져라고 한다.</p>
 
 
 </section>
