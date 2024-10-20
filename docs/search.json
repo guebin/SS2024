@@ -39,7 +39,7 @@
     "href": "posts/06wk.html#b.-파이시스템-starstar",
     "title": "06wk: 측도론의 중요이론들 (1)",
     "section": "B. 파이시스템 (\\(\\star\\star\\))",
-    "text": "B. 파이시스템 (\\(\\star\\star\\))\n# 정의 – \\(\\Omega\\)의 부분집합 중 아래의 조건1을 만족하는 집합의 집합 (collection) \\({\\cal P}\\)를 “\\(\\Omega\\)에 대한 파이시스템 (\\(\\pi\\)-system)”이라고 한다.\n조건1. \\(A, B \\in {\\cal P} \\Rightarrow A \\cap B \\in {\\cal P}\\)\n#\n- 파이시스템이 공집합을 포함할 필요는 없다.\n- 파이시스템의 예시: 아래는 모두 \\(\\Omega=\\mathbb{R}\\) 에 대한 파이시스템이다.\n\n예시1: \\({\\cal A} = \\{(a,b]: -\\infty &lt; a &lt; b &lt; \\infty \\}\\)\n예시2: \\({\\cal A} = \\{[a,b): -\\infty &lt; a &lt; b &lt; \\infty \\}\\)\n예시3: \\({\\cal A} = \\{(a,b): -\\infty &lt; a &lt; b &lt; \\infty \\}\\)\n예시4: \\({\\cal A} = \\{[a,b]: -\\infty &lt; a &lt; b &lt; \\infty \\}\\)"
+    "text": "B. 파이시스템 (\\(\\star\\star\\))\n# 정의 – \\(\\Omega\\)의 부분집합 중 아래의 조건1을 만족하는 집합의 집합 (collection) \\({\\cal P}\\)를 “\\(\\Omega\\)에 대한 파이시스템 (\\(\\pi\\)-system)”이라고 한다.\n조건1. \\(A, B \\in {\\cal P} \\Rightarrow A \\cap B \\in {\\cal P}\\)\n#\n- 파이시스템이 공집합을 포함할 필요는 없다.\n- 파이시스템의 예시: 아래는 모두 \\(\\Omega=\\mathbb{R}\\) 에 대한 파이시스템이다.\n\n예시1: \\({\\cal A} = \\{(a,b]: -\\infty &lt; a &lt; b &lt; \\infty \\}\\cup \\{\\emptyset\\}\\)\n예시2: \\({\\cal A} = \\{[a,b): -\\infty &lt; a &lt; b &lt; \\infty \\}\\cup \\{\\emptyset\\}\\)\n예시3: \\({\\cal A} = \\{(a,b): -\\infty &lt; a &lt; b &lt; \\infty \\}\\cup \\{\\emptyset\\}\\)\n예시4: \\({\\cal A} = \\{[a,b]: -\\infty &lt; a &lt; b &lt; \\infty \\}\\cup \\{\\emptyset\\}\\)"
   },
   {
     "objectID": "posts/06wk.html#c.-람다시스템-starstar",
