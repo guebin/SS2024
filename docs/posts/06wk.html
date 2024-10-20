@@ -516,7 +516,7 @@ window.Quarto = {
 <blockquote class="blockquote">
 <p><strong>(h)</strong> <span class="math inline">\(\forall E \in l({\cal P}):\)</span> (1) <span class="math inline">\(\Omega \in {\cal D}_E\)</span> (2) <span class="math inline">\({\cal D}_E\)</span> is <span class="math inline">\(^c\)</span>-closed (3) <span class="math inline">\({\cal D}_E\)</span> is <span class="math inline">\(\uplus\)</span>-closed. <br> <strong>(i)</strong> <span class="math inline">\(\forall E \in l({\cal P}): {\cal P} \subset {\cal D}_E\)</span>.</p>
 </blockquote>
-<p><span class="math inline">\(F \in {\cal D}_E \Leftrightarrow E \cap F \in l({\cal P})\)</span> 임을 이용하여 (h)를 체크해보자.</p>
+<p><span class="math inline">\(F \in {\cal D}_E \Leftrightarrow \big( F \in l({\cal P}) \text{ and } E \cap F \in l({\cal P}) \big)\)</span> 임을 이용하여 (h)를 체크해보자.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -539,7 +539,7 @@ window.Quarto = {
 </ul>
 <p>그러면 (h)-(1)을 보이기 위해서 아래를 보이면 충분함을 알 수 있다.</p>
 <p><span class="math display">\[E \in l({\cal P}) \Rightarrow \Omega \in {\cal D}_E\]</span></p>
-<p>그런데 <span class="math inline">\(\Omega \in {\cal D}_E \Leftrightarrow \Omega \cap E \in l({\cal P})\)</span> 이므로 아래를 보이면 충분하다.</p>
+<p>그런데 <span class="math inline">\(\Omega \in {\cal D}_E \Leftrightarrow \big( \Omega \in l({\cal P}) \text{ and } \Omega \cap E \in l({\cal P}) \big)\)</span> 이므로 아래를 보이면 충분하다.</p>
 <p><span class="math display">\[E \in l({\cal P}) \Rightarrow E \cap \Omega \in l({\cal P})\]</span></p>
 <p>따라서 (h)-(1)은 체크되었음.</p>
 </div>
@@ -560,13 +560,13 @@ window.Quarto = {
 <p><span class="math display">\[\forall E \in l({\cal P}): (A,B \in {\cal D}_E \text{ and } A\subset B) \Rightarrow B-A \in {\cal D}_E\]</span></p>
 <p>이제 각 조건을 아래와 같이 정리하면</p>
 <ul>
-<li><span class="math inline">\(A \in {\cal D}_E \Leftrightarrow A \cap E \in l({\cal P})\)</span></li>
-<li><span class="math inline">\(B \in {\cal D}_E \Leftrightarrow B \cap E \in l({\cal P})\)</span></li>
-<li><span class="math inline">\(B -A \in {\cal D}_E \Leftrightarrow (B-A) \cap E \in l({\cal P})\)</span></li>
+<li>$A _E (A l({P}) A E l({P})) $</li>
+<li><span class="math inline">\(B \in {\cal D}_E \Leftrightarrow \big(B \in l({\cal P}) \text{ and } B \cap E \in l({\cal P})\big)\)</span></li>
+<li><span class="math inline">\(B -A \in {\cal D}_E \Leftrightarrow \big( B-A \in l({\cal P}) \text{ and } (B-A) \cap E \in l({\cal P})\big)\)</span></li>
 </ul>
-<p>(2)를 보이기 위해서 아래를 보이면 충분하다는 것을 알 수 있다.</p>
+<p>(h)-(2)를 보이기 위해서 아래를 보이면 충분하다는 것을 알 수 있다.</p>
 <ul>
-<li><span class="math inline">\(\forall E \in l({\cal P}): \big( A \cap E \in l({\cal P}) \text{ and } B \cap E \in l({\cal P}) \big) \Rightarrow (B-A) \cap E \in l({\cal P})\)</span></li>
+<li><span class="math inline">\(\forall E \in l({\cal P}): \big( A \cap E \in l({\cal P}), B \cap E \in l({\cal P}) \text{ and } A \subset B \big) \Rightarrow (B-A) \cap E \in l({\cal P})\)</span></li>
 </ul>
 <p>그런데 이것은 아래의 식을 관찰하면 보일 수 있다.</p>
 <ul>
@@ -598,11 +598,12 @@ window.Quarto = {
 </blockquote>
 <p>이제 아래와 같이 표현을 정리하여 보자.</p>
 <ul>
-<li><span class="math inline">\(B_1 \in {\cal D}_E \Leftrightarrow B_1 \cap E \in l({\cal P})\)</span></li>
-<li><span class="math inline">\(B_2 \in {\cal D}_E \Leftrightarrow B_2 \cap E \in l({\cal P})\)</span><br>
+<li><span class="math inline">\(B_1 \in {\cal D}_E \Leftrightarrow \big(B_1 \in l({\cal P}) \text{ and } B_1 \cap E \in l({\cal P})\big)\)</span></li>
+<li><span class="math inline">\(B_2 \in {\cal D}_E \Leftrightarrow \big(B_2 \in l({\cal P}) \text{ and } B_2 \cap E \in l({\cal P})\big)\)</span><br>
 </li>
 <li><span class="math inline">\(\dots\)</span></li>
-<li><span class="math inline">\(\biguplus_{n=1}^{\infty} B_n \in {\cal D}_E \Leftrightarrow (\biguplus_{n=1}^{\infty} B_n) \cap E \in l({\cal P})\)</span></li>
+<li><span class="math inline">\(\biguplus_{n=1}^{\infty} B_n \in {\cal D}_E \Leftrightarrow \Big(\biguplus_{n=1}^{\infty} B_n \in l({\cal P})
+\text{ and } (\biguplus_{n=1}^{\infty} B_n) \cap E \in l({\cal P})\Big)\)</span></li>
 </ul>
 <p>여기에서 <span class="math inline">\(\big(\biguplus_{n=1}^{\infty} B_n\big) \cap E \in l({\cal P})\)</span> 는 아래와 같이 정리할 수 있음을 쉽게 체크할 수 있다.</p>
 <ul>
