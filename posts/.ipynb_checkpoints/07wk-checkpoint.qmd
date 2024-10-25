@@ -13,7 +13,7 @@ draft: false
 
 # 2. 집합함수 
 
-## A. 집함함수의 성질 
+## A. 집합함수의 성질 
 
 `# 정의`: $\Omega$의 부분집합들의 모임 ${\cal A}$에서 정의된 집합함수 $\tilde{m}: {\cal A}\to [0,\infty]$에 대하여, 아래와 같은 용어를 정의하자. 
 
@@ -34,7 +34,7 @@ $$\text{(1)} B_1,\dots, B_n \in {\cal A} ~~\text{(2)}\biguplus_{i=1}^{n}B_i \in 
 
 함수 $\tilde{m}$이 ${\cal A}$에서 $\sigma$-additive 하다는 것은, 
 
-$$\text{(1)} B_1,B_2,\dots \in {\cal A} ~~\text{(2)}\biguplus_{i=1}^{\infty}B_i \in {\cal A}~ \Longrightarrow ~ \tilde{m}\left(\biguplus_{i=1}^{n} B_{i}\right)=\sum_{i=1}^{n}\tilde{m}(B_i)$$
+$$\text{(1)} B_1,B_2,\dots \in {\cal A} ~~\text{(2)}\biguplus_{i=1}^{\infty}B_i \in {\cal A}~ \Longrightarrow ~ \tilde{m}\left(\biguplus_{i=1}^{\infty} B_{i}\right)=\sum_{i=1}^{\infty}\tilde{m}(B_i)$$
 
 이 성립한다는 의미이다. 
 :::
@@ -45,7 +45,7 @@ $$\text{(1)} B_1,B_2,\dots \in {\cal A} ~~\text{(2)}\biguplus_{i=1}^{\infty}B_i 
 
 함수 $\tilde{m}$이 ${\cal A}$에서 subadditive 하다는 것은, 
 
-$$\text{(1)} A_1,\dots, A_n \in {\cal A} ~~\text{(2)}\bigcup_{i=1}^{n}A_i \in {\cal A}~ \Longrightarrow ~ \tilde{m}\left(\bigcup_{i=1}^{\infty} A_{i}\right)\leq\sum_{i=1}^{n}\tilde{m}(A_i)$$
+$$\text{(1)} A_1,\dots, A_n \in {\cal A} ~~\text{(2)}\bigcup_{i=1}^{n}A_i \in {\cal A}~ \Longrightarrow ~ \tilde{m}\left(\bigcup_{i=1}^{n} A_{i}\right)\leq\sum_{i=1}^{n}\tilde{m}(A_i)$$
 
 
 이 성립한다는 의미이다. 
@@ -57,7 +57,7 @@ $$\text{(1)} A_1,\dots, A_n \in {\cal A} ~~\text{(2)}\bigcup_{i=1}^{n}A_i \in {\
 
 함수 $\tilde{m}$이 ${\cal A}$에서 $\sigma$-subadditive 하다는 것은, 
 
-$$\text{(1)}A_1,A_2,\dots \in {\cal A} ~~\text{(2)}\bigcup_{i=1}^{\infty}A_i \in {\cal A}~ \Longrightarrow ~ \tilde{m}\left(\bigcup_{i=1}^{n} A_{i}\right)\leq\sum_{i=1}^{\infty}\tilde{m(A_i)}$$
+$$\text{(1)}A_1,A_2,\dots \in {\cal A} ~~\text{(2)}\bigcup_{i=1}^{\infty}A_i \in {\cal A}~ \Longrightarrow ~ \tilde{m}\left(\bigcup_{i=1}^{\infty} A_{i}\right)\leq\sum_{i=1}^{\infty}\tilde{m(A_i)}$$
 
 이 성립한다는 의미이다. 
 :::
