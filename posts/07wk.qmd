@@ -23,7 +23,7 @@ draft: false
 
 함수 $\tilde{m}$이 ${\cal A}$에서 additive 하다는 것은, 
 
-$$B_1,\dots, B_n \in {\cal A} ~ \Longrightarrow ~ \tilde{m}\left(\biguplus_{i=1}^{n} B_{i}\right)=\sum_{i=1}^{n}\tilde{m}(B_i)$$
+$$\text{(1)} B_1,\dots, B_n \in {\cal A} ~~\text{(2)}\biguplus_{i=1}^{n}B_i \in {\cal A}~ \Longrightarrow ~ \tilde{m}\left(\biguplus_{i=1}^{n} B_{i}\right)=\sum_{i=1}^{n}\tilde{m}(B_i)$$
 
 이 성립한다는 의미이다. 
 :::
@@ -45,7 +45,7 @@ $$\text{(1)} B_1,B_2,\dots \in {\cal A} ~~\text{(2)}\biguplus_{i=1}^{\infty}B_i 
 
 함수 $\tilde{m}$이 ${\cal A}$에서 subadditive 하다는 것은, 
 
-$$A_1,\dots, A_n \in {\cal A} ~ \Longrightarrow ~ \tilde{m}\left(\bigcup_{i=1}^{\infty} A_{i}\right)\leq\sum_{i=1}^{n}\tilde{m}(A_i)$$
+$$\text{(1)} A_1,\dots, A_n \in {\cal A} ~~\text{(2)}\bigcup_{i=1}^{n}A_i \in {\cal A}~ \Longrightarrow ~ \tilde{m}\left(\bigcup_{i=1}^{\infty} A_{i}\right)\leq\sum_{i=1}^{n}\tilde{m}(A_i)$$
 
 
 이 성립한다는 의미이다. 
@@ -67,7 +67,7 @@ $$\text{(1)}A_1,A_2,\dots \in {\cal A} ~~\text{(2)}\bigcup_{i=1}^{\infty}A_i \in
 
 `#` 
 
-`-` 위의 정의에서 ${\cal A}$ 시그마필드라면, $\sigma$-additive 와  $\sigma$-subadditive 에서 조건 (2) 은 생략할 수 있다. 
+`-` 위의 정의에서 ${\cal A}$ 시그마필드라면, 위의 정의에서 조건 (2) 는 모두 생략할 수 있다. 
 
 `-` 체크해볼만한 성질들이 있다. 
 
