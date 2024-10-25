@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.533">
+<meta name="generator" content="quarto-1.4.520">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -72,33 +72,6 @@ ul.task-list li input[type="checkbox"] {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
 <link rel="stylesheet" href="../styles.css">
 </head>
 
@@ -154,7 +127,7 @@ window.Quarto = {
   <li><a href="#강의영상" id="toc-강의영상" class="nav-link active" data-scroll-target="#강의영상">1. 강의영상</a></li>
   <li><a href="#집합함수" id="toc-집합함수" class="nav-link" data-scroll-target="#집합함수">2. 집합함수</a>
   <ul class="collapse">
-  <li><a href="#a.-집함함수의-성질" id="toc-a.-집함함수의-성질" class="nav-link" data-scroll-target="#a.-집함함수의-성질">A. 집함함수의 성질</a></li>
+  <li><a href="#a.-집합함수의-성질" id="toc-a.-집합함수의-성질" class="nav-link" data-scroll-target="#a.-집합함수의-성질">A. 집합함수의 성질</a></li>
   <li><a href="#b.-측도-유한측도-확률" id="toc-b.-측도-유한측도-확률" class="nav-link" data-scroll-target="#b.-측도-유한측도-확률">B. 측도, 유한측도, 확률</a></li>
   <li><a href="#c.-sigma-유한측도" id="toc-c.-sigma-유한측도" class="nav-link" data-scroll-target="#c.-sigma-유한측도">C. <span class="math inline">\(\sigma\)</span>-유한측도</a></li>
   </ul></li>
@@ -206,8 +179,8 @@ window.Quarto = {
 </section>
 <section id="집합함수" class="level1">
 <h1>2. 집합함수</h1>
-<section id="a.-집함함수의-성질" class="level2">
-<h2 class="anchored" data-anchor-id="a.-집함함수의-성질">A. 집함함수의 성질</h2>
+<section id="a.-집합함수의-성질" class="level2">
+<h2 class="anchored" data-anchor-id="a.-집합함수의-성질">A. 집합함수의 성질</h2>
 <p><code># 정의</code>: <span class="math inline">\(\Omega\)</span>의 부분집합들의 모임 <span class="math inline">\({\cal A}\)</span>에서 정의된 집합함수 <span class="math inline">\(\tilde{m}: {\cal A}\to [0,\infty]\)</span>에 대하여, 아래와 같은 용어를 정의하자.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -220,7 +193,7 @@ additive
 </div>
 <div class="callout-body-container callout-body">
 <p>함수 <span class="math inline">\(\tilde{m}\)</span>이 <span class="math inline">\({\cal A}\)</span>에서 additive 하다는 것은,</p>
-<p><span class="math display">\[B_1,\dots, B_n \in {\cal A} ~ \Longrightarrow ~ \tilde{m}\left(\biguplus_{i=1}^{n} B_{i}\right)=\sum_{i=1}^{n}\tilde{m}(B_i)\]</span></p>
+<p><span class="math display">\[\text{(1)} B_1,\dots, B_n \in {\cal A} ~~\text{(2)}\biguplus_{i=1}^{n}B_i \in {\cal A}~ \Longrightarrow ~ \tilde{m}\left(\biguplus_{i=1}^{n} B_{i}\right)=\sum_{i=1}^{n}\tilde{m}(B_i)\]</span></p>
 <p>이 성립한다는 의미이다.</p>
 </div>
 </div>
@@ -235,7 +208,7 @@ additive
 </div>
 <div class="callout-body-container callout-body">
 <p>함수 <span class="math inline">\(\tilde{m}\)</span>이 <span class="math inline">\({\cal A}\)</span>에서 <span class="math inline">\(\sigma\)</span>-additive 하다는 것은,</p>
-<p><span class="math display">\[\text{(1)} B_1,B_2,\dots \in {\cal A} ~~\text{(2)}\biguplus_{i=1}^{\infty}B_i \in {\cal A}~ \Longrightarrow ~ \tilde{m}\left(\biguplus_{i=1}^{n} B_{i}\right)=\sum_{i=1}^{n}\tilde{m}(B_i)\]</span></p>
+<p><span class="math display">\[\text{(1)} B_1,B_2,\dots \in {\cal A} ~~\text{(2)}\biguplus_{i=1}^{\infty}B_i \in {\cal A}~ \Longrightarrow ~ \tilde{m}\left(\biguplus_{i=1}^{\infty} B_{i}\right)=\sum_{i=1}^{\infty}\tilde{m}(B_i)\]</span></p>
 <p>이 성립한다는 의미이다.</p>
 </div>
 </div>
@@ -250,7 +223,7 @@ subadditive
 </div>
 <div class="callout-body-container callout-body">
 <p>함수 <span class="math inline">\(\tilde{m}\)</span>이 <span class="math inline">\({\cal A}\)</span>에서 subadditive 하다는 것은,</p>
-<p><span class="math display">\[A_1,\dots, A_n \in {\cal A} ~ \Longrightarrow ~ \tilde{m}\left(\bigcup_{i=1}^{\infty} A_{i}\right)\leq\sum_{i=1}^{n}\tilde{m}(A_i)\]</span></p>
+<p><span class="math display">\[\text{(1)} A_1,\dots, A_n \in {\cal A} ~~\text{(2)}\bigcup_{i=1}^{n}A_i \in {\cal A}~ \Longrightarrow ~ \tilde{m}\left(\bigcup_{i=1}^{n} A_{i}\right)\leq\sum_{i=1}^{n}\tilde{m}(A_i)\]</span></p>
 <p>이 성립한다는 의미이다.</p>
 </div>
 </div>
@@ -265,13 +238,13 @@ subadditive
 </div>
 <div class="callout-body-container callout-body">
 <p>함수 <span class="math inline">\(\tilde{m}\)</span>이 <span class="math inline">\({\cal A}\)</span>에서 <span class="math inline">\(\sigma\)</span>-subadditive 하다는 것은,</p>
-<p><span class="math display">\[\text{(1)}A_1,A_2,\dots \in {\cal A} ~~\text{(2)}\bigcup_{i=1}^{\infty}A_i \in {\cal A}~ \Longrightarrow ~ \tilde{m}\left(\bigcup_{i=1}^{n} A_{i}\right)\leq\sum_{i=1}^{\infty}\tilde{m(A_i)}\]</span></p>
+<p><span class="math display">\[\text{(1)}A_1,A_2,\dots \in {\cal A} ~~\text{(2)}\bigcup_{i=1}^{\infty}A_i \in {\cal A}~ \Longrightarrow ~ \tilde{m}\left(\bigcup_{i=1}^{\infty} A_{i}\right)\leq\sum_{i=1}^{\infty}\tilde{m(A_i)}\]</span></p>
 <p>이 성립한다는 의미이다.</p>
 </div>
 </div>
 <p>여기에서 집합열 <span class="math inline">\(A_1,A_2,\dots\)</span> 은 서로소가 아닌 집합열, <span class="math inline">\(B_1,B_2,\dots\)</span> 는 서로소인 집합열이다.</p>
 <p><code>#</code></p>
-<p><code>-</code> 위의 정의에서 <span class="math inline">\({\cal A}\)</span> 시그마필드라면, <span class="math inline">\(\sigma\)</span>-additive 와 <span class="math inline">\(\sigma\)</span>-subadditive 에서 조건 (2) 은 생략할 수 있다.</p>
+<p><code>-</code> 위의 정의에서 <span class="math inline">\({\cal A}\)</span> 시그마필드라면, 위의 정의에서 조건 (2) 는 모두 생략할 수 있다.</p>
 <p><code>-</code> 체크해볼만한 성질들이 있다.</p>
 <ol type="1">
 <li><span class="math inline">\(\Omega\)</span>가 유한집합일 경우, <span class="math inline">\(\sigma\)</span>-additivity와 additivity는 동일하며, <span class="math inline">\(\sigma\)</span>-subadditivity와 subadditivity는 동일하다.</li>
@@ -323,7 +296,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>시그마유한 측도의 뉘앙스는 “<strong>전체 집합을 유한한 값으로 나타낼 길은 없을지라도, 전체집합을 쪼개서 (비록 무한번 쪼개는 한이 있더라도), 쪼갠것들은 유한한 값으로 나타낼 수 있는 길이 최소한 하나는 존재한다.</strong>” 의 뉘앙스를 가지고 있다. 따라서 시그마측도의 정의에서 집합열 <span class="math inline">\(\Omega_1,\Omega_2,\dots\)</span> 를 무한집합열로 잡을 이유는 굳이 없다. (수 틀리면 무한번 쪼개겠다는 것이지 꼭 무한번 쪼개야 할 이유는 없으니까. 유한번 쪼개서 만들 수 있다면 오히려 좋음!)</p>
+<p>시그마유한 측도의 뉘앙스는 “<strong>전체 집합을 유한한 값으로 나타낼 수는 없을지라도, 전체집합을 쪼개서 (비록 무한번 쪼개는 한이 있더라도), 쪼갠것들은 유한한 값으로 나타낼 수 있는 방법이1 최소한 하나는 존재한다.</strong>” 의 뉘앙스를 가지고 있다. 따라서 시그마측도의 정의에서 집합열 <span class="math inline">\(\Omega_1,\Omega_2,\dots\)</span> 를 무한집합열로 잡을 이유는 굳이 없다. (수 틀리면 무한번 쪼개겠다는 것이지 꼭 무한번 쪼개야 할 이유는 없으니까. 유한번 쪼개서 만들 수 있다면 오히려 좋음!)</p>
 </div>
 </div>
 <p><code># 예제1의 다른풀이</code> – <code>예제1</code>에서 <span class="math inline">\(\Omega_1,\Omega_2,\dots\)</span>을 아래와 같이 설정해도 된다.</p>
@@ -1252,6 +1225,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
     if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
@@ -1266,14 +1260,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             break;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
+        typesetMath(container);
         return container.innerHTML
       } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
+        typesetMath(note);
         return note.innerHTML;
       }
     } else {
@@ -1282,9 +1272,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
+      typesetMath(note);
       return note.innerHTML;
     }
   }
