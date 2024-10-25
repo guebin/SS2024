@@ -76,7 +76,7 @@ $$\text{(1)}A_1,A_2,\dots \in {\cal A} ~~\text{(2)}\bigcup_{i=1}^{\infty}A_i \in
 
 ## B. 측도, 유한측도, 확률
 
-`# (간단한) 정의` -- 측도는 정의역이 시그마필드이고 $\sigma$-additivty를 만족하는 집합함수 $m$이다. 
+`# (간단한) 정의` -- 측도는 정의역이 시그마필드이고 $\sigma$-additivity 와 $m(\emptyset)=0$ 를 만족하는 집합함수 $m$ 이다. 
 
 `# (간단한) 정의` -- $m(\Omega)=1$ 인 측도를 확률측도라고 하고, 간단히 확률이라고 줄여부르기도 한다. 
 
@@ -117,7 +117,7 @@ $$\lambda(\mathbb{R})=\infty$$
 
 - $\Omega_1 = [-1,1]$
 - $\Omega_2 = [-2,2] - \Omega_1$
-- $\Omega_3 = [-3,3] - \Omega_2$
+- $\Omega_3 = [-3,3] - \Omega_2 -\Omega_1$
 - $\dots$
 
 와 같이 설정한다면, 
@@ -133,7 +133,7 @@ $$\cup_{i=1}^{\infty}\Omega_i = \Omega = \mathbb{R}$$
 `#`
 
 :::{.callout-note}
-시그마유한 측도의 뉘앙스는 "**전체 집합을 유한한 값으로 나타낼 수는 없을지라도, 전체집합을 쪼개서 (비록 무한번 쪼개는 한이 있더라도), 쪼갠것들은 유한한 값으로 나타낼 수 있는 방법이1 최소한 하나는 존재한다.**" 의 뉘앙스를 가지고 있다. 따라서 시그마측도의 정의에서 집합열 $\Omega_1,\Omega_2,\dots$ 를 무한집합열로 잡을 이유는 굳이 없다. (수 틀리면 무한번 쪼개겠다는 것이지 꼭 무한번 쪼개야 할 이유는 없으니까. 유한번 쪼개서 만들 수 있다면 오히려 좋음!)
+시그마유한 측도의 뉘앙스는 "**전체 집합을 유한한 값으로 나타낼 수는 없을지라도, 전체집합을 쪼개서 (비록 무한번 쪼개는 한이 있더라도), 쪼갠것들은 유한한 값으로 나타낼 수 있는 방법이  최소한 하나는 존재한다.**" 의 뉘앙스를 가지고 있다. 따라서 시그마측도의 정의에서 집합열 $\Omega_1,\Omega_2,\dots$ 를 무한집합열로 잡을 이유는 굳이 없다. (수 틀리면 무한번 쪼개겠다는 것이지 꼭 무한번 쪼개야 할 이유는 없으니까. 유한번 쪼개서 만들 수 있다면 오히려 좋음!)
 :::
 
 `# 예제1의 다른풀이` -- `예제1`에서 $\Omega_1,\Omega_2,\dots$을 아래와 같이 설정해도 된다. 
@@ -203,7 +203,7 @@ $$\text{prob-msr $\Rightarrow$ finite-msr $\Rightarrow$ $\sigma$-finite msr $\Ri
 
 `#`
 
-`# 이론 (카라테오도리의 유산, $\sigma$-유한측도버전)` --  ${\cal A} \subset 2^{\Omega}$를 $\Omega$에 대한 세미링이라고 하자. ${\cal A}$ 에서 **$\sigma$-유한측도인 듯 $\sigma$-유한측도 아닌** 집합함수 $\tilde{m}:{\cal A} \to [0,\infty]$ with (1) $\tilde{m}(\emptyset)=0$ and (2) $\text{$\tilde{m}$ is $\sigma$-finite on ${\cal A}$}$ 이 아래의 조건을 만족한다고 가정하자. 
+`# 이론 (카라테오도리의 유산, 시그마유한측도버전)` --  ${\cal A} \subset 2^{\Omega}$를 $\Omega$에 대한 세미링이라고 하자. ${\cal A}$ 에서 **$\sigma$-유한측도인 듯 $\sigma$-유한측도 아닌** 집합함수 $\tilde{m}:{\cal A} \to [0,\infty]$ with (1) $\tilde{m}(\emptyset)=0$ and (2) $\text{$\tilde{m}$ is $\sigma$-finite on ${\cal A}$}$ 이 아래의 조건을 만족한다고 가정하자. 
 
 1. **additive on ${\cal A}$**
 2. **$\sigma$-subadditive on ${\cal A}$**
