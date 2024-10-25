@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>SS2024 - 통계세미나 (측도론/확률론)</title>
+<title>SS2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,35 +66,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -128,7 +97,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -138,7 +107,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">SS2024</span>
     </a>
   </div>
@@ -149,7 +118,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./quiz.html"> 
+    <a class="nav-link" href="../quiz.html"> 
 <span class="menu-text"><strong>Quiz</strong></span></a>
   </li>  
 </ul>
@@ -172,147 +141,182 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(7)</span></div></div></div>
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Untitled.out.ipynb" download="Untitled.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">통계세미나 (측도론/확률론)</h1>
-</div>
+<main class="content page-columns page-full" id="quarto-document-content">
 
 
 
-<div class="quarto-title-meta column-page-left">
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p><strong>질문하는 방법</strong></p>
+<p><strong>(예제1)</strong> – motivating EX</p>
+<p><code>-</code> <span class="math inline">\(\Omega=\{1,2,3,4\}\)</span>이라고 하자. 내가 관심있는 집합의 모음은 아래와 같다.</p>
+<p><span class="math display">\[{\cal A} = \{\emptyset, \{1\},\{2\},\{3,4\},\Omega\}\]</span></p>
+<p><code>-</code> 소망: 그래도 그냥 <span class="math inline">\({\cal A}\)</span>에서만 확률 비슷한 함수 <span class="math inline">\(\tilde{P}\)</span>를 잘 정의하면 <span class="math inline">\((\Omega,\sigma({\cal A}))\)</span>에서의 확률측도로 업그레이드 가능하고 업그레이드 결과가 유일할까?</p>
 <ul>
-<li>카카오톡: <a href="http://pf.kakao.com/_txeIFG/chat">질문하러 가기</a></li>
-<li>이메일: <a href="mailto:guebin@jbnu.ac.kr" class="email">guebin@jbnu.ac.kr</a></li>
-<li>직접방문: 자연과학대학 본관 205호</li>
-<li>Zoom: <em>카카오톡이나 이메일로 미리 시간을 정할 것</em></li>
-<li>LMS쪽지: <a href="https://ieilms.jbnu.ac.kr/" class="uri">https://ieilms.jbnu.ac.kr/</a></li>
+<li><span class="math inline">\(\tilde{P}(\emptyset) = 0\)</span></li>
+<li><span class="math inline">\(\tilde{P}(\{1\}) = 1/4\)</span></li>
+<li><span class="math inline">\(\tilde{P}(\{2\}) = 1/2\)</span></li>
+<li><span class="math inline">\(\tilde{P}(\{3,4\}) = 1/4\)</span></li>
+<li><span class="math inline">\(\tilde{P}(\Omega) = 1\)</span></li>
 </ul>
-<p><strong>퀴즈</strong>: <a href="https://guebin.github.io/SS2024/quiz.html" class="uri">https://guebin.github.io/SS2024/quiz.html</a></p>
-<p><strong>강의노트</strong></p>
-
-
-
-
-<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
-<table class="quarto-listing-table table">
+<p><code>-</code> 조건체크</p>
+<ul>
+<li><span class="math inline">\({\cal A}\)</span>는 세미알지브라(그러므로 세미링)이다.</li>
+<li><span class="math inline">\({\cal A}\)</span>는 전체집합을 포함하고 있으며 <span class="math inline">\({\tilde P}(\Omega)=1\)</span>이다. <span class="math inline">\(\Rightarrow\)</span> 조건 (4)가 만족.</li>
+<li><span class="math inline">\({\tilde P}\)</span>는 (1) <span class="math inline">\(\tilde{P}(\emptyset)=0\)</span> 이고 (2) add 를 만족하며 (3) <span class="math inline">\(\sigma\)</span>-subadd 를 만족한다.</li>
+</ul>
+<blockquote class="blockquote page-columns page-full">
+<p>참고: 이 예제의 경우 <span class="math inline">\(|\Omega|&lt;\infty\)</span> 이므로 <span class="math inline">\(\sigma\)</span>-subadd 는 subadd 와 같은 성질이다. 그리고 add 는 subadd를 imply 하므로 사실상 (2) 만 체크하면 끝난다.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;(1)이랑 (4)는 너무 체크하기 쉬움</p></li></div></blockquote>
+<p><strong>(예제2)</strong> – motivating EX (2)</p>
+<p><code>-</code> <span class="math inline">\(\Omega=\{1,2,3,4\}\)</span>이라고 하고 <span class="math inline">\({\cal A} = \{\emptyset, \{1\},\{2\}, \{3,4\}, \Omega\}\)</span> 라고 하자. 그리고 아래와 같은 <span class="math inline">\(\sigma({\cal A})\)</span>를 다시 상상하자.</p>
+<p><span class="math display">\[\sigma({\cal A}) = \big\{\emptyset, \{1\}, \{2\}, \{1,2\}, \{3,4\}, \{1,3,4\}, \{2,3,4\}, \Omega \big\}\]</span></p>
+<p><code>-</code> 위의 시그마필드에서 확률을 예제1과 다른 방식으로 정의할 수 도 있다. 예를들면 아래와 같은 방식으로 정의가능하다.</p>
+<table class="table">
 <thead>
-<tr>
-<th>
-Date
-</th>
-<th>
-Title
-</th>
-<th>
-Author
-</th>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;"><span class="math inline">\(P_1\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\tilde{P}_1\)</span></th>
 </tr>
 </thead>
-<tbody class="list">
-<tr data-index="0" data-listing-date-sort="1729695600000" data-listing-file-modified-sort="1729833043113" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2079" data-listing-title-sort="07wk: 측도론의 중요이론들 (2)" data-listing-filename-sort="07wk.qmd">
-<td>
-<span class="listing-date">Oct 24, 2024</span>
-</td>
-<td>
-<a href="./posts/07wk.html" class="title listing-title">07wk: 측도론의 중요이론들 (2)</a>
-</td>
-<td>
-<span class="listing-author">최규빈 </span>
-</td>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\emptyset\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
 </tr>
-<tr data-index="1" data-listing-date-sort="1729350000000" data-listing-file-modified-sort="1729821323597" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2646" data-listing-title-sort="06wk: 측도론의 중요이론들 (1)" data-listing-filename-sort="06wk.ipynb">
-<td>
-<span class="listing-date">Oct 20, 2024</span>
-</td>
-<td>
-<a href="./posts/06wk.html" class="title listing-title">06wk: 측도론의 중요이론들 (1)</a>
-</td>
-<td>
-<span class="listing-author">최규빈 </span>
-</td>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\{1\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{3}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{3}\)</span></td>
 </tr>
-<tr data-index="2" data-listing-date-sort="1727881200000" data-listing-file-modified-sort="1729417947519" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3189" data-listing-title-sort="05wk: 시그마필드 -- Motivation2, 측도와 확률측도" data-listing-filename-sort="05wk.ipynb">
-<td>
-<span class="listing-date">Oct 3, 2024</span>
-</td>
-<td>
-<a href="./posts/05wk.html" class="title listing-title">05wk: 시그마필드 – Motivation2, 측도와 확률측도</a>
-</td>
-<td>
-<span class="listing-author">최규빈 </span>
-</td>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\{2\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{3}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{3}\)</span></td>
 </tr>
-<tr data-index="3" data-listing-date-sort="1727276400000" data-listing-file-modified-sort="1729417947395" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2288" data-listing-title-sort="04wk: 시그마필드 -- Motivation1" data-listing-filename-sort="04wk.ipynb">
-<td>
-<span class="listing-date">Sep 26, 2024</span>
-</td>
-<td>
-<a href="./posts/04wk.html" class="title listing-title">04wk: 시그마필드 – Motivation1</a>
-</td>
-<td>
-<span class="listing-author">최규빈 </span>
-</td>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\{3,4\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{3}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{3}\)</span></td>
 </tr>
-<tr data-index="4" data-listing-date-sort="1726671600000" data-listing-file-modified-sort="1729417947395" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="730" data-listing-title-sort="03wk: 유리수, 무리수, 실수의 Cardinality" data-listing-filename-sort="03wk.ipynb">
-<td>
-<span class="listing-date">Sep 19, 2024</span>
-</td>
-<td>
-<a href="./posts/03wk.html" class="title listing-title">03wk: 유리수, 무리수, 실수의 Cardinality</a>
-</td>
-<td>
-<span class="listing-author">최규빈 </span>
-</td>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\Omega\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
 </tr>
-<tr data-index="5" data-listing-date-sort="1725894000000" data-listing-file-modified-sort="1729829460442" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1705" data-listing-title-sort="02wk: 귀류법과 일반화, 수학과의 표현, Cardinality의 개념" data-listing-filename-sort="02wk.ipynb">
-<td>
-<span class="listing-date">Sep 10, 2024</span>
-</td>
-<td>
-<a href="./posts/02wk.html" class="title listing-title">02wk: 귀류법과 일반화, 수학과의 표현, Cardinality의 개념</a>
-</td>
-<td>
-<span class="listing-author">최규빈 </span>
-</td>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
 </tr>
-<tr data-index="6" data-listing-date-sort="1725289200000" data-listing-file-modified-sort="1729417947395" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1008" data-listing-title-sort="01wk: 확률을 정의하는건 쉬운 일인가?, 르벡메져" data-listing-filename-sort="01wk.ipynb">
-<td>
-<span class="listing-date">Sep 3, 2024</span>
-</td>
-<td>
-<a href="./posts/01wk.html" class="title listing-title">01wk: 확률을 정의하는건 쉬운 일인가?, 르벡메져</a>
-</td>
-<td>
-<span class="listing-author">최규빈 </span>
-</td>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\{1,2\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{2}{3}\)</span></td>
+<td style="text-align: center;">None</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\{1,3,4\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{2}{3}\)</span></td>
+<td style="text-align: center;">None</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\{2,3,4\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{2}{3}\)</span></td>
+<td style="text-align: center;">None</td>
 </tr>
 </tbody>
 </table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+<p>또한 아래와 같은 방식도 가능하다.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;"><span class="math inline">\(P_2\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\tilde{P}_2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\emptyset\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\{1\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\{2\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\{3,4\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\Omega\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\{1,2\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;">None</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\{1,3,4\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;">None</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\{2,3,4\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;">None</td>
+</tr>
+</tbody>
+</table>
+<p>어떠한 방식으로 정의하든 <span class="math inline">\({\cal A}\)</span>에서 확률 비슷한 것 <span class="math inline">\(\tilde{P}_1,\tilde{P}_2\)</span>를 잘 정의하기만 <span class="math inline">\(\sigma({\cal A})\)</span>에서의 확률 <span class="math inline">\(P\)</span>로 적절하게 확장할 수 있다. 심지어 이런 확장은 유일한 듯 하다.</p>
+<p><code>-</code> 당연함. 예제1과 동일하게 <span class="math inline">\(\tilde{P_1}\)</span>과 <span class="math inline">\(\tilde{P_2}\)</span>가 add 성질만 만족한다는 사실을 체크하면 끝난다.</p>
+<p><strong>(예제3)</strong> – 운이 안 좋은 경우</p>
+<p><code>-</code> <span class="math inline">\(\Omega=\{1,2,3\}\)</span> 이라고 하고 <span class="math inline">\({\cal A} = \{\emptyset, \{1,2\},\{2,3\}, \Omega\}\)</span> 라고 하자.</p>
+<p><code>-</code> 아래와 같은 확률 비슷한 함수 <span class="math inline">\(\tilde{P}:{\cal A} \to [0,1]\)</span>를 정의하자.</p>
+<ul>
+<li><span class="math inline">\(\tilde{P}(\emptyset) = 0\)</span></li>
+<li><span class="math inline">\(\tilde{P}(\{1,2\}) = 0\)</span></li>
+<li><span class="math inline">\(\tilde{P}(\{2,3\}) = 0\)</span></li>
+<li><span class="math inline">\(\tilde{P}(\Omega) = 1\)</span></li>
+</ul>
+<p><code>-</code> 체크: 일단 <span class="math inline">\({\cal A}\)</span>는 세미링이 아니다. 따라서 확장 불가능. 세미링이 맞다고 하여도 subadd가 성립하지 않는다.</p>
+<p><strong>(예제4)</strong> – 운이 안 좋은 경우</p>
+<p><code>-</code> <span class="math inline">\(\Omega=\{1,2,3,4\}\)</span> 이라고 하고 <span class="math inline">\({\cal A} = \{\emptyset, \{1,2\},\{2,3\}, \Omega\}\)</span> 라고 하자.</p>
+<p><code>-</code> 아래와 같은 확률 비슷한 함수 <span class="math inline">\(\tilde{P}:{\cal A} \to [0,1]\)</span>를 정의하자.</p>
+<ul>
+<li><span class="math inline">\(\tilde{P}(\emptyset) = 0\)</span></li>
+<li><span class="math inline">\(\tilde{P}(\{1,2\}) = 1/2\)</span></li>
+<li><span class="math inline">\(\tilde{P}(\{2,3\}) = 1/2\)</span></li>
+<li><span class="math inline">\(\tilde{P}(\Omega) = 1\)</span></li>
+</ul>
+<p><code>-</code> 체크: <span class="math inline">\(\tilde{P}\)</span>는 괜찮게 정의되었다. (1)-(4)가 모두 성립한다. (위의 예제와는 다르게 subadd 역시 성립함!!) 하지만 <span class="math inline">\({\cal A}\)</span>가 세미링이 아니어서 탈락.</p>
+
+
+
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -694,6 +698,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
+</script>
+<script src="https://utteranc.es/client.js" repo="guebin/SS2024" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 
