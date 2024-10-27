@@ -777,7 +777,7 @@ add 체크~
 </div>
 </div>
 </section>
-<section id="b.-확장이론2" class="level2 page-columns page-full">
+<section id="b.-확장이론2" class="level2">
 <h2 class="anchored" data-anchor-id="b.-확장이론2">B. 확장이론2</h2>
 <p><strong><code># 이론 (확장이론2,시그마유한측도)</code></strong> – <em>확장의 존재성이 보장될때 유일성을 보이는 테크닉</em></p>
 <p><span class="math inline">\(\big(\Omega, \sigma({\cal A}), m\big)\)</span> 가 시그마유한측도공간이라고 하자. 그리고 <span class="math inline">\({\cal A}\)</span>는 <span class="math inline">\(\pi\)</span>-system이라고 하자. 시그마유한측도 <span class="math inline">\(m: \sigma({\cal A}) \to [0,\infty]\)</span> 의 값은 <span class="math inline">\(m: {\cal A} \to [0,1]\)</span> 의 값으로 유일하게 결정된다.</p>
@@ -795,7 +795,13 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>확장이론1은 “확장의 존재성 &amp; 유일성”을 동시에 보장한다. 그런데 확장이론2는 “유일성”만을 보장한다. 확장이론1은 “존재성” 보이는것이 매우 어려운 경우 유용하다. (예를들면 르벡메저의 경우) 확장이론1의 논리전개는 <span class="math inline">\(\big(\Omega, {\cal A}\big)\)</span> 에서 additivity, sub-additivity 를 체크해야하는 방향으로 흐른다. 확장이론2는 “존재성” 보장되는 상황에 “유일성”을 보이는 것이다. 따라서 일단 확장된 공간 <span class="math inline">\(\big(\Omega,\sigma({\cal A})\big)\)</span> 에서 측도 하나를 어떻게는 “설정”해놓고 그 설정값이 유일하다는 식의 주장을 하는 논리전개를 따른다.</p>
+<p>확장이론1은 “확장의 존재성 &amp; 유일성”을 동시에 보장한다. 그런데 확장이론2는 “유일성”만을 보장한다.</p>
+<p>확장이론1은 “존재성” 보이는 것이 매우 어려운 경우 특히 유용하다. (예를들면 르벡메저의 경우) 확장이론1의 논리전개는 <span class="math inline">\(\big(\Omega, {\cal A}\big)\)</span> 에서 additivity, sub-additivity 를 체크해야하는 방향으로 흐른다.</p>
+<p>확장이론2는 “존재성” 보장되는 상황에 “유일성”을 보이고자할때 특히 유용하다. 확장이론2는 아래와 같은 논리전개로 써먹을 수 있다.</p>
+<ul>
+<li><span class="math inline">\((\Omega, {\cal P}, \tilde{m})\)</span>을 알고 있을 경우: <span class="math inline">\(\tilde{m}\)</span>을 확장하여 공간 <span class="math inline">\(\big(\Omega,\sigma({\cal P})\big)\)</span> 에서 측도 하나를 어떻게는 “설정”해놓고 그 설정값이 유일하다는 식의 주장을 함.</li>
+<li><span class="math inline">\((\Omega, \sigma({\cal P}), m)\)</span>을 알고 있을 경우: 측도 <span class="math inline">\(m\)</span>의 값을 <span class="math inline">\({\cal P}\)</span> 에서만 definine 하여 <span class="math inline">\(\tilde{m}\)</span>을 만든다. 그리고 <span class="math inline">\(\tilde{m}\)</span>이 <span class="math inline">\(m\)</span>으로 유일하게 확장된다고 주장한다.</li>
+</ul>
 </div>
 </div>
 <p><strong><code># 예제1</code></strong> – 확장이론2의 위대함을 보여줄게요..</p>
@@ -809,8 +815,8 @@ Warning
 <li><span class="math inline">\(\tilde{P}(\{3,4\}) = 1/4\)</span></li>
 <li><span class="math inline">\(\tilde{P}(\Omega) = 1\)</span></li>
 </ul>
-<p>아쉽게도 <span class="math inline">\({\cal A}\)</span>는 시그마필드의 정의를 만족하지 않으므로, 위와 같은 함수 <span class="math inline">\(\tilde{P}\)</span>를 확률(=확률측도)이라고 주장할 수 없다.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> 그렇다고 해서 <span class="math inline">\(\sigma({\cal A})\)</span>를 구한 다음 그 위에서 확률측도를 정의하는건 너무 귀찮은 일이다. 어쩌면 좋을까?</p>
-<div class="no-row-height column-margin column-container"><li id="fn6"><p><sup>6</sup>&nbsp;그렇지만 사실 딱봐도 확률 같은걸? 이 정도만 정의하면 <span class="math inline">\(\sigma({\cal A})\)</span> 에서의 모든 사건들은 알아서 센스있게 잘 정의될 것 같은걸?</p></li></div><p><code>(풀이1)</code> – 확장이론1 적용</p>
+<p>아쉽게도 <span class="math inline">\({\cal A}\)</span>는 시그마필드의 정의를 만족하지 않으므로, 위와 같은 함수 <span class="math inline">\(\tilde{P}\)</span>를 확률(=확률측도)이라고 주장할 수 없다. 그렇다고 해서 <span class="math inline">\(\sigma({\cal A})\)</span>를 구한 다음 그 위에서 확률측도를 정의하는건 너무 귀찮은 일이다. 어쩌면 좋을까?</p>
+<p><code>(풀이1)</code> – 확장이론1 적용</p>
 <p>아까 한 풀이.. <span class="math inline">\({\cal A}\)</span>이 세미링임을 체크하고 <span class="math inline">\(\tilde{P}\)</span> 가 (1) additive in <span class="math inline">\({\cal A}\)</span> (2) <span class="math inline">\(\sigma\)</span>-subadditive on <span class="math inline">\({\cal A}\)</span> 임을 보임.</p>
 <p><code>(풀이2)</code> – 확장이론2 적용</p>
 <p>아래표의 오른쪽과 같은 <span class="math inline">\(\sigma({\cal A})\)</span>에서의 확률측도 <span class="math inline">\(\mathbb{P}\)</span>를 일단 만들어보자.</p>
