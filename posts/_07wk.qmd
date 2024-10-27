@@ -1,11 +1,11 @@
 ---
-title: "07wk: 측도론의 중요이론들 (2)"
+title: "07wk: 측도론의 중요이론들 (2)s"
 author: "최규빈"
 date: "10/24/2024"
 reference-location: margin
 citation-location: margin
 cap-location: margin
-draft: false
+draft: ture
 ---
 
 # 1. 강의영상 
@@ -257,7 +257,13 @@ $$1 = \tilde{P}(\{1\})+ \tilde{P}(\{2\}) + \tilde{P}(\{3,4\})=\frac{1}{4}+\frac{
 
 ### $\sigma$-subadd 체크~ 
 
-${\cal A}$의 cardinality는 finite 하므로 $\sigma$-subadd 를 체크할 필요 없이 subadd 만 체크하면 된다. 그런데 add 는 subadd를 imply 하므로 체크할 필요가 없다. 
+**방법1**
+
+${\cal A}$의 cardinality는 finite 하므로 $\sigma$-subadd 를 체크할 필요 없이 subadd 만 체크하면 된다. 그런데 세미링에서 add 는 subadd 를 imply 하므로 체크되었다. 
+
+**방법1**
+
+${\cal A}$의 cardinality는 finite 하므로 add 가 $\sigma$-add 를 imply 한다. 그런데 세미링에서 $\sigma$-add 는 $\sigma$-subadd 를 imply 하므로 체크되었다. 
 :::
 
 따라서 $\big(\Omega,{\cal A},\tilde{P}\big)$ 를 확장하여 measure space $\big(\Omega,\sigma({\cal A}),\mathbb{P}\big)$ 로 만들 수 있다. 또한 이러한 확장은 유일하다. 즉 아래가 성립한다. 
