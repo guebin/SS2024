@@ -25,7 +25,7 @@
     "href": "quiz/Quiz-5.html",
     "title": "Quiz-5 (2024.11.05) // 범위: 06wk 까지",
     "section": "",
-    "text": "1. 딘킨의 \\(\\pi-\\lambda\\) theorem"
+    "text": "1. 증명 – 30점\n(1) 전체집합 \\(\\Omega\\)에 대한 부분집합들의 모임 \\({\\cal A}\\)를 고려하자. \\(\\sigma({\\cal A})\\) 와 같은 표현이 항상 존재함을 보여라. – 10점\n(2) 딘킨의 \\(\\pi\\)-\\(\\lambda\\) 정리를 증명하라. – 20점\n\n\n2. O/X – 70점\n다음을 읽고 참/거짓을 판단하라.\n(1) 전체집합 \\(\\Omega\\)가 아래와 같이 서로소인 집합열 \\(B_1,B_2,\\dots,B_n\\) 으로 표현된다고 하자.\n\\[\\Omega=B_1 \\uplus B_2 \\uplus \\dots \\uplus B_n\\]\n아래와 같은 집합들의 집합 \\({\\cal A}\\)를 고려하자.\n\\[{\\cal A}=\\{\\emptyset, B_1,B_2,\\dots, B_n\\}\\]\n\\({\\cal A}\\)는 항상 세미링의 정의를 만족한다.\n(2) \\({\\cal F}_1,{\\cal F}_2 \\subset 2^\\Omega\\) 이 \\(\\Omega\\)에 대한 시그마필드이면 \\({\\cal F}_1 \\cap {\\cal F}_2\\) 역시 \\(\\Omega\\)에 대한 시그마필드이다.\n(3) \\({\\cal P}\\subset 2^\\Omega\\)이 파이시스템이라고 하자. \\(l({\\cal P}) \\subset \\sigma({\\cal P})\\) 는 항상 성립한다."
   },
   {
     "objectID": "posts/02wk.html#a.-귀류법",
