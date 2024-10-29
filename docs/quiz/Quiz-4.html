@@ -223,15 +223,60 @@ window.Quarto = {
 <p><span class="math inline">\(\Omega = \mathbb{R}\)</span> 의 부분집합들의 모임</p>
 <p><span class="math display">\[{\cal A}= \{[a,b]: a&lt; b,  \text{ where } a,b \in \mathbb{R} \}\]</span></p>
 <p>를 고려하자. 그리고 <span class="math inline">\({\cal R}=\sigma({\cal A})\)</span> 라고 하자.</p>
+<hr>
 <p><code>(1)</code> 임의의 실수 <span class="math inline">\(c\)</span> 만을 포함하는 집합 <span class="math inline">\(\{c\}\)</span> 가 <span class="math inline">\({\cal R}\)</span>의 원소임을 보여라. 즉 <span class="math inline">\(\{c\} \in {\cal R}\)</span> 임을 보여라.</p>
+<p><code>(풀이)</code></p>
+<p><span class="math inline">\([1,2] \in {\cal R}\)</span> 이고 <span class="math inline">\([2,3] \in {\cal R}\)</span> 이다. (왜냐하면 <span class="math inline">\([1,2], [2,3] \in {\cal A} \subset {\cal R}\)</span> 이므로) 시그마필드는 교집합에 닫혀있으므로 <span class="math display">\[[1,2] \cap [2,3] =\{2\} \in {\cal R}\]</span> 이 성립한다. 임의의 실수 <span class="math inline">\(c\)</span>에 대하여 동일한 논리전개를 사용할 수 있으므로 <span class="math display">\[\forall c \in \mathbb{R}: \{c\} \in {\cal R}\]</span> 이다.</p>
+<hr>
 <p><code>(2)</code> <span class="math inline">\(\mathbb{Q} \in {\cal R}\)</span> 임을 보여라.</p>
+<p><code>(풀이)</code></p>
+<p><span class="math inline">\(\mathbb{Q}= \bigcup_{q \in \mathbb{Q}}\{q\}\)</span> 로 표현가능하다. (1)에 의하여 <span class="math inline">\(\{q\} \in {\cal R}\)</span> 이고 시그마필드는 countable union에 닫혀있으므로 <span class="math inline">\(\bigcup_{q \in \mathbb{Q}}\{q\} \in {\cal R}\)</span> 이 성립한다. 따라서 <span class="math inline">\(\mathbb{Q} \in {\cal R}\)</span> 이다.</p>
+<hr>
 <p><code>(3)</code> <span class="math inline">\(\mathbb{Q}^c \in {\cal R}\)</span> 임을 보여라.</p>
+<p><code>(풀이)</code></p>
+<p>(2)에 의하여 <span class="math inline">\(\mathbb{Q} \in {\cal R}\)</span> 이고 시그마필드는 여집합에 닫혀있으므로 <span class="math inline">\(\mathbb{Q}^c \in {\cal R}\)</span> 이다.</p>
+<hr>
 <p><code>(4)</code> <span class="math inline">\(\mathbb{Q}^+ \in {\cal R}\)</span> 임을 보여라. 단, 여기에서 <span class="math inline">\(\mathbb{Q}^+\)</span> 은 양의 유리수집합을 의미한다. 즉 <span class="math inline">\(\mathbb{Q}^+=\{q: q \in \mathbb{Q},~ q&gt;0\}\)</span> 이다.</p>
+<p><code>(풀이)</code></p>
+<p>문항 (2)와 동일한 테크닉을 사용하면 된다. <span class="math inline">\(\mathbb{Q}^+= \bigcup_{q \in \mathbb{Q}^+}\{q\}\)</span> 로 표현가능하다. (1)에 의하여 <span class="math inline">\(\{q\} \in {\cal R}\)</span> 이고 시그마필드는 countable union에 닫혀있으므로 <span class="math inline">\(\bigcup_{q \in \mathbb{Q}^+}\{q\} \in {\cal R}\)</span> 이 성립한다. 따라서 <span class="math inline">\(\mathbb{Q}^+ \in {\cal R}\)</span> 이다.</p>
+<hr>
 <p><code>(5)</code> <span class="math inline">\(\mathbb{R}^+ \in {\cal R}\)</span> 임을 보여라. 단 여기에서 <span class="math inline">\(\mathbb{R}^+\)</span>은 양의 실수를 의미한다. 즉 <span class="math inline">\(\mathbb{R}^+ = \{x: x \in \mathbb{R}, ~x&gt;0\}\)</span> 이다.</p>
+<p><code>(풀이)</code></p>
+<p>이 문제는 문항 (2)와 동일한 테크닉을 사용할 수 없다. 왜냐하면</p>
+<p><span class="math display">\[\mathbb{R}^+= \bigcup_{x \in \mathbb{R}^+}\{x\}\]</span></p>
+<p>에서 <span class="math inline">\(\bigcup_{x \in \mathbb{R}^+}\)</span>은 countable union을 의미하는게 아니라 uncountable union을 의미하기 때문이다. 대신에 아래와 같이 <span class="math inline">\(\mathbb{R}^+\)</span>을 표현한다면</p>
+<p><span class="math display">\[\mathbb{R}^+= \bigcup_{n \in \mathbb{N}}[0,n] - \{0\}\]</span></p>
+<p><span class="math inline">\(\bigcup_{n \in \mathbb{N}}\)</span>은 countable union 이 된다. 이제 임의의 자연수 <span class="math inline">\(n\)</span>에 대하여 <span class="math inline">\([0,n] \in {\cal R}\)</span> 이고 시그마필드는 countable union에 닫혀다는 성질을 이용하면 <span class="math inline">\(\bigcup_{n \in \mathbb{N}}[0,n]\in {\cal R}\)</span> 이 성립한다. 여기에서 시그마필드가 차집합에 닫혀있음을 이용하면 <span class="math inline">\(\big(\bigcup_{n \in \mathbb{N}}[0,n]- \{x\}\big) \in {\cal R}\)</span> 역시 보일 수 있다. 따라서 <span class="math inline">\(\mathbb{R}^+ \in {\cal R}\)</span> 이다.</p>
+<hr>
 <p><code>(6)</code> <span class="math inline">\(a&lt;b\)</span> 인 임의의 실수 <span class="math inline">\(a,b\)</span> 에 대하여 <span class="math inline">\((a,b] \in {\cal R}\)</span>, <span class="math inline">\((a,b) \in {\cal R}\)</span>, <span class="math inline">\([a,b) \in {\cal R}\)</span> 임을 보여라.</p>
+<p><code>(풀이)</code></p>
+<p>아래와 같이 구간을 표현할 수 있다.</p>
+<ul>
+<li><span class="math inline">\((a,b] = [a,b]-\{a\}\)</span></li>
+<li><span class="math inline">\((a,b) = [a,b]-\{a\}-\{b\}\)</span></li>
+<li><span class="math inline">\([a,b) = [a,b]-\{b\}\)</span></li>
+</ul>
+<p>여기에서 <span class="math inline">\([a,b] \in {\cal R}\)</span> 이고 <span class="math inline">\(\{a\}\in{\cal R}, \{b\} \in {\cal R}\)</span> 라는 사실과 시그마필드가 차집합에 닫혀있다는 사실을 이용하면 <span class="math inline">\((a,b] \in {\cal R}\)</span>, <span class="math inline">\((a,b) \in {\cal R}\)</span>, <span class="math inline">\([a,b) \in {\cal R}\)</span> 임을 보일 수 있다.</p>
+<hr>
 <p><code>(7)</code> 임의의 실수 <span class="math inline">\(x\)</span>에 대하여 <span class="math inline">\((-\infty, x] \in {\cal R}\)</span>, <span class="math inline">\((-\infty,x) \in {\cal R}\)</span>, <span class="math inline">\((x,\infty) \in {\cal R}\)</span>, <span class="math inline">\([x,\infty) \in {\cal R}\)</span> 임을 보여라.</p>
+<p><code>(풀이)</code></p>
+<p>아래와 같이 구간을 표현할 수 있다.</p>
+<ul>
+<li><span class="math inline">\((-\infty, x] = \bigcup_{n \in \mathbb{N}}(-n,x]\)</span></li>
+<li><span class="math inline">\((-\infty, x) = \bigcup_{n \in \mathbb{N}}(-n,x)\)</span></li>
+<li><span class="math inline">\((x,\infty) = \bigcup_{n \in \mathbb{N}}(x,n)\)</span></li>
+<li><span class="math inline">\([x,\infty] = \bigcup_{n \in \mathbb{N}}[x,n)\)</span></li>
+</ul>
+<p>여기에서 (6)을 이용하면 구간 <span class="math inline">\((-n,x], (-n,x), (x,n), [x,n)\)</span> 은 모두 <span class="math inline">\({\cal R}\)</span> 의 원소임을 알 수 있다. 시그마필드는 countable union에 닫혀있으므로 <span class="math inline">\((-\infty, x] \in {\cal R}\)</span>, <span class="math inline">\((-\infty,x) \in {\cal R}\)</span>, <span class="math inline">\((x,\infty) \in {\cal R}\)</span>, <span class="math inline">\([x,\infty) \in {\cal R}\)</span> 을 보일 수 있다.</p>
+<hr>
 <p><code>(8)</code> <span class="math inline">\(\mathbb{N} \in {\cal R}\)</span> 임을 보여라.</p>
+<p><code>(풀이)</code></p>
+<p>문항 (2)와 동일한 테크닉을 사용한다. <span class="math inline">\(\mathbb{N} = \bigcup_{n \in \mathbb{N}}\{n\}\)</span> 로 표현할 수 있다. (1)에 의하여 <span class="math inline">\(\{n\} \in {\cal R}\)</span> 이고 시그마필드는 countable union에 닫혀있으므로 <span class="math inline">\(\bigcup_{n \in \mathbb{N}}\{n\} \in {\cal R}\)</span> 이 성립한다. 따라서 <span class="math inline">\(\mathbb{N} \in {\cal R}\)</span> 이다.</p>
+<hr>
 <p><code>(9)</code> <span class="math inline">\(A = \{x: x \geq 0, x \notin \mathbb{Q}\} \in {\cal R}\)</span> 임을 보여라.</p>
+<p><code>(풀이)</code></p>
+<p>문항 (4)에서 <span class="math inline">\(\mathbb{Q}^+ \in {\cal R}\)</span>임을 보였고 문항 (5)에서 <span class="math inline">\(\mathbb{R}^+ \in {\cal R}\)</span> 임을 보였다. <span class="math inline">\(A = \mathbb{R}^+-\mathbb{Q}^+\)</span> 이고 시그마필드가 차집합에 닫혀있으므로 <span class="math inline">\(A \in {\cal R}\)</span>이다.</p>
+<hr>
 <p><code>(10)</code> <span class="math inline">\(B = \{x: \sin(\pi x) &gt; 0, x\in \mathbb{R} \} \in {\cal R}\)</span> 임을 보여라.</p>
 <p><strong>hint:</strong> 10번의 집합 <span class="math inline">\(B\)</span>에 대한 힌트</p>
 <p><code>1</code>. <span class="math inline">\(\sin(\pi x)\)</span> 는 주기가 2인 함수이다.</p>
@@ -294,19 +339,28 @@ window.Quarto = {
 <path clip-path="url(#clip550)" d="M2123.19 1317.59 L2123.19 1321.62 Q2121.38 1320.7 2119.44 1320.23 Q2117.49 1319.77 2115.41 1319.77 Q2112.24 1319.77 2110.64 1320.74 Q2109.07 1321.71 2109.07 1323.66 Q2109.07 1325.14 2110.2 1326 Q2111.33 1326.83 2114.76 1327.59 L2116.22 1327.92 Q2120.76 1328.89 2122.65 1330.67 Q2124.57 1332.43 2124.57 1335.6 Q2124.57 1339.21 2121.7 1341.32 Q2118.86 1343.43 2113.86 1343.43 Q2111.77 1343.43 2109.51 1343.01 Q2107.26 1342.62 2104.76 1341.81 L2104.76 1337.41 Q2107.12 1338.63 2109.41 1339.26 Q2111.7 1339.86 2113.95 1339.86 Q2116.96 1339.86 2118.58 1338.84 Q2120.2 1337.8 2120.2 1335.93 Q2120.2 1334.19 2119.02 1333.26 Q2117.86 1332.34 2113.9 1331.48 L2112.42 1331.14 Q2108.46 1330.3 2106.7 1328.59 Q2104.95 1326.85 2104.95 1323.84 Q2104.95 1320.19 2107.54 1318.2 Q2110.13 1316.2 2114.9 1316.2 Q2117.26 1316.2 2119.34 1316.55 Q2121.43 1316.9 2123.19 1317.59 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip550)" d="M2131.36 1316.83 L2135.62 1316.83 L2135.62 1342.76 L2131.36 1342.76 L2131.36 1316.83 M2131.36 1306.74 L2135.62 1306.74 L2135.62 1312.13 L2131.36 1312.13 L2131.36 1306.74 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip550)" d="M2166.08 1327.11 L2166.08 1342.76 L2161.82 1342.76 L2161.82 1327.25 Q2161.82 1323.57 2160.38 1321.74 Q2158.95 1319.91 2156.08 1319.91 Q2152.63 1319.91 2150.64 1322.11 Q2148.65 1324.31 2148.65 1328.1 L2148.65 1342.76 L2144.37 1342.76 L2144.37 1316.83 L2148.65 1316.83 L2148.65 1320.86 Q2150.18 1318.52 2152.24 1317.36 Q2154.32 1316.2 2157.03 1316.2 Q2161.5 1316.2 2163.79 1318.98 Q2166.08 1321.74 2166.08 1327.11 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip550)" d="M2184.81 1306.78 Q2181.7 1312.11 2180.2 1317.32 Q2178.69 1322.52 2178.69 1327.87 Q2178.69 1333.22 2180.2 1338.47 Q2181.73 1343.7 2184.81 1349.01 L2181.1 1349.01 Q2177.63 1343.57 2175.89 1338.31 Q2174.18 1333.06 2174.18 1327.87 Q2174.18 1322.71 2175.89 1317.48 Q2177.61 1312.25 2181.1 1306.78 L2184.81 1306.78 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip550)" d="M2190.32 1316.83 L2215.15 1316.83 L2215.15 1321.09 L2211.89 1321.09 L2211.89 1337.01 Q2211.89 1338.68 2212.44 1339.42 Q2213.02 1340.14 2214.3 1340.14 Q2214.64 1340.14 2215.15 1340.09 Q2215.66 1340.02 2215.82 1340 L2215.82 1343.08 Q2215.01 1343.38 2214.16 1343.52 Q2213.3 1343.66 2212.44 1343.66 Q2209.67 1343.66 2208.6 1342.15 Q2207.54 1340.63 2207.54 1336.55 L2207.54 1321.09 L2197.98 1321.09 L2197.98 1342.76 L2193.63 1342.76 L2193.63 1321.09 L2190.32 1321.09 L2190.32 1316.83 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip550)" d="M2243.16 1316.83 L2233.79 1329.45 L2243.65 1342.76 L2238.63 1342.76 L2231.08 1332.57 L2223.53 1342.76 L2218.51 1342.76 L2228.58 1329.19 L2219.37 1316.83 L2224.39 1316.83 L2231.26 1326.07 L2238.14 1316.83 L2243.16 1316.83 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip550)" d="M2249 1306.78 L2252.7 1306.78 Q2256.17 1312.25 2257.88 1317.48 Q2259.62 1322.71 2259.62 1327.87 Q2259.62 1333.06 2257.88 1338.31 Q2256.17 1343.57 2252.7 1349.01 L2249 1349.01 Q2252.07 1343.7 2253.58 1338.47 Q2255.11 1333.22 2255.11 1327.87 Q2255.11 1322.52 2253.58 1317.32 Q2252.07 1312.11 2249 1306.78 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path></svg>
 </div>
 </div>
+<p><code>(풀이)</code></p>
+<p><span class="math inline">\(B\)</span> 는 아래와 같이 열린구간 <span class="math inline">\((a,b)\)</span>의 countable union으로 표현할 수 있다.</p>
+<p><span class="math display">\[B = \dots(-2,-1) \cup (0,1) \cup (2,3) \cup \dots\]</span></p>
+<p>(6)에 의하여 <span class="math inline">\((a,b) \in {\cal R}\)</span> 이고 시그마필드는 countable union에 닫혀있으므로 <span class="math inline">\(B \in {\cal R}\)</span> 이다.</p>
+<hr>
 </section>
 <section id="점-1" class="level1">
 <h1><code>2</code>. – 50점</h1>
 <p><span class="math inline">\(\Omega = \{a,b,c,d\}\)</span> 의 부분집합들의 모임</p>
 <p><span class="math display">\[{\cal A}=\big\{\{a,b,c\},\{b,c,d\}\big\}\]</span></p>
 <p>를 고려하자.</p>
+<hr>
 <p><code>(1)</code> <span class="math inline">\({\cal A}\)</span>를 포함하는 최소한의 시그마필드 즉 <span class="math inline">\(\sigma({\cal A})\)</span>를 구하라. – 20점</p>
+<p><code>(풀이)</code></p>
+<p><span class="math inline">\(\sigma({\cal A}) ={\cal A} \cup \big\{\emptyset, \Omega, \{b,c\},\{a\},\{d\},\{a,d\}\big\}\)</span></p>
+<hr>
 <p><code>(2)</code> 함수 <span class="math inline">\(\tilde{P}: {\cal A} \to [0,1]\)</span> 을 아래와 같이 정의하자.</p>
 <ul>
 <li><span class="math inline">\(\tilde{P}(\{a,b,c\}) = \frac{3}{4}\)</span></li>
 <li><span class="math inline">\(\tilde{P}(\{b,c,d\}) = \frac{3}{4}\)</span></li>
 </ul>
-<p><span class="math inline">\(\tilde{P}\)</span> 를 확장하여 확률측도의 정의를 만족하는 적당한 함수 <span class="math inline">\(P:\sigma({\cal A}) \to [0,1]\)</span> 를 유일하게 만들 수 있는가? – 30점</p>
+<p><span class="math inline">\(\tilde{P}\)</span> 를 확장하여 확률측도의 정의를 만족하는 적당한 함수 <span class="math inline">\(\mathbb{P}:\sigma({\cal A}) \to [0,1]\)</span> 를 유일하게 만들 수 있는가? – 30점</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -317,10 +371,43 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>단, 여기에서 <span class="math inline">\(\tilde{P}\)</span>를 확장하여 <span class="math inline">\(P\)</span>를 만든다는 의미는 아래가 성립하도록 한다는 의미이다.</p>
-<p><span class="math display">\[\forall A \in {\cal A}: \tilde{P}(A) = P(A)\]</span></p>
+<p>단, 여기에서 <span class="math inline">\(\tilde{P}\)</span>를 확장하여 <span class="math inline">\(\mathbb{P}\)</span>를 만든다는 의미는 아래가 성립하도록 한다는 의미이다.</p>
+<p><span class="math display">\[\forall A \in {\cal A}: \tilde{P}(A) = \mathbb{P}(A)\]</span></p>
 </div>
 </div>
+<p><code>(풀이)</code></p>
+<p><span class="math inline">\(\tilde{P}\)</span>를 확장해서 만들어야 하므로 <span class="math inline">\(A \in {\cal A}\)</span> 에서 <span class="math inline">\(\mathbb{P}(A)\)</span> 의 값은 아래와 같이 설정해야한다.</p>
+<ul>
+<li><span class="math inline">\(\mathbb{P}(\{a,b,c\}) = \tilde{P}(\{a,b,c\})=\frac{3}{4}\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\{b,c,d\})=\tilde{P}(\{b,c,d\}) =\frac{3}{4}\)</span></li>
+</ul>
+<p>이제 <span class="math inline">\(A \in \big(\sigma({\cal A}) - {\cal A}\big)\)</span> 에서의 <span class="math inline">\(\mathbb{P}(A)\)</span>의 값을 정의하여 보자. 즉 아래의 값을 결정해야한다.</p>
+<ol type="1">
+<li><span class="math inline">\(\mathbb{P}(\emptyset)=??\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\Omega)=??\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\{b,c\})=??\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\{a\})=??\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\{d\})=??\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\{a,d\})=??\)</span></li>
+</ol>
+<p>여기에서 <span class="math inline">\(??\)</span>에 해당하는 값들을 확률의 공리에 모순되지 않게 결정할 수 있다면 “확장가능” 이고, <span class="math inline">\(??\)</span>의 값을 확률의 공리에 모순되지 않게 정할 수 있는 값이 단 하나라면 “확장가능” &amp; “유일” 이라고 볼 수 있다.</p>
+<ul>
+<li>항목1,2 는 <span class="math inline">\(\mathbb{P}(\emptyset)=0\)</span>, <span class="math inline">\(\mathbb{P}(\Omega)=1\)</span> 이외의 다른 선택지가 없다.</li>
+<li>항목4는 <span class="math inline">\(\mathbb{P}(\{a\})=1-\mathbb{P}(\{b,c,d\})=\frac{1}{4}\)</span> 이어야 하므로 이 역시 다른 선택지가 없다.</li>
+<li>항목5는 항목4와 마찬가지로 <span class="math inline">\(\mathbb{P}(\{d\})=1-\mathbb{P}(\{d\})=\frac{1}{4}\)</span> 이어야 하므로 이 역시 다른 선택지가 없다.</li>
+<li>항목6은 항목4와 항목5에 의하여 <span class="math inline">\(\mathbb{P}(\{a,d\})=\mathbb{P}(\{a\})+\mathbb{P}(\{d\})=\frac{1}{2}\)</span> 이어야 한다. 그래서 항목6 역시 다른 선택지가 없다.</li>
+<li>항목3은 항목6에 의하여 <span class="math inline">\(\mathbb{P}(\{b,c\})=1-\mathbb{P}(\{a,d\})=\frac{1}{2}\)</span> 이어야 하고 이 역시 다른 선택지는 없다.</li>
+</ul>
+<p>위에서 논의된 값들을 정리하면</p>
+<ol type="1">
+<li><span class="math inline">\(\mathbb{P}(\emptyset)=0\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\Omega)=1\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\{b,c\})=\frac{1}{2}\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\{a\})=\frac{1}{4}\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\{d\})=\frac{1}{4}\)</span></li>
+<li><span class="math inline">\(\mathbb{P}(\{a,d\})=\frac{1}{2}\)</span></li>
+</ol>
+<p>와 같이 만들 수 있다. 이러한 함수 <span class="math inline">\(\mathbb{P}\)</span>는 <span class="math inline">\(\sigma({\cal A})\)</span> 에서 확률의 정의를 만족한다. 따라서 확장가능하다. 또한 위의 숫자들 이외에 다른선택지가 없었으므로 이 확장은 유일하다.</p>
 
 
 </section>
