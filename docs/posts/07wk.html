@@ -9,7 +9,7 @@
 <meta name="author" content="최규빈">
 <meta name="dcterms.date" content="2024-10-24">
 
-<title>SS2024 - 07wk: 측도론의 중요이론들 (2)</title>
+<title>SS2024 - 07wk-08wk: 측도론의 중요이론들 (2)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -152,7 +186,6 @@ window.Quarto = {
    
   <ul>
   <li><a href="#강의영상" id="toc-강의영상" class="nav-link active" data-scroll-target="#강의영상">1. 강의영상</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/playlist?list=PLQqh36zP38-wPRAGCBWdFBZvnPV7102DO&amp;si=JCIBoQID_LlT4ZjK" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div></a></li>
   <li><a href="#집합함수" id="toc-집합함수" class="nav-link" data-scroll-target="#집합함수">2. 집합함수</a>
   <ul class="collapse">
   <li><a href="#a.-집합함수의-성질" id="toc-a.-집합함수의-성질" class="nav-link" data-scroll-target="#a.-집합함수의-성질">A. 집합함수의 성질</a></li>
@@ -172,7 +205,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">07wk: 측도론의 중요이론들 (2)</h1>
+<h1 class="title">07wk-08wk: 측도론의 중요이론들 (2)</h1>
 </div>
 
 
@@ -203,9 +236,9 @@ window.Quarto = {
 
 <section id="강의영상" class="level1">
 <h1>1. 강의영상</h1>
-</section>
-<section id="section" class="level1">
-<h1><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/playlist?list=PLQqh36zP38-wPRAGCBWdFBZvnPV7102DO&amp;si=JCIBoQID_LlT4ZjK" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div></h1>
+<div id="cell-2" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># {{&lt; video https://youtu.be/playlist?list=PLQqh36zP38-wPRAGCBWdFBZvnPV7102DO&amp;si=JCIBoQID_LlT4ZjK &gt;}}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="집합함수" class="level1 page-columns page-full">
 <h1>2. 집합함수</h1>
@@ -626,6 +659,14 @@ add 체크~
 </ul>
 <p><span class="math inline">\(\bar{P}\)</span>는 <span class="math inline">\(\tilde{P}\)</span>를 확장한 <strong>확률인 듯 확률 아닌 함수</strong>이다. 즉 <span class="math inline">\(\bar{P}\)</span>는 <span class="math inline">\(\bar{\cal A}\)</span> 에서 (1) additivity (2) <span class="math inline">\(\sigma\)</span>-subadditivity 를 만족한다.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> 따라서 <span class="math inline">\(\bar{P}\)</span>를 확장하여 <span class="math inline">\(\sigma(\bar{\cal A})=\sigma({\cal A})\)</span> 에서의 확률 <span class="math inline">\(\mathbb{P}\)</span>를 만들 수 있으며, 이렇게 만들어진 <span class="math inline">\(\mathbb{P}\)</span>는 유일하다. 또한 <span class="math inline">\(\tilde{P}\)</span>를 확장하여 <span class="math inline">\(\bar{\cal A}\)</span>에서의 <strong>확률인 듯 확률 아닌 함수</strong>로 확장하는 방법이 <span class="math inline">\(\bar{P}\)</span>가 유일함을 떠올리면<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> <span class="math inline">\({\cal A}\)</span>에서의 집합함수 <span class="math inline">\(\tilde{P}\)</span>를 <span class="math inline">\(\sigma({\cal A})\)</span>에서의 확률로 업그레이드 하는 방법은 이것이 유일함을 알 수 있다.</p>
 <div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;add 만 체크하면 끝나는거 알죠?</p></li><li id="fn4"><p><sup>4</sup>&nbsp;<span class="math inline">\(\bar{P}(\emptyset)\)</span>, <span class="math inline">\(\bar{P}(\Omega)\)</span>, <span class="math inline">\(\bar{P}(\{a\})\)</span>, <span class="math inline">\(\bar{P}(\{d\})\)</span>, <span class="math inline">\(\bar{P}(\{b,c\})\)</span>의 값을 달리 정의할 수 있는 방법이 없잖아요??</p></li></div><p><code>#</code></p>
+<p><code># 정리</code></p>
+<p><span class="math inline">\(\Omega\)</span>에 대한 부분집합들의 모임 <span class="math inline">\({\cal A}\)</span> 를 고려하자. 아래가 성립함을 보여라.</p>
+<p><span class="math display">\[X \in \sigma({\cal A}) \Rightarrow \sigma\big({\cal A} \cup \{X\}\big) = \sigma({\cal A})\]</span></p>
+<p>좀 더 일반적으로는 아래가 성립한다.</p>
+<p><span class="math display">\[\forall X \in {\cal X}:  X \in \sigma({\cal A}) \Rightarrow \sigma\big({\cal A} \cup {\cal X} \big) = \sigma({\cal A})\]</span></p>
+<p><code>(증명)</code></p>
+<p>그냥 외웁시다.. <span class="math inline">\({\cal A}\)</span> 에 원소를 추가해서 <span class="math inline">\(\sigma({\cal A})\)</span> 를 만드는 과정을 잘 이해했다면 이건 당연하니까요..</p>
+<p><code>#</code></p>
 <p><code># 예제4</code></p>
 <p><span class="math inline">\(\Omega=\{1,2,3\}\)</span> 이라고 하고 <span class="math inline">\({\cal A} = \{\emptyset, \{1,2\},\{2,3\}, \Omega\}\)</span> 라고 하자. 아래와 같은 집합함수 <span class="math inline">\(\tilde{P}:{\cal A} \to [0,1]\)</span>를 정의하자.</p>
 <ul>
@@ -634,7 +675,18 @@ add 체크~
 <li><span class="math inline">\(\tilde{P}(\{2,3\}) = 0\)</span></li>
 <li><span class="math inline">\(\tilde{P}(\Omega) = 1\)</span></li>
 </ul>
-<p>일단 <span class="math inline">\({\cal A}\)</span>는 세미링이 아니다. 적당히 <span class="math inline">\({\cal A}\)</span>를 확장하여 세미링 <span class="math inline">\(\bar{\cal A}\)</span>를 만든다고 하여도 <span class="math inline">\(\bar{\cal A}\)</span>에서 add가 성립하지 않을것 같다. 즉 <strong>확률인 듯 확률 아닌</strong> 함수조차 만들 수 없다. 따라서 이 경우는 확장이 불가능하다.</p>
+<p>이러한 집합함수 <span class="math inline">\(\tilde{P}\)</span>는 <span class="math inline">\(\sigma({\cal A})\)</span> 에서의 확률측도로 확장가능할까?</p>
+<p><code>(느낌)</code></p>
+<p>그냥 안될 것 같다. 일단 <span class="math inline">\({\cal A}\)</span>는 세미링이 아니다. 적당히 <span class="math inline">\({\cal A}\)</span>를 확장하여 세미링 <span class="math inline">\(\bar{\cal A}\)</span>를 만든다고 하여도 <span class="math inline">\(\bar{\cal A}\)</span>에서 add 혹은 <span class="math inline">\(\sigma\)</span>-subadd 가 성립하지 않을것 같다. 즉 <strong>확률인 듯 확률 아닌</strong> 함수조차 만들 수 없다. 따라서 이 경우는 확장이 불가능할 것 같다.</p>
+<p><code>(풀이)</code></p>
+<p>확장가능하다고 하자. 즉 아래를 만족하는 함수 <span class="math inline">\(\mathbb{P}: \sigma({\cal A}) \to [0,1]\)</span> 가 존재한다고 하자.</p>
+<ol type="1">
+<li><span class="math inline">\(\forall A \in {\cal A}: \mathbb{P}(A) = \tilde{P}(A)\)</span></li>
+<li><span class="math inline">\(\mathbb{P}\)</span> is prob-msr on <span class="math inline">\(\big(\Omega, \sigma({\cal A})\big)\)</span></li>
+</ol>
+<p>1에 의하여 <span class="math inline">\(\mathbb{P}(\{1,2\}) = \mathbb{P}(\{2,3\}) = 0\)</span> 이어야 한다. 또한 2에 의하여 <span class="math inline">\(\mathbb{P}\)</span>는 <span class="math inline">\(\big(\Omega,\sigma({\cal A})\big)\)</span> 에서의 확률이고 따라서 아래가 성립해야 한다.</p>
+<p><span class="math display">\[\mathbb{P}\big(\{1,2\} \cup\{2,3\} \big) \leq \mathbb{P}(\{1,2\})  + \mathbb{P}(\{2,3\})\]</span></p>
+<p>그런데 1에 의하여 우변은 0이고 좌변은 1 이므로 이는 모순이다.</p>
 <p><code>#</code></p>
 <p><code># 예제5</code></p>
 <p><span class="math inline">\(\Omega=\{1,2,3,4\}\)</span> 이라고 하고 <span class="math inline">\({\cal A} = \{\emptyset, \{1,2\},\{2,3\}, \Omega\}\)</span> 라고 하자. 아래와 같은 확률 비슷한 함수 <span class="math inline">\(\tilde{P}:{\cal A} \to [0,1]\)</span>를 정의하자.</p>
@@ -644,6 +696,8 @@ add 체크~
 <li><span class="math inline">\(\tilde{P}(\{2,3\}) = 1/2\)</span></li>
 <li><span class="math inline">\(\tilde{P}(\Omega) = 1\)</span></li>
 </ul>
+<p>이러한 집합함수 <span class="math inline">\(\tilde{P}\)</span>는 <span class="math inline">\(\sigma({\cal A})\)</span> 에서의 확률측도로 확장가능할까? 확장가능하다면 결과는 유일할까?</p>
+<p><code>(풀이1)</code></p>
 <p>이 예제의 경우 위의 예제와 다르게 <span class="math inline">\(\bar{\cal A}\)</span>에서 add가 성립해보인다. 확장을 시도해보자. 우선 <span class="math inline">\({\cal A}\)</span>를 적당히 확장하여 세미링을 만든다. <span class="math display">\[\bar{\cal A} = \{\emptyset, \{1,2\}, \{2,3\}, \Omega, \{1\}, \{2\}, \{3\}, \{4\}\}\]</span></p>
 <p>이제 <span class="math inline">\(\tilde{P}\)</span>를 적절히 확장하여 <strong>확률인 듯 확률 아닌</strong> 함수 <span class="math inline">\(\bar{P}: \bar{\cal A} \to [0,1]\)</span> 를 정의해보자. 그런데…</p>
 <table class="table">
@@ -703,6 +757,161 @@ add 체크~
 </tbody>
 </table>
 <p>와 같이 유일하게 <span class="math inline">\(\bar{P}\)</span>를 정할 수 없다. 이때 위에서 정의된 함수 <span class="math inline">\(\bar{P}_1\)</span>, <span class="math inline">\(\bar{P}_2\)</span> 는 모두 세미링 <span class="math inline">\(\bar{\cal A}\)</span> 에서 add하다. 따라서 <strong>확률인 듯 확률 아닌</strong> 함수 <span class="math inline">\(\bar{P}_1\)</span>, <span class="math inline">\(\bar{P}_2\)</span> 는 각각 확률 <span class="math inline">\(\mathbb{P}_1\)</span>, <span class="math inline">\(\mathbb{P}_2\)</span>로 업그레이드 될 수 있다. 요약하면 <span class="math inline">\(\tilde{P}\)</span>는 확장되어 확률 <span class="math inline">\(\mathbb{P}_1\)</span> 로 업그레이드 될 수도 있고 <span class="math inline">\(\mathbb{P}_2\)</span> 로 업그레이드 될 수도 있다. 따라서 일단 <span class="math inline">\(\tilde{P}\)</span> 는 업그레이드는 가능하지만 그 결과가 유일하지 않다고 볼 수 있다.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>그냥 보여줄게요.. 아래를 보면 <span class="math inline">\(\mathbb{P}_1\)</span>, <span class="math inline">\(\mathbb{P}_2\)</span>는 <span class="math inline">\({\cal A}\)</span>에서는 일치하지만 <span class="math inline">\(\sigma(A)\)</span>에서는 일치하지 않는 두 확률측도입니다.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">-</th>
+<th style="text-align: center;"><span class="math inline">\(\mathbb{P}_1\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\mathbb{P}_2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\emptyset\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\{1,2\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{2}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\{2,3\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{2}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\Omega\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\{1\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{2}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\{2\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\{3\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{2}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\{4\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\{1,3\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\{1,4\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{2}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\{2,4\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\{3,4\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{2}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\{2,3,4\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{2}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\{1,3,4\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\{1,2,4\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{2}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\{1,2,3\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><code>(풀이2)</code></p>
+<p>아래와 같은 집합을 고려하자. <span class="math inline">\({\cal S} = \{\emptyset, \{1\},\{2\},\{3\},\{4\}\}\)</span> 라고 하자. 아래와 같은 두개의 집합함수 <span class="math inline">\(\tilde{P}_1:{\cal S} \to [0,1]\)</span>, <span class="math inline">\(\tilde{P}_2:{\cal S} \to [0,1]\)</span>를 정의하자.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">-</th>
+<th style="text-align: center;"><span class="math inline">\(\tilde{P}_1\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\tilde{P}_2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\emptyset\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\{1\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1/2\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\{2\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1/2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\{3\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1/2\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\{4\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1/2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\({\cal S}\)</span>는 세미링이고 이 두 집합함수는 <span class="math inline">\({\cal S}\)</span>에서 add를 만족하므로 확장정리1에 의하여 각각 <span class="math inline">\(\mathbb{P}_1:\sigma({\cal S}) \to [0,1]\)</span>, <span class="math inline">\(\mathbb{P}_2: \sigma({\cal S}) \to [0,1]\)</span>로 확장가능하다. 그런데 이렇게 확장된 <span class="math inline">\(\mathbb{P}_1\)</span>, <span class="math inline">\(\mathbb{P}_2\)</span>의 값을 <span class="math inline">\({\cal A}=\{\emptyset, \{1,2\},\{2,3\}, \Omega\}\)</span>에서 조사해보면</p>
+<p><span class="math display">\[\forall A \in {\cal A}: \mathbb{P}_1(A)=\mathbb{P}_2(A)=\tilde{P}(A)\]</span></p>
+<p>임을 알 수 있다. 또한 <span class="math inline">\(\sigma({\cal S}) = \sigma({\cal A})\)</span> 임을 이용하면 결국 <span class="math inline">\(\mathbb{P}_1\)</span>, <span class="math inline">\(\mathbb{P}_2\)</span> 는 <span class="math inline">\({\cal A}\)</span> 에서는 모두 <span class="math inline">\(\tilde{P}\)</span>와 일치하지만 <span class="math inline">\(\sigma({\cal A})=\sigma({\cal S})\)</span> 에서는 일치하지 않는 두 확률측도임을 알 수 있다. 따라서 <span class="math inline">\(\tilde{P}\)</span> 는 <span class="math inline">\(\big(\Omega, \sigma({\cal A})\big)\)</span> 에서의 확률측도로 확장가능하다고 주장할 수 있지만 그 확장의 유일성을 보장할 수는 없다.</p>
 <p><code>#</code></p>
 <p><code># 예제6</code> – 통계학과라서 행복해</p>
 <p><span class="math inline">\(\Omega=\{a,b\}\)</span> 이라고 하고 <span class="math inline">\({\cal A} = \{\emptyset,\{a\}\}\)</span> 라고 하자. 여기에서 <span class="math inline">\({\cal A}\)</span> 는 세미링이다. 이때 <strong>측도인 듯 측도 아닌</strong> 함수 <span class="math inline">\(\tilde{m}: {\cal A} \to [0,1]\)</span> 를 아래와 같이 정의하자.</p>
@@ -710,6 +919,8 @@ add 체크~
 <li><span class="math inline">\(\tilde{m}(\emptyset)=0\)</span></li>
 <li><span class="math inline">\(\tilde{m}(\{a\})=\frac{1}{2}\)</span></li>
 </ul>
+<p>이 함수는 <span class="math inline">\(\tilde{m}\)</span>은 <span class="math inline">\(\big(\Omega, \sigma({\cal A})\big)\)</span> 에서의 측도로 확장가능할까? 확장가능하다면 결과는 유일할까? 만약에 <span class="math inline">\(\tilde{m}(\Omega)=1\)</span> 이라는 조건을 추가로 준다면 어떠할까?</p>
+<p><code>(풀이)</code></p>
 <p>이 함수는 <span class="math inline">\({\cal A}\)</span>에서 add를 만족한다. 함수 <span class="math inline">\(\tilde{m}\)</span>은 잴 수 있는 공간 <span class="math inline">\((\Omega,\sigma({\cal A})\big)\)</span>에서의 측도로 확장가능하다. 하지만 유일한 확장이 가능하지는 않다. (시그마유한하지 않아서 그래..)</p>
 <table class="table">
 <thead>
@@ -881,8 +1092,17 @@ Warning
 </table>
 <p>심심풀이로 <span class="math inline">\(\tilde{P}\)</span>를 확장한 확률측도 <span class="math inline">\(\mathbb{P}\)</span>를 만들어 봤는데, 이 확률측도는 유일하다. 왜냐하면 <span class="math inline">\({\cal A}\)</span>가 파이시스템이니까..</p>
 <p><code>#</code></p>
-<p><code># 예제9</code></p>
-<p><span class="math inline">\(\Omega=\{1,2,3,4\}\)</span> 이라고 하고 <span class="math inline">\({\cal A} = \{\emptyset, \{1,2\},\{2,3\}, \Omega\}\)</span> 라고 하자. 이제 <span class="math inline">\(\sigma({\cal A})\)</span> 에서의 확률측도 <span class="math inline">\(\mathbb{P}_1\)</span> 와 <span class="math inline">\(\mathbb{P}_2\)</span> 를 고려하자.</p>
+<p><code># 예제9</code> – 예제5를 다시 살펴보자..</p>
+<p><span class="math inline">\(\Omega=\{1,2,3,4\}\)</span> 이라고 하고 <span class="math inline">\({\cal A} = \{\emptyset, \{1,2\},\{2,3\}, \Omega\}\)</span> 라고 하자. 아래와 같은 확률 비슷한 함수 <span class="math inline">\(\tilde{P}:{\cal A} \to [0,1]\)</span>를 정의하자.</p>
+<ul>
+<li><span class="math inline">\(\tilde{P}(\emptyset) = 0\)</span></li>
+<li><span class="math inline">\(\tilde{P}(\{1,2\}) = 1/2\)</span></li>
+<li><span class="math inline">\(\tilde{P}(\{2,3\}) = 1/2\)</span></li>
+<li><span class="math inline">\(\tilde{P}(\Omega) = 1\)</span></li>
+</ul>
+<p>이러한 집합함수 <span class="math inline">\(\tilde{P}\)</span>는 <span class="math inline">\(\sigma({\cal A})\)</span> 에서의 확률측도로 확장가능한가? 이 확장결과는 유일할까?</p>
+<p><code>(살펴봄)</code></p>
+<p>이미 한번 푼 적있는 예제이다. 즉 <span class="math inline">\({\cal A}\)</span>에서의 아래와 같이 <span class="math inline">\(\sigma({\cal A})\)</span> 에서의 확률측도 <span class="math inline">\(\mathbb{P}_1\)</span> 와 <span class="math inline">\(\mathbb{P}_2\)</span> 를 고려하자.</p>
 <table class="table">
 <thead>
 <tr class="header">
@@ -979,11 +1199,22 @@ Warning
 </tr>
 </tbody>
 </table>
-<p>여기에서 <span class="math inline">\(\mathbb{P}_1\)</span>와 <span class="math inline">\(\mathbb{P}_2\)</span>는 분명히 <span class="math inline">\({\cal A}\)</span>에서는 일치하지만, <span class="math inline">\(\sigma({\cal A})\)</span> 에서는 일치하지 않는다. 즉 <span class="math inline">\(\big(\Omega, \sigma({\cal A})\big)\)</span> 에서의 모든 확률측도의 값은 <span class="math inline">\({\cal A}\)</span> 에서의 값으로 유일하게 결정되지는 않는다.</p>
-<p>그 이유는 여기에서 주어진 <span class="math inline">\({\cal A}\)</span>가 파이시스템이 아니기 때문이다. 따라서 <span class="math inline">\({\cal A}\)</span>에서의 값은 agree하지만 <span class="math inline">\((\Omega, \sigma({\cal A}))\)</span>에서 agree하지 않는 서로 다른 확률측도가 존재할 수도 있는 것이다. 만약에 이 예제에서 <span class="math inline">\({\cal A}\)</span>를 아래와 같이 수정한다면</p>
+<p>여기에서 <span class="math inline">\(\mathbb{P}_1\)</span>와 <span class="math inline">\(\mathbb{P}_2\)</span>는 분명히 <span class="math inline">\({\cal A}\)</span>에서는 일치하지만, <span class="math inline">\(\sigma({\cal A})\)</span> 에서는 일치하지 않는다. 즉 <span class="math inline">\(\big(\Omega, \sigma({\cal A})\big)\)</span> 에서의 모든 확률측도의 값은 <span class="math inline">\({\cal A}\)</span> 에서의 값으로 유일하게 결정되지는 않는다. 따라서 확장가능하지만 (<span class="math inline">\(\mathbb{P}_1,\mathbb{P}_2\)</span> 의 존재로 인하여 확장가능함이 보장) 유일하지 않다 (<span class="math inline">\(\mathbb{P}_1 \neq \mathbb{P}_2\)</span> 이니까).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>추가설명: 유일한 확장이 보장되지 않는 이유는 여기에서 주어진 <span class="math inline">\({\cal A}\)</span>가 파이시스템이 아니기 때문이다. 따라서 <span class="math inline">\({\cal A}\)</span>에서의 값은 agree하지만 <span class="math inline">\((\Omega, \sigma({\cal A}))\)</span>에서 agree하지 않는 서로 다른 확률측도가 존재할 수도 있는 것이다. 만약에 이 예제에서 <span class="math inline">\({\cal A}\)</span>를 아래와 같이 수정한다면</p>
 <p><span class="math display">\[{\cal A}=\{\emptyset, \{1,2\}, \{2,3\}, \{2\}\}\]</span></p>
 <p>이번에는 <span class="math inline">\({\cal A}\)</span>는 파이시스템이 된다. 따라서 이 경우 <span class="math inline">\((\Omega, \sigma({\cal A}))\)</span>에서의 모든 확률측도는 <span class="math inline">\({\cal A}\)</span>의 값에 의하여 유일하게 결정된다.</p>
-<p><code>#</code></p>
+</div>
+</div>
 <p><code># 예제10</code> – 예제3을 다시풀자.</p>
 <p><span class="math inline">\(\Omega = \{a,b,c,d\}\)</span> 의 부분집합들의 모임</p>
 <p><span class="math display">\[{\cal A}=\big\{\{a,b,c\},\{b,c,d\}\big\}\]</span></p>
@@ -994,69 +1225,36 @@ Warning
 </ul>
 <p><span class="math inline">\(\tilde{P}\)</span> 를 확장하여 확률측도의 정의를 만족하는 적당한 함수 <span class="math inline">\(\mathbb{P}:\sigma({\cal A}) \to [0,1]\)</span> 를 유일하게 만들 수 있는가?</p>
 <p><code>(풀이)</code></p>
-<p>아래와 같은 파이시스템을 고려하자.</p>
-<p><span class="math display">\[{\cal P}=\big\{\emptyset, \{a\},\{b,c\},\{d\}\big\}\]</span></p>
-<p>여기에서 결정되는 확률측도 <span class="math inline">\(\mathbb{P}:\sigma({\cal P}) \to [0,1]\)</span> 를 고려하자.</p>
+<p>편의상 <span class="math inline">\({\cal A}=\big\{\{a,b,c\},\{b,c,d\}\big\}\)</span> 에서 정의된 집합함수<span class="math inline">\(\tilde{P}\)</span>를 <span class="math inline">\(\tilde{P}_1\)</span>라고 하자.</p>
 <ul>
-<li><span class="math inline">\(\mathbb{P}(\{a\})=\mathbb{P}(\{d\})=\frac{1}{4}\)</span></li>
-<li><span class="math inline">\(\mathbb{P}(\{b,c\})=\frac{1}{2}\)</span></li>
+<li><span class="math inline">\(\tilde{P}_1(\{a,b,c\}) = \frac{3}{4}\)</span></li>
+<li><span class="math inline">\(\tilde{P}_1(\{b,c,d\}) = \frac{3}{4}\)</span></li>
 </ul>
-<p>주장: (1) <span class="math inline">\(\sigma({\cal P})=\sigma({\cal A})\)</span> 이다. (2) <span class="math inline">\(\tilde{P}\)</span>는 <span class="math inline">\(\mathbb{P}\)</span>로 유일하게 확장된다.</p>
-<p>여기에서 (1)은 <span class="math inline">\(\sigma({\cal P} \cup {\cal A})=\sigma({\cal A})\)</span> 이고 <span class="math inline">\(\sigma({\cal P})=\sigma({\cal P \cup {\cal A}})\)</span> 이므로 당연하다. 이제 (2)를 보이면 된다.</p>
-<p>귀류법: <span class="math inline">\(\tilde{P}\)</span>가 <span class="math inline">\(\mathbb{P}\)</span>가 아닌 다른방식 <span class="math inline">\(\mathbb{P}'\)</span> 으로 확장되었다고 가정하자. <span class="math inline">\(\mathbb{P}'\)</span>는 <span class="math inline">\(\tilde{P}\)</span> 의 확장이므로 아래가 성립한다.</p>
+<p><strong>먼저 존재성을 따져보자</strong></p>
+<p>세미링 <span class="math inline">\({\cal S}=\big\{\emptyset, \{a\},\{b,c\},\{d\}\big\}\)</span> 을 고려하고, 이 세미링에서 정의된 집함함수 <span class="math inline">\(\tilde{P}_2\)</span>를 생각하자.</p>
 <ul>
-<li><span class="math inline">\(\mathbb{P}'(\{a,b,c\})=\frac{3}{4}\)</span></li>
-<li><span class="math inline">\(\mathbb{P}'(\{b,c,d\})=\frac{3}{4}\)</span></li>
+<li><span class="math inline">\(\tilde{P}_2(\{a\})=\tilde{P}_2(\{d\})=\frac{1}{4}\)</span></li>
+<li><span class="math inline">\(\tilde{P}_2(\{b,c\})=\frac{1}{2}\)</span></li>
 </ul>
-<p><span class="math inline">\(\mathbb{P}'\)</span>는 확률측도의정의를 만족하므로 아래가 성립한다.</p>
+<p><span class="math inline">\(\tilde{P}_2\)</span>는 <span class="math inline">\(\sigma({\cal S})\)</span> 에서 add를 만족하므로 <span class="math inline">\(\big(\Omega,\sigma({\cal S})\big)\)</span> 에서의 확률측도로 유일하게 확장된다. 이렇게 확장된 측도를 <span class="math inline">\(\mathbb{P}_2\)</span> 라고 하자. 그런데 <span class="math inline">\(\mathbb{P}_2\)</span>는</p>
+<p><span class="math display">\[\forall A \in {\cal A}: \mathbb{P}_2(A) = \tilde{P}_1(A)\]</span></p>
+<p>를 만족하고 <span class="math inline">\(\sigma({\cal S})\)</span>는 사실 <span class="math inline">\(\sigma({\cal A})\)</span>와 같으므로 <span class="math inline">\(\mathbb{P}_2\)</span>는 <span class="math inline">\(\tilde{P}_1(A)\)</span>이 확장된 확률측도이다. 따라서 존재성이 증명되었다.</p>
+<p><strong>이제 유일성을 따져보자.</strong></p>
+<p>귀류법: <span class="math inline">\(\tilde{P}_1\)</span>가 <span class="math inline">\(\mathbb{P}_2\)</span>가 아닌 다른 <span class="math inline">\(\mathbb{P}_1\)</span> 으로 확장되었다고 가정하자. <span class="math inline">\(\mathbb{P}_1\)</span>는 <span class="math inline">\(\tilde{P}_1\)</span> 의 확장이므로 아래가 성립한다.</p>
 <ul>
-<li><span class="math inline">\(\mathbb{P}'(\{d\})=\frac{1}{4}\)</span></li>
-<li><span class="math inline">\(\mathbb{P}'(\{a\})=\frac{1}{4}\)</span></li>
-<li><span class="math inline">\(\mathbb{P}'(\{b,c\})=\frac{1}{2}\)</span></li>
+<li><span class="math inline">\(\mathbb{P}_1(\{a,b,c\})=\frac{3}{4}\)</span></li>
+<li><span class="math inline">\(\mathbb{P}_1(\{b,c,d\})=\frac{3}{4}\)</span></li>
 </ul>
-<p>따라서 <span class="math inline">\(\mathbb{P}'\)</span>는 <span class="math inline">\({\cal P}\)</span>에서 <span class="math inline">\(\mathbb{P}\)</span>와 일치한다. 따라서 <span class="math inline">\(\mathbb{P}\)</span>와 <span class="math inline">\(\mathbb{P}'\)</span>가 다르기 위해서는 파이시스템 <span class="math inline">\({\cal P}\)</span>에서는 일치하지만, <span class="math inline">\(\sigma({\cal P})\)</span>에서는 그 값이 다른 측도이어야 하는데 이는 확장이론2에 모순된다.</p>
+<p><span class="math inline">\(\mathbb{P}_1\)</span>는 확률측도의정의를 만족하므로 아래가 성립한다.</p>
+<ul>
+<li><span class="math inline">\(\mathbb{P}_1(\{\emptyset\})=0\)</span></li>
+<li><span class="math inline">\(\mathbb{P}_1(\{d\})=\frac{1}{4}\)</span></li>
+<li><span class="math inline">\(\mathbb{P}_1(\{a\})=\frac{1}{4}\)</span></li>
+<li><span class="math inline">\(\mathbb{P}_1(\{b,c\})=\frac{1}{2}\)</span></li>
+</ul>
+<p>따라서 <span class="math inline">\(\mathbb{P}_1\)</span>는 <span class="math inline">\({\cal S}\)</span>에서 <span class="math inline">\(\mathbb{P}_2\)</span>와 일치한다. 따라서 <span class="math inline">\(\mathbb{P}_1\)</span>와 <span class="math inline">\(\mathbb{P}_2\)</span>가 다르기 위해서는 파이시스템 <span class="math inline">\({\cal S}\)</span>에서는 일치하지만, <span class="math inline">\(\sigma({\cal S})\)</span>에서는 그 값이 다른 측도이어야 한다. 그런데 이는 확장이론2에 모순된다.</p>
 <p><code>#</code></p>
-<p><code># 예제11</code> – 예제4를 다시풀자</p>
-<p><span class="math inline">\(\Omega=\{1,2,3\}\)</span> 이라고 하고 <span class="math inline">\({\cal A} = \{\emptyset, \{1,2\},\{2,3\}, \Omega\}\)</span> 라고 하자. 아래와 같은 집합함수 <span class="math inline">\(\tilde{P}:{\cal A} \to [0,1]\)</span>를 정의하자.</p>
-<ul>
-<li><span class="math inline">\(\tilde{P}(\emptyset) = 0\)</span></li>
-<li><span class="math inline">\(\tilde{P}(\{1,2\}) = 0\)</span></li>
-<li><span class="math inline">\(\tilde{P}(\{2,3\}) = 0\)</span></li>
-<li><span class="math inline">\(\tilde{P}(\Omega) = 1\)</span></li>
-</ul>
-<p>이 측도는 확장불가능 함을 보여라.</p>
-<p><code>(풀이)</code></p>
-<p>확장되었다고 하자. 확장된 측도를 <span class="math inline">\(\mathbb{P}\)</span>라고 하자. <span class="math inline">\(\mathbb{P}\)</span>는 <span class="math inline">\(\tilde{P}\)</span>의 확장이므로 아래가 성립해야 한다.</p>
-<ul>
-<li><span class="math inline">\(\mathbb{P}(\emptyset) = 0\)</span></li>
-<li><span class="math inline">\(\mathbb{P}(\{1,2\}) = 0\)</span></li>
-<li><span class="math inline">\(\mathbb{P}(\{2,3\}) = 0\)</span></li>
-<li><span class="math inline">\(\mathbb{P}(\Omega) = 1\)</span></li>
-</ul>
-<p>그런데</p>
-<p><span class="math display">\[\mathbb{P}((\{1,2\} \cup \{2,3\}) \leq \mathbb{P}(\{1,2\}) + \mathbb{P}(\{2,3\})\]</span></p>
-<p>이 성립하지 않으므로 이 측도는 <span class="math inline">\(\sigma({\cal A})\)</span>에서 subaddtive 하지 않다. 따라서 모순</p>
-<p><code>#</code></p>
-<p><code># 예제12</code> – 예제5 다시풀기</p>
-<p><span class="math inline">\(\Omega=\{1,2,3,4\}\)</span> 이라고 하고 <span class="math inline">\({\cal A} = \{\emptyset, \{1,2\},\{2,3\}, \Omega\}\)</span> 라고 하자. 아래와 같은 확률 비슷한 함수 <span class="math inline">\(\tilde{P}:{\cal A} \to [0,1]\)</span>를 정의하자.</p>
-<ul>
-<li><span class="math inline">\(\tilde{P}(\emptyset) = 0\)</span></li>
-<li><span class="math inline">\(\tilde{P}(\{1,2\}) = 1/2\)</span></li>
-<li><span class="math inline">\(\tilde{P}(\{2,3\}) = 1/2\)</span></li>
-<li><span class="math inline">\(\tilde{P}(\Omega) = 1\)</span></li>
-</ul>
-<p><span class="math inline">\(\tilde{P}\)</span>는 <span class="math inline">\(\sigma(A)\)</span>에서의 측도로 유일하게 확장되지 않음을 보여라.</p>
-<p><code>(풀이)</code></p>
-<p>아래와 같은 파이시스템을 생각하자.</p>
-<p><span class="math display">\[{\cal P}= \{\emptyset, \{1\}, \{2\}, \{3\}, \{4\} \}\]</span></p>
-<p><span class="math inline">\(\sigma({\cal A})\)</span>에서의 측도 <span class="math inline">\(\mathbb{P}_1\)</span>, <span class="math inline">\(\mathbb{P}_2\)</span> 를 아래와 같이 설정하자.</p>
-<ul>
-<li><span class="math inline">\(\mathbb{P}_1(\{1\})=\mathbb{P}_1(\{3\})=\frac{1}{2}\)</span>, 나머지는 모두 0</li>
-<li><span class="math inline">\(\mathbb{P}_1(\{2\})=\mathbb{P}_1(\{4\})=\frac{1}{2}\)</span>, 나머지는 모두 0</li>
-</ul>
-<p>분명히 <span class="math inline">\(\mathbb{P}_1, \mathbb{P}_2\)</span> 는 <span class="math inline">\({\cal A}\)</span> 에서는 일치하지만 <span class="math inline">\(\sigma({\cal A})=\sigma({\cal P})=\sigma({\cal A}\cup {\cal P})\)</span> 에서는 일치하지 않는다.</p>
-<p><code>#</code></p>
-<p><strong><code># 예제13</code></strong> – 르벡메져</p>
+<p><strong><code># 예제11</code></strong> – 르벡메져</p>
 <p>어떠한 경로로 인하여 보렐시그마필드 <span class="math inline">\({\cal R}\)</span> 와 르벡메저 <span class="math inline">\(\lambda\)</span> 의 존재성을 배웠다고 치자. 그렇다면 measure space <span class="math inline">\((\mathbb{R}, {\cal R}, \lambda)\)</span> 선언할 수 있다. 관심 있는 집합들의 모임 <span class="math inline">\({\cal A} = \big\{(a,b):-\infty &lt; a &lt;b &lt; \infty \big\}\)</span>에 대하여 아래와 같은 집합함수 <span class="math inline">\(\tilde{\lambda}: {\cal A} \to [0,\infty]\)</span> 를 생각하자.</p>
 <p><span class="math display">\[\tilde{\lambda}((a,b)) = b-a\]</span></p>
 <p>아래의 사실을 체크하자.</p>
