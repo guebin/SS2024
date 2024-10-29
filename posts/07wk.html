@@ -968,7 +968,7 @@ Note
 <p><strong><code># 예제7</code></strong> – 르벡메저(<span class="math inline">\(\star\star\star\)</span>)</p>
 <p><span class="math inline">\(\Omega=\mathbb{R}\)</span> 이라고 하고</p>
 <p><span class="math display">\[{\cal A} = \big\{(a,b]: -\infty&lt;a&lt;b&lt;\infty \big\} \cup \{\emptyset\}\]</span></p>
-<p>라고 하자. 여기에서 <span class="math inline">\({\cal A}\)</span>는 세미링이다. 이때 <span class="math inline">\(\bar{\cal A}\)</span>에서 <strong>시그마유한측도인 듯 시그마유한측도 아닌</strong> 함수 <span class="math inline">\(\tilde{\lambda}: {\cal A} \to [0,1]\)</span>, <span class="math inline">\(\tilde{\lambda}(\emptyset)=0\)</span> 를 아래와 같이 정의하자. <span class="math display">\[\tilde{\lambda}((a,b])=b-a\]</span></p>
+<p>라고 하자. 여기에서 <span class="math inline">\({\cal A}\)</span>는 세미링이다. 이때 <span class="math inline">\(\bar{\cal A}\)</span>에서 <strong>시그마유한측도인 듯 시그마유한측도 아닌</strong> 함수 <span class="math inline">\(\tilde{\lambda}: {\cal A} \to [0,1]\)</span>, <span class="math inline">\(\tilde{\lambda}(\emptyset)=0\)</span> 를 아래와 같이 정의하자. <span class="math display">\[\tilde{\lambda}((a,b])=b-a, \quad \tilde{\lambda}(\emptyset)=0\]</span></p>
 <p>이제 <span class="math inline">\(\tilde{\lambda}\)</span>가 <span class="math inline">\({\cal A}\)</span>에서 (1) additivity (2) <span class="math inline">\(\sigma\)</span>-additivity 를 만족한다면 <span class="math inline">\(\tilde{\lambda}\)</span>는 잴 수 있는 공간 <span class="math inline">\(\big(\Omega, \sigma({\cal A})\big)=(\mathbb{R}, {\cal R})\)</span> 에서의 측도로 업그레이드 되며 이 업그레이드 결과는 유일하다. 그리고 이러한 방식으로 업그레이드된 척도를 르벡척도라고 한다.</p>
 <p>이 예제에서 남은 부분은 <span class="math inline">\(\tilde{\lambda}\)</span>가 <span class="math inline">\({\cal A}\)</span>에서 (1) additivity (2) <span class="math inline">\(\sigma\)</span>-additivity 를 만족함을 보이는 것이다. 이때 additivity가 성립함은 자명하고, <span class="math inline">\(\sigma\)</span>-subadditivity가 성립함을 보여야 하는데 이것은 매우 어렵다. 따라서 이 예제에서는 생략하겠다. (안할건 아니고요, 다음에 할거에요..)</p>
 <p><code>#</code></p>
@@ -991,7 +991,7 @@ Note
 </div>
 </div>
 </section>
-<section id="b.-확장이론2" class="level2">
+<section id="b.-확장이론2" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="b.-확장이론2">B. 확장이론2</h2>
 <p><strong><code># 이론 (확장이론2,확률측도)</code></strong> – <em>확장의 존재성이 보장될때 유일성을 보이는 테크닉</em></p>
 <p><span class="math inline">\(\big(\Omega, \sigma({\cal A}), \mathbb{P}\big)\)</span> 가 확률공간이라고 하자. 그리고 <span class="math inline">\({\cal A}\)</span>는 <span class="math inline">\(\pi\)</span>-system이라고 하자. 확률측도 <span class="math inline">\(\mathbb{P}: \sigma({\cal A}) \to [0,1]\)</span> 의 값은 <span class="math inline">\({\cal A}\)</span> 에서의 값으로 유일하게 결정된다.</p>
@@ -1019,8 +1019,8 @@ Warning
 <p>확장이론1은 “존재성” 보이는 것이 매우 어려운 경우 특히 유용하다. (예를들면 르벡메저의 경우) 확장이론1의 논리전개는 <span class="math inline">\(\big(\Omega, {\cal A}\big)\)</span> 에서 additivity, sub-additivity 를 체크해야하는 방향으로 흐른다.</p>
 <p>확장이론2는 “존재성” 보장되는 상황에 “유일성”을 보이고자할때 특히 유용하다. 확장이론2는 아래와 같은 논리전개로 써먹을 수 있다.</p>
 <ul>
-<li><span class="math inline">\((\Omega, {\cal P}, \tilde{m})\)</span>을 알고 있을 경우: <span class="math inline">\(\tilde{m}\)</span>을 확장하여 공간 <span class="math inline">\(\big(\Omega,\sigma({\cal P})\big)\)</span> 에서 측도 하나를 어떻게는 “설정”해놓고 그 설정값이 유일하다는 식의 주장을 함.</li>
-<li><span class="math inline">\((\Omega, \sigma({\cal P}), m)\)</span>을 알고 있을 경우: 측도 <span class="math inline">\(m\)</span>의 값을 <span class="math inline">\({\cal P}\)</span> 에서만 definine 하여 <span class="math inline">\(\tilde{m}\)</span>을 만든다. 그리고 <span class="math inline">\(\tilde{m}\)</span>이 <span class="math inline">\(m\)</span>으로 유일하게 확장된다고 주장한다.</li>
+<li><span class="math inline">\((\Omega, {\cal P}, \tilde{m})\)</span>을 알고 있을 경우: <span class="math inline">\(\tilde{m}\)</span>을 확장하여 공간 <span class="math inline">\(\big(\Omega,\sigma({\cal P})\big)\)</span> 에서 측도 하나를 어떻게는 “설정”해놓고 그 설정값이 유일하다는 식의 주장을 한다.</li>
+<li><span class="math inline">\((\Omega, \sigma({\cal P}), m)\)</span>을 알고 있을 경우: 측도 <span class="math inline">\(m\)</span>의 값을 <span class="math inline">\({\cal P}\)</span> 에서만 definine 하여 <span class="math inline">\(\tilde{m}\)</span>을 만든다. 그리고 <span class="math inline">\(\tilde{m}\)</span>이 <span class="math inline">\(m\)</span>으로 유일한 확장이라고 주장한다.</li>
 </ul>
 </div>
 </div>
@@ -1261,42 +1261,122 @@ Note
 <p>따라서 <span class="math inline">\(\mathbb{P}_1\)</span>는 <span class="math inline">\({\cal S}\)</span>에서 <span class="math inline">\(\mathbb{P}_2\)</span>와 일치한다. 따라서 <span class="math inline">\(\mathbb{P}_1\)</span>와 <span class="math inline">\(\mathbb{P}_2\)</span>가 다르기 위해서는 파이시스템 <span class="math inline">\({\cal S}\)</span>에서는 일치하지만, <span class="math inline">\(\sigma({\cal S})\)</span>에서는 그 값이 다른 측도이어야 한다. 그런데 이는 확장이론2에 모순된다.</p>
 <p><code>#</code></p>
 <p><strong><code># 예제11</code></strong> – 르벡메져</p>
-<p>어떠한 경로로 인하여 보렐시그마필드 <span class="math inline">\({\cal R}\)</span> 와 르벡메저 <span class="math inline">\(\lambda\)</span> 의 존재성을 배웠다고 치자. 그렇다면 measure space <span class="math inline">\((\mathbb{R}, {\cal R}, \lambda)\)</span> 선언할 수 있다. 관심 있는 집합들의 모임 <span class="math inline">\({\cal A} = \big\{(a,b):-\infty &lt; a &lt;b &lt; \infty \big\}\)</span>에 대하여 아래와 같은 집합함수 <span class="math inline">\(\tilde{\lambda}: {\cal A} \to [0,\infty]\)</span> 를 생각하자.</p>
-<p><span class="math display">\[\tilde{\lambda}((a,b)) = b-a\]</span></p>
-<p>아래의 사실을 체크하자.</p>
-<ol type="1">
-<li><span class="math inline">\(\forall A \in {\cal A}:~ \lambda(A) = \tilde{\lambda}(A)\)</span> 이다.</li>
-<li><span class="math inline">\({\cal A}\)</span> 는 파이시스템이다.</li>
-</ol>
-<p>확장이론2에 따라서 <span class="math inline">\(\tilde{\lambda}\)</span> 는 <span class="math inline">\(\lambda\)</span> 로 밖에 확장될 수 없다. 이 예제에서 <span class="math inline">\({\cal A}\)</span> 를 아래중 어떠한 방식으로 정의해도 동일한 논리가 성립한다.</p>
+<p>측도공간 measure space <span class="math inline">\((\mathbb{R}, {\cal R}, \lambda)\)</span> 를 선언하자. 여기에서</p>
+<p><span class="math display">\[{\cal R} = \sigma({\cal A}_1), \text{ where } {\cal A}_1 = \big\{(a,b]:-\infty &lt; a &lt;b &lt; \infty \big\}\]</span></p>
+<p>이고 <span class="math inline">\(\lambda\)</span>는 르벡메져이다. 이제 아래와 같은 서로 다른 3개의 collection을 고려하자.</p>
 <ul>
-<li><span class="math inline">\({\cal A}= \big\{[a,b]:-\infty &lt; a &lt;b &lt; \infty \big\}\)</span></li>
-<li><span class="math inline">\({\cal A}= \big\{[a,b):-\infty &lt; a &lt;b &lt; \infty \big\}\)</span></li>
-<li><span class="math inline">\({\cal A}= \big\{(a,b]:-\infty &lt; a &lt;b &lt; \infty \big\}\)</span></li>
+<li><span class="math inline">\({\cal A}_2 = \big\{[a,b):-\infty &lt; a &lt;b &lt; \infty \big\}\)</span></li>
+<li><span class="math inline">\({\cal A}_3 = \big\{[a,b]:-\infty &lt; a &lt;b &lt; \infty \big\}\)</span></li>
+<li><span class="math inline">\({\cal A}_4 = \big\{(a,b):-\infty &lt; a &lt;b &lt; \infty \big\}\)</span></li>
 </ul>
-<blockquote class="blockquote">
-<p><span class="math inline">\({\cal A}\)</span>를 정의할때 공집합이 빠져도 된다는 사실도 우리에게 즐거움을 준다. <span class="math inline">\({\cal A}\)</span>가 파이시스템이면 되었지, 세미링일 필요까진 없으니까..</p>
-</blockquote>
-<p><code>#</code></p>
+<p>그리고 <span class="math inline">\({\cal A}_2 ,{\cal A}_3,{\cal A}_4\)</span> 에서 각각 정의된 아래와 같은 3개의 집합함수 <span class="math inline">\(\tilde{\lambda}_2: {\cal A}_2 \to [0,\infty]\)</span>, <span class="math inline">\(\tilde{\lambda}_3: {\cal A}_3 \to [0,\infty]\)</span>, <span class="math inline">\(\tilde{\lambda}_4: {\cal A}_4 \to [0,\infty]\)</span> 를 고려하자.</p>
+<ul>
+<li><span class="math inline">\(\tilde{\lambda}_2([a,b))=b-a,\quad\)</span></li>
+<li><span class="math inline">\(\tilde{\lambda}_3((a,b))=b-a,\quad\)</span></li>
+<li><span class="math inline">\(\tilde{\lambda}_4([a,b])=b-a,\quad\)</span></li>
+</ul>
+<p>함수 <span class="math inline">\(\tilde{\lambda}_2\)</span>, <span class="math inline">\(\tilde{\lambda}_3\)</span>, <span class="math inline">\(\tilde{\lambda}_4\)</span>는 모두 잴 수 있는 공간 <span class="math inline">\((\mathbb{R},{\cal R})\)</span>에서의 르벡측도로 유일하게 업그레이드 된다.</p>
+<p><code>(풀이)</code></p>
+<p>아래를 보이면 충분하다.</p>
+<p><code>1</code>. <span class="math inline">\(\sigma({\cal A}_1)=\sigma({\cal A}_2)=\sigma({\cal A}_3)=\sigma({\cal A}_4)={\cal R}\)</span></p>
+<p><code>2</code>. <span class="math inline">\(\lambda\)</span>는 공간 <span class="math inline">\({\cal A}_2, {\cal A}_3, {\cal A}_4\)</span> 에서 각각 <span class="math inline">\(\tilde{\lambda}_2\)</span>, <span class="math inline">\(\tilde{\lambda}_3\)</span>, <span class="math inline">\(\tilde{\lambda}_4\)</span> 와 일치함. 즉 아래가 성립</p>
+<ul>
+<li><span class="math inline">\(\forall A \in {\cal A}_2:~ \tilde{\lambda}_2(A) = \lambda(A)\)</span></li>
+<li><span class="math inline">\(\forall A \in {\cal A}_3:~ \tilde{\lambda}_3(A) = \lambda(A)\)</span></li>
+<li><span class="math inline">\(\forall A \in {\cal A}_4:~ \tilde{\lambda}_4(A) = \lambda(A)\)</span></li>
+</ul>
+<p><code>3</code>. <span class="math inline">\({\cal A}_2,{\cal A}_3, {\cal A}_4\)</span> 는 모두 파이시스템</p>
+<p>왜냐하면 1,2가 의미하는건 르벡측도가 <span class="math inline">\(\tilde{\lambda}_2\)</span>, <span class="math inline">\(\tilde{\lambda}_3\)</span>, <span class="math inline">\(\tilde{\lambda}_4\)</span>의 확장이라는 의미이고, 3이 의미하는건 그 확장이 유일함을 의미하는 것이기 때문이다.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+1의 증명
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>본격적인 증명에 앞서 아래를 보이자.</p>
+<hr>
+<p><code>Claim</code>: <span class="math inline">\(\sigma({\cal A}_1)\)</span>, <span class="math inline">\(\sigma({\cal A}_2)\)</span>, <span class="math inline">\(\sigma({\cal A}_3)\)</span>, <span class="math inline">\(\sigma({\cal A}_4)\)</span> 가 모두 한점만 포함된 집합 <span class="math inline">\(\{c\}\)</span> 를 원소로 가짐을 보이자.</p>
+<p><code>(증명)</code></p>
+<p>우선 <span class="math inline">\(\{c\}=[c-1,c] \cap [c,c+1]\)</span> 에 의하여 <span class="math inline">\(\{c\} \in {\cal A}_4\)</span> 임은 쉽게 보일 수 있다. 이제 아래수식을 관찰하자.</p>
+<p><span class="math display">\[\{c\}=\bigcup_{n=1}^{\infty}\big(c,c+\frac{1}{n}\big]=\bigcup_{n=1}^{\infty}\big[c,c+\frac{1}{n}\big)=\bigcup_{n=1}^{\infty}\big(c-\frac{1}{n},c+\frac{1}{n}\big)\]</span></p>
+<p>그러면 <span class="math inline">\(\{c\} \in {\cal A}_1\)</span>, <span class="math inline">\(\{c\} \in {\cal A}_2\)</span>, <span class="math inline">\(\{c\} \in {\cal A}_3\)</span> 임을 순차적으로 보일 수 있다.</p>
+<hr>
+<p>이제 본격적으로 아래가 성립함을 보이자.</p>
+<ul>
+<li><span class="math inline">\(\sigma({\cal A}_2) = \sigma({\cal A}_1)\)</span></li>
+<li><span class="math inline">\(\sigma({\cal A}_3) = \sigma({\cal A}_1)\)</span></li>
+<li><span class="math inline">\(\sigma({\cal A}_4) = \sigma({\cal A}_1)\)</span></li>
+</ul>
+<p>논의를 간단하게 하기 위해서 <span class="math display">\[\sigma({\cal A}_2) = \sigma({\cal A}_1)\]</span> 만 따져보자. (나머지는 같은 논리로 따질 수 있음) 만약 <span class="math inline">\({\cal A}_1\)</span>를 확장하는 과정에서 <span class="math inline">\({\cal A}_2\)</span>가 포함되고, <span class="math inline">\({\cal A}_2\)</span>를 확장하는 과정에서 <span class="math inline">\({\cal A}_1\)</span>이 포함됨을 보이면,</p>
+<p><span class="math display">\[\sigma({\cal A}_1) = \sigma({\cal A}_1 \cup {\cal A}_2)=\sigma({\cal A}_2)\]</span></p>
+<p>가 성립되어 <span class="math inline">\(\sigma({\cal A}_2) = \sigma({\cal A}_1)\)</span>를 보일 수 있다. 따라서 아래를 보이면 된다.</p>
+<ul>
+<li><span class="math inline">\(\sigma({\cal A}_1) = \sigma({\cal A}_1 \cup {\cal A}_2) \Leftrightarrow \forall A \in {\cal A}_2: A \in \sigma({\cal A}_1) \Leftrightarrow {\cal A}_2 \subset \sigma({\cal A}_1)\)</span></li>
+<li><span class="math inline">\(\sigma({\cal A}_2) = \sigma({\cal A}_2 \cup {\cal A}_1) \Leftrightarrow \forall A \in {\cal A}_1: A \in \sigma({\cal A}_2) \Leftrightarrow {\cal A}_1 \subset \sigma({\cal A}_2)\)</span></li>
+</ul>
+<p>그런데</p>
+<ul>
+<li><span class="math inline">\((a,b] = ([a,b) - \{a\}) \cup \{b\}\)</span></li>
+<li><span class="math inline">\([a,b) = ((a,b] - \{b\}) \cup \{a\}\)</span></li>
+</ul>
+<p>이므로 증명되었음.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+2의 증명
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>아래가 성립한다.</p>
+<p><span class="math display">\[\forall x \in \mathbb{R}: \lambda(\{x\})=0\]</span></p>
+<p><code>(풀이1)</code> – 알 수 없는 풀이..</p>
+<p><span class="math inline">\(\lambda:{\cal R}\to[0,\infty]\)</span>는 <span class="math inline">\({\cal A}\)</span>에서의 함수 <span class="math inline">\(\tilde{\lambda}_1((a,b])=b-a\)</span> 를 확장한 것이다.</p>
+<p><span class="math display">\[\begin{align*}
+\lambda(\{x\})=&amp;\lambda\left(\bigcap_{n\to \infty}\big(x-\frac{1}{n},x\big]\right)\\
+=&amp;\lambda\left(\lim_{n\to \infty}\big(x-\frac{1}{n},x\big]\right) \\
+=&amp; \lim_{n\to \infty}\lambda\left(\big(x-\frac{1}{n},x\big]\right)\\
+=&amp;\lim_{n\to \infty}\tilde{\lambda}_1\left(\big(x-\frac{1}{n},x\big]\right)\\
+=&amp;\lim_{n\to \infty} \frac{1}{n}\end{align*}\]</span></p>
+<p><code>(풀이2)</code> – 일단은 이렇게 푸는게 나을듯</p>
+<p>임의의 실수 <span class="math inline">\(x\)</span>에 대하여 <span class="math inline">\(\lambda(\{x\}) &gt; 0\)</span> 이라고 하자.</p>
+<p><span class="math inline">\(\mathbb{R}\)</span>에서 하나의 원소 <span class="math inline">\(c\)</span> 를 고정하자. 임의의 구간 <span class="math inline">\((c-1,c+1]\)</span> 에 존재하는 모든 유리수 집합 <span class="math inline">\(\mathbb{Q}^\star\)</span>를 생각하자. 즉</p>
+<p><span class="math display">\[\mathbb{Q}^\star = (c-1,c+1] \cap \mathbb{Q}^\star\]</span></p>
+<p>그런데 <span class="math inline">\(\mathbb{Q}^\star \subset (c-1,c+1]\)</span> 이므로</p>
+<p><span class="math display">\[\lambda(\mathbb{Q}^{\star}) \leq \lambda((c-1,c+1]) = \tilde{\lambda}_1((c-1,c+1) =2 \quad \cdots (\star)\]</span></p>
+<p>이다.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> 여기에서 첫 부등호는 세미링에서 add를 만족하는 집합함수는 monotone임을 이용한 것이고, 첫번째 등호는 르벡측도는 <span class="math inline">\(\tilde{\lambda}_1\)</span>의 확장임을 이용한 것이며 두번째 등호는 <span class="math inline">\(\tilde{\lambda}_1\)</span>의 정의에 의하여 성립한다. 그런데 집합 <span class="math inline">\(\mathbb{Q}^\star\)</span> 는 아래와 같이 한점을 포함하는 집합의 countable union 으로 표현가능하다. 따라서 아래가 성립한다.</p>
+<p><span class="math display">\[\lambda\left(\mathbb{Q}^{\star}\right) = \lambda\left(\bigcup_{x\in \mathbb{Q}^\star}\{x\}\right) =\sum_{x \in \mathbb{Q}^\star} \lambda(\{x\})= \infty \quad \cdots(\star\star)\]</span></p>
+<p>여기에서 첫번째 등호가 성립하는 이유는 집합의 표현, 두번째 등호가 성립하는 이유는 <span class="math inline">\(\lambda\)</span>가 measure 라는 사실 (메저는 <span class="math inline">\(\sigma\)</span>-additivity가 성립해요..) 그리고 마지막등호가 성립하는 이유는 귀류법에 의하여 가정된 <span class="math inline">\(\lambda(\{x\})&gt;0\)</span> 라는 사실때문에 성립한다. <span class="math inline">\((\star)\)</span>와 <span class="math inline">\((\star\star)\)</span>는 모순이므로 증명되었음.</p>
+</div>
+</div>
+<div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;아직 <span class="math inline">\(\lambda(\mathbb{Q}^{\star})=0\)</span> 이건 모르는 상태에요</p></li></div><p><code>#</code></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip
+확장이론1의 깊은 이해
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>확률을 정의할 때 엄밀하게 정의한답시고 시그마필드에서 정의하는건 원래 말도 안되는 일이에요. 적당히 세미링이나 파이시스템에서만 정의해도 충분히 엄밀하다 생각하고 넘어갈 수 있습니다. 예를들어 “공평한 동전”이 만드는 확률을 기술하고자 할때</p>
+<p>확률을 정의할 때 엄밀하게 정의한답시고 시그마필드에서 정의하는건 원래 말도 안되는 일이에요. 적당히 세미링에서만 정의해도 충분히 엄밀하다 생각하고 넘어갈 수 있습니다. 예를들어 “공평한 동전”이 만드는 확률을 기술하고자 할때</p>
 <blockquote class="blockquote">
-<p>표본공간 <span class="math inline">\(\Omega=\{H, T\}\)</span>에서, 앞면이 나올 확률이 <span class="math inline">\(\mathbb{P}(\{H\})=\frac{1}{2}\)</span>인 동전 던지기 상황을 생각해보자.</p>
+<p>표본공간 <span class="math inline">\(\Omega=\{H, T\}\)</span>에서, 앞면과 뒷면이 나옥 확률이 각각 1/2인 동전던지기 상황을 생각해보자.</p>
 </blockquote>
 <p>정도로 서술하면 되는 것이지</p>
 <blockquote class="blockquote">
 <p>표본공간 <span class="math inline">\(\Omega=\{H, T\}\)</span>를 고려하자. 이때, <span class="math inline">\({\cal F}=\{\emptyset, \{T\}, \{H\}, \Omega\}\)</span>가 <span class="math inline">\(\Omega\)</span>에 대한 시그마 필드라고 하자. 또한, 확률은 <span class="math inline">\(\mathbb{P}(\emptyset)=0\)</span>, <span class="math inline">\(\mathbb{P}(\{H\})=\frac{1}{2}\)</span>, <span class="math inline">\(\mathbb{P}(\{T\})=\frac{1}{2}\)</span>, <span class="math inline">\(\mathbb{P}(\Omega)=1\)</span>로 정의되는 동전 던지기 상황을 생각해보자.</p>
 </blockquote>
-<p>와 같이 서술하는건 일반적인 서술방법은 아닙니다. 파이시스템인 <span class="math inline">\({\cal A}=\{\{H\}\}\)</span> 에서 확률값 <span class="math inline">\(\mathbb{P}(\{H\})=\frac{1}{2}\)</span> 만을 <strong>잘</strong> 정의해도, <span class="math inline">\(\sigma({\cal A}) = {\cal F}\)</span> 에서의 확률값이 자동결정된다는 점을 알고 있기 때문입니다.</p>
+<p>와 같이 서술하는건 일반적인 서술방법은 아닙니다. 세미링인 <span class="math inline">\({\cal A}=\{\emptyset,\{H\},\{T\}\}\)</span> 에서 확률값 <span class="math inline">\(\mathbb{P}(\{H\})=\mathbb{P}(\{T\})=\frac{1}{2}\)</span> 만을 <strong>잘</strong> 정의해도, <span class="math inline">\(\sigma({\cal A}) = {\cal F}\)</span> 에서의 확률값이 자동결정된다는 점을 알고 있기 때문입니다.</p>
 </div>
 </div>
 
