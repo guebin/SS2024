@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.533">
+<meta name="generator" content="quarto-1.4.520">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -71,33 +71,6 @@ ul.task-list li input[type="checkbox"] {
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -1266,7 +1239,8 @@ Note
 <p><code>Claim</code>: <span class="math inline">\(\sigma({\cal A}_1)\)</span>, <span class="math inline">\(\sigma({\cal A}_2)\)</span>, <span class="math inline">\(\sigma({\cal A}_3)\)</span>, <span class="math inline">\(\sigma({\cal A}_4)\)</span> 가 모두 한점만 포함된 집합 <span class="math inline">\(\{c\}\)</span> 를 원소로 가짐을 보이자.</p>
 <p><code>(증명)</code></p>
 <p>우선 <span class="math inline">\(\{c\}=[c-1,c] \cap [c,c+1]\)</span> 에 의하여 <span class="math inline">\(\{c\} \in {\cal A}_4\)</span> 임은 쉽게 보일 수 있다. 이제 아래수식을 관찰하자.</p>
-<p><span class="math display">\[\{c\}=\bigcap_{n=1}^{\infty}\big(c,c+\frac{1}{n}\big]=\bigcap_{n=1}^{\infty}\big[c,c+\frac{1}{n}\big)=\bigcap_{n=1}^{\infty}\big(c-\frac{1}{n},c+\frac{1}{n}\big)\]</span></p>
+<p><span class="math display">\[\{c\}=\bigcap_{n=1}^{\infty}\big(c-\frac{1}{n},c
+\big]=\bigcap_{n=1}^{\infty}\big[c,c+\frac{1}{n}\big)=\bigcap_{n=1}^{\infty}\big(c-\frac{1}{n},c+\frac{1}{n}\big)\]</span></p>
 <p>그러면 <span class="math inline">\(\{c\} \in {\cal A}_1\)</span>, <span class="math inline">\(\{c\} \in {\cal A}_2\)</span>, <span class="math inline">\(\{c\} \in {\cal A}_3\)</span> 임을 순차적으로 보일 수 있다.</p>
 <hr>
 <p>이제 본격적으로 아래가 성립함을 보이자.</p>
@@ -1300,7 +1274,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>아래가 성립한다.</p>
+<p>아래를 보이면 증명이 된 다.</p>
 <p><span class="math display">\[\forall x \in \mathbb{R}: \lambda(\{x\})=0\]</span></p>
 <p><code>(풀이1)</code> – 알 수 없는 풀이..</p>
 <p><span class="math inline">\(\lambda:{\cal R}\to[0,\infty]\)</span>는 <span class="math inline">\({\cal A}\)</span>에서의 함수 <span class="math inline">\(\tilde{\lambda}_1((a,b])=b-a\)</span> 를 확장한 것이다.</p>
@@ -1478,6 +1452,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
     if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
@@ -1492,14 +1487,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             break;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
+        typesetMath(container);
         return container.innerHTML
       } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
+        typesetMath(note);
         return note.innerHTML;
       }
     } else {
@@ -1508,9 +1499,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
+      typesetMath(note);
       return note.innerHTML;
     }
   }
