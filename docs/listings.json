@@ -1,0 +1,25 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/supp.html",
+      "/posts/07-08wk.html",
+      "/posts/06wk.html",
+      "/posts/05wk.html",
+      "/posts/04wk.html",
+      "/posts/03wk.html",
+      "/posts/02wk.html",
+      "/posts/01wk.html"
+    ]
+  },
+  {
+    "listing": "/quiz.html",
+    "items": [
+      "/quiz/Quiz-5.html",
+      "/quiz/Quiz-4.html",
+      "/quiz/Quiz-3.html",
+      "/quiz/Quiz-2.html",
+      "/quiz/Quiz-1.html"
+    ]
+  }
+]
