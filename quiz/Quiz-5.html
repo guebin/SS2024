@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.520">
+<meta name="generator" content="quarto-1.4.533">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -71,6 +105,33 @@ ul.task-list li input[type="checkbox"] {
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -157,7 +218,13 @@ ul.task-list li input[type="checkbox"] {
 <section id="증명-30점" class="level1">
 <h1>1. 증명 – 30점</h1>
 <p><code>(1)</code> 전체집합 <span class="math inline">\(\Omega\)</span>에 대한 부분집합들의 모임 <span class="math inline">\({\cal A}\)</span>를 고려하자. <span class="math inline">\(\sigma({\cal A})\)</span> 와 같은 표현이 항상 존재함을 보여라. – 10점</p>
+<blockquote class="blockquote">
+<p>해설은 강의노트 참고</p>
+</blockquote>
 <p><code>(2)</code> 딘킨의 <span class="math inline">\(\pi\)</span>-<span class="math inline">\(\lambda\)</span> 정리를 증명하라. – 20점</p>
+<blockquote class="blockquote">
+<p>해설은 강의노트 참고</p>
+</blockquote>
 </section>
 <section id="ox-70점" class="level1">
 <h1>2. O/X – 70점</h1>
@@ -167,8 +234,42 @@ ul.task-list li input[type="checkbox"] {
 <p>아래와 같은 집합들의 집합 <span class="math inline">\({\cal A}\)</span>를 고려하자.</p>
 <p><span class="math display">\[{\cal A}=\{\emptyset, B_1,B_2,\dots, B_n\}\]</span></p>
 <p><span class="math inline">\({\cal A}\)</span>는 항상 세미링의 정의를 만족한다.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cn">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote class="blockquote">
+<ol type="1">
+<li><span class="math inline">\({\cal A}\)</span>의 원소는 공집합을 포함한다. (2) <span class="math inline">\({\cal A}\)</span>의 원소는 모두 서로소이므로 원소간의 교집합은 항상 공집합이다. <span class="math inline">\({\cal A}\)</span>는 공집합을 포함하므로 교집합에 닫혀있다. (3) <span class="math inline">\({\cal A}\)</span>의 원소는 모두 서로소이므로, 임의의 두 원소의 차집합은 항상 공집합이다. <span class="math inline">\({\cal A}\)</span>는 공집합을 포함하므로 차집합에 닫혀있다. (따라서 차집합에 반쯤 닫혀있다.) (1)-(3)에 따라서 <span class="math inline">\({\cal A}\)</span>는 세미링이다.</li>
+</ol>
+</blockquote>
 <p><code>(2)</code> <span class="math inline">\({\cal F}_1,{\cal F}_2 \subset 2^\Omega\)</span> 이 <span class="math inline">\(\Omega\)</span>에 대한 시그마필드이면 <span class="math inline">\({\cal F}_1 \cap {\cal F}_2\)</span> 역시 <span class="math inline">\(\Omega\)</span>에 대한 시그마필드이다.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cn">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote class="blockquote">
+<p>해설은 강의노트 참고</p>
+</blockquote>
 <p><code>(3)</code> <span class="math inline">\({\cal P}\subset 2^\Omega\)</span>이 파이시스템이라고 하자. <span class="math inline">\(l({\cal P}) \subset \sigma({\cal P})\)</span> 는 항상 성립한다.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cn">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote class="blockquote">
+<p><span class="math inline">\({\cal P}\)</span>를 포함하는 람다시스템 <span class="math inline">\(l({\cal P})\)</span>에서 <span class="math inline">\(\cap\)</span>-closed 를 만족하도록 원소를 추가해야 시그마필드의 정의를 만족하므로 이는 당연하다.</p>
+</blockquote>
+<p><code>(4)</code> 임의의 집합 <span class="math inline">\({\cal A} \subset 2^\Omega\)</span> 에 대하여 <span class="math inline">\(l({\cal A})\)</span>가 시그마필드이면 항상 <span class="math inline">\(l({\cal A})\supset \sigma({\cal A})\)</span> 가 성립한다.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cn">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote class="blockquote">
+<p><span class="math inline">\(\sigma({\cal A})\)</span>는 <span class="math inline">\({\cal A}\)</span>를 포함하는 가장 작은 시그마필드이다. 그런데 <span class="math inline">\(l({\cal A})\)</span> 는 <span class="math inline">\({\cal A}\)</span>를 포함하고 있으며 시그마필드이므로 <span class="math inline">\(\sigma({\cal A}) \subset l({\cal A})\)</span> 이 성립</p>
+</blockquote>
+<p><code>(5)</code> <span class="math inline">\({\cal F}\)</span>가 <span class="math inline">\(\Omega\)</span>에 대한 시그마필드이면, <span class="math inline">\(\forall E \in {\cal F}: {\cal D}_E=\{F: E\cap F \in {\cal F}, F\in {\cal F}\} = \emptyset\)</span> 이다.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cn">false</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote class="blockquote">
+<p>시그마필드는 교집합에 닫혀있으므로 <span class="math inline">\(\forall E \in {\cal F}: {\cal D}_E = {\cal F}\)</span> 이다.</p>
+</blockquote>
+<p><code>(6)</code> 임의의 <span class="math inline">\({\cal A} \subset 2^\Omega\)</span>에 대하여 <span class="math inline">\({\cal A}\)</span>가 시그마필드이면 <span class="math inline">\({\cal A}\)</span>는 람다시스템이다.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cn">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote class="blockquote">
+<p>람다시스템에서 추가로 <span class="math inline">\(\cap\)</span>-closed가 만족해야 시그마필드이므로, 시그마필드이면 이미 람다시스템의 조건을 만족한다.</p>
+</blockquote>
+<p><code>(7)</code> 임의의 <span class="math inline">\({\cal A} \subset 2^\Omega\)</span>에 대하여 <span class="math inline">\({\cal A}\)</span>가 세미링이면 <span class="math inline">\({\cal A}\)</span>는 파이시스템이다.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cn">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote class="blockquote">
+<p>세미링은 <span class="math inline">\(\cap\)</span>-closed를 만족하므로 파이시스템의 조건을 만족한다.</p>
+</blockquote>
 
 
 </section>
@@ -302,27 +403,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    const typesetMath = (el) => {
-      if (window.MathJax) {
-        // MathJax Typeset
-        window.MathJax.typeset([el]);
-      } else if (window.katex) {
-        // KaTeX Render
-        var mathElements = el.getElementsByClassName("math");
-        var macros = [];
-        for (var i = 0; i < mathElements.length; i++) {
-          var texText = mathElements[i].firstChild;
-          if (mathElements[i].tagName == "SPAN") {
-            window.katex.render(texText.data, mathElements[i], {
-              displayMode: mathElements[i].classList.contains('display'),
-              throwOnError: false,
-              macros: macros,
-              fleqn: false
-            });
-          }
-        }
-      }
-    }
     if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
@@ -337,10 +417,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             break;
           }
         }
-        typesetMath(container);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
         return container.innerHTML
       } else {
-        typesetMath(note);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
         return note.innerHTML;
       }
     } else {
@@ -349,7 +433,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      typesetMath(note);
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
       return note.innerHTML;
     }
   }
