@@ -22,40 +22,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -237,9 +203,7 @@ window.Quarto = {
 
 <section id="강의영상" class="level1">
 <h1>1. 강의영상</h1>
-<div id="c4d45b7d-aab2-4242-a95c-08eb6b497d1e" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># {{&lt; video https://youtu.be/playlist?list=PLQqh36zP38-zt1QwukCuWEIP-u7cHsoW-&amp;si=HmdZqGF0KwnreBdv &gt;}}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/playlist?list=PLQqh36zP38-xHeTT4_M5ZUS4zz8yTjInQ&amp;si=jTksLDPuwBEPqb93" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </section>
 <section id="확률변수-기호와-표현" class="level1 page-columns page-full">
 <h1>2. 확률변수 – 기호와 표현</h1>
@@ -692,49 +656,70 @@ Note
 </ol>
 <p>그리고 각 경우에 대한 <span class="math inline">\(Y\)</span>의 역상은 <span class="math inline">\(\emptyset, \{a\}, \{b,c,d\}, \{a,b,d,c\}\)</span> 로 각각 정리되므로 <span class="math inline">\(Y\)</span>는 확률변수이다.</p>
 <p><code>#</code></p>
-<p><code># 예제2</code> – 두개의 잴 수 있는 공간 <span class="math inline">\((\Omega, {\cal F})\)</span>와 <span class="math inline">\((S,{\cal S})\)</span>를 고려하자. 단,</p>
+<p><code># 예제2</code> – 두개의 잴 수 있는 공간 <span class="math inline">\((\Omega, {\cal F})\)</span>와 <span class="math inline">\((\mathbb{R},{\cal R})\)</span>를 고려하자. 단,</p>
 <ul>
 <li><span class="math inline">\(\Omega=\mathbb{R}\)</span>,</li>
-<li><span class="math inline">\({\cal F} =\sigma({\cal A})\)</span> where <span class="math inline">\({\cal A} = \mathbb{Q}\)</span>,</li>
-<li><span class="math inline">\(S = \{0,1\}\)</span>,</li>
-<li><span class="math inline">\({\cal S} = 2^{S}\)</span>.</li>
+<li><span class="math inline">\({\cal F} =\sigma({\cal A})\)</span> where <span class="math inline">\({\cal A} = \{\{q\}: q \in \mathbb{Q}\}\)</span></li>
 </ul>
-<p>아래와 같은 함수 <span class="math inline">\(X:\Omega \to S\)</span>을 고려하라.</p>
+<p>이다.</p>
+<p>아래와 같은 함수 <span class="math inline">\(X:\Omega \to \mathbb{R}\)</span>을 고려하라.</p>
 <p><span class="math display">\[X(\omega) = \begin{cases}
 0 &amp; \omega \in \mathbb{Q}\\
 1 &amp; \omega \in \mathbb{R} - \mathbb{Q}
 \end{cases}\]</span></p>
-<p><span class="math inline">\(X\)</span>는 <span class="math inline">\((\Omega,{\cal F})\to(S,{\cal S})\)</span> 인 가측함수인가?</p>
+<p><span class="math inline">\(X\)</span>는 <span class="math inline">\((\Omega,{\cal F})\to(\mathbb{R},{\cal R})\)</span> 인 가측함수인가? 즉 <span class="math inline">\(X\)</span>는 <span class="math inline">\((\Omega,{\cal F})\)</span> 에서의 확률변수인가?</p>
 <p><code>(풀이)</code> 잴 수 있는 함수임.</p>
-<p>Note: <span class="math inline">\(\sigma({\cal A})=\{\emptyset, \mathbb{Q}, \mathbb{Q}^c, \mathbb{R} \}, 2^S  = \{\emptyset, \{0\}, \{1\}, \{0,1\}\}\)</span></p>
-<p>잴 수 있는 함수임을 체크하기 위해서는 <span class="math inline">\(2^S\)</span>의 모든 원소 <span class="math inline">\(B\)</span>에 대하여 <span class="math inline">\(X^{-1}(B):= \{\omega : X(\omega) \in B\} \in {\cal F}\)</span> 임을 확인하면 된다.</p>
+<p><span class="math inline">\(X\)</span>의 상은 <span class="math inline">\(\{0\}, \{1\}, \{0,1\}\)</span> 중 하나이고, <span class="math inline">\(X\)</span>의 역상은 <span class="math inline">\(\mathbb{Q}, \mathbb{Q}^c, \emptyset, \Omega\)</span> 중 하나이다. 역상이 모두 <span class="math inline">\({\cal F}\)</span>의 원소인지 따져보자.</p>
 <ul>
-<li><span class="math inline">\(B=\emptyset\)</span> 일 경우: <span class="math inline">\(\{\omega: X(\omega) \in \emptyset\}=\emptyset \in \sigma({\cal A})\)</span></li>
-<li><span class="math inline">\(B=\{0\}\)</span> 일 경우: <span class="math inline">\(\{\omega: X(\omega) \in \{0\}\}=\mathbb{Q} \in \sigma({\cal A})\)</span></li>
-<li><span class="math inline">\(B=\{1\}\)</span> 일 경우: <span class="math inline">\(\{\omega: X(\omega) \in \{1\}\}=\mathbb{Q}^c \in \sigma({\cal A})\)</span></li>
-<li><span class="math inline">\(B=\{0,1\}\)</span> 일 경우: <span class="math inline">\(\{\omega: X(\omega) \in \{0,1\}\}=\mathbb{R} \in \sigma({\cal A})\)</span></li>
+<li><span class="math inline">\(\emptyset, \Omega\)</span> 는 시그마필드의 정의에 의하여 <span class="math inline">\({\cal F}\)</span>의 원소임.</li>
+<li>임의의 <span class="math inline">\(q \in \mathbb{Q}\)</span> 에 대하여 <span class="math inline">\(\{q\} \in {\cal F}\)</span> 이고, 시그마필드는 countable union 에 닫혀있으므로 <span class="math inline">\(\mathbb{Q} \in {\cal F}\)</span>.</li>
+<li><span class="math inline">\(\mathbb{Q} \in {\cal F}\)</span> 이고 시그마필드는 <span class="math inline">\(^c\)</span>-closed 이므로 <span class="math inline">\(\mathbb{Q}^ \in {\cal F}\)</span>.</li>
 </ul>
-<blockquote class="blockquote">
-<p>이 문제에서 <span class="math inline">\((S,{\cal S})\)</span>를 <span class="math inline">\((\mathbb{R}, {\cal R})\)</span> 바꾸면 풀이의 약간만 수정하여 <span class="math inline">\(X \in {\cal F}\)</span>임을 보일 수 있다.</p>
-</blockquote>
-<p><code>#</code></p>
-<p><code># 예제3</code> – 두개의 잴 수 있는 공간 <span class="math inline">\((\Omega, {\cal F})\)</span>와 <span class="math inline">\((S,{\cal S})\)</span>를 고려하자. 단,</p>
+<p>따라서 <span class="math inline">\(X\)</span>는 <span class="math inline">\((\Omega, {\cal F})\)</span>에서의 확률변수이다.</p>
+<p><code># 예제3</code> – 두개의 잴 수 있는 공간 <span class="math inline">\((\Omega, {\cal F})\)</span>와 <span class="math inline">\((\mathbb{R},{\cal R})\)</span>를 고려하자. 단,</p>
 <ul>
 <li><span class="math inline">\(\Omega=\mathbb{R}\)</span>,</li>
-<li><span class="math inline">\({\cal F} =\sigma({\cal A})\)</span> where <span class="math inline">\({\cal A} = \{\mathbb{Q}\}\)</span>,</li>
-<li><span class="math inline">\(S = \{0,1\}\)</span>,</li>
-<li><span class="math inline">\({\cal S} = 2^S\)</span>.</li>
+<li><span class="math inline">\({\cal F} =\sigma({\cal A})\)</span> where <span class="math inline">\({\cal A} = \{\mathbb{Q}\}\)</span>.</li>
 </ul>
-<p>아래와 같은 함수 <span class="math inline">\(X:\Omega \to S\)</span>을 고려하라.</p>
+<p>아래와 같은 함수 <span class="math inline">\(X:\Omega \to \mathbb{R}\)</span>을 고려하라.</p>
+<p><span class="math display">\[X(\omega) = \begin{cases}
+0 &amp; \omega \in \mathbb{Q}\\
+1 &amp; \omega \in \mathbb{R} - \mathbb{Q}
+\end{cases}\]</span></p>
+<p><span class="math inline">\(X\)</span>는 <span class="math inline">\((\Omega,{\cal F})\to(\mathbb{R},{\cal R})\)</span> 인 가측함수인가? 즉 <span class="math inline">\(X\)</span>는 <span class="math inline">\((\Omega,{\cal F})\)</span> 에서의 확률변수인가?</p>
+<p><code>(풀이)</code></p>
+<p>이 문제의 경우 <span class="math inline">\({\cal F} = \{\emptyset, \mathbb{Q}, \mathbb{Q}^c, \mathbb{R}\}\)</span> 이다. <span class="math inline">\(X\)</span>의 역상이 나올 수 있는 경우는 이전문제와 동일하게 <span class="math inline">\(\mathbb{Q}, \mathbb{Q}^c, \emptyset, \Omega\)</span> 중 하나이다. (<span class="math inline">\({\cal F}\)</span>가 어떻게 바뀌든 상관없음. <span class="math inline">\(X:\Omega \to \mathbb{R}\)</span> 자체는 이전문제와 동일.) 역상이 모두 <span class="math inline">\({\cal F}\)</span>의 원소이므로 <span class="math inline">\(X\)</span>는 확률변수의 정의를 만족한다.</p>
+<p><code>#</code></p>
+<p><code># 예제4</code> – 두개의 잴 수 있는 공간 <span class="math inline">\((\Omega, {\cal F})\)</span>와 <span class="math inline">\((\mathbb{R},{\cal R})\)</span>를 고려하자. 단,</p>
+<ul>
+<li><span class="math inline">\(\Omega=\mathbb{R}\)</span>,</li>
+<li><span class="math inline">\({\cal F} =\sigma({\cal A})\)</span> where <span class="math inline">\({\cal A} = \{\{q\}: q \in \mathbb{Q}\}\)</span>,</li>
+</ul>
+<p>아래와 같은 함수 <span class="math inline">\(X:\Omega \to \mathbb{R}\)</span> 을 고려하라.</p>
 <p><span class="math display">\[X(\omega) = \begin{cases}
 0 &amp; \omega =0\\
 1 &amp; \omega \neq 0
 \end{cases}\]</span></p>
-<p>즉 <span class="math inline">\(X\)</span>는 <span class="math inline">\((\Omega,{\cal F})\to(S,{\cal S})\)</span>인 가측함수인가?</p>
-<p><code>(풀이)</code> 잴 수 있는 함수가 아님. <span class="math inline">\(B=\{0\}\)</span> 일 경우, <span class="math display">\[\{\omega: X(\omega) \in B\}=\{0\} \notin \sigma({\cal A})\]</span> 이므로 잴 수 있는 함수의 정의에 만족하지 않음.</p>
-<blockquote class="blockquote">
-<p>이 문제에서 <span class="math inline">\((S,{\cal S})\)</span>를 <span class="math inline">\((\mathbb{R}, {\cal R})\)</span> 바꾸면 풀이의 약간만 수정하여 <span class="math inline">\(X \notin {\cal F}\)</span>임을 보일 수 있다.</p>
-</blockquote>
+<p><span class="math inline">\(X\)</span>는 <span class="math inline">\((\Omega,{\cal F})\to(\mathbb{R},{\cal R})\)</span> 인 가측함수인가? 즉 <span class="math inline">\(X\)</span>는 <span class="math inline">\((\Omega,{\cal F})\)</span> 에서의 확률변수인가?</p>
+<p><code>(풀이)</code> 확률변수가 맞음. <span class="math inline">\(X\)</span>의 상은 <span class="math inline">\(\{0\}, \{1\}, \{0,1\}\)</span> 중 하나이며, 역상은 <span class="math inline">\(\{0\}, \mathbb{R}-\{0\}, \emptyset, \mathbb{R}\)</span> 중 하나임.</p>
+<ul>
+<li><span class="math inline">\(\emptyset, \mathbb{R}\)</span> 는 시그마필드의 정의에 의하여 <span class="math inline">\({\cal F}\)</span>의 원소임.</li>
+<li>임의의 <span class="math inline">\(q \in \mathbb{Q}\)</span> 에 대하여 <span class="math inline">\(\{q\} \in {\cal F}\)</span> 이므로 <span class="math inline">\(0 \in \mathbb{Q}\)</span> 이므로, <span class="math inline">\(\{0\} \in {\cal F}\)</span>.</li>
+<li><span class="math inline">\(\{0\} \in {\cal F}\)</span> 이고 시그마필드는 <span class="math inline">\(^c\)</span>-closed 이므로 <span class="math inline">\(\mathbb{R}-\{0\} \in {\cal F}\)</span>.</li>
+</ul>
+<p><code>#</code></p>
+<p><code># 예제4</code> – 두개의 잴 수 있는 공간 <span class="math inline">\((\Omega, {\cal F})\)</span>와 <span class="math inline">\((\mathbb{R},{\cal R})\)</span>를 고려하자. 단,</p>
+<ul>
+<li><span class="math inline">\(\Omega=\mathbb{R}\)</span>,</li>
+<li><span class="math inline">\({\cal F} =\sigma({\cal A})\)</span> where <span class="math inline">\({\cal A} = \{\mathbb{Q}\}\)</span>,</li>
+</ul>
+<p>아래와 같은 함수 <span class="math inline">\(X:\Omega \to \mathbb{R}\)</span> 을 고려하라.</p>
+<p><span class="math display">\[X(\omega) = \begin{cases}
+0 &amp; \omega =0\\
+1 &amp; \omega \neq 0
+\end{cases}\]</span></p>
+<p><span class="math inline">\(X\)</span>는 <span class="math inline">\((\Omega,{\cal F})\to(\mathbb{R},{\cal R})\)</span> 인 가측함수인가? 즉 <span class="math inline">\(X\)</span>는 <span class="math inline">\((\Omega,{\cal F})\)</span> 에서의 확률변수인가?</p>
+<p><code>(풀이)</code> 확률변수가 아님. <span class="math inline">\(X\)</span>의 상은 <span class="math inline">\(\{0\}, \{1\}, \{0,1\}\)</span> 중 하나이며, 역상은 <span class="math inline">\(\{0\}, \mathbb{R}-\{0\}, \emptyset, \mathbb{R}\)</span> 중 하나임. <span class="math inline">\(\{0\}\)</span> 와 <span class="math inline">\(\mathbb{R}-\{0\}\)</span>는 <span class="math inline">\({\cal F}\)</span>의 원소가 아니므로 확률변수가 아님.</p>
 <p><code>#</code></p>
 </section>
 </section>
