@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="최규빈">
-<meta name="dcterms.date" content="2024-11-19">
+<meta name="dcterms.date" content="2024-11-12">
 
-<title>SS2024 - Quiz-7 (2024.11.19) // 범위: 09wk 까지</title>
+<title>SS2024 - Quiz-6 (2024.11.12) // 범위: 08wk 까지</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -123,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><strong>Quiz-7 (2024.11.19)</strong> // 범위: 09wk 까지</h1>
+<h1 class="title"><strong>Quiz-6 (2024.11.12)</strong> // 범위: 08wk 까지</h1>
 </div>
 
 
@@ -140,7 +169,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 19, 2024</p>
+      <p class="date">November 12, 2024</p>
     </div>
   </div>
   
@@ -152,8 +181,63 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="sigma-finite" class="level1">
+<h1>1. – <span class="math inline">\(\sigma\)</span>-finite</h1>
+<blockquote class="blockquote">
+<p>(1)은 답만 써도 됩니다. (2),(3)은 이유를 함께 써야합니다.</p>
+</blockquote>
+<p>잴 수 있는 공간 <span class="math inline">\((\mathbb{N}, 2^{\mathbb{N}})\)</span> 에 대하여, 아래와 같은 집합함수 <span class="math inline">\(m:2^{\mathbb{N}} \to [0,\infty]\)</span></p>
+<p><span class="math display">\[m(A) = \begin{cases} |A| &amp; \text{$A$ 는 유한집합} \\
+\infty &amp; \text{$A$ 는 무한집합}
+\end{cases}\]</span></p>
+<p>를 고려하자. 여기에서 <span class="math inline">\(|A|\)</span>는 <span class="math inline">\(|A|\)</span>의 cardinal number를 의미한다. 함수 <span class="math inline">\(m\)</span>을 적용한 예시는 아래와 같다.</p>
+<ul>
+<li><span class="math inline">\(m(\emptyset) = 0\)</span></li>
+<li><span class="math inline">\(m(\{1,10\}) = 2\)</span></li>
+<li><span class="math inline">\(m(\{2,4,6,8,\dots\})=\infty\)</span></li>
+<li><span class="math inline">\(m\big(\{n: 0&lt;n\leq 10, n \in \mathbb{N} \}\big)=10\)</span></li>
+</ul>
+<p>즉 함수 <span class="math inline">\(m\)</span>은 유한집합에서는 원소의 숫자를, 무한집합에서는 <span class="math inline">\(\infty\)</span>를 리턴하는 함수라고 생각 할 수 있다.</p>
+<p><code>(1)</code> <span class="math inline">\(m\)</span>이 <span class="math inline">\((\mathbb{N}, 2^{\mathbb{N}})\)</span> 에서 <span class="math inline">\(\sigma\)</span>-additivity 를 만족하는지 판단하라. – 5점</p>
+<p><code>(풀이)</code></p>
+<p>만족한다. 서로 겹치지 않는 두 집합 <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>에 대하여 <span class="math inline">\(A\cup B\)</span> 의 원소수는 <span class="math inline">\(A\)</span>의 원소수와 <span class="math inline">\(B\)</span>의 원소수를 각각 더한것과 같기 때문.</p>
+<p><code>(2)</code> <span class="math inline">\(m\)</span>은 <span class="math inline">\((\mathbb{N},2^\mathbb{N})\)</span>에서 측도의 정의를 만족하는지 판단하고 판단한 근거를 설명하라. – 5점</p>
+<p><code>(풀이)</code></p>
+<ol type="1">
+<li>에 의하여 <span class="math inline">\(\sigma\)</span>-additivity를 만족하고 <span class="math inline">\(m(\emptyset)=0\)</span> 이므로 measure의 조건을 만족한다.</li>
+</ol>
+<p><code>(3)</code> <span class="math inline">\(m\)</span>이 <span class="math inline">\((\mathbb{N},2^\mathbb{N})\)</span>에서 시그마유한 측도의 정의를 만족하는지 판단하고 그렇게 판단한 근거를 서술하라. – 10점</p>
+<p><code>(풀이)</code></p>
+<p><span class="math inline">\(\Omega_1 = \{1\}, \Omega_2 = \{2\}, \dots\)</span> 와 같이 잡으면 <span class="math inline">\(\cup_{i=1}^{\infty}\Omega_i = \Omega = \mathbb{N}\)</span> 이고 모든 <span class="math inline">\(i\)</span>에 대하여 <span class="math inline">\(m(\Omega_i)=1 &lt; \infty\)</span> 가 성립하므로 <span class="math inline">\(m\)</span>은 시그마유한측도이다.</p>
+</section>
+<section id="확장이론" class="level1">
+<h1>2. – 확장이론</h1>
+<p><span class="math inline">\(\Omega\)</span> 는 전체집합, <span class="math inline">\({\cal A}\)</span> 는 <span class="math inline">\(\Omega\)</span>의 부분집합들을 원소로 하는 collection이라고 하자. 그리고 <span class="math inline">\(\tilde{P}:{\cal A} \to [0,1]\)</span> 는 <span class="math inline">\({\cal A}\)</span> 에서 <span class="math inline">\(\sigma\)</span>-additive 하고 <span class="math inline">\(\tilde{P}(\emptyset)=0, \tilde{P}(\Omega)=1\)</span> 인 집합함수라고 하자. <span class="math inline">\(\tilde{P}\)</span> 는 <span class="math inline">\((\Omega, \sigma({\cal A}))\)</span> 에서의 확장가능하며, 그 확장은 유일한가? 유일한 확장이 가능하다면 이유를 설명하라. 유일한 확장이 가능하지 않다면 반례를 들어라. – 20점</p>
+<p><code>(풀이)</code></p>
+<p>유일한 확장을 보장하지는 않는다. 반례는 07wk-08wk 강의노트 3-A의 예제5를 그대로 쓰면 된다.</p>
+</section>
+<section id="ox" class="level1">
+<h1>3. – O/X</h1>
+<p>아래를 참거짓을 판단하고 근거를 함께 서술하라.</p>
+<p><code>(1)</code> 전체집합 <span class="math inline">\(\Omega=\{a,b,c\}\)</span>에 대한 collection <span class="math inline">\({\cal A}=\{\emptyset, \{a\},\{b\}\}\)</span> 를 고려하자. <span class="math inline">\(\tilde{P}:{\cal A} \to [0,1]\)</span> 는 <span class="math inline">\({\cal A}\)</span>에서 <span class="math inline">\(\sigma\)</span>-additive 하고 <span class="math inline">\(\tilde{P}(\emptyset)=0, \tilde{P}(\Omega)=1\)</span> 인 집합함수라고 하자. 우연히 <span class="math inline">\(\tilde{P}\)</span>를 확장하여 <span class="math inline">\((\Omega, \sigma({\cal A}))\)</span> 에서의 확률측도 <span class="math inline">\(\mathbb{P}\)</span>를 하나 얻었다고 하자. 이때 <span class="math inline">\(\mathbb{P}\)</span>는 <span class="math inline">\(\tilde{P}\)</span>를 확장하여 얻은 유일한 확률측도라고 주장할 수 있는가? – 20점</p>
+<p><code>(풀이)</code></p>
+<p><span class="math inline">\({\cal A}\)</span>는 파이시스템이므로, <span class="math inline">\(\tilde{P}\)</span>의 확장가능성이 보장되면 유일성은 자동보장된다. // 확장이론2 참고</p>
+<p><code>(2)</code> <span class="math inline">\(\Omega = \{a, b\}\)</span> 이라고 하고 <span class="math inline">\(\mathcal{A} = \{\emptyset, \{a\}\}\)</span> 라고 하자. 여기에서 <span class="math inline">\(\mathcal{A}\)</span>는 세미링이다. 이때 집합함수 <span class="math inline">\(\tilde{m} : \mathcal{A} \rightarrow [0, 1]\)</span> 를 아래와 같이 정의하자.</p>
+<ul>
+<li><span class="math inline">\(\tilde{m}(\emptyset) = 0\)</span></li>
+<li><span class="math inline">\(\tilde{m}(\{a\}) = \frac{1}{2}\)</span></li>
+</ul>
+<p>이 함수는 <span class="math inline">\(\tilde{m}\)</span>은 <span class="math inline">\((\Omega, \sigma(\mathcal{A}))\)</span>에서의 측도로 확장 가능할까? – 20점</p>
+<p><code>(풀이)</code></p>
+<p>확장가능하다. (그렇지만 유일성을 보장하지 않는다.) 확장의 예시는 07wk-08wk 강의노트 3-A의 예제6을 참고하라.</p>
+<p><code>(3)</code> Measure space <span class="math inline">\((\mathbb{R}, {\cal R}, \lambda)\)</span>를 고려하자. 여기에서 <span class="math inline">\({\cal R}\)</span>은 보렐시그마필드이며 <span class="math inline">\(\lambda\)</span>은 르벡메저이다. 이제 아래와 같은 집합함수 <span class="math inline">\(\tilde{\lambda}: {\cal A} \to [0,1]\)</span></p>
+<p><span class="math display">\[\tilde{\lambda}([a,b]) = b-a\]</span></p>
+<p>를 고려하자. 여기에서 <span class="math inline">\({\cal A}=\{[a,b]: -\infty&lt;a&lt;b&lt;\infty\}\)</span> 이다. 집합함수 <span class="math inline">\(\tilde{\lambda}\)</span>를 <span class="math inline">\((\mathbb{R}, {\cal R})\)</span>에서의 측도로 확장하고자 한다. 르벡메저가 아닌 다른 메저로 확장가능한가? – 20점</p>
+<p><code>(풀이)</code></p>
+<p><span class="math inline">\(\forall A \in {\cal A}\)</span>에 대하여 <span class="math inline">\(\tilde{\lambda}([a,b])=\lambda([a,b])\)</span>이므로 <span class="math inline">\(\lambda\)</span>는 <span class="math inline">\(\tilde{\lambda}\)</span>의 확장이다. 그런데 <span class="math inline">\({\cal A} \cup \{\emptyset\}\)</span> 이 파이시스템이므로 확장의 유일성이 보장된다. 따라서 다른메저로의 확장은 불가능하다.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
