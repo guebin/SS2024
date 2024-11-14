@@ -159,7 +159,8 @@ window.Quarto = {
   <li><a href="#르벡적분-맛보기" id="toc-르벡적분-맛보기" class="nav-link" data-scroll-target="#르벡적분-맛보기">6. 르벡적분 맛보기</a>
   <ul class="collapse">
   <li><a href="#a.-motivating-ex" id="toc-a.-motivating-ex" class="nav-link" data-scroll-target="#a.-motivating-ex">A. motivating EX</a></li>
-  <li><a href="#b.-리만적분-vs-르벡적분" id="toc-b.-리만적분-vs-르벡적분" class="nav-link" data-scroll-target="#b.-리만적분-vs-르벡적분">B. 리만적분 vs 르벡적분</a></li>
+  <li><a href="#b.-거의-모든-곳에서.." id="toc-b.-거의-모든-곳에서.." class="nav-link" data-scroll-target="#b.-거의-모든-곳에서..">B. 거의 모든 곳에서..</a></li>
+  <li><a href="#c.-리만적분-vs-르벡적분" id="toc-c.-리만적분-vs-르벡적분" class="nav-link" data-scroll-target="#c.-리만적분-vs-르벡적분">C. 리만적분 vs 르벡적분</a></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="10wk.out.ipynb" download="10wk.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
@@ -458,8 +459,34 @@ window.Quarto = {
 <p>단, 여기에서 <span class="math inline">\(A_1=[0,1] \cap \mathbb{Q}, A_2=[0,1] \cap \mathbb{Q}^c\)</span> 이다. 집합 <span class="math inline">\(A_1,A_2\)</span> 는 모두 <span class="math inline">\({\cal R}\)</span>-measurable 하므로 <span class="math inline">\(\lambda(A_1), \lambda(A_2)\)</span>의 값이 각각 0과 1로 잘 정의된다. 따라서 <span class="math inline">\(S=2\)</span>로 계산할 수 있다.</p>
 <p><code>#</code></p>
 </section>
-<section id="b.-리만적분-vs-르벡적분" class="level2">
-<h2 class="anchored" data-anchor-id="b.-리만적분-vs-르벡적분">B. 리만적분 vs 르벡적분</h2>
+<section id="b.-거의-모든-곳에서.." class="level2">
+<h2 class="anchored" data-anchor-id="b.-거의-모든-곳에서..">B. 거의 모든 곳에서..</h2>
+<p><code># 복습?</code> 아래예제의 서술을 다시 살펴보자.</p>
+<p><strong># 예제</strong> – 사각형의 넓이 (2)</p>
+<p>이제 아래와 같은 함수의 밑면적을 고려하자.</p>
+<p><span class="math display">\[g(x)= \begin{cases} 1 &amp;  0 &lt; x &lt; 1 \\ 0 &amp; o.w. \end{cases}\]</span></p>
+<p>이것을 적분을 이용하여 구하는 과정을 서술하고 기호를 살펴보자.</p>
+<p><strong>서술1</strong> – 약간 말장난인데?</p>
+<p>구간 <span class="math inline">\([0,1]\)</span>에서 <span class="math inline">\(g(x)\)</span>의 밑면적은 구간 <span class="math inline">\([0,1]\)</span>에서 <span class="math inline">\(f(x)\)</span>의 밑면적과 같으므로 1이다.</p>
+<p><code>#</code></p>
+<p><code>-</code> 느낌: <span class="math inline">\(f(x)\)</span>와 <span class="math inline">\(g(x)\)</span>는 <strong>거의</strong> 같으니까 <span class="math inline">\(\int_{-\infty}^{\infty}f(x)dx = \int_{-\infty}^{\infty}g(x)dx\)</span> 라고 계산해도 된다는 논리..</p>
+<p><code>-</code> <strong>거의 같다</strong>의 엄밀한 의미??</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>르벡측도 0인 곳을 제외하고는 어떠한 명제가 성립할때 <strong><em>거의 모든 곳에서</em></strong> 라는 수식어를 붙인다. 영어로는 <strong><em>almost everywhere</em></strong> 라고 하며 기호로는 <strong><em>a.e.</em></strong> 라고 표현한다.</p>
+</div>
+</div>
+</section>
+<section id="c.-리만적분-vs-르벡적분" class="level2">
+<h2 class="anchored" data-anchor-id="c.-리만적분-vs-르벡적분">C. 리만적분 vs 르벡적분</h2>
 <p><code>-</code> 느낌: 리만적분은 정의역을 잘게 쪼개는 느낌이지만, 르벡적분은 치역을 잘게 쪼개는 느낌이다. (리만적분을 밑넓이를 세로로 나누어 계산하고, 르벡적분은 가로로 나누어 계산한다.)</p>
 <div class="img-fluid quarto-figure quarto-figure-center">
 <figure class="figure">
