@@ -159,8 +159,8 @@ window.Quarto = {
   <li><a href="#르벡적분-맛보기" id="toc-르벡적분-맛보기" class="nav-link" data-scroll-target="#르벡적분-맛보기">6. 르벡적분 맛보기</a>
   <ul class="collapse">
   <li><a href="#a.-motivating-ex" id="toc-a.-motivating-ex" class="nav-link" data-scroll-target="#a.-motivating-ex">A. motivating EX</a></li>
-  <li><a href="#b.-거의-모든-곳에서.." id="toc-b.-거의-모든-곳에서.." class="nav-link" data-scroll-target="#b.-거의-모든-곳에서..">B. 거의 모든 곳에서..</a></li>
-  <li><a href="#c.-리만적분-vs-르벡적분" id="toc-c.-리만적분-vs-르벡적분" class="nav-link" data-scroll-target="#c.-리만적분-vs-르벡적분">C. 리만적분 vs 르벡적분</a></li>
+  <li><a href="#b.-리만적분-vs-르벡적분" id="toc-b.-리만적분-vs-르벡적분" class="nav-link" data-scroll-target="#b.-리만적분-vs-르벡적분">B. 리만적분 vs 르벡적분</a></li>
+  <li><a href="#c.-거의-모든-곳에서.." id="toc-c.-거의-모든-곳에서.." class="nav-link" data-scroll-target="#c.-거의-모든-곳에서..">C. 거의 모든 곳에서..</a></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="10wk.out.ipynb" download="10wk.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
@@ -459,8 +459,25 @@ window.Quarto = {
 <p>단, 여기에서 <span class="math inline">\(A_1=[0,1] \cap \mathbb{Q}, A_2=[0,1] \cap \mathbb{Q}^c\)</span> 이다. 집합 <span class="math inline">\(A_1,A_2\)</span> 는 모두 <span class="math inline">\({\cal R}\)</span>-measurable 하므로 <span class="math inline">\(\lambda(A_1), \lambda(A_2)\)</span>의 값이 각각 0과 1로 잘 정의된다. 따라서 <span class="math inline">\(S=2\)</span>로 계산할 수 있다.</p>
 <p><code>#</code></p>
 </section>
-<section id="b.-거의-모든-곳에서.." class="level2">
-<h2 class="anchored" data-anchor-id="b.-거의-모든-곳에서..">B. 거의 모든 곳에서..</h2>
+<section id="b.-리만적분-vs-르벡적분" class="level2">
+<h2 class="anchored" data-anchor-id="b.-리만적분-vs-르벡적분">B. 리만적분 vs 르벡적분</h2>
+<p><code>-</code> 느낌: 리만적분은 정의역을 잘게 쪼개는 느낌이지만, 르벡적분은 치역을 잘게 쪼개는 느낌이다. (리만적분을 밑넓이를 세로로 나누어 계산하고, 르벡적분은 가로로 나누어 계산한다.)</p>
+<div class="img-fluid quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Lebesgueintegralsimplefunctions_finer-dotted.svg/1280px-Lebesgueintegralsimplefunctions_finer-dotted.svg.png" class="img-fluid figure-img"></p>
+<figcaption>그림1: 위키에서 긁은 그림.. 르벡적분은 <span class="math inline">\(y\)</span> 에 대응하는 <span class="math inline">\(x\)</span> 의 영역을 찾는다..</figcaption>
+</figure>
+</div>
+<div class="img-fluid quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://i.ytimg.com/vi/PGPZ0P1PJfw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&amp;rs=AOn4CLCiqxilKPxSiW1OV3g_vg1e8ODKzw" class="img-fluid figure-img"></p>
+<figcaption>그림2: 유튜브에서 긁은 그림, 리만적분과 르벡적분을 비교한다. 리만적분은 <span class="math inline">\(x\)</span>값에 대응하는 <span class="math inline">\(y\)</span>를 찾고, 르벡적분은 <span class="math inline">\(y\)</span>값에 대응하는 <span class="math inline">\(x\)</span>값을 찾는다</figcaption>
+</figure>
+</div>
+<p>ref: <a href="https://www.youtube.com/watch?app=desktop&amp;v=PGPZ0P1PJfw" class="uri">https://www.youtube.com/watch?app=desktop&amp;v=PGPZ0P1PJfw</a></p>
+</section>
+<section id="c.-거의-모든-곳에서.." class="level2">
+<h2 class="anchored" data-anchor-id="c.-거의-모든-곳에서..">C. 거의 모든 곳에서..</h2>
 <p><code># 복습?</code> 아래예제의 서술을 다시 살펴보자.</p>
 <p><strong># 예제</strong> – 사각형의 넓이 (2)</p>
 <p>이제 아래와 같은 함수의 밑면적을 고려하자.</p>
@@ -484,23 +501,41 @@ Note
 <p>르벡측도 0인 곳을 제외하고는 어떠한 명제가 성립할때 <strong><em>거의 모든 곳에서</em></strong> 라는 수식어를 붙인다. 영어로는 <strong><em>almost everywhere</em></strong> 라고 하며 기호로는 <strong><em>a.e.</em></strong> 라고 표현한다.</p>
 </div>
 </div>
-</section>
-<section id="c.-리만적분-vs-르벡적분" class="level2">
-<h2 class="anchored" data-anchor-id="c.-리만적분-vs-르벡적분">C. 리만적분 vs 르벡적분</h2>
-<p><code>-</code> 느낌: 리만적분은 정의역을 잘게 쪼개는 느낌이지만, 르벡적분은 치역을 잘게 쪼개는 느낌이다. (리만적분을 밑넓이를 세로로 나누어 계산하고, 르벡적분은 가로로 나누어 계산한다.)</p>
-<div class="img-fluid quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Lebesgueintegralsimplefunctions_finer-dotted.svg/1280px-Lebesgueintegralsimplefunctions_finer-dotted.svg.png" class="img-fluid figure-img"></p>
-<figcaption>그림1: 위키에서 긁은 그림.. 르벡적분은 <span class="math inline">\(y\)</span> 에 대응하는 <span class="math inline">\(x\)</span> 의 영역을 찾는다..</figcaption>
-</figure>
-</div>
-<div class="img-fluid quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://i.ytimg.com/vi/PGPZ0P1PJfw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&amp;rs=AOn4CLCiqxilKPxSiW1OV3g_vg1e8ODKzw" class="img-fluid figure-img"></p>
-<figcaption>그림2: 유튜브에서 긁은 그림, 리만적분과 르벡적분을 비교한다. 리만적분은 <span class="math inline">\(x\)</span>값에 대응하는 <span class="math inline">\(y\)</span>를 찾고, 르벡적분은 <span class="math inline">\(y\)</span>값에 대응하는 <span class="math inline">\(x\)</span>값을 찾는다</figcaption>
-</figure>
-</div>
-<p>ref: <a href="https://www.youtube.com/watch?app=desktop&amp;v=PGPZ0P1PJfw" class="uri">https://www.youtube.com/watch?app=desktop&amp;v=PGPZ0P1PJfw</a></p>
+<p><code># 예시1</code> – 아래와 같은 함수 <span class="math inline">\(f\)</span>를 고려하자.</p>
+<p><span class="math display">\[f(x) = \begin{cases} 1 &amp; x\in \mathbb{Q} \\ 0 &amp; x\in \mathbb{R}-\mathbb{Q} \end{cases}\]</span></p>
+<p>이 함수는 <strong><em>거의 모든 곳에서</em></strong> 0이다.</p>
+<blockquote class="blockquote">
+<p>기호로는 <span class="math inline">\(f \overset{a.e.}{=} 0\)</span> 혹은 <span class="math inline">\(f \overset{a.e.}{=} 0\)</span> <strong><em>w.r.t. <span class="math inline">\(\lambda\)</span></em></strong> 와 같이 표현한다.</p>
+</blockquote>
+<p><code>#</code></p>
+<p><code># 예시2</code> – 아래와 같은 함수 <span class="math inline">\(f,g\)</span>를 고려하자.</p>
+<p><span class="math display">\[f(x) = \begin{cases} 1 &amp; x\in \mathbb{Q} \\ 0 &amp; x\in \mathbb{R}-\mathbb{Q} \end{cases}\]</span></p>
+<p><span class="math display">\[g(x) = \begin{cases} 2 &amp; x\in \mathbb{Q} \\ 0 &amp; x \in \mathbb{R}-\mathbb{Q} \end{cases}\]</span></p>
+<p>함수 <span class="math inline">\(f\)</span>와 <span class="math inline">\(g\)</span>는 <strong><em>거의 모든 곳에서</em></strong> 같다.</p>
+<blockquote class="blockquote">
+<p>기호로는 <span class="math inline">\(f\overset{a.e.}{=} g\)</span> 혹은 <span class="math inline">\(f\overset{a.e.}{=} g\)</span> <strong><em>w.r.t. <span class="math inline">\(\lambda\)</span></em></strong> 와 같이 표현한다.</p>
+</blockquote>
+<p><code>#</code></p>
+<p><code># 예시3</code> – 아래와 같은 함수 <span class="math inline">\(f,g\)</span>를 고려하자.</p>
+<p><span class="math display">\[f(x) = \begin{cases} 0 &amp; x\in \mathbb{Q} \\ 1 &amp; x\in \mathbb{R}-\mathbb{Q} \end{cases}\]</span></p>
+<p>함수 <span class="math inline">\(f\)</span>는 <strong><em>거의 모든 곳에서 양수이다.</em></strong></p>
+<blockquote class="blockquote">
+<p>기호로는 <span class="math inline">\(f\overset{a.e.}{&gt;} 0\)</span> 혹은 <span class="math inline">\(f\overset{a.e.}{&gt;} g\)</span> <strong><em>w.r.t. <span class="math inline">\(\lambda\)</span></em></strong> 와 같이 표현한다.</p>
+</blockquote>
+<p><code>#</code></p>
+<p><code># 예시4</code> – 아래와 같은 함수 <span class="math inline">\(f,g\)</span>를 고려하자.</p>
+<p><span class="math display">\[f(x) = \begin{cases} 0 &amp; x\in \mathbb{Q} \\ 1 &amp; x\in \mathbb{R}-\mathbb{Q} \end{cases}\]</span></p>
+<p><span class="math display">\[g(x) = \begin{cases} 0 &amp; x\in \mathbb{Q} \\ 2 &amp; x \in \mathbb{R}-\mathbb{Q} \end{cases}\]</span></p>
+<p>함수 <span class="math inline">\(f\)</span>는 <strong><em>거의 모든 곳에서</em></strong> <span class="math inline">\(g\)</span>보다 작다.</p>
+<blockquote class="blockquote">
+<p>기호로는 <span class="math inline">\(f\overset{a.e.}{&lt;} g\)</span> 혹은 <span class="math inline">\(f\overset{a.e.}{&lt;} g\)</span> <strong><em>w.r.t. <span class="math inline">\(\lambda\)</span></em></strong> 와 같이 표현한다.</p>
+</blockquote>
+<p><code>#</code></p>
+<p><code># 예시5</code> – 만약에 아래와 같은 함수 <span class="math inline">\(f,g\)</span>가 있다면</p>
+<p><span class="math display">\[f(x) = \begin{cases} 1 &amp; x\in \mathbb{Q} \\ 0 &amp; x\in \mathbb{R}-\mathbb{Q} \end{cases}\]</span></p>
+<p><span class="math display">\[g(x) = \begin{cases} 1 &amp; x\in \mathbb{Q} \\ 0 &amp; x \in \mathbb{R}-\mathbb{Q} \end{cases}\]</span></p>
+<p>함수 <span class="math inline">\(f\)</span>와 <span class="math inline">\(g\)</span>는 <strong><em>모든 곳에서</em></strong> 같다라고 할 수 있겠다. (보통 그냥 같다라고 하죠..)</p>
+<p><code>#</code></p>
 
 
 </section>
