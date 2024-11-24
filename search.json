@@ -347,7 +347,7 @@
     "href": "posts/11wk.html#d.-f-가-non-negative-function-일때",
     "title": "11wk: 르벡적분 맛보기2, 르벡적분의 정의",
     "section": "D. \\(f\\) 가 non-negative function 일때",
-    "text": "D. \\(f\\) 가 non-negative function 일때\n# 정의2 – \\(f\\) 가 simple function일 경우 \\(\\int f d\\mu\\) 의 정의\n시그마유한측도공간 \\((\\Omega,{\\cal F}, \\mu)\\) 를 고려하자. 함수 \\(f:(\\Omega,{\\cal F})\\to(\\mathbb{\\bar R},\\bar{\\cal R})\\) non-negative (w.r.t. \\(\\mu\\)) measurable function 이라고 하고 \\(\\varphi: \\Omega \\to \\mathbb{R}\\) 를 simple function이라고 하자. 이 경우 기호 \\(\\int f d\\mu\\) 의 값은 아래와 같이 정의한다.\n\\[\\int f d\\mu := \\sup\\Big\\{\\int \\varphi d\\mu: 0\\leq \\varphi \\leq f, ~\\text{a.e. with respect to } \\mu \\Big\\}\\]\n\n즉 기호 \\(\\int f d\\mu\\) 의 값은 \\(\\mu\\) 가 시그마유한이고 \\(f\\) 가 non-negative (w.r.t. \\(\\mu\\)) 일 경우 모순되지 않게 항상 정의할 수 있다.\n\n#\n- 참고: \\(\\sup\\)은 항상 잘 정의됩니다.."
+    "text": "D. \\(f\\) 가 non-negative function 일때\n# 정의2 – \\(f\\) 가 non-negative function 일 경우 \\(\\int f d\\mu\\) 의 정의\n시그마유한측도공간 \\((\\Omega,{\\cal F}, \\mu)\\) 를 고려하자. 함수 \\(f:(\\Omega,{\\cal F})\\to(\\mathbb{\\bar R},\\bar{\\cal R})\\) non-negative (w.r.t. \\(\\mu\\)) measurable function 이라고 하고 \\(\\varphi: \\Omega \\to \\mathbb{R}\\) 를 simple function이라고 하자. 이 경우 기호 \\(\\int f d\\mu\\) 의 값은 아래와 같이 정의한다.\n\\[\\int f d\\mu := \\sup\\Big\\{\\int \\varphi d\\mu: 0\\leq \\varphi \\leq f, ~\\text{a.e. with respect to } \\mu \\Big\\}\\]\n\n즉 기호 \\(\\int f d\\mu\\) 의 값은 \\(\\mu\\) 가 시그마유한이고 \\(f\\) 가 non-negative (w.r.t. \\(\\mu\\)) 일 경우 모순되지 않게 항상 정의할 수 있다.\n\n#\n- 참고: \\(\\sup\\)은 항상 잘 정의됩니다.."
   },
   {
     "objectID": "posts/11wk.html#e.-f-가-measurable-function-일때",
