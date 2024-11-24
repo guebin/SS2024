@@ -22,7 +22,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -214,10 +234,10 @@ window.Quarto = {
 </section>
 <section id="예비학습" class="level1 page-columns page-full">
 <h1>2. 예비학습</h1>
-<section id="a.-확장된-실수공간" class="level2">
+<section id="a.-확장된-실수공간" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="a.-확장된-실수공간">A. 확장된 실수공간</h2>
-<p><code>-</code> 교재에 따라서 확장된 실수공간 <span class="math inline">\(\bar{\mathbb{R}}\)</span>를 고려하기도 한다. <span class="citation" data-cites="durrett2019probability">(<a href="#ref-durrett2019probability" role="doc-biblioref"><strong>durrett2019probability?</strong></a>, p 14)</span></p>
-<p><span class="math display">\[\bar{\mathbb{R}} = \mathbb{R} \cup \{-\infty\} \cup \{\infty\}\]</span></p>
+<p><code>-</code> 교재에 따라서 확장된 실수공간 <span class="math inline">\(\bar{\mathbb{R}}\)</span>를 고려하기도 한다. <span class="citation" data-cites="durrett2019probability">(<a href="#ref-durrett2019probability" role="doc-biblioref">Durrett 2019</a>, p 14)</span></p>
+<div class="no-row-height column-margin column-container"></div><p><span class="math display">\[\bar{\mathbb{R}} = \mathbb{R} \cup \{-\infty\} \cup \{\infty\}\]</span></p>
 <p><code>-</code> 또한 확장된 실수공간에 대응하는 보렐셋을 정의하기도 한다.</p>
 <p><span class="math display">\[{\cal B}(\bar{\mathbb{R}})=\bar{\cal R}\]</span></p>
 <p><code>-</code> <span class="math inline">\(\infty\)</span>, <span class="math inline">\(-\infty\)</span>는 실수가 아니다. 따라서 <span class="math inline">\(x\in \mathbb{R}\)</span> 인 경우는 <span class="math inline">\(x\)</span>를 <strong><em>real-valued</em></strong> 라고 표현하지만 <span class="math inline">\(x \in \bar{\mathbb{R}}\)</span> 인 경우는 <span class="math inline">\(x\)</span>를 <strong><em><span class="math inline">\(\bar{\mathbb{R}}\)</span>-valued</em></strong> 라고 표현한다.</p>
@@ -308,7 +328,7 @@ window.Quarto = {
 <li>사실 <span class="math inline">\(\int_{-\infty}^{\infty} f(x) dx\)</span> 역시 줄여서 <span class="math inline">\(\int f(x)dx\)</span> 로 표현하기도 하지만 이건 적분연산 자체를 의미하는 부정적분과 혼돈될 우려가 있어 사용을 지양하는 편이다.</li>
 </ul>
 </section>
-<section id="c.-르벡적분의-매력" class="level2">
+<section id="c.-르벡적분의-매력" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="c.-르벡적분의-매력">C. 르벡적분의 매력</h2>
 <p><code># 예제1</code> – 표현을 좀 더 엄밀하게</p>
 <p>아래와 같은 문장이 있다고 하자.</p>
@@ -335,8 +355,8 @@ window.Quarto = {
 <li><span class="math inline">\(\int f(x)dx = \int f d\lambda\)</span></li>
 <li><span class="math inline">\(\int_a^b f(x)dx = \int_E fd\lambda\)</span></li>
 </ol>
-<p>와 같이 사용한다. 단, 여기에서 <span class="math inline">\(E=[a,b]\)</span>. <span class="citation" data-cites="durrett2019probability">(<a href="#ref-durrett2019probability" role="doc-biblioref"><strong>durrett2019probability?</strong></a>, p 23)</span></p>
-<div class="callout callout-style-default callout-note callout-titled">
+<p>와 같이 사용한다. 단, 여기에서 <span class="math inline">\(E=[a,b]\)</span>. <span class="citation" data-cites="durrett2019probability">(<a href="#ref-durrett2019probability" role="doc-biblioref">Durrett 2019</a>, p 23)</span></p>
+<div class="no-row-height column-margin column-container"></div><div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -356,10 +376,12 @@ Note
 <li><span class="math inline">\(\int_{(0,1)}x^y \lambda(dx)=\int_{(0,1)}x^y d\lambda(x)\)</span> 는 함수 <span class="math inline">\(x \mapsto x^y\)</span> 에 대한 적분을</li>
 <li><span class="math inline">\(\int_{(0,1)}x^y \lambda(dy)=\int_{(0,1)}x^y d\lambda(y)\)</span> 는 함수 <span class="math inline">\(y \mapsto x^y\)</span> 에 대한 적분을</li>
 </ul>
-<p>의미한다. <span class="citation" data-cites="makarov2013real">(<a href="#ref-makarov2013real" role="doc-biblioref"><strong>makarov2013real?</strong></a>, p 125)</span>, <span class="citation" data-cites="durrett2019probability">(<a href="#ref-durrett2019probability" role="doc-biblioref"><strong>durrett2019probability?</strong></a>, p 32, p 38)</span></p>
+<p>의미한다. <span class="citation" data-cites="makarov2013real">(<a href="#ref-makarov2013real" role="doc-biblioref">Makarov and Podkorytov 2013</a>, p 125)</span>, <span class="citation" data-cites="durrett2019probability">(<a href="#ref-durrett2019probability" role="doc-biblioref">Durrett 2019</a>, p 32, p 38)</span></p>
 </div>
 </div>
-<p><code>#</code></p>
+<div class="no-row-height column-margin column-container"></div><div class="no-row-height column-margin column-container"><div id="ref-makarov2013real" class="csl-entry" role="listitem">
+Makarov, Boris, and Anatolii Podkorytov. 2013. <em>Real Analysis: Measures, Integrals and Applications</em>. Springer Science &amp; Business Media.
+</div></div><p><code>#</code></p>
 <p><code># 예제4</code> – <span class="math inline">\(\sum_{i}\)</span></p>
 <p>측도공간 <span class="math inline">\((\mathbb{N}, 2^{\mathbb{N}},\#)\)</span> 을 고려하자. 여기에서 <span class="math inline">\(\#: 2^{\mathbb{N}} \to [0,\infty]\)</span> 는 counting measure 이다. 즉 <span class="math inline">\(\#\)</span> 은 아래를 만족하는 집합함수이다.</p>
 <p><span class="math display">\[\#(A) = \begin{cases} |A| &amp; \text{$A$ 는 유한집합} \\
@@ -401,10 +423,12 @@ Note
 <ul>
 <li><span class="math inline">\(\int f d\# = \sum_{i \in \Omega} f(i)\)</span></li>
 </ul>
-<p>이 성립한다. <span class="citation" data-cites="durrett2019probability">(<a href="#ref-durrett2019probability" role="doc-biblioref"><strong>durrett2019probability?</strong></a>, p 23)</span></p>
+<p>이 성립한다. <span class="citation" data-cites="durrett2019probability">(<a href="#ref-durrett2019probability" role="doc-biblioref">Durrett 2019</a>, p 23)</span></p>
 </div>
 </div>
-<p><code>#</code></p>
+<div class="no-row-height column-margin column-container"><div id="ref-durrett2019probability" class="csl-entry" role="listitem">
+Durrett, Rick. 2019. <em>Probability: Theory and Examples</em>. Vol. 49. Cambridge university press.
+</div></div><p><code>#</code></p>
 <blockquote class="blockquote">
 <p>느낌: 르벡적분은 리만적분과 시그마를 통합하여 서술할 수 있는 언어이다.</p>
 </blockquote>
@@ -727,11 +751,14 @@ Note
 <p><code>-</code> 위의 정의에서 <span class="math inline">\(\int f^+ d\mu\)</span> 혹은 <span class="math inline">\(\int f^- d\mu\)</span> 라는 표현이 잘 정의되는 이유는 <span class="math inline">\(f^+, f^-\)</span>이 모두 <span class="math inline">\((\Omega, {\cal F}) \to (\mathbb{R}, {\cal R})\)</span>인 non-negative (<strong><em>w.r.t. <span class="math inline">\(\mu\)</span></em></strong>) function 이기 때문이다.</p>
 </section>
 </section>
-<section id="시벤코정리" class="level1">
+<section id="시벤코정리" class="level1 page-columns page-full">
 <h1>5. 시벤코정리</h1>
-<p><code>-</code> ref: <a href="https://github.com/guebin/AP2023/blob/main/posts/II.%20%ED%99%95%EB%A5%A0%EB%A1%A0%EA%B8%B0%EC%B4%88/PAPER_Cybenko.pdf">Approximation by Superpositions of a Sigmoidal Function</a> <span class="citation" data-cites="cybenko1989approximation">(<a href="#ref-cybenko1989approximation" role="doc-biblioref"><strong>cybenko1989approximation?</strong></a>)</span></p>
-<p><code>-</code> meaure, measurable function, <span class="math inline">\(\int_E f(x)d\mu(x)\)</span> 의 표현이 등장</p>
+<p><code>-</code> ref: <a href="https://github.com/guebin/AP2023/blob/main/posts/II.%20%ED%99%95%EB%A5%A0%EB%A1%A0%EA%B8%B0%EC%B4%88/PAPER_Cybenko.pdf">Approximation by Superpositions of a Sigmoidal Function</a> <span class="citation" data-cites="cybenko1989approximation">(<a href="#ref-cybenko1989approximation" role="doc-biblioref">Cybenko 1989</a>)</span></p>
+<div class="no-row-height column-margin column-container"><div id="ref-cybenko1989approximation" class="csl-entry" role="listitem">
+Cybenko, George. 1989. <span>“Approximation by Superpositions of a Sigmoidal Function.”</span> <em>Mathematics of Control, Signals and Systems</em> 2 (4): 303–14.
+</div></div><p><code>-</code> meaure, measurable function, <span class="math inline">\(\int_E f(x)d\mu(x)\)</span> 의 표현이 등장</p>
 <p><code>-</code> 임의의 연속함수 <span class="math inline">\(f\)</span> 를 sigmoidal function의 가중합으로 근사가능하다는 의미</p>
+
 
 
 </section>
