@@ -291,7 +291,7 @@
     "href": "posts/11wk.html#a.-확장된-실수공간",
     "title": "11wk: 르벡적분 맛보기2, 르벡적분의 정의",
     "section": "A. 확장된 실수공간",
-    "text": "A. 확장된 실수공간\n- 교재에 따라서 확장된 실수공간 \\(\\bar{\\mathbb{R}}\\)를 고려하기도 한다. (Durrett 2019, p 14)\n\\[\\bar{\\mathbb{R}} = \\mathbb{R} \\cup \\{-\\infty\\} \\cup \\{\\infty\\}\\]\n- 또한 확장된 실수공간에 대응하는 보렐셋을 정의하기도 한다.\n\\[{\\cal B}(\\bar{\\mathbb{R}})=\\bar{\\cal R}\\]\n- \\(\\infty\\), \\(-\\infty\\)는 실수가 아니다. 따라서 \\(x\\in \\mathbb{R}\\) 인 경우는 \\(x\\)를 real-valued 라고 표현하지만 \\(x \\in \\bar{\\mathbb{R}}\\) 인 경우는 \\(x\\)를 \\(\\bar{\\mathbb{R}}\\)-valued 라고 표현한다."
+    "text": "A. 확장된 실수공간\n- 교재에 따라서 확장된 실수공간 \\(\\bar{\\mathbb{R}}\\)를 고려하기도 한다. (Durrett 2019, p 14)\n\\[\\bar{\\mathbb{R}} = \\mathbb{R} \\cup \\{-\\infty\\} \\cup \\{\\infty\\}\\]\n- 또한 확장된 실수공간에 대응하는 보렐셋 \\(\\bar{\\cal R}\\) 을 정의하기도 한다."
   },
   {
     "objectID": "posts/11wk.html#b.-sup-inf",
