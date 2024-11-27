@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="최규빈">
-<meta name="dcterms.date" content="2024-11-23">
+<meta name="dcterms.date" content="2024-11-27">
 
-<title>SS2024 - 12wk: 밀도함수</title>
+<title>SS2024 - 12wk: 칸토어집합, 칸토어함수, 칸토어분포, 절대연속, 라돈니코딤정리 // 2023 고급확률론강의 업로드</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -61,6 +61,8 @@ div.csl-indent {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="../site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -171,23 +173,19 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#강의영상" id="toc-강의영상" class="nav-link active" data-scroll-target="#강의영상">강의영상</a></li>
-  <li><a href="#칸토어집합" id="toc-칸토어집합" class="nav-link" data-scroll-target="#칸토어집합">칸토어집합</a>
+  <li><a href="#강의영상" id="toc-강의영상" class="nav-link active" data-scroll-target="#강의영상">1. 강의영상</a></li>
+  <li><a href="#칸토어집합" id="toc-칸토어집합" class="nav-link" data-scroll-target="#칸토어집합">2. 칸토어집합</a>
   <ul class="collapse">
-  <li><a href="#정의" id="toc-정의" class="nav-link" data-scroll-target="#정의">정의</a></li>
-  <li><a href="#성질" id="toc-성질" class="nav-link" data-scroll-target="#성질">성질</a></li>
+  <li><a href="#a.-정의" id="toc-a.-정의" class="nav-link" data-scroll-target="#a.-정의">A. 정의</a></li>
+  <li><a href="#b.-성질" id="toc-b.-성질" class="nav-link" data-scroll-target="#b.-성질">B. 성질</a></li>
   </ul></li>
-  <li><a href="#밀도함수-density-function" id="toc-밀도함수-density-function" class="nav-link" data-scroll-target="#밀도함수-density-function">밀도함수 (density function)</a>
+  <li><a href="#밀도함수-density-function" id="toc-밀도함수-density-function" class="nav-link" data-scroll-target="#밀도함수-density-function">3. 밀도함수 (density function)</a>
   <ul class="collapse">
-  <li><a href="#정의-1" id="toc-정의-1" class="nav-link" data-scroll-target="#정의-1">정의</a></li>
-  </ul></li>
-  <li><a href="#밀도함수-density-function-1" id="toc-밀도함수-density-function-1" class="nav-link" data-scroll-target="#밀도함수-density-function-1">밀도함수 (density function)</a>
-  <ul class="collapse">
-  <li><a href="#정의-2" id="toc-정의-2" class="nav-link" data-scroll-target="#정의-2">정의</a></li>
-  <li><a href="#다양한-밀도함수-예시" id="toc-다양한-밀도함수-예시" class="nav-link" data-scroll-target="#다양한-밀도함수-예시">다양한 밀도함수 예시</a></li>
-  <li><a href="#칸토어함수-칸토어분포" id="toc-칸토어함수-칸토어분포" class="nav-link" data-scroll-target="#칸토어함수-칸토어분포">칸토어함수, 칸토어분포</a></li>
-  <li><a href="#절대연속" id="toc-절대연속" class="nav-link" data-scroll-target="#절대연속">절대연속</a></li>
-  <li><a href="#라돈니코딤-정리" id="toc-라돈니코딤-정리" class="nav-link" data-scroll-target="#라돈니코딤-정리">라돈니코딤 정리</a></li>
+  <li><a href="#a.-정의-1" id="toc-a.-정의-1" class="nav-link" data-scroll-target="#a.-정의-1">A. 정의</a></li>
+  <li><a href="#b.-다양한-밀도함수-예시" id="toc-b.-다양한-밀도함수-예시" class="nav-link" data-scroll-target="#b.-다양한-밀도함수-예시">B. 다양한 밀도함수 예시</a></li>
+  <li><a href="#c.-칸토어함수-칸토어분포" id="toc-c.-칸토어함수-칸토어분포" class="nav-link" data-scroll-target="#c.-칸토어함수-칸토어분포">C. 칸토어함수, 칸토어분포</a></li>
+  <li><a href="#d.-절대연속" id="toc-d.-절대연속" class="nav-link" data-scroll-target="#d.-절대연속">D. 절대연속</a></li>
+  <li><a href="#e.-라돈니코딤-정리" id="toc-e.-라돈니코딤-정리" class="nav-link" data-scroll-target="#e.-라돈니코딤-정리">E. 라돈니코딤 정리</a></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="12wk.out.ipynb" download="12wk.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
@@ -197,7 +195,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">12wk: 밀도함수</h1>
+<h1 class="title">12wk: 칸토어집합, 칸토어함수, 칸토어분포, 절대연속, 라돈니코딤정리 // 2023 고급확률론강의 업로드</h1>
 </div>
 
 
@@ -214,7 +212,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 23, 2024</p>
+      <p class="date">November 27, 2024</p>
     </div>
   </div>
   
@@ -227,16 +225,14 @@ window.Quarto = {
 
 
 <section id="강의영상" class="level1">
-<h1>강의영상</h1>
-<blockquote class="blockquote">
-<p>youtube: <a href="https://youtube.com/playlist?list=PLQqh36zP38-xzs1sJhhsXTzssLICsc9t6" class="uri">https://youtube.com/playlist?list=PLQqh36zP38-xzs1sJhhsXTzssLICsc9t6</a></p>
-</blockquote>
+<h1>1. 강의영상</h1>
+<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="https://youtube.com/playlist?list=PLQqh36zP38-xzs1sJhhsXTzssLICsc9t6"></video></div>
 </section>
 <section id="칸토어집합" class="level1">
-<h1>칸토어집합</h1>
+<h1>2. 칸토어집합</h1>
 <p>ref: <a href="https://en.wikipedia.org/wiki/Cantor_set" class="uri">https://en.wikipedia.org/wiki/Cantor_set</a></p>
-<section id="정의" class="level2">
-<h2 class="anchored" data-anchor-id="정의">정의</h2>
+<section id="a.-정의" class="level2">
+<h2 class="anchored" data-anchor-id="a.-정의">A. 정의</h2>
 <p><code>-</code> 아래의 집합열 <span class="math inline">\(C_n\)</span>의 극한 <span class="math inline">\({\cal C}=\lim_{n\to\infty} C_n\)</span>를 생각하자.</p>
 <p><strong>실제수열</strong></p>
 <ul>
@@ -274,8 +270,8 @@ window.Quarto = {
 </figure>
 </div>
 </section>
-<section id="성질" class="level2">
-<h2 class="anchored" data-anchor-id="성질">성질</h2>
+<section id="b.-성질" class="level2">
+<h2 class="anchored" data-anchor-id="b.-성질">B. 성질</h2>
 <p><code>-</code> 3진법의 표기: 칸토어 집합의 원소는 <span class="math inline">\([0,1]\)</span>사이의 원소를 삼진법으로 표현할때 모든 자리수가 0 또는 2가 되는 수만 모은 집합이다.</p>
 <ol type="1">
 <li><span class="math inline">\([0,1]\)</span> 사이의 모든 실수를 3진법을 표현한다고 생각하자.</li>
@@ -399,10 +395,10 @@ window.Quarto = {
 </div>
 </section>
 </section>
-<section id="밀도함수-density-function" class="level1">
-<h1>밀도함수 (density function)</h1>
-<section id="정의-1" class="level2">
-<h2 class="anchored" data-anchor-id="정의-1">정의</h2>
+<section id="밀도함수-density-function" class="level1 page-columns page-full">
+<h1>3. 밀도함수 (density function)</h1>
+<section id="a.-정의-1" class="level2">
+<h2 class="anchored" data-anchor-id="a.-정의-1">A. 정의</h2>
 <p><code>-</code> <strong>(정의)</strong> <span class="math inline">\(X\)</span>를 확률공간 <span class="math inline">\((\Omega, {\cal F}, P)\)</span>에서 정의된 확률변수라고 하고 <span class="math inline">\(F_X\)</span>를 <span class="math inline">\(X\)</span>의 분포함수 라고 하자. 만약에 <span class="math inline">\(F_X\)</span>가 아래와 같은 방식으로 표현된다면 <span class="math inline">\(f_X\)</span>를 <span class="math inline">\(X\)</span>를 밀도함수 (density function) 이라고 한다.</p>
 <p><span class="math display">\[F_X(x)=\int_{-\infty}^xf_X(y)dy\]</span></p>
 <p><code>-</code> 저런 표현이 존재하지 않는다면 어쩌지?</p>
@@ -411,21 +407,8 @@ window.Quarto = {
 <li><span class="math inline">\(F_X(x)\)</span>가 연속인 경우: 미분가능할 수도 있고, 아닐 수도 있고</li>
 </ul>
 </section>
-</section>
-<section id="밀도함수-density-function-1" class="level1 page-columns page-full">
-<h1>밀도함수 (density function)</h1>
-<section id="정의-2" class="level2">
-<h2 class="anchored" data-anchor-id="정의-2">정의</h2>
-<p><code>-</code> <strong>(정의)</strong> <span class="math inline">\(X\)</span>를 확률공간 <span class="math inline">\((\Omega, {\cal F}, P)\)</span>에서 정의된 확률변수라고 하고 <span class="math inline">\(F_X\)</span>를 <span class="math inline">\(X\)</span>의 분포함수 라고 하자. 만약에 <span class="math inline">\(F_X\)</span>가 아래와 같은 방식으로 표현된다면 <span class="math inline">\(f_X\)</span>를 <span class="math inline">\(X\)</span>를 밀도함수 (density function) 이라고 한다.</p>
-<p><span class="math display">\[F_X(x)=\int_{-\infty}^xf_X(y)dy\]</span></p>
-<p><code>-</code> 저런 표현이 존재하지 않는다면 어쩌지?</p>
-<ul>
-<li><span class="math inline">\(F_X(x)\)</span>가 불연속인 경우: 미분 불가능</li>
-<li><span class="math inline">\(F_X(x)\)</span>가 연속인 경우: 미분가능할 수도 있고, 아닐 수도 있고</li>
-</ul>
-</section>
-<section id="다양한-밀도함수-예시" class="level2">
-<h2 class="anchored" data-anchor-id="다양한-밀도함수-예시">다양한 밀도함수 예시</h2>
+<section id="b.-다양한-밀도함수-예시" class="level2">
+<h2 class="anchored" data-anchor-id="b.-다양한-밀도함수-예시">B. 다양한 밀도함수 예시</h2>
 <p><code>-</code> 교양: 함수 <span class="math inline">\(F_X(x)\)</span>가 연속인 경우는 연속확률변수 <span class="math inline">\(X\)</span>의 분포함수 (distribution fucntion) 혹은 CDF라고 하고 함수 <span class="math inline">\(F_X(x)\)</span>가 jump만 존재하는 불연속인 경우는 이산확률변수의 분포함수 (distribution function) 혹은 CDF라고 한다.</p>
 <p><strong>(예제1)</strong> – 균등분포</p>
 <p>아래와 같은 distribution function <span class="math inline">\(F_X\)</span>을 가지는 확률변수 <span class="math inline">\(X\)</span>를 고려하자.</p>
@@ -506,8 +489,8 @@ window.Quarto = {
 <p>엄청 그럴듯해보이지만 칸토어함수의 존재로 인하여 이 주장은 틀렸다.</p>
 </blockquote>
 </section>
-<section id="칸토어함수-칸토어분포" class="level2">
-<h2 class="anchored" data-anchor-id="칸토어함수-칸토어분포">칸토어함수, 칸토어분포</h2>
+<section id="c.-칸토어함수-칸토어분포" class="level2">
+<h2 class="anchored" data-anchor-id="c.-칸토어함수-칸토어분포">C. 칸토어함수, 칸토어분포</h2>
 <p><code>-</code> 아래와 같은 과정으로 얻어지는 함수 <span class="math inline">\(F_0, F_1, F_2, \dots\)</span>를 고려하자.</p>
 <div class="img-fluid quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -550,8 +533,8 @@ window.Quarto = {
 <p>칸토어함수는 미적분학의 기본정리 성립하지 않는 반례를 찾기 위해 고안되었다. 즉 어떠한 함수 <span class="math inline">\(F\)</span>가 <strong><em>거의 모든 곳에서</em></strong> 미분가능하며, 그 도함수를 <span class="math inline">\(f\)</span>가 <strong><em>르벡적분 가능</em></strong> 할지라도 <span class="math inline">\(\int_{-\infty}^{x} f(y) dy= F(x)\)</span> 가 성립하지 않을 수 있다.</p>
 </blockquote>
 </section>
-<section id="절대연속" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="절대연속">절대연속</h2>
+<section id="d.-절대연속" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="d.-절대연속">D. 절대연속</h2>
 <p><code>-</code> 모티브</p>
 <ol type="1">
 <li><span class="math inline">\(F_X\)</span>의 “도함수 비슷한 함수”를 일반화 할 수 없을까? <span class="math inline">\(\Rightarrow\)</span> 라돈니코딤 도함수</li>
@@ -707,8 +690,8 @@ x &amp; 0\leq  x \leq  1 \\
 </table>
 <p>그런데 <span class="math inline">\(\lambda({\cal C})=0\)</span> 이지만 <span class="math inline">\(\mu_X(\lim_{n\to \infty}C_n)=\mu_X({\cal C})=1\)</span> 이므로 <span class="math inline">\(\mu&lt;&lt;\lambda\)</span>에 모순이다.</p>
 </section>
-<section id="라돈니코딤-정리" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="라돈니코딤-정리">라돈니코딤 정리</h2>
+<section id="e.-라돈니코딤-정리" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="e.-라돈니코딤-정리">E. 라돈니코딤 정리</h2>
 <p><code>-</code> <strong>이론</strong>: 분포함수 <span class="math inline">\(F_X:\mathbb{R} \to [0,1]\)</span>가 (르벡메져에 대하여) 절대연속이라면 아래를 만족하는 함수 <span class="math inline">\(f_X:\mathbb{R} \to \mathbb{R}^+\)</span>가 존재한다.</p>
 <p><span class="math display">\[F_X = \int_{(-\infty,x]}f_Xd\lambda\]</span></p>
 <p>여기에서 함수 <span class="math inline">\(f_X\)</span>를 <span class="math inline">\(F_X\)</span>의 밀도함수 (density function) 이라고 한다. 일반적으로 밀도함수 <span class="math inline">\(f_X\)</span>는 유일하지 않지만, 르벡측도로 재었을때 0인 집합을 제외한 부분에서는 유일하게 결정된다. (요약: 분포함수 <span class="math inline">\(F_X\)</span>가 절대연속이면 밀도함수 <span class="math inline">\(f_X\)</span>가 존재하고, <strong><em>거의</em></strong> 유일함)</p>
@@ -1166,6 +1149,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <script src="https://utteranc.es/client.js" repo="guebin/SS2024" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
+<script>videojs(video_shortcode_videojs_video1);</script>
 
 
 
