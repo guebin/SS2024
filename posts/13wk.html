@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="최규빈">
-<meta name="dcterms.date" content="2023-06-06">
+<meta name="dcterms.date" content="2024-11-28">
 
-<title>SS2024 - 13wk: 이산형과 연속형의 통합</title>
+<title>SS2024 - 13wk: 일반화된 밀도함수, 르벡분해정리 // 2023 고급확률론강의 업로드</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -41,6 +41,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="../site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -151,15 +153,15 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#강의영상" id="toc-강의영상" class="nav-link active" data-scroll-target="#강의영상">강의영상</a></li>
-  <li><a href="#일반화된-밀도함수" id="toc-일반화된-밀도함수" class="nav-link" data-scroll-target="#일반화된-밀도함수">일반화된 밀도함수</a>
+  <li><a href="#강의영상" id="toc-강의영상" class="nav-link active" data-scroll-target="#강의영상">1. 강의영상</a></li>
+  <li><a href="#일반화된-밀도함수" id="toc-일반화된-밀도함수" class="nav-link" data-scroll-target="#일반화된-밀도함수">2. 일반화된 밀도함수</a>
   <ul class="collapse">
-  <li><a href="#이산확률변수" id="toc-이산확률변수" class="nav-link" data-scroll-target="#이산확률변수">이산확률변수</a></li>
-  <li><a href="#혼합형확률변수" id="toc-혼합형확률변수" class="nav-link" data-scroll-target="#혼합형확률변수">혼합형확률변수</a></li>
+  <li><a href="#a.-이산확률변수" id="toc-a.-이산확률변수" class="nav-link" data-scroll-target="#a.-이산확률변수">A. 이산확률변수</a></li>
+  <li><a href="#b.-혼합형확률변수" id="toc-b.-혼합형확률변수" class="nav-link" data-scroll-target="#b.-혼합형확률변수">B. 혼합형확률변수</a></li>
   </ul></li>
-  <li><a href="#르벡분해정리" id="toc-르벡분해정리" class="nav-link" data-scroll-target="#르벡분해정리">르벡분해정리</a></li>
-  <li><a href="#기대값" id="toc-기대값" class="nav-link" data-scroll-target="#기대값">기대값</a></li>
-  <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">Appendix</a></li>
+  <li><a href="#르벡분해정리" id="toc-르벡분해정리" class="nav-link" data-scroll-target="#르벡분해정리">3. 르벡분해정리</a></li>
+  <li><a href="#기대값" id="toc-기대값" class="nav-link" data-scroll-target="#기대값">4. 기대값</a></li>
+  <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">5. Appendix</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="13wk.out.ipynb" download="13wk.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
@@ -168,7 +170,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">13wk: 이산형과 연속형의 통합</h1>
+<h1 class="title">13wk: 일반화된 밀도함수, 르벡분해정리 // 2023 고급확률론강의 업로드</h1>
 </div>
 
 
@@ -185,7 +187,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 6, 2023</p>
+      <p class="date">November 28, 2024</p>
     </div>
   </div>
   
@@ -198,16 +200,14 @@ window.Quarto = {
 
 
 <section id="강의영상" class="level1">
-<h1>강의영상</h1>
-<blockquote class="blockquote">
-<p>youtube: <a href="https://youtube.com/playlist?list=PLQqh36zP38-wThZpnzJAP_aOtJzBl1Ij_" class="uri">https://youtube.com/playlist?list=PLQqh36zP38-wThZpnzJAP_aOtJzBl1Ij_</a></p>
-</blockquote>
+<h1>1. 강의영상</h1>
+<p></p><div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="https://youtube.com/playlist?list=PLQqh36zP38-wThZpnzJAP_aOtJzBl1Ij_"></video></div>m<p></p>
 </section>
 <section id="일반화된-밀도함수" class="level1 page-columns page-full">
-<h1>일반화된 밀도함수</h1>
+<h1>2. 일반화된 밀도함수</h1>
 <p><code>-</code> 라돈니코딤 정리는 꼭 르벡메져일 경우에만 성립하는 것이 아니다.</p>
-<section id="이산확률변수" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="이산확률변수">이산확률변수</h2>
+<section id="a.-이산확률변수" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="a.-이산확률변수">A. 이산확률변수</h2>
 <p><code>-</code> 예제1 – 베르누이 (with 카운팅메져)</p>
 <p>아래와 같은 함수를 고려하자.</p>
 <p><span class="math display">\[F_X(x) = \begin{cases}
@@ -343,8 +343,8 @@ window.Quarto = {
 <p>여기에서 <span class="math inline">\(p_X(x)\)</span>는 학부때 배우는 pmf</p>
 </blockquote>
 </section>
-<section id="혼합형확률변수" class="level2">
-<h2 class="anchored" data-anchor-id="혼합형확률변수">혼합형확률변수</h2>
+<section id="b.-혼합형확률변수" class="level2">
+<h2 class="anchored" data-anchor-id="b.-혼합형확률변수">B. 혼합형확률변수</h2>
 <p><code>-</code> 예제1: 아래와 같은 분포함수 <span class="math inline">\(F_X\)</span>를 고려하자.</p>
 <p><span class="math display">\[F_X(x) = \begin{cases} 0 &amp; x&lt; 0 \\ \frac{1}{2} &amp; 0 \leq x &lt; \frac{1}{2} \\ x &amp; \frac{1}{2} \leq x \leq 1 \\ 1 &amp; x&gt;1  \end{cases}\]</span></p>
 <p>이 분포함수는 동전을 던져 앞면이 나오면 <span class="math inline">\(X=0\)</span>으로 결정하고 뒷면이 나오면 균등분포 <span class="math inline">\([0.5,1]\)</span>에서 확률변수 <span class="math inline">\(X\)</span>를 생성하는 실험을 상상하면 쉽게 이해할 수 있다. 아래와 같은 함수</p>
@@ -412,7 +412,7 @@ window.Quarto = {
 </section>
 </section>
 <section id="르벡분해정리" class="level1 page-columns page-full">
-<h1>르벡분해정리</h1>
+<h1>3. 르벡분해정리</h1>
 <p><code>-</code> <strong>Thm</strong>: 분포함수의 정의를 만족하는 임의의 <span class="math inline">\(F\)</span>는 항상 아래와 같이 분해가능하다.</p>
 <p><span class="math display">\[F = F_{ac}+F_{pp}+F_{sing}\]</span></p>
 <p>여기에서 <span class="math inline">\(F_{ac}\)</span>는 르벡메져에 대하여 절대연속이고 <span class="math inline">\(F_{pp}\)</span>는 카운팅메져에 대하여 절대연속이다. 따라서 <span class="math inline">\(F_{ac}\)</span>와 <span class="math inline">\(F_{pp}\)</span>는 각각 르벡메져와 카운팅메져에 대응하는 밀도함수가 존재한다. <span class="math inline">\(F_{sing}\)</span>는 칸토어분포와 같이 밀도함수가 존재하지 않는 경우이다.</p>
@@ -432,7 +432,7 @@ window.Quarto = {
 <p><span class="math inline">\(F\)</span>에 대응하는 혼합형 확률변수 <span class="math inline">\(X\)</span>가 존재하고 그에 대응하는 (일반화된) pdf가 존재한다.</p>
 </section>
 <section id="기대값" class="level1 page-columns page-full">
-<h1>기대값</h1>
+<h1>4. 기대값</h1>
 <p><code>-</code> 예제1: <span class="math inline">\((\Omega,{\cal F},P)\)</span>를 확률공간이라고 하고 <span class="math inline">\(\Omega=\{H,T\}\)</span>, <span class="math inline">\({\cal F}=2^\Omega\)</span>, <span class="math inline">\(P(H)=P(T)=\frac{1}{2}\)</span>라고 하자.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> 확률변수 <span class="math inline">\(X(H)=0\)</span>, <span class="math inline">\(X(T)=1\)</span>를 정의하자. 이 확률변수의 기대값 <span class="math inline">\(\mathbb{E}(X)\)</span>를 계산하여 보자.</p>
 <div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;이렇게 정의해도 되는 이유는 카라테오도리 확장정리덕분</p></li></div><table class="table">
 <thead>
@@ -569,7 +569,7 @@ d\#_X\)</span></li>
 </ul>
 </section>
 <section id="appendix" class="level1">
-<h1>Appendix</h1>
+<h1>5. Appendix</h1>
 <p><code>-</code> <a href="https://github.com/guebin/AP2023/blob/main/posts/II.%20%ED%99%95%EB%A5%A0%EB%A1%A0%EA%B8%B0%EC%B4%88/supp_14wk_surv.pdf">생존분석 강의노트</a></p>
 <p><code>-</code> <a href="https://github.com/guebin/AP2023/blob/main/posts/II.%20%ED%99%95%EB%A5%A0%EB%A1%A0%EA%B8%B0%EC%B4%88/supp_14wk_WGAN.pdf">WGAN</a></p>
 <p><code>-</code> <a href="https://github.com/guebin/AP2023/blob/main/posts/II.%20%ED%99%95%EB%A5%A0%EB%A1%A0%EA%B8%B0%EC%B4%88/supp_14wk_ts.pdf">시계열교재</a></p>
@@ -964,6 +964,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <script src="https://utteranc.es/client.js" repo="guebin/SS2024" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
+<script>videojs(video_shortcode_videojs_video1);</script>
 
 
 
